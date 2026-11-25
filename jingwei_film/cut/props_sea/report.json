@@ -1,0 +1,197 @@
+{
+ "image": "props_sea.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   97.74,
+   -0.52,
+   5.78
+  ],
+  "board_noise": 0.8,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 8,
+ "cleanly_cuttable": false,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    210,
+    180,
+    1053,
+    359
+   ],
+   "area_frac": 0.0622,
+   "centroid": [
+    748.1,
+    376.2
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_00.png",
+   "origin": [
+    204,
+    174
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    1362,
+    122,
+    1200,
+    1282
+   ],
+   "area_frac": 0.2189,
+   "centroid": [
+    1810.8,
+    826.2
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.171,
+   "file": "piece_01.png",
+   "origin": [
+    1356,
+    116
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    2350,
+    313,
+    83,
+    80
+   ],
+   "area_frac": 0.0007,
+   "centroid": [
+    2392.8,
+    358.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.524,
+   "file": "piece_02.png",
+   "origin": [
+    2344,
+    307
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    211,
+    647,
+    1004,
+    124
+   ],
+   "area_frac": 0.0158,
+   "centroid": [
+    828.3,
+    709.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_03.png",
+   "origin": [
+    205,
+    641
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    259,
+    1020,
+    82,
+    60
+   ],
+   "area_frac": 0.0005,
+   "centroid": [
+    301.3,
+    1050.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.133,
+   "file": "piece_04.png",
+   "origin": [
+    253,
+    1014
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    304,
+    947,
+    864,
+    452
+   ],
+   "area_frac": 0.0389,
+   "centroid": [
+    768.4,
+    1232.9
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.286,
+   "file": "piece_05.png",
+   "origin": [
+    298,
+    941
+   ]
+  },
+  {
+   "index": 6,
+   "bbox": [
+    361,
+    898,
+    41,
+    85
+   ],
+   "area_frac": 0.0004,
+   "centroid": [
+    381.4,
+    938.5
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.095,
+   "file": "piece_06.png",
+   "origin": [
+    355,
+    892
+   ]
+  },
+  {
+   "index": 7,
+   "bbox": [
+    2237,
+    794,
+    294,
+    189
+   ],
+   "area_frac": 0.0042,
+   "centroid": [
+    2390.2,
+    893.5
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.05,
+   "file": "piece_07.png",
+   "origin": [
+    2231,
+    788
+   ]
+  }
+ ]
+}

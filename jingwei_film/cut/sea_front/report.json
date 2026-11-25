@@ -1,0 +1,47 @@
+{
+ "image": "sea_front.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   96.54,
+   0.81,
+   5.53
+  ],
+  "board_noise": 2.13,
+  "border_is_board": 0.565,
+  "threshold": 7.47
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": false,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    0,
+    951,
+    2752,
+    585
+   ],
+   "area_frac": 0.3431,
+   "centroid": [
+    1371.1,
+    1271.0
+   ],
+   "touches_edge": true,
+   "edges": [
+    "bottom",
+    "left",
+    "right"
+   ],
+   "weak_outline": 0.043,
+   "file": "piece_00.png",
+   "origin": [
+    0,
+    945
+   ]
+  }
+ ]
+}

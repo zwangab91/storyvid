@@ -1,0 +1,46 @@
+{
+ "image": "river_strip.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   97.61,
+   -0.02,
+   6.25
+  ],
+  "board_noise": 0.75,
+  "border_is_board": 0.926,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": false,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    0,
+    601,
+    2752,
+    339
+   ],
+   "area_frac": 0.1693,
+   "centroid": [
+    1356.7,
+    767.6
+   ],
+   "touches_edge": true,
+   "edges": [
+    "left",
+    "right"
+   ],
+   "weak_outline": 0.001,
+   "file": "piece_00.png",
+   "origin": [
+    0,
+    595
+   ]
+  }
+ ]
+}

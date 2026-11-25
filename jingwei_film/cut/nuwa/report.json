@@ -1,0 +1,43 @@
+{
+ "image": "nuwa.png",
+ "size": [
+  1792,
+  2400
+ ],
+ "board": {
+  "board_lab": [
+   97.8,
+   0.47,
+   5.66
+  ],
+  "board_noise": 0.98,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    547,
+    288,
+    680,
+    1869
+   ],
+   "area_frac": 0.1998,
+   "centroid": [
+    886.0,
+    1243.7
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.004,
+   "file": "piece_00.png",
+   "origin": [
+    541,
+    282
+   ]
+  }
+ ]
+}

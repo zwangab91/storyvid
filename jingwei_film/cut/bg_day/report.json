@@ -1,0 +1,175 @@
+{
+ "image": "bg_day.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   92.53,
+   -1.89,
+   1.52
+  ],
+  "board_noise": 11.32,
+  "border_is_board": 1.0,
+  "threshold": 39.63
+ },
+ "n_pieces": 7,
+ "cleanly_cuttable": false,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    46,
+    435,
+    95,
+    73
+   ],
+   "area_frac": 0.0005,
+   "centroid": [
+    81.4,
+    470.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.467,
+   "file": "piece_00.png",
+   "origin": [
+    40,
+    429
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    2086,
+    375,
+    87,
+    137
+   ],
+   "area_frac": 0.001,
+   "centroid": [
+    2115.0,
+    432.7
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.537,
+   "file": "piece_01.png",
+   "origin": [
+    2080,
+    369
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    471,
+    632,
+    59,
+    152
+   ],
+   "area_frac": 0.0009,
+   "centroid": [
+    503.2,
+    711.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.22,
+   "file": "piece_02.png",
+   "origin": [
+    465,
+    626
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    695,
+    593,
+    214,
+    174
+   ],
+   "area_frac": 0.006,
+   "centroid": [
+    800.1,
+    678.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.159,
+   "file": "piece_03.png",
+   "origin": [
+    689,
+    587
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    751,
+    762,
+    797,
+    207
+   ],
+   "area_frac": 0.0206,
+   "centroid": [
+    1161.5,
+    866.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.366,
+   "file": "piece_04.png",
+   "origin": [
+    745,
+    756
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    2101,
+    715,
+    60,
+    101
+   ],
+   "area_frac": 0.0008,
+   "centroid": [
+    2133.9,
+    765.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.56,
+   "file": "piece_05.png",
+   "origin": [
+    2095,
+    709
+   ]
+  },
+  {
+   "index": 6,
+   "bbox": [
+    2355,
+    610,
+    86,
+    69
+   ],
+   "area_frac": 0.0007,
+   "centroid": [
+    2396.9,
+    647.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.396,
+   "file": "piece_06.png",
+   "origin": [
+    2349,
+    604
+   ]
+  }
+ ]
+}

@@ -1,0 +1,451 @@
+{
+ "model": "gemini-nano-banana-2.1",
+ "image_size": "2K",
+ "total_cost_usd": 0.7077,
+ "assets": [
+  {
+   "id": "nuwa",
+   "key": "9542dd10322d8332",
+   "file": "nuwa.png",
+   "aspect": "3:4",
+   "refs": [
+    "@jingwei_step1/bird.png"
+   ],
+   "prompt": "A single little girl from ancient China, about seven years old: the Flame Emperor's daughter Nüwa. Black hair tied in a bun on top of her head, a round friendly face, a red tunic over a red skirt with a yellow apron, simple dark shoes. Standing, three-quarter view turned slightly to the right, arms relaxed at her sides, the whole figure visible from the top of the bun to the shoes. She is isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1341,
+    "candidatesTokenCount": 2071,
+    "totalTokenCount": 3836,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 221
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 424,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05852,
+   "seconds": 21.6,
+   "created": "2026-11-25T11:35:02Z"
+  },
+  {
+   "id": "nuwa_parts",
+   "key": "af3ee95cff7e1dc3",
+   "file": "nuwa_parts.png",
+   "aspect": "4:3",
+   "refs": [
+    "nuwa"
+   ],
+   "prompt": "The attached image is a cut-paper girl. Make her puppet parts sheet: the same girl taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair, bun and neck; the body (tunic, skirt and apron, without arms and without legs); the left arm with its hand; the right arm with its hand; the left leg with its shoe; the right leg with its shoe. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached girl. Every piece is complete, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "Here is the deconstructed puppet parts sheet for the cut-paper girl, featuring her separate pieces laid out flat on a cream paper board, complete with straight-cut joints as requested:",
+   "usage": {
+    "promptTokenCount": 1388,
+    "candidatesTokenCount": 2653,
+    "totalTokenCount": 4235,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 268
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 194,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06123,
+   "seconds": 30.1,
+   "created": "2026-11-25T11:35:33Z"
+  },
+  {
+   "id": "props_sky",
+   "key": "700645282043daf5",
+   "file": "props_sky.png",
+   "aspect": "16:9",
+   "refs": [
+    "@jingwei_step1/bird.png"
+   ],
+   "prompt": "A props sheet of five separate cut-paper pieces laid out in one row with clear gaps of plain board between them: a round golden sun with short pointed rays (one piece), a pale silver full moon, a puffy white cloud, a long flat white cloud, and a yellow zigzag lightning bolt. Nothing overlaps; wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1305,
+    "candidatesTokenCount": 2083,
+    "totalTokenCount": 3635,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 185
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 247,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05723,
+   "seconds": 17.3,
+   "created": "2026-11-25T11:35:52Z"
+  },
+  {
+   "id": "props_sea",
+   "key": "fe5b2e598074ae15",
+   "file": "props_sea.png",
+   "aspect": "16:9",
+   "refs": [
+    "@jingwei_step1/bird.png"
+   ],
+   "prompt": "A props sheet of five separate cut-paper pieces laid out with clear gaps of plain board between them: a small wooden rowing boat seen from the side, a single wooden oar, one huge towering ocean wave in deep indigo and teal that curls over to the right with white foam on its crest (taller than it is wide), a white and teal water splash, and a tiny distant seagull with its wings up. Nothing overlaps; wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1330,
+    "candidatesTokenCount": 2106,
+    "totalTokenCount": 3989,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 210
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 553,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05974,
+   "seconds": 23.7,
+   "created": "2026-11-25T11:36:17Z"
+  },
+  {
+   "id": "props_land",
+   "key": "282736fe9c02b471",
+   "file": "props_land.png",
+   "aspect": "16:9",
+   "refs": [
+    "@jingwei_step1/bird.png"
+   ],
+   "prompt": "A props sheet of five separate cut-paper pieces laid out with clear gaps of plain board between them: one tall lone mountain peak in grey-green with violet shadow stripes and a flat base, a mulberry tree with a twisting brown trunk and a round leafy green crown, a small brown twig with two green leaves, a small round grey pebble, and a low pile of grey pebbles and brown twigs with a flat base. Nothing overlaps; wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "Here is the props sheet featuring five separate cut-paper pieces on a flat, cream paper board, crafted in the children's picture-book collage style matching the textures of the bird artwork:",
+   "usage": {
+    "promptTokenCount": 1329,
+    "candidatesTokenCount": 2108,
+    "totalTokenCount": 4187,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 209
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 750,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06123,
+   "seconds": 27.8,
+   "created": "2026-11-25T11:36:46Z"
+  },
+  {
+   "id": "ground_strip",
+   "key": "ff566163764d1dbb",
+   "file": "ground_strip.png",
+   "aspect": "16:9",
+   "refs": [
+    "@jingwei_step1/bird.png"
+   ],
+   "prompt": "A single wide strip of gently rolling grassy ground cut from painted tissue paper, in fresh greens with a little ochre, with a softly wavy cut top edge, running across the full width of the image as one piece and filling only the bottom third. The rest of the image is plain empty board.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1293,
+    "candidatesTokenCount": 1981,
+    "totalTokenCount": 3758,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 173
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 484,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05823,
+   "seconds": 18.8,
+   "created": "2026-11-25T11:37:06Z"
+  },
+  {
+   "id": "river_strip",
+   "key": "8a800f5d66e00e9b",
+   "file": "river_strip.png",
+   "aspect": "16:9",
+   "refs": [
+    "@jingwei_step1/bird.png"
+   ],
+   "prompt": "A single long thin ribbon of river cut from painted tissue paper, in clear blues with a few white ripple marks, gently wavy, running horizontally across the full width of the image through the middle, about one tenth of the image height thick. Above and below it is plain empty board.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1290,
+    "candidatesTokenCount": 1995,
+    "totalTokenCount": 3864,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 170
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 579,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05904,
+   "seconds": 25.8,
+   "created": "2026-11-25T11:37:33Z"
+  },
+  {
+   "id": "sea_back",
+   "key": "f86b4b07449fdac7",
+   "file": "sea_back.png",
+   "aspect": "16:9",
+   "refs": [
+    "@jingwei_step1/layer_sea.png"
+   ],
+   "prompt": "A single wide strip of calm far-away sea cut from painted tissue paper, in lighter teal and grey-blue than the attached sea, with low gentle waves along its cut top edge, running across the full width of the image as one piece and filling only the bottom third. The rest of the image is plain empty board.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1299,
+    "candidatesTokenCount": 1972,
+    "totalTokenCount": 3578,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 179
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 307,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05684,
+   "seconds": 20.6,
+   "created": "2026-11-25T11:37:55Z"
+  },
+  {
+   "id": "sea_front",
+   "key": "2058e1a343fb17ce",
+   "file": "sea_front.png",
+   "aspect": "16:9",
+   "refs": [
+    "@jingwei_step1/layer_sea.png"
+   ],
+   "prompt": "A single wide strip of near sea cut from painted tissue paper, in the darkest indigo and navy of the attached sea, with a few white foam crests along its wavy cut top edge, running across the full width of the image as one piece and filling only the bottom quarter. The rest of the image is plain empty board.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1299,
+    "candidatesTokenCount": 2331,
+    "totalTokenCount": 4263,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 179
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 633,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06198,
+   "seconds": 30.3,
+   "created": "2026-11-25T11:38:26Z"
+  },
+  {
+   "id": "bg_dawn",
+   "key": "fc90347fa9ee27bc",
+   "file": "bg_dawn.png",
+   "aspect": "16:9",
+   "refs": [
+    "@jingwei_step1/bird.png"
+   ],
+   "prompt": "A full-bleed dawn sky made of overlapping torn bands of hand-painted tissue paper: pale gold near the bottom rising through apricot and peach to soft rose at the top. It fills the entire image edge to edge. Only sky: no sun, no clouds, no birds, no land, no sea, no objects of any kind.\n\nStyle: children's picture-book art made of hand-painted tissue paper, matching the paints and paper textures of the attached reference: bold acrylic brush streaks and sponge mottling, flat, no 3D shading, no outlines, no text.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1241,
+    "candidatesTokenCount": 1953,
+    "totalTokenCount": 3718,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 121
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 524,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05824,
+   "seconds": 20.8,
+   "created": "2026-11-25T11:38:48Z"
+  },
+  {
+   "id": "bg_day",
+   "key": "bec968840a3f6c54",
+   "file": "bg_day.png",
+   "aspect": "16:9",
+   "refs": [
+    "@jingwei_step1/bird.png"
+   ],
+   "prompt": "A full-bleed soft daytime sky made of overlapping torn bands of hand-painted tissue paper in pale blues and a little warm cream near the bottom. It fills the entire image edge to edge. Only sky: no sun, no clouds, no birds, no land, no sea, no objects of any kind.\n\nStyle: children's picture-book art made of hand-painted tissue paper, matching the paints and paper textures of the attached reference: bold acrylic brush streaks and sponge mottling, flat, no 3D shading, no outlines, no text.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1236,
+    "candidatesTokenCount": 1971,
+    "totalTokenCount": 3517,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 116
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 310,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05676,
+   "seconds": 19.3,
+   "created": "2026-11-25T11:39:09Z"
+  },
+  {
+   "id": "bg_storm",
+   "key": "c8c5b3f22da829c4",
+   "file": "bg_storm.png",
+   "aspect": "16:9",
+   "refs": [
+    "@jingwei_step1/bird.png"
+   ],
+   "prompt": "A full-bleed stormy sky made of overlapping torn pieces of hand-painted tissue paper in dark indigo, slate grey and bruised violet, with swirling brush strokes. It fills the entire image edge to edge. Only sky: no lightning, no rain drawn as lines, no birds, no land, no sea, no objects of any kind.\n\nStyle: children's picture-book art made of hand-painted tissue paper, matching the paints and paper textures of the attached reference: bold acrylic brush streaks and sponge mottling, flat, no 3D shading, no outlines, no text.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1241,
+    "candidatesTokenCount": 1981,
+    "totalTokenCount": 3775,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 121
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 553,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05867,
+   "seconds": 22.7,
+   "created": "2026-11-25T11:39:33Z"
+  }
+ ]
+}

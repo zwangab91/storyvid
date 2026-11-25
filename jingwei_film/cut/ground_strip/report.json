@@ -1,0 +1,47 @@
+{
+ "image": "ground_strip.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   96.33,
+   -0.52,
+   7.45
+  ],
+  "board_noise": 2.0,
+  "border_is_board": 0.562,
+  "threshold": 7.01
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": false,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    0,
+    999,
+    2752,
+    537
+   ],
+   "area_frac": 0.3223,
+   "centroid": [
+    1371.9,
+    1287.3
+   ],
+   "touches_edge": true,
+   "edges": [
+    "bottom",
+    "left",
+    "right"
+   ],
+   "weak_outline": 0.001,
+   "file": "piece_00.png",
+   "origin": [
+    0,
+    993
+   ]
+  }
+ ]
+}

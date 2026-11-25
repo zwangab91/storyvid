@@ -1,0 +1,47 @@
+{
+ "image": "sea_back.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   96.5,
+   -0.36,
+   5.53
+  ],
+  "board_noise": 2.06,
+  "border_is_board": 0.566,
+  "threshold": 7.2
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": false,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    0,
+    963,
+    2752,
+    573
+   ],
+   "area_frac": 0.3417,
+   "centroid": [
+    1371.4,
+    1272.2
+   ],
+   "touches_edge": true,
+   "edges": [
+    "bottom",
+    "left",
+    "right"
+   ],
+   "weak_outline": 0.125,
+   "file": "piece_00.png",
+   "origin": [
+    0,
+    957
+   ]
+  }
+ ]
+}

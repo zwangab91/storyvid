@@ -1,0 +1,153 @@
+{
+ "image": "nuwa_parts.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.8,
+   -0.19,
+   5.78
+  ],
+  "board_noise": 0.78,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 6,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    213,
+    131,
+    497,
+    618
+   ],
+   "area_frac": 0.0477,
+   "centroid": [
+    472.7,
+    423.9
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.003,
+   "file": "piece_00.png",
+   "origin": [
+    207,
+    125
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    563,
+    495,
+    481,
+    502
+   ],
+   "area_frac": 0.0226,
+   "centroid": [
+    807.1,
+    744.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.004,
+   "file": "piece_01.png",
+   "origin": [
+    557,
+    489
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    965,
+    418,
+    596,
+    1047
+   ],
+   "area_frac": 0.0997,
+   "centroid": [
+    1268.9,
+    1016.2
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_02.png",
+   "origin": [
+    959,
+    412
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    1537,
+    486,
+    563,
+    425
+   ],
+   "area_frac": 0.0216,
+   "centroid": [
+    1816.1,
+    691.5
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.005,
+   "file": "piece_03.png",
+   "origin": [
+    1531,
+    480
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    684,
+    992,
+    250,
+    681
+   ],
+   "area_frac": 0.0267,
+   "centroid": [
+    797.8,
+    1299.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_04.png",
+   "origin": [
+    678,
+    986
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    1669,
+    999,
+    310,
+    641
+   ],
+   "area_frac": 0.026,
+   "centroid": [
+    1807.3,
+    1297.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_05.png",
+   "origin": [
+    1663,
+    993
+   ]
+  }
+ ]
+}
