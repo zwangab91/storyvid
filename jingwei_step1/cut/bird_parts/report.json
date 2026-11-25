@@ -1,0 +1,153 @@
+{
+ "image": "bird_parts.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.61,
+   0.5,
+   5.67
+  ],
+  "board_noise": 1.03,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 6,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    299,
+    237,
+    742,
+    533
+   ],
+   "area_frac": 0.0473,
+   "centroid": [
+    668.6,
+    520.8
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.012,
+   "file": "piece_00.png",
+   "origin": [
+    293,
+    231
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    1319,
+    217,
+    870,
+    410
+   ],
+   "area_frac": 0.0563,
+   "centroid": [
+    1723.3,
+    407.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.013,
+   "file": "piece_01.png",
+   "origin": [
+    1313,
+    211
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    793,
+    712,
+    981,
+    464
+   ],
+   "area_frac": 0.0517,
+   "centroid": [
+    1269.1,
+    957.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.055,
+   "file": "piece_02.png",
+   "origin": [
+    787,
+    706
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    261,
+    1101,
+    529,
+    347
+   ],
+   "area_frac": 0.0229,
+   "centroid": [
+    539.7,
+    1281.9
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.003,
+   "file": "piece_03.png",
+   "origin": [
+    255,
+    1095
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    1676,
+    1147,
+    254,
+    361
+   ],
+   "area_frac": 0.0062,
+   "centroid": [
+    1796.2,
+    1328.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.01,
+   "file": "piece_04.png",
+   "origin": [
+    1670,
+    1141
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    1086,
+    1266,
+    215,
+    359
+   ],
+   "area_frac": 0.0061,
+   "centroid": [
+    1188.6,
+    1442.2
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.01,
+   "file": "piece_05.png",
+   "origin": [
+    1080,
+    1260
+   ]
+  }
+ ]
+}

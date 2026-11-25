@@ -1,0 +1,43 @@
+{
+ "image": "bird.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.23,
+   -0.02,
+   6.27
+  ],
+  "board_noise": 0.88,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    494,
+    322,
+    1323,
+    1079
+   ],
+   "area_frac": 0.1355,
+   "centroid": [
+    1133.0,
+    841.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.027,
+   "file": "piece_00.png",
+   "origin": [
+    488,
+    316
+   ]
+  }
+ ]
+}

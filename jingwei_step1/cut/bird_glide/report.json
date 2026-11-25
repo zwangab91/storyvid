@@ -1,0 +1,43 @@
+{
+ "image": "bird_glide.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.61,
+   0.16,
+   6.25
+  ],
+  "board_noise": 0.88,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    629,
+    437,
+    1243,
+    811
+   ],
+   "area_frac": 0.1058,
+   "centroid": [
+    1264.6,
+    867.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.031,
+   "file": "piece_00.png",
+   "origin": [
+    623,
+    431
+   ]
+  }
+ ]
+}

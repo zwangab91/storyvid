@@ -1,0 +1,248 @@
+{
+ "model": "gemini-nano-banana-2.1",
+ "image_size": "2K",
+ "total_cost_usd": 0.4279,
+ "assets": [
+  {
+   "id": "bird",
+   "key": "5814dc899b4bbcc9",
+   "file": "bird.png",
+   "aspect": "4:3",
+   "refs": [],
+   "prompt": "A single small bird from the Chinese myth of Jingwei: crow-sized, with a dark indigo-black body, a patterned head, a white beak and bright red feet. Side view facing right, wings spread in flight, the whole bird visible. The bird is isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 174,
+    "candidatesTokenCount": 2045,
+    "totalTokenCount": 3065,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 174
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 846,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05974,
+   "seconds": 21.1,
+   "created": "2026-11-25T11:20:50Z"
+  },
+  {
+   "id": "bird_b",
+   "key": "8f22042c788461b4",
+   "file": "bird_b.png",
+   "aspect": "4:3",
+   "refs": [],
+   "prompt": "A single small bird from the Chinese myth of Jingwei: crow-sized, with a dark indigo-black body, a patterned head, a white beak and bright red feet. Side view facing right, wings spread in flight, the whole bird visible. The bird is isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 174,
+    "candidatesTokenCount": 2071,
+    "totalTokenCount": 3687,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 174
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 1442,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06441,
+   "seconds": 21.6,
+   "created": "2026-11-25T11:21:12Z"
+  },
+  {
+   "id": "bird_parts",
+   "key": "0308c7c16a3a902f",
+   "file": "bird_parts.png",
+   "aspect": "4:3",
+   "refs": [
+    "bird"
+   ],
+   "prompt": "The attached image is a cut-paper bird. Make its puppet parts sheet: the same bird taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the body with head and beak (no wings, no tail, no legs), the near wing, the far wing, the tail, and the two legs with feet. Keep every piece's colours, paints and brush textures exactly as in the attached bird. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "Here is the puppet parts sheet for the cut-paper bird, shown dismantled into separate pieces and arranged across the cream board. Let me know if this looks good!",
+   "usage": {
+    "promptTokenCount": 1347,
+    "candidatesTokenCount": 2490,
+    "totalTokenCount": 5085,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 227
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 1248,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06786,
+   "seconds": 35.2,
+   "created": "2026-11-25T11:21:49Z"
+  },
+  {
+   "id": "bird_parts_noref",
+   "key": "7c2abfb24899c462",
+   "file": "bird_parts_noref.png",
+   "aspect": "4:3",
+   "refs": [],
+   "prompt": "A puppet parts sheet for a small bird from the Chinese myth of Jingwei (crow-sized, dark indigo-black body, patterned head, white beak, bright red feet), taken apart into separate flat cut-paper pieces laid out on the board like parts before assembly. Pieces: the body with head and beak (no wings, no tail, no legs), the near wing, the far wing, the tail, and the two legs with feet. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 225,
+    "candidatesTokenCount": 2089,
+    "totalTokenCount": 3151,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 225
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 837,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06008,
+   "seconds": 21.0,
+   "created": "2026-11-25T11:22:10Z"
+  },
+  {
+   "id": "bird_glide",
+   "key": "a108a54d54620bff",
+   "file": "bird_glide.png",
+   "aspect": "4:3",
+   "refs": [
+    "bird"
+   ],
+   "prompt": "The attached image is a cut-paper bird. Show the very same bird, with identical colours, paints and shapes, in a new pose: gliding down to the left with wings half folded, a small round pebble held in its beak. The bird is isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "Here is the very same bird from image_0.png in its new pose, gliding down to the left with half-folded wings, holding a small round pebble in its beak. The image continues the exact cut-paper collage style on a plain cream paper board.",
+   "usage": {
+    "promptTokenCount": 1291,
+    "candidatesTokenCount": 2369,
+    "totalTokenCount": 3859,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 171
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 199,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.059,
+   "seconds": 26.6,
+   "created": "2026-11-25T11:22:38Z"
+  },
+  {
+   "id": "layer_sea",
+   "key": "31a318d03ebef174",
+   "file": "layer_sea.png",
+   "aspect": "16:9",
+   "refs": [
+    "bird"
+   ],
+   "prompt": "Match the paints and paper textures of the attached image. A single wide strip of stormy sea cut from painted tissue paper: deep indigo and teal waves with white crests, a wavy cut top edge, running across the full width of the image as one piece, filling only the bottom third. The rest of the image is plain empty board.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1290,
+    "candidatesTokenCount": 1991,
+    "totalTokenCount": 4003,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 170
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 722,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06008,
+   "seconds": 21.8,
+   "created": "2026-11-25T11:23:01Z"
+  },
+  {
+   "id": "layer_mountains",
+   "key": "636085291ff51d8e",
+   "file": "layer_mountains.png",
+   "aspect": "16:9",
+   "refs": [
+    "bird"
+   ],
+   "prompt": "Match the paints and paper textures of the attached image. A single wide strip of distant mountains cut from painted tissue paper: soft grey-green and violet peaks with a jagged cut top edge, running across the full width of the image as one piece, sitting in the middle band of the image. Above and below it is plain empty board.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1290,
+    "candidatesTokenCount": 1987,
+    "totalTokenCount": 3549,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 170
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 272,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05668,
+   "seconds": 19.3,
+   "created": "2026-11-25T11:23:22Z"
+  }
+ ]
+}

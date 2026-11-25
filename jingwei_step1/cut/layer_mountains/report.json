@@ -1,0 +1,46 @@
+{
+ "image": "layer_mountains.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   97.39,
+   -0.02,
+   6.2
+  ],
+  "board_noise": 0.94,
+  "border_is_board": 0.912,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": false,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    0,
+    482,
+    2752,
+    530
+   ],
+   "area_frac": 0.2562,
+   "centroid": [
+    1362.7,
+    802.8
+   ],
+   "touches_edge": true,
+   "edges": [
+    "left",
+    "right"
+   ],
+   "weak_outline": 0.011,
+   "file": "piece_00.png",
+   "origin": [
+    0,
+    476
+   ]
+  }
+ ]
+}
