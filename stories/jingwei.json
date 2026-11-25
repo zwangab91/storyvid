@@ -1,0 +1,2749 @@
+{
+ "title": "精卫填海",
+ "subtitle": "Jingwei Fills the Sea",
+ "language": "zh",
+ "voice": "melo",
+ "speed": 0.86,
+ "credit": "《山海经·北山经》：常衔西山之木石，以堙于东海。",
+ "music": {
+  "style": "pluck",
+  "seed": 7,
+  "tempo": 66
+ },
+ "paints": {
+  "jw_head": {
+   "colors": [
+    "#23252f",
+    "#f2c230",
+    "#e8392f",
+    "#3f8fd4"
+   ],
+   "style": "speckle",
+   "density": 0.5
+  },
+  "feather": {
+   "colors": [
+    "#2b2d3a",
+    "#3f4356",
+    "#15161e",
+    "#3d5a8a",
+    "#2d4a5e"
+   ],
+   "style": "streaks"
+  },
+  "feather_wing": {
+   "colors": [
+    "#30344a",
+    "#4b5a7a",
+    "#1b1d28",
+    "#5a7fae",
+    "#2b6f7e"
+   ],
+   "style": "streaks",
+   "angle": 30
+  },
+  "red_feet": {
+   "colors": [
+    "#e23a2e",
+    "#ff6f4d",
+    "#b81f2a"
+   ],
+   "style": "flat"
+  },
+  "storm": {
+   "colors": [
+    "#2c3557",
+    "#3c4a75",
+    "#1b2140",
+    "#55628f",
+    "#433a66"
+   ],
+   "style": "swirl",
+   "contrast": 0.9
+  },
+  "dawn": {
+   "colors": [
+    "#fcdfa0",
+    "#fdecc4",
+    "#f9c690",
+    "#fef4dc"
+   ],
+   "style": "streaks",
+   "angle": 0,
+   "contrast": 0.38
+  },
+  "sky_soft": {
+   "colors": [
+    "#b3dcf6",
+    "#cbe8fa",
+    "#98cdf0",
+    "#e2f2fc"
+   ],
+   "style": "streaks",
+   "angle": 0,
+   "contrast": 0.4
+  },
+  "zhe_leaf": {
+   "colors": [
+    "#2f7f45",
+    "#4f9f4f",
+    "#1f5e33",
+    "#7cc542"
+   ],
+   "style": "dabs"
+  },
+  "boat_wood": {
+   "colors": [
+    "#9c6537",
+    "#b97b44",
+    "#6e4523",
+    "#d09a5c"
+   ],
+   "style": "streaks",
+   "angle": 0
+  },
+  "lightning": {
+   "colors": [
+    "#fff3a0",
+    "#ffe14d",
+    "#ffffff"
+   ],
+   "style": "flat"
+  }
+ },
+ "actors": {
+  "nuwa": {
+   "template": "person",
+   "params": {
+    "height": 320,
+    "child": true,
+    "skin": "skin_tan",
+    "hair": "hair_black",
+    "hair_style": "bun",
+    "top": "red_cloth",
+    "apron": "yellow_cloth",
+    "facing": 0.3
+   }
+  },
+  "jingwei": {
+   "parts": [
+    {
+     "id": "tail",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      1,
+      2
+     ],
+     "points": [
+      [
+       -50,
+       -66
+      ],
+      [
+       -138,
+       -44
+      ],
+      [
+       -146,
+       -66
+      ],
+      [
+       -120,
+       -86
+      ],
+      [
+       -60,
+       -88
+      ]
+     ],
+     "paint": "feather",
+     "pivot": [
+      -55,
+      -76
+     ]
+    },
+    {
+     "id": "wing_b",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      2
+     ],
+     "points": [
+      [
+       -6,
+       -104
+      ],
+      [
+       -60,
+       -170
+      ],
+      [
+       -128,
+       -196
+      ],
+      [
+       -92,
+       -142
+      ],
+      [
+       -40,
+       -92
+      ]
+     ],
+     "paint": "feather_wing",
+     "pivot": [
+      -10,
+      -100
+     ]
+    },
+    {
+     "id": "leg_l",
+     "shape": "stroke",
+     "points": [
+      [
+       -6,
+       -40
+      ],
+      [
+       -8,
+       -4
+      ]
+     ],
+     "width": 6,
+     "paint": "red_feet",
+     "pivot": [
+      -6,
+      -40
+     ]
+    },
+    {
+     "id": "foot_l",
+     "shape": "stroke",
+     "points": [
+      [
+       -22,
+       0
+      ],
+      [
+       -8,
+       -4
+      ],
+      [
+       8,
+       0
+      ]
+     ],
+     "width": 5,
+     "paint": "red_feet",
+     "parent": "leg_l"
+    },
+    {
+     "id": "leg_r",
+     "shape": "stroke",
+     "points": [
+      [
+       16,
+       -40
+      ],
+      [
+       20,
+       -4
+      ]
+     ],
+     "width": 6,
+     "paint": "red_feet",
+     "pivot": [
+      16,
+      -40
+     ]
+    },
+    {
+     "id": "foot_r",
+     "shape": "stroke",
+     "points": [
+      [
+       6,
+       0
+      ],
+      [
+       20,
+       -4
+      ],
+      [
+       36,
+       0
+      ]
+     ],
+     "width": 5,
+     "paint": "red_feet",
+     "parent": "leg_r"
+    },
+    {
+     "id": "body",
+     "shape": "ellipse",
+     "c": [
+      -4,
+      -78
+     ],
+     "r": [
+      70,
+      42
+     ],
+     "rot": -16,
+     "paint": "feather",
+     "pivot": [
+      0,
+      -70
+     ]
+    },
+    {
+     "id": "head",
+     "shape": "circle",
+     "c": [
+      58,
+      -122
+     ],
+     "r": 36,
+     "paint": "jw_head",
+     "pivot": [
+      40,
+      -100
+     ],
+     "tex_scale": 0.7
+    },
+    {
+     "id": "beak",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      0,
+      1,
+      2
+     ],
+     "points": [
+      [
+       86,
+       -134
+      ],
+      [
+       146,
+       -116
+      ],
+      [
+       86,
+       -106
+      ]
+     ],
+     "paint": "white_beak",
+     "parent": "head"
+    },
+    {
+     "id": "twig",
+     "shape": "stroke",
+     "points": [
+      [
+       120,
+       -118
+      ],
+      [
+       150,
+       -112
+      ],
+      [
+       196,
+       -98
+      ]
+     ],
+     "width": 7,
+     "paint": "bark",
+     "parent": "head",
+     "hidden": true
+    },
+    {
+     "id": "twig_leaf",
+     "shape": "ellipse",
+     "c": [
+      176,
+      -112
+     ],
+     "r": [
+      15,
+      7
+     ],
+     "rot": -30,
+     "paint": "leaf",
+     "parent": "head",
+     "hidden": true
+    },
+    {
+     "id": "pebble",
+     "shape": "blob",
+     "c": [
+      148,
+      -108
+     ],
+     "r": [
+      16,
+      13
+     ],
+     "paint": "stone",
+     "parent": "head",
+     "hidden": true,
+     "shape_seed": 3
+    },
+    {
+     "id": "eye_w",
+     "shape": "circle",
+     "c": [
+      66,
+      -130
+     ],
+     "r": 9,
+     "paint": "white",
+     "parent": "head",
+     "shadow": 0.3
+    },
+    {
+     "id": "eye",
+     "shape": "circle",
+     "c": [
+      69,
+      -130
+     ],
+     "r": 5,
+     "paint": "black",
+     "parent": "eye_w",
+     "shadow": 0
+    },
+    {
+     "id": "wing_f",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      2
+     ],
+     "points": [
+      [
+       -20,
+       -100
+      ],
+      [
+       -80,
+       -178
+      ],
+      [
+       -150,
+       -168
+      ],
+      [
+       -112,
+       -114
+      ],
+      [
+       -44,
+       -62
+      ]
+     ],
+     "paint": "feather_wing",
+     "pivot": [
+      -18,
+      -98
+     ]
+    }
+   ],
+   "rigs": {
+    "fly": [
+     {
+      "part": "wing_f",
+      "type": "swing",
+      "deg": 38,
+      "period": 0.5
+     },
+     {
+      "part": "wing_b",
+      "type": "swing",
+      "deg": 34,
+      "period": 0.5,
+      "phase": 0.08
+     },
+     {
+      "part": [
+       "leg_l",
+       "leg_r"
+      ],
+      "type": "rotate",
+      "to": -70,
+      "t": [
+       0,
+       0.01
+      ]
+     },
+     {
+      "part": "tail",
+      "type": "swing",
+      "deg": 6,
+      "period": 0.5
+     },
+     {
+      "part": "eye_w",
+      "type": "blink"
+     }
+    ],
+    "glide": [
+     {
+      "part": "wing_f",
+      "type": "swing",
+      "deg": 10,
+      "period": 1.6
+     },
+     {
+      "part": "wing_b",
+      "type": "swing",
+      "deg": 8,
+      "period": 1.6
+     },
+     {
+      "part": [
+       "leg_l",
+       "leg_r"
+      ],
+      "type": "rotate",
+      "to": -70,
+      "t": [
+       0,
+       0.01
+      ]
+     },
+     {
+      "part": "eye_w",
+      "type": "blink"
+     }
+    ],
+    "idle": [
+     {
+      "part": "head",
+      "type": "swing",
+      "deg": 4,
+      "period": 1.8
+     },
+     {
+      "part": "tail",
+      "type": "swing",
+      "deg": 5,
+      "period": 2.2
+     },
+     {
+      "part": "eye_w",
+      "type": "blink"
+     }
+    ],
+    "peck": [
+     {
+      "part": "head",
+      "type": "rotate",
+      "to": 38,
+      "t": [
+       0.25,
+       0.45
+      ]
+     },
+     {
+      "part": "head",
+      "type": "rotate",
+      "to": 0,
+      "t": [
+       0.6,
+       0.75
+      ]
+     },
+     {
+      "part": "eye_w",
+      "type": "blink"
+     }
+    ],
+    "cry": [
+     {
+      "part": "head",
+      "type": "swing",
+      "deg": 7,
+      "period": 0.5
+     },
+     {
+      "part": "wing_f",
+      "type": "swing",
+      "deg": 14,
+      "period": 0.5
+     },
+     {
+      "part": "eye_w",
+      "type": "blink"
+     }
+    ]
+   }
+  },
+  "boat": {
+   "parts": [
+    {
+     "id": "hull",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      0,
+      1
+     ],
+     "points": [
+      [
+       -170,
+       -70
+      ],
+      [
+       170,
+       -70
+      ],
+      [
+       120,
+       -10
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       -120,
+       -10
+      ]
+     ],
+     "paint": "boat_wood"
+    },
+    {
+     "id": "rim",
+     "shape": "stroke",
+     "points": [
+      [
+       -176,
+       -70
+      ],
+      [
+       176,
+       -70
+      ]
+     ],
+     "width": 14,
+     "paint": "wood"
+    },
+    {
+     "id": "stripe",
+     "shape": "stroke",
+     "points": [
+      [
+       -140,
+       -40
+      ],
+      [
+       0,
+       -32
+      ],
+      [
+       140,
+       -40
+      ]
+     ],
+     "width": 10,
+     "paint": "red_cloth",
+     "shadow": 0.3
+    }
+   ]
+  },
+  "oar": {
+   "parts": [
+    {
+     "id": "pole",
+     "shape": "stroke",
+     "points": [
+      [
+       0,
+       0
+      ],
+      [
+       110,
+       130
+      ]
+     ],
+     "width": 9,
+     "paint": "wood"
+    },
+    {
+     "id": "blade",
+     "shape": "ellipse",
+     "c": [
+      118,
+      142
+     ],
+     "r": [
+      16,
+      34
+     ],
+     "rot": -40,
+     "paint": "wood"
+    }
+   ]
+  },
+  "big_wave": {
+   "parts": [
+    {
+     "id": "wave",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      0,
+      9
+     ],
+     "points": [
+      [
+       -460,
+       0
+      ],
+      [
+       -380,
+       -220
+      ],
+      [
+       -200,
+       -400
+      ],
+      [
+       20,
+       -470
+      ],
+      [
+       210,
+       -420
+      ],
+      [
+       300,
+       -310
+      ],
+      [
+       230,
+       -300
+      ],
+      [
+       170,
+       -250
+      ],
+      [
+       210,
+       -160
+      ],
+      [
+       460,
+       0
+      ]
+     ],
+     "paint": "deep_sea"
+    },
+    {
+     "id": "inner",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      0,
+      5
+     ],
+     "points": [
+      [
+       -300,
+       0
+      ],
+      [
+       -240,
+       -170
+      ],
+      [
+       -90,
+       -300
+      ],
+      [
+       60,
+       -330
+      ],
+      [
+       -20,
+       -230
+      ],
+      [
+       260,
+       0
+      ]
+     ],
+     "paint": "sea"
+    },
+    {
+     "id": "crest",
+     "shape": "stroke",
+     "points": [
+      [
+       -210,
+       -390
+      ],
+      [
+       20,
+       -462
+      ],
+      [
+       208,
+       -414
+      ],
+      [
+       298,
+       -312
+      ],
+      [
+       232,
+       -300
+      ]
+     ],
+     "width": [
+      22,
+      12
+     ],
+     "paint": "foam"
+    },
+    {
+     "id": "foam1",
+     "shape": "circle",
+     "c": [
+      250,
+      -330
+     ],
+     "r": 20,
+     "paint": "foam"
+    },
+    {
+     "id": "foam2",
+     "shape": "circle",
+     "c": [
+      190,
+      -300
+     ],
+     "r": 14,
+     "paint": "foam"
+    }
+   ]
+  },
+  "lightning": {
+   "parts": [
+    {
+     "id": "bolt",
+     "shape": "poly",
+     "points": [
+      [
+       0,
+       0
+      ],
+      [
+       60,
+       0
+      ],
+      [
+       20,
+       120
+      ],
+      [
+       80,
+       120
+      ],
+      [
+       -40,
+       330
+      ],
+      [
+       0,
+       170
+      ],
+      [
+       -60,
+       170
+      ]
+     ],
+     "paint": "lightning",
+     "shadow": 0.2
+    }
+   ]
+  },
+  "zhe_tree": {
+   "parts": [
+    {
+     "id": "trunk",
+     "shape": "stroke",
+     "points": [
+      [
+       0,
+       0
+      ],
+      [
+       -8,
+       -90
+      ],
+      [
+       6,
+       -170
+      ]
+     ],
+     "width": [
+      30,
+      18
+     ],
+     "paint": "bark"
+    },
+    {
+     "id": "crown",
+     "shape": "blob",
+     "c": [
+      0,
+      -210
+     ],
+     "r": [
+      95,
+      70
+     ],
+     "paint": "zhe_leaf",
+     "shape_seed": 2,
+     "pivot": [
+      0,
+      -150
+     ]
+    },
+    {
+     "id": "crown2",
+     "shape": "blob",
+     "c": [
+      -50,
+      -175
+     ],
+     "r": [
+      60,
+      45
+     ],
+     "paint": "dark_leaf",
+     "shape_seed": 5,
+     "pivot": [
+      0,
+      -150
+     ]
+    }
+   ],
+   "rigs": {
+    "sway": [
+     {
+      "part": [
+       "crown",
+       "crown2"
+      ],
+      "type": "swing",
+      "deg": 2,
+      "period": 3
+     }
+    ]
+   }
+  },
+  "pebble_pile": {
+   "parts": [
+    {
+     "id": "pile",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      0,
+      4
+     ],
+     "points": [
+      [
+       -160,
+       0
+      ],
+      [
+       -110,
+       -40
+      ],
+      [
+       0,
+       -62
+      ],
+      [
+       110,
+       -42
+      ],
+      [
+       160,
+       0
+      ]
+     ],
+     "paint": "stone"
+    },
+    {
+     "id": "sticks",
+     "shape": "stroke",
+     "points": [
+      [
+       -80,
+       -30
+      ],
+      [
+       -20,
+       -52
+      ]
+     ],
+     "width": 7,
+     "paint": "bark"
+    },
+    {
+     "id": "sticks2",
+     "shape": "stroke",
+     "points": [
+      [
+       30,
+       -50
+      ],
+      [
+       90,
+       -30
+      ]
+     ],
+     "width": 6,
+     "paint": "bark"
+    }
+   ]
+  }
+ },
+ "title_scene": {
+  "background": "dawn",
+  "items": [
+   {
+    "actor": "sun",
+    "at": [
+     1500,
+     700
+    ],
+    "scale": 1.1,
+    "rig": "glow"
+   },
+   {
+    "actor": "sea",
+    "at": [
+     0,
+     790
+    ],
+    "rig": "waves"
+   },
+   {
+    "actor": "jingwei",
+    "at": [
+     700,
+     640
+    ],
+    "scale": 0.9,
+    "rig": "glide",
+    "anims": [
+     {
+      "type": "bob",
+      "amp": 14,
+      "period": 2.4
+     }
+    ]
+   }
+  ]
+ },
+ "scenes": [
+  {
+   "narration": "很久很久以前，炎帝有一个小女儿，名叫女娃。她活泼又勇敢，最喜欢跑到东海边，看太阳从海上升起。",
+   "subtitle_en": "Long, long ago, the Flame Emperor had a little daughter named Nüwa. She was lively and brave, and she loved to run to the Eastern Sea to watch the sun rise over the water.",
+   "background": "dawn",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "center": [
+     [
+      960,
+      540
+     ],
+     [
+      900,
+      560
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1350,
+      880
+     ],
+     "scale": 1.0,
+     "rig": "glow",
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1350,
+        600
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "out"
+      }
+     ]
+    },
+    {
+     "actor": "cloud_long",
+     "at": [
+      600,
+      220
+     ],
+     "scale": 0.7,
+     "anims": [
+      {
+       "type": "drift",
+       "amp": 30,
+       "period": 10
+      }
+     ]
+    },
+    {
+     "actor": "sea",
+     "at": [
+      0,
+      760
+     ],
+     "rig": "waves"
+    },
+    {
+     "part": {
+      "shape": "poly",
+      "smooth": true,
+      "corners": [
+       0,
+       5
+      ],
+      "points": [
+       [
+        -100,
+        1100
+       ],
+       [
+        -60,
+        820
+       ],
+       [
+        150,
+        770
+       ],
+       [
+        420,
+        800
+       ],
+       [
+        560,
+        900
+       ],
+       [
+        620,
+        1100
+       ]
+      ],
+      "paint": "stone"
+     }
+    },
+    {
+     "actor": "nuwa",
+     "at": [
+      330,
+      800
+     ],
+     "scale": 1.0,
+     "rig": "idle",
+     "anims": [
+      {
+       "type": "hop",
+       "height": 14,
+       "period": 0.55,
+       "t": [
+        0.6,
+        0.8
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "有一天，女娃划着一只小船，向大海深处驶去。她想去看一看，太阳究竟是从哪里升起来的。",
+   "subtitle_en": "One day, Nüwa rowed a little boat far out to sea. She wanted to see where the sun really comes from.",
+   "background": "sky_soft",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1650,
+      200
+     ],
+     "scale": 0.75,
+     "rig": "glow"
+    },
+    {
+     "actor": "cloud",
+     "at": [
+      700,
+      200
+     ],
+     "anims": [
+      {
+       "type": "drift",
+       "amp": 30,
+       "period": 9
+      }
+     ]
+    },
+    {
+     "actor": "bird_small",
+     "at": [
+      1100,
+      280
+     ],
+     "rig": "flap",
+     "anims": [
+      {
+       "type": "bob",
+       "amp": 12,
+       "period": 1.4
+      }
+     ]
+    },
+    {
+     "actor": "sea",
+     "at": [
+      0,
+      700
+     ],
+     "rig": "waves",
+     "hide": [
+      "w3"
+     ]
+    },
+    {
+     "actor": "nuwa",
+     "at": [
+      700,
+      810
+     ],
+     "scale": 0.8,
+     "rig": "idle",
+     "hide": [
+      "leg_l",
+      "leg_r",
+      "shoe_l",
+      "shoe_r"
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1200,
+        810
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      },
+      {
+       "type": "sway",
+       "deg": 4,
+       "period": 2.0
+      },
+      {
+       "type": "bob",
+       "amp": 10,
+       "period": 2.0
+      }
+     ],
+     "part_anims": [
+      {
+       "part": [
+        "arm_l",
+        "arm_r"
+       ],
+       "type": "swing",
+       "deg": 22,
+       "period": 1.6
+      }
+     ]
+    },
+    {
+     "actor": "oar",
+     "at": [
+      740,
+      690
+     ],
+     "scale": 1.0,
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1240,
+        690
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      },
+      {
+       "type": "swing",
+       "deg": 22,
+       "period": 1.6
+      },
+      {
+       "type": "bob",
+       "amp": 10,
+       "period": 2.0
+      }
+     ]
+    },
+    {
+     "actor": "boat",
+     "at": [
+      700,
+      870
+     ],
+     "scale": 1.0,
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1200,
+        870
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      },
+      {
+       "type": "sway",
+       "deg": 4,
+       "period": 2.0
+      },
+      {
+       "type": "bob",
+       "amp": 10,
+       "period": 2.0
+      }
+     ]
+    },
+    {
+     "actor": "sea",
+     "at": [
+      0,
+      860
+     ],
+     "rig": "waves",
+     "seed": 5,
+     "hide": [
+      "w1",
+      "w2"
+     ],
+     "z": 5
+    }
+   ]
+  },
+  {
+   "narration": "忽然，天空暗了下来。狂风呼呼地刮，卷起了比山还高的巨浪，一下子打翻了小船。女娃再也没有回来。",
+   "subtitle_en": "Suddenly, the sky grew dark. A howling wind whipped up waves taller than mountains, and in a moment the little boat overturned. Nüwa never came home again.",
+   "background": "storm",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "shake": {
+     "amp": 7,
+     "t": [
+      0.25,
+      0.7
+     ]
+    }
+   },
+   "items": [
+    {
+     "actor": "lightning",
+     "at": [
+      1450,
+      60
+     ],
+     "scale": 1.1,
+     "anims": [
+      {
+       "type": "show",
+       "t": [
+        0.2,
+        0.24
+       ],
+       "fade": 0.02
+      }
+     ]
+    },
+    {
+     "actor": "lightning",
+     "at": [
+      520,
+      40
+     ],
+     "scale": 0.8,
+     "flip": true,
+     "anims": [
+      {
+       "type": "show",
+       "t": [
+        0.36,
+        0.39
+       ],
+       "fade": 0.02
+      }
+     ]
+    },
+    {
+     "actor": "sea",
+     "at": [
+      0,
+      620
+     ],
+     "rig": "waves",
+     "seed": 9
+    },
+    {
+     "actor": "boat",
+     "at": [
+      880,
+      760
+     ],
+     "scale": 0.7,
+     "anims": [
+      {
+       "type": "sway",
+       "deg": 18,
+       "period": 1.1
+      },
+      {
+       "type": "bob",
+       "amp": 40,
+       "period": 1.1
+      },
+      {
+       "type": "rotate",
+       "to": 160,
+       "t": [
+        0.55,
+        0.68
+       ]
+      },
+      {
+       "type": "move",
+       "to": [
+        920,
+        900
+       ],
+       "t": [
+        0.55,
+        0.75
+       ]
+      },
+      {
+       "type": "fade",
+       "to": 0,
+       "t": [
+        0.68,
+        0.8
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "big_wave",
+     "at": [
+      -500,
+      1000
+     ],
+     "scale": 1.3,
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        900,
+        1000
+       ],
+       "t": [
+        0.3,
+        0.62
+       ],
+       "ease": "inout"
+      },
+      {
+       "type": "move",
+       "to": [
+        2500,
+        1000
+       ],
+       "t": [
+        0.65,
+        0.95
+       ],
+       "ease": "in"
+      },
+      {
+       "type": "bob",
+       "amp": 20,
+       "period": 1.3
+      }
+     ]
+    },
+    {
+     "actor": "sea",
+     "at": [
+      0,
+      820
+     ],
+     "rig": "waves",
+     "seed": 3,
+     "hide": [
+      "w1"
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "可是，女娃变成了一只小鸟。她的头上有花纹，嘴巴是白色的，小脚是红色的。她总是“精卫、精卫”地叫着，所以人们就叫她精卫。",
+   "subtitle_en": "But Nüwa had turned into a little bird. She had a patterned head, a white beak, and little red feet. She always cried \"jingwei, jingwei,\" and so people called her Jingwei.",
+   "background": "sky_soft",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "center": [
+     [
+      960,
+      540
+     ],
+     [
+      960,
+      500
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "cloud",
+     "at": [
+      400,
+      200
+     ],
+     "scale": 0.8,
+     "anims": [
+      {
+       "type": "drift",
+       "amp": 30,
+       "period": 9
+      }
+     ]
+    },
+    {
+     "actor": "cloud",
+     "at": [
+      1550,
+      160
+     ],
+     "scale": 0.7,
+     "seed": 4,
+     "anims": [
+      {
+       "type": "drift",
+       "amp": 25,
+       "period": 11
+      }
+     ]
+    },
+    {
+     "actor": "sea",
+     "at": [
+      0,
+      760
+     ],
+     "rig": "waves"
+    },
+    {
+     "actor": "splash",
+     "at": [
+      960,
+      760
+     ],
+     "scale": 1.6,
+     "anims": [
+      {
+       "type": "pop",
+       "t": [
+        0.02,
+        0.1
+       ]
+      },
+      {
+       "type": "vanish",
+       "t": [
+        0.2,
+        0.3
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "jingwei",
+     "at": [
+      960,
+      820
+     ],
+     "scale": 1.3,
+     "rig": "fly",
+     "anims": [
+      {
+       "type": "pop",
+       "t": [
+        0.05,
+        0.15
+       ]
+      },
+      {
+       "type": "move",
+       "to": [
+        960,
+        520
+       ],
+       "t": [
+        0.05,
+        0.35
+       ],
+       "ease": "out"
+      },
+      {
+       "type": "bob",
+       "amp": 18,
+       "period": 1.0
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "head",
+       "type": "swing",
+       "deg": 8,
+       "period": 0.5,
+       "t": [
+        0.72,
+        1.0
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "精卫恨透了夺走她生命的大海。她下定决心：要把东海填平，不让它再去伤害别人！",
+   "subtitle_en": "Jingwei hated the sea that had taken her life. She made up her mind: she would fill up the Eastern Sea, so that it could never hurt anyone again!",
+   "camera": {
+    "zoom": [
+     1.05,
+     1.0
+    ]
+   },
+   "items": [
+    {
+     "actor": "cloud_long",
+     "at": [
+      1300,
+      180
+     ],
+     "scale": 0.8,
+     "anims": [
+      {
+       "type": "drift",
+       "amp": 30,
+       "period": 10
+      }
+     ]
+    },
+    {
+     "actor": "sea",
+     "at": [
+      0,
+      640
+     ],
+     "rig": "waves",
+     "seed": 11
+    },
+    {
+     "actor": "big_wave",
+     "at": [
+      1500,
+      1000
+     ],
+     "scale": 0.9,
+     "anims": [
+      {
+       "type": "bob",
+       "amp": 25,
+       "period": 2.2
+      },
+      {
+       "type": "squash",
+       "amp": 0.04,
+       "period": 2.2
+      }
+     ]
+    },
+    {
+     "actor": "jingwei",
+     "at": [
+      500,
+      420
+     ],
+     "scale": 0.9,
+     "rig": "fly",
+     "anims": [
+      {
+       "type": "path",
+       "points": [
+        [
+         800,
+         360
+        ],
+        [
+         1100,
+         420
+        ],
+        [
+         800,
+         480
+        ],
+        [
+         520,
+         420
+        ]
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      },
+      {
+       "type": "flip",
+       "at": 0.62
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "她飞到西边的发鸠山。山上长满了柘树，她衔起一根小树枝。",
+   "subtitle_en": "She flew west to Mount Fajiu. The mountain was covered with mulberry trees, and she picked up a little twig in her beak.",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.15
+    ],
+    "center": [
+     [
+      960,
+      540
+     ],
+     [
+      1080,
+      620
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      300,
+      200
+     ],
+     "scale": 0.7,
+     "rig": "glow"
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      700,
+      830
+     ],
+     "scale": 1.3
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      1450,
+      830
+     ],
+     "scale": [
+      1.1,
+      0.9
+     ],
+     "seed": 3
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      800
+     ],
+     "seed": 5
+    },
+    {
+     "actor": "zhe_tree",
+     "at": [
+      1350,
+      840
+     ],
+     "scale": 1.3,
+     "rig": "sway"
+    },
+    {
+     "actor": "zhe_tree",
+     "at": [
+      380,
+      830
+     ],
+     "scale": 1.0,
+     "rig": "sway",
+     "seed": 2
+    },
+    {
+     "actor": "zhe_tree",
+     "at": [
+      1720,
+      850
+     ],
+     "scale": 1.1,
+     "rig": "sway",
+     "seed": 4
+    },
+    {
+     "actor": "twig",
+     "at": [
+      1170,
+      885
+     ],
+     "scale": 1.4,
+     "anims": [
+      {
+       "type": "show",
+       "t": [
+        0,
+        0.62
+       ],
+       "fade": 0.02
+      }
+     ]
+    },
+    {
+     "actor": "jingwei",
+     "at": [
+      400,
+      300
+     ],
+     "scale": 0.8,
+     "rig": "fly",
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1000,
+        900
+       ],
+       "t": [
+        0.0,
+        0.3
+       ],
+       "ease": "out"
+      }
+     ],
+     "part_anims": [
+      {
+       "part": [
+        "wing_f",
+        "wing_b"
+       ],
+       "type": "rotate",
+       "to": 0,
+       "t": [
+        0.3,
+        0.32
+       ]
+      },
+      {
+       "part": "head",
+       "type": "rotate",
+       "to": 40,
+       "t": [
+        0.4,
+        0.55
+       ]
+      },
+      {
+       "part": "head",
+       "type": "rotate",
+       "to": 0,
+       "t": [
+        0.62,
+        0.75
+       ]
+      },
+      {
+       "part": [
+        "twig",
+        "twig_leaf"
+       ],
+       "type": "show",
+       "t": [
+        0.62,
+        1.0
+       ],
+       "fade": 0.02
+      }
+     ],
+     "reveal": [
+      "twig",
+      "twig_leaf"
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "她飞过高山，飞过大河，一直飞到东海，把树枝投进海里。扑通一声，树枝就不见了。",
+   "subtitle_en": "She flew over high mountains and across wide rivers, all the way to the Eastern Sea, and dropped the twig into the water. Plop, and the twig was gone.",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.04
+    ]
+   },
+   "items": [
+    {
+     "actor": "cloud",
+     "at": [
+      1400,
+      200
+     ],
+     "scale": 0.7,
+     "anims": [
+      {
+       "type": "drift",
+       "amp": 30,
+       "period": 9
+      }
+     ]
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      300,
+      820
+     ],
+     "scale": [
+      0.9,
+      0.8
+     ]
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      780
+     ],
+     "seed": 9,
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        -900,
+        780
+       ],
+       "t": [
+        0,
+        0.55
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "river",
+     "at": [
+      1000,
+      870
+     ],
+     "scale": [
+      0.7,
+      0.8
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        200,
+        870
+       ],
+       "t": [
+        0,
+        0.55
+       ],
+       "ease": "linear"
+      },
+      {
+       "type": "fade",
+       "to": 0,
+       "t": [
+        0.45,
+        0.55
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "sea",
+     "at": [
+      0,
+      720
+     ],
+     "rig": "waves",
+     "anims": [
+      {
+       "type": "enter",
+       "from": [
+        1900,
+        720
+       ],
+       "t": [
+        0.35,
+        0.6
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "jingwei",
+     "at": [
+      200,
+      380
+     ],
+     "scale": 0.75,
+     "rig": "fly",
+     "reveal": [
+      "twig",
+      "twig_leaf"
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1100,
+        420
+       ],
+       "t": [
+        0,
+        0.6
+       ],
+       "ease": "linear"
+      },
+      {
+       "type": "move",
+       "to": [
+        1500,
+        300
+       ],
+       "t": [
+        0.7,
+        1.0
+       ],
+       "ease": "in"
+      }
+     ],
+     "part_anims": [
+      {
+       "part": [
+        "twig",
+        "twig_leaf"
+       ],
+       "type": "show",
+       "t": [
+        0.0,
+        0.62
+       ],
+       "fade": 0.02
+      }
+     ]
+    },
+    {
+     "actor": "twig",
+     "at": [
+      1210,
+      432
+     ],
+     "scale": 1.0,
+     "anims": [
+      {
+       "type": "show",
+       "t": [
+        0.62,
+        0.8
+       ],
+       "fade": 0.02
+      },
+      {
+       "type": "move",
+       "to": [
+        1230,
+        790
+       ],
+       "t": [
+        0.62,
+        0.76
+       ],
+       "ease": "in"
+      },
+      {
+       "type": "spin",
+       "speed": 300
+      }
+     ]
+    },
+    {
+     "actor": "splash",
+     "at": [
+      1230,
+      790
+     ],
+     "scale": 1.0,
+     "anims": [
+      {
+       "type": "pop",
+       "t": [
+        0.76,
+        0.83
+       ]
+      },
+      {
+       "type": "vanish",
+       "t": [
+        0.86,
+        0.96
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "大海哗哗地大笑：“小鸟儿，算了吧！就算过一百万年，你也填不平我！”",
+   "subtitle_en": "The sea roared with laughter: \"Give up, little bird! Even in a million years, you could never fill me up!\"",
+   "background": "storm",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "shake": {
+     "amp": 5,
+     "t": [
+      0.1,
+      0.9
+     ]
+    }
+   },
+   "items": [
+    {
+     "actor": "sea",
+     "at": [
+      0,
+      600
+     ],
+     "rig": "waves",
+     "seed": 13
+    },
+    {
+     "actor": "big_wave",
+     "at": [
+      1250,
+      1060
+     ],
+     "scale": 1.5,
+     "anims": [
+      {
+       "type": "squash",
+       "amp": 0.06,
+       "period": 0.9
+      },
+      {
+       "type": "bob",
+       "amp": 20,
+       "period": 0.9
+      }
+     ]
+    },
+    {
+     "actor": "big_wave",
+     "at": [
+      300,
+      1080
+     ],
+     "scale": 1.1,
+     "flip": true,
+     "seed": 2,
+     "anims": [
+      {
+       "type": "squash",
+       "amp": 0.06,
+       "period": 1.1,
+       "phase": 0.4
+      }
+     ]
+    },
+    {
+     "actor": "jingwei",
+     "at": [
+      760,
+      330
+     ],
+     "scale": 0.55,
+     "rig": "fly",
+     "anims": [
+      {
+       "type": "bob",
+       "amp": 25,
+       "period": 1.4
+      },
+      {
+       "type": "shake",
+       "amp": 6
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "精卫大声回答：“就算要一千万年、一万万年，我也一定要把你填平！”",
+   "subtitle_en": "Jingwei cried out: \"Even if it takes ten million years, a hundred million years, I will fill you up!\"",
+   "background": "sky_soft",
+   "camera": {
+    "zoom": [
+     1.25,
+     1.35
+    ],
+    "center": [
+     [
+      960,
+      480
+     ],
+     [
+      960,
+      470
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "sea",
+     "at": [
+      0,
+      760
+     ],
+     "rig": "waves"
+    },
+    {
+     "actor": "jingwei",
+     "at": [
+      960,
+      600
+     ],
+     "scale": 1.4,
+     "rig": "cry",
+     "anims": [
+      {
+       "type": "bob",
+       "amp": 10,
+       "period": 1.2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "从此，精卫每天从西山衔来树枝和石子，一趟又一趟，从不停歇。春去秋来，年复一年。",
+   "subtitle_en": "From then on, every single day, Jingwei carried twigs and pebbles from the western mountains, trip after trip, never resting. Spring came and autumn went, year after year.",
+   "background": "dawn",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.04
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      -100,
+      500
+     ],
+     "scale": 0.6,
+     "rig": "glow",
+     "anims": [
+      {
+       "type": "path",
+       "points": [
+        [
+         400,
+         150
+        ],
+        [
+         960,
+         80
+        ],
+        [
+         1500,
+         150
+        ],
+        [
+         2050,
+         500
+        ]
+       ],
+       "t": [
+        0,
+        0.5
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "full_moon",
+     "at": [
+      -100,
+      500
+     ],
+     "scale": 0.8,
+     "anims": [
+      {
+       "type": "path",
+       "points": [
+        [
+         400,
+         150
+        ],
+        [
+         960,
+         80
+        ],
+        [
+         1500,
+         150
+        ],
+        [
+         2050,
+         500
+        ]
+       ],
+       "t": [
+        0.5,
+        1.0
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      220,
+      800
+     ],
+     "scale": [
+      0.8,
+      0.7
+     ]
+    },
+    {
+     "actor": "zhe_tree",
+     "at": [
+      120,
+      820
+     ],
+     "scale": 0.7
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      790
+     ],
+     "seed": 3
+    },
+    {
+     "actor": "sea",
+     "at": [
+      700,
+      760
+     ],
+     "rig": "waves",
+     "seed": 2
+    },
+    {
+     "actor": "pebble_pile",
+     "at": [
+      1000,
+      860
+     ],
+     "scale": 0.3,
+     "anims": [
+      {
+       "type": "scale",
+       "to": 1.0,
+       "t": [
+        0.1,
+        0.95
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "jingwei",
+     "at": [
+      250,
+      420
+     ],
+     "scale": 0.5,
+     "rig": "fly",
+     "reveal": [
+      "pebble"
+     ],
+     "anims": [
+      {
+       "type": "path",
+       "points": [
+        [
+         900,
+         380
+        ],
+        [
+         1300,
+         420
+        ],
+        [
+         900,
+         460
+        ],
+        [
+         250,
+         420
+        ],
+        [
+         900,
+         380
+        ],
+        [
+         1300,
+         420
+        ],
+        [
+         900,
+         460
+        ],
+        [
+         250,
+         420
+        ]
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      },
+      {
+       "type": "flip",
+       "at": 0.17
+      },
+      {
+       "type": "flip",
+       "at": 0.5
+      },
+      {
+       "type": "flip",
+       "at": 0.67
+      }
+     ]
+    },
+    {
+     "actor": "jingwei",
+     "at": [
+      700,
+      250
+     ],
+     "scale": 0.35,
+     "rig": "fly",
+     "seed": 2,
+     "reveal": [
+      "twig",
+      "twig_leaf"
+     ],
+     "anims": [
+      {
+       "type": "path",
+       "points": [
+        [
+         1350,
+         300
+        ],
+        [
+         800,
+         260
+        ],
+        [
+         200,
+         300
+        ],
+        [
+         800,
+         260
+        ],
+        [
+         1350,
+         300
+        ]
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      },
+      {
+       "type": "flip",
+       "at": 0.3
+      },
+      {
+       "type": "flip",
+       "at": 0.75
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "直到今天，人们都说，精卫还在飞，还衔着石子，一点一点地填着大海。",
+   "subtitle_en": "Even today, people say that Jingwei is still flying, still carrying pebbles, filling the sea little by little.",
+   "background": "dawn",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "center": [
+     [
+      960,
+      540
+     ],
+     [
+      1100,
+      520
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1400,
+      760
+     ],
+     "scale": 1.2,
+     "rig": "glow",
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1400,
+        600
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "out"
+      }
+     ]
+    },
+    {
+     "actor": "sea",
+     "at": [
+      0,
+      760
+     ],
+     "rig": "waves",
+     "seed": 6
+    },
+    {
+     "actor": "jingwei",
+     "at": [
+      300,
+      520
+     ],
+     "scale": 0.8,
+     "rig": "fly",
+     "reveal": [
+      "pebble"
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1250,
+        420
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      },
+      {
+       "type": "bob",
+       "amp": 16,
+       "period": 1.4
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "精卫填海的故事告诉我们：只要有决心，坚持不放弃，再难的事情也不怕。",
+   "subtitle_en": "The story of Jingwei teaches us: with determination, and if we never give up, no task is too hard to face.",
+   "camera": {
+    "zoom": [
+     1.1,
+     1.0
+    ]
+   },
+   "items": [
+    {
+     "actor": "cloud",
+     "at": [
+      500,
+      200
+     ],
+     "scale": 0.8,
+     "anims": [
+      {
+       "type": "drift",
+       "amp": 30,
+       "period": 9
+      }
+     ]
+    },
+    {
+     "actor": "sea",
+     "at": [
+      0,
+      740
+     ],
+     "rig": "waves",
+     "seed": 8
+    },
+    {
+     "actor": "pebble_pile",
+     "at": [
+      960,
+      840
+     ],
+     "scale": 1.3
+    },
+    {
+     "actor": "jingwei",
+     "at": [
+      960,
+      790
+     ],
+     "scale": 0.9,
+     "rig": "idle",
+     "reveal": [
+      "pebble"
+     ]
+    }
+   ]
+  }
+ ],
+ "end_scene": {
+  "background": "dawn",
+  "items": [
+   {
+    "actor": "sea",
+    "at": [
+     0,
+     820
+    ],
+    "rig": "waves",
+    "seed": 4
+   },
+   {
+    "actor": "jingwei",
+    "at": [
+     -200,
+     300
+    ],
+    "scale": 0.6,
+    "rig": "fly",
+    "anims": [
+     {
+      "type": "move",
+      "to": [
+       2200,
+       260
+      ],
+      "t": [
+       0,
+       1
+      ],
+      "ease": "linear"
+     }
+    ]
+   }
+  ]
+ }
+}

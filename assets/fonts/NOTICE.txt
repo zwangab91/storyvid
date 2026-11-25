@@ -1,0 +1,3 @@
+Fredoka (Bold, SemiBold) - Copyright The Fredoka Project Authors. SIL Open Font License 1.1.
+Andika (Regular, Bold)   - Copyright SIL International. SIL Open Font License 1.1.
+Converted from the @fontsource npm packages (WOFF -> TTF, glyphs unchanged). Full licence: https://openfontlicense.org

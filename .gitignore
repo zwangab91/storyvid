@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+models/
+.cache/
+out/
+hybrid/layers/
+hybrid/masks.npy
+hybrid/out/
+hybrid/*_overlay.jpg
+hybrid/layers_sheet.jpg

@@ -1,0 +1,2325 @@
+{
+ "title": "夸父逐日",
+ "subtitle": "Kuafu Chases the Sun",
+ "language": "zh",
+ "voice": "melo",
+ "speed": 0.86,
+ "credit": "《山海经·海外北经》：夸父与日逐走……弃其杖，化为邓林。",
+ "music": {
+  "style": "pluck",
+  "seed": 23,
+  "tempo": 72
+ },
+ "paints": {
+  "sky_soft": {
+   "colors": [
+    "#b3dcf6",
+    "#cbe8fa",
+    "#98cdf0",
+    "#e2f2fc"
+   ],
+   "style": "streaks",
+   "angle": 0,
+   "contrast": 0.4
+  },
+  "heat": {
+   "colors": [
+    "#fcd27a",
+    "#fde3a6",
+    "#f9b25c",
+    "#fef0cc"
+   ],
+   "style": "streaks",
+   "angle": 0,
+   "contrast": 0.45
+  },
+  "blaze": {
+   "colors": [
+    "#f9a24c",
+    "#fcc36e",
+    "#f07b3c",
+    "#fde0a0"
+   ],
+   "style": "swirl",
+   "contrast": 0.5
+  },
+  "dusk_sky": {
+   "colors": [
+    "#f4a87a",
+    "#f8c79a",
+    "#e88a6e",
+    "#fbe0bc",
+    "#c98aa6"
+   ],
+   "style": "streaks",
+   "angle": 0,
+   "contrast": 0.5
+  },
+  "night_soft": {
+   "colors": [
+    "#1d2b5c",
+    "#26386e",
+    "#17214a"
+   ],
+   "style": "swirl",
+   "contrast": 0.5
+  },
+  "tunic": {
+   "colors": [
+    "#b07a3c",
+    "#c9934d",
+    "#8a5a28",
+    "#e0b26b",
+    "#6e4a2a"
+   ],
+   "style": "dabs"
+  },
+  "leggings": {
+   "colors": [
+    "#6b4a2e",
+    "#7f5a38",
+    "#4e3420"
+   ],
+   "style": "streaks"
+  },
+  "snake_yellow": {
+   "colors": [
+    "#f2c230",
+    "#ffe070",
+    "#c98f1a"
+   ],
+   "style": "flat"
+  },
+  "yellow_river": {
+   "colors": [
+    "#c9a15a",
+    "#dbb978",
+    "#a77f3e",
+    "#e8cf98"
+   ],
+   "style": "streaks",
+   "angle": 0
+  },
+  "wei_river": {
+   "colors": [
+    "#4aa8d8",
+    "#7ccbea",
+    "#2a7fbf",
+    "#c8ecf8"
+   ],
+   "style": "streaks",
+   "angle": 0
+  },
+  "cracked": {
+   "colors": [
+    "#b78a52",
+    "#c99d63",
+    "#a77a45",
+    "#6e4a26"
+   ],
+   "style": "cells",
+   "cells": 160
+  },
+  "peach": {
+   "colors": [
+    "#f9a27e",
+    "#ffc9a0",
+    "#ef6f5f",
+    "#ffd9c2"
+   ],
+   "style": "swirl"
+  }
+ },
+ "actors": {
+  "kuafu": {
+   "template": "person",
+   "params": {
+    "height": 600,
+    "skin": "skin_bronze",
+    "hair": "hair_black",
+    "hair_style": "long",
+    "dress": false,
+    "top": "tunic",
+    "bottom": "leggings",
+    "shoes": "bark",
+    "holding": "staff"
+   },
+   "extra_parts": [
+    {
+     "id": "snake_l",
+     "shape": "stroke",
+     "points": [
+      [
+       -64,
+       -452
+      ],
+      [
+       -74,
+       -432
+      ],
+      [
+       -62,
+       -414
+      ],
+      [
+       -72,
+       -396
+      ]
+     ],
+     "width": [
+      9,
+      5
+     ],
+     "paint": "snake_yellow",
+     "parent": "head",
+     "shadow": 0.5
+    },
+    {
+     "id": "snake_l_head",
+     "shape": "ellipse",
+     "c": [
+      -73,
+      -392
+     ],
+     "r": [
+      8,
+      6
+     ],
+     "paint": "snake_yellow",
+     "parent": "head",
+     "shadow": 0.5
+    },
+    {
+     "id": "snake_r",
+     "shape": "stroke",
+     "points": [
+      [
+       64,
+       -452
+      ],
+      [
+       74,
+       -432
+      ],
+      [
+       62,
+       -414
+      ],
+      [
+       72,
+       -396
+      ]
+     ],
+     "width": [
+      9,
+      5
+     ],
+     "paint": "snake_yellow",
+     "parent": "head",
+     "shadow": 0.5
+    },
+    {
+     "id": "snake_r_head",
+     "shape": "ellipse",
+     "c": [
+      73,
+      -392
+     ],
+     "r": [
+      8,
+      6
+     ],
+     "paint": "snake_yellow",
+     "parent": "head",
+     "shadow": 0.5
+    }
+   ]
+  },
+  "traveler": {
+   "template": "person",
+   "params": {
+    "height": 380,
+    "dress": false,
+    "top": "blue_cloth",
+    "bottom": "earth",
+    "hat": "straw",
+    "hair": "hair_black",
+    "skin": "skin_tan"
+   }
+  },
+  "child": {
+   "template": "person",
+   "params": {
+    "height": 280,
+    "child": true,
+    "top": "green_cloth",
+    "hair": "hair_black",
+    "hair_style": "bun",
+    "skin": "skin_tan"
+   }
+  },
+  "staff_ground": {
+   "parts": [
+    {
+     "id": "staff",
+     "shape": "stroke",
+     "points": [
+      [
+       -330,
+       0
+      ],
+      [
+       0,
+       -6
+      ],
+      [
+       330,
+       0
+      ]
+     ],
+     "width": 16,
+     "paint": "bark"
+    },
+    {
+     "id": "knob",
+     "shape": "blob",
+     "c": [
+      340,
+      -2
+     ],
+     "r": [
+      20,
+      17
+     ],
+     "paint": "bark",
+     "shape_seed": 2
+    }
+   ]
+  },
+  "peach_tree_fruit": {
+   "parts": [
+    {
+     "id": "trunk",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      0,
+      5
+     ],
+     "points": [
+      [
+       -26,
+       0
+      ],
+      [
+       -16,
+       -110
+      ],
+      [
+       -30,
+       -200
+      ],
+      [
+       24,
+       -200
+      ],
+      [
+       14,
+       -110
+      ],
+      [
+       26,
+       0
+      ]
+     ],
+     "paint": "bark"
+    },
+    {
+     "id": "branch",
+     "shape": "stroke",
+     "points": [
+      [
+       0,
+       -150
+      ],
+      [
+       60,
+       -210
+      ],
+      [
+       90,
+       -230
+      ]
+     ],
+     "width": [
+      16,
+      8
+     ],
+     "paint": "bark"
+    },
+    {
+     "id": "crown_b",
+     "shape": "blob",
+     "c": [
+      -60,
+      -260
+     ],
+     "r": [
+      120,
+      90
+     ],
+     "paint": "dark_leaf",
+     "shape_seed": 3,
+     "pivot": [
+      0,
+      -200
+     ]
+    },
+    {
+     "id": "crown",
+     "shape": "blob",
+     "c": [
+      40,
+      -285
+     ],
+     "r": [
+      135,
+      100
+     ],
+     "paint": "leaf",
+     "shape_seed": 4,
+     "pivot": [
+      0,
+      -200
+     ]
+    },
+    {
+     "id": "p1",
+     "shape": "circle",
+     "c": [
+      -70,
+      -250
+     ],
+     "r": 20,
+     "paint": "peach",
+     "parent": "crown"
+    },
+    {
+     "id": "p2",
+     "shape": "circle",
+     "c": [
+      20,
+      -320
+     ],
+     "r": 22,
+     "paint": "peach",
+     "parent": "crown"
+    },
+    {
+     "id": "p3",
+     "shape": "circle",
+     "c": [
+      100,
+      -260
+     ],
+     "r": 20,
+     "paint": "peach",
+     "parent": "crown"
+    },
+    {
+     "id": "p4",
+     "shape": "circle",
+     "c": [
+      -10,
+      -230
+     ],
+     "r": 19,
+     "paint": "peach",
+     "parent": "crown"
+    },
+    {
+     "id": "p5",
+     "shape": "circle",
+     "c": [
+      -100,
+      -310
+     ],
+     "r": 18,
+     "paint": "peach",
+     "parent": "crown"
+    },
+    {
+     "id": "p6",
+     "shape": "circle",
+     "c": [
+      140,
+      -310
+     ],
+     "r": 18,
+     "paint": "peach",
+     "parent": "crown"
+    }
+   ],
+   "rigs": {
+    "sway": [
+     {
+      "part": [
+       "crown",
+       "crown_b"
+      ],
+      "type": "swing",
+      "deg": 2,
+      "period": 3.2
+     }
+    ],
+    "fruit": [
+     {
+      "part": [
+       "p1",
+       "p2",
+       "p3",
+       "p4",
+       "p5",
+       "p6"
+      ],
+      "type": "pop",
+      "t": [
+       0.55,
+       0.7
+      ]
+     }
+    ]
+   }
+  },
+  "sweat": {
+   "parts": [
+    {
+     "id": "drop",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      0
+     ],
+     "points": [
+      [
+       0,
+       -16
+      ],
+      [
+       9,
+       2
+      ],
+      [
+       0,
+       10
+      ],
+      [
+       -9,
+       2
+      ]
+     ],
+     "paint": "water",
+     "shadow": 0.3
+    }
+   ]
+  },
+  "dust": {
+   "parts": [
+    {
+     "id": "d1",
+     "shape": "cloud",
+     "c": [
+      0,
+      0
+     ],
+     "r": [
+      120,
+      60
+     ],
+     "paint": "sand",
+     "puffs": 5
+    },
+    {
+     "id": "d2",
+     "shape": "cloud",
+     "c": [
+      110,
+      20
+     ],
+     "r": [
+      80,
+      40
+     ],
+     "paint": "sand",
+     "puffs": 4,
+     "shape_seed": 3
+    }
+   ]
+  },
+  "lake": {
+   "parts": [
+    {
+     "id": "lake",
+     "shape": "blob",
+     "c": [
+      0,
+      0
+     ],
+     "r": [
+      160,
+      40
+     ],
+     "paint": "water",
+     "jag": 0.08,
+     "shape_seed": 6
+    }
+   ]
+  }
+ },
+ "title_scene": {
+  "background": "heat",
+  "items": [
+   {
+    "actor": "sun",
+    "at": [
+     1560,
+     560
+    ],
+    "scale": 1.1,
+    "rig": "glow"
+   },
+   {
+    "actor": "mountain",
+    "at": [
+     400,
+     920
+    ],
+    "scale": 0.6
+   },
+   {
+    "actor": "mountain",
+    "at": [
+     1500,
+     930
+    ],
+    "scale": 0.5,
+    "seed": 2
+   },
+   {
+    "actor": "ground",
+    "at": [
+     0,
+     880
+    ],
+    "seed": 4
+   },
+   {
+    "actor": "kuafu",
+    "at": [
+     420,
+     950
+    ],
+    "scale": 0.75,
+    "rig": "idle"
+   }
+  ]
+ },
+ "scenes": [
+  {
+   "narration": "远古的时候，北方的大山里住着一群巨人。他们的首领叫夸父，个子比山还要高，力气大得能搬动一座石头山。",
+   "subtitle_en": "In ancient times, a tribe of giants lived among the great mountains of the north. Their leader was called Kuafu; he was taller than the mountains, and strong enough to lift a whole hill of stone.",
+   "background": "sky_soft",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "center": [
+     [
+      960,
+      560
+     ],
+     [
+      960,
+      520
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "cloud_long",
+     "at": [
+      1300,
+      330
+     ],
+     "scale": 0.8,
+     "anims": [
+      {
+       "type": "drift",
+       "amp": 30,
+       "period": 10
+      }
+     ]
+    },
+    {
+     "actor": "cloud",
+     "at": [
+      450,
+      260
+     ],
+     "scale": 0.7,
+     "anims": [
+      {
+       "type": "drift",
+       "amp": 25,
+       "period": 9
+      }
+     ]
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      300,
+      880
+     ],
+     "scale": 0.45
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      1550,
+      880
+     ],
+     "scale": 0.5,
+     "seed": 3
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      850
+     ],
+     "seed": 2
+    },
+    {
+     "actor": "kuafu",
+     "at": [
+      900,
+      925
+     ],
+     "scale": 1.25,
+     "rig": "idle"
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      1200,
+      900
+     ],
+     "scale": 0.32,
+     "seed": 5
+    },
+    {
+     "actor": "pine",
+     "at": [
+      560,
+      900
+     ],
+     "scale": 0.25
+    },
+    {
+     "actor": "pine",
+     "at": [
+      1700,
+      905
+     ],
+     "scale": 0.3
+    }
+   ]
+  },
+  {
+   "narration": "那时候，太阳每天从东边升起，又从西边落下。太阳一落山，大地就变得又冷又黑。",
+   "subtitle_en": "In those days, the sun rose in the east each morning and set in the west each evening. And whenever the sun went down, the land became cold and dark.",
+   "background": "sky_soft",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.04
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      200,
+      600
+     ],
+     "scale": 0.7,
+     "rig": "glow",
+     "anims": [
+      {
+       "type": "path",
+       "points": [
+        [
+         600,
+         200
+        ],
+        [
+         1200,
+         200
+        ],
+        [
+         1700,
+         950
+        ]
+       ],
+       "t": [
+        0,
+        0.6
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      500,
+      900
+     ],
+     "scale": 0.5
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      1450,
+      900
+     ],
+     "scale": 0.6,
+     "seed": 4
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      860
+     ],
+     "seed": 6
+    },
+    {
+     "actor": "kuafu",
+     "at": [
+      960,
+      930
+     ],
+     "scale": 0.95,
+     "rig": "idle",
+     "part_anims": [
+      {
+       "part": [
+        "arm_l",
+        "arm_r"
+       ],
+       "type": "swing",
+       "deg": 3,
+       "period": 0.15,
+       "t": [
+        0.7,
+        1.0
+       ]
+      }
+     ]
+    },
+    {
+     "part": {
+      "shape": "rect",
+      "xywh": [
+       -200,
+       -150,
+       2320,
+       1380
+      ],
+      "paint": "night_soft",
+      "edge": "clean",
+      "shadow": 0
+     },
+     "opacity": 0.0,
+     "z": 10,
+     "detail": 0.5,
+     "anims": [
+      {
+       "type": "fade",
+       "to": 0.82,
+       "t": [
+        0.5,
+        0.72
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "moon",
+     "at": [
+      1500,
+      220
+     ],
+     "scale": 0.9,
+     "z": 11,
+     "anims": [
+      {
+       "type": "pop",
+       "t": [
+        0.7,
+        0.8
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "star",
+     "rig": "twinkle",
+     "z": 11,
+     "scatter": {
+      "n": 12,
+      "area": [
+       150,
+       80,
+       1800,
+       500
+      ],
+      "scale": [
+       0.6,
+       1.1
+      ],
+      "seed": 3,
+      "min_dist": 120
+     },
+     "anims": [
+      {
+       "type": "pop",
+       "t": [
+        0.75,
+        0.85
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "夸父想：“我要追上太阳，把它捉住，让它永远照亮大地！”",
+   "subtitle_en": "Kuafu thought: \"I will chase the sun and catch it, so that it lights up the land forever!\"",
+   "camera": {
+    "zoom": [
+     1.7,
+     1.85
+    ],
+    "center": [
+     [
+      1000,
+      420
+     ],
+     [
+      1000,
+      400
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1560,
+      220
+     ],
+     "scale": 0.8,
+     "rig": "glow"
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      860
+     ],
+     "seed": 8
+    },
+    {
+     "actor": "kuafu",
+     "at": [
+      960,
+      930
+     ],
+     "scale": 1.0,
+     "rig": "talk",
+     "reveal": [
+      "mouth_open"
+     ],
+     "hide": [
+      "mouth"
+     ],
+     "part_anims": [
+      {
+       "part": "head",
+       "type": "rotate",
+       "to": -8,
+       "t": [
+        0.0,
+        0.2
+       ]
+      },
+      {
+       "part": "mouth_open",
+       "type": "show",
+       "t": [
+        0.1,
+        0.9
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "于是，他拿起手杖，迈开大步，朝着太阳追去。",
+   "subtitle_en": "So he picked up his staff, took a giant stride, and set off after the sun.",
+   "background": "sky_soft",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1680,
+      260
+     ],
+     "scale": 0.75,
+     "rig": "glow"
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      1300,
+      900
+     ],
+     "scale": 0.55,
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        900,
+        900
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      400,
+      900
+     ],
+     "scale": 0.45,
+     "seed": 6,
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        0,
+        900
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      860
+     ],
+     "seed": 10
+    },
+    {
+     "actor": "kuafu",
+     "at": [
+      500,
+      930
+     ],
+     "scale": 0.95,
+     "rig": "run",
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1100,
+        930
+       ],
+       "t": [
+        0.1,
+        1.0
+       ],
+       "ease": "inout"
+      },
+      {
+       "type": "hop",
+       "height": 30,
+       "period": 0.36,
+       "t": [
+        0.1,
+        1.0
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "他跑过一座座高山，跨过一条条大河，脚步把大地震得咚咚响。",
+   "subtitle_en": "He ran over mountain after mountain and strode across river after river, and his footsteps made the earth go boom, boom, boom.",
+   "background": "sky_soft",
+   "camera": {
+    "zoom": [
+     1.02,
+     1.02
+    ],
+    "shake": {
+     "amp": 6,
+     "t": [
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1680,
+      240
+     ],
+     "scale": 0.85,
+     "rig": "glow"
+    },
+    {
+     "actor": "cloud",
+     "at": [
+      1700,
+      200
+     ],
+     "scale": 0.6,
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        100,
+        200
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      2300,
+      900
+     ],
+     "scale": 0.55,
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        -400,
+        900
+       ],
+       "t": [
+        0,
+        0.8
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      1500,
+      900
+     ],
+     "scale": 0.4,
+     "seed": 2,
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        -400,
+        900
+       ],
+       "t": [
+        0,
+        0.6
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      2900,
+      900
+     ],
+     "scale": 0.5,
+     "seed": 4,
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        200,
+        900
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      860
+     ],
+     "seed": 12
+    },
+    {
+     "actor": "lake",
+     "at": [
+      2600,
+      905
+     ],
+     "scale": [
+      1.3,
+      0.55
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        -400,
+        905
+       ],
+       "t": [
+        0,
+        0.7
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "kuafu",
+     "at": [
+      800,
+      930
+     ],
+     "scale": 0.9,
+     "rig": "run",
+     "anims": [
+      {
+       "type": "hop",
+       "height": 45,
+       "period": 0.36
+      }
+     ]
+    },
+    {
+     "actor": "dust",
+     "at": [
+      760,
+      930
+     ],
+     "scale": 0.5,
+     "anims": [
+      {
+       "type": "float_up",
+       "dist": 120,
+       "period": 0.72,
+       "dir": [
+        -1,
+        -0.3
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "太阳越来越近，越来越大，也越来越热。夸父跑得满头大汗。",
+   "subtitle_en": "The sun grew closer, and bigger, and hotter. Kuafu ran until sweat poured down his face.",
+   "background": "heat",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "center": [
+     [
+      960,
+      540
+     ],
+     [
+      1050,
+      540
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1550,
+      420
+     ],
+     "scale": 1.6,
+     "rig": "glow",
+     "anims": [
+      {
+       "type": "scale",
+       "to": 2.3,
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      },
+      {
+       "type": "pulse",
+       "amp": 0.03,
+       "period": 1.2
+      }
+     ]
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      860
+     ],
+     "seed": 14
+    },
+    {
+     "actor": "kuafu",
+     "at": [
+      450,
+      930
+     ],
+     "scale": 0.9,
+     "rig": "run",
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        700,
+        930
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      },
+      {
+       "type": "hop",
+       "height": 30,
+       "period": 0.36
+      }
+     ]
+    },
+    {
+     "actor": "sweat",
+     "at": [
+      420,
+      420
+     ],
+     "anims": [
+      {
+       "type": "float_up",
+       "dist": 120,
+       "period": 1.0,
+       "dir": [
+        -0.3,
+        1
+       ]
+      },
+      {
+       "type": "move",
+       "to": [
+        670,
+        420
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "sweat",
+     "at": [
+      520,
+      400
+     ],
+     "scale": 0.8,
+     "anims": [
+      {
+       "type": "float_up",
+       "dist": 110,
+       "period": 1.0,
+       "phase": 0.5,
+       "dir": [
+        0.3,
+        1
+       ]
+      },
+      {
+       "type": "move",
+       "to": [
+        770,
+        400
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "终于，在太阳落下的地方，夸父追上了太阳！他张开双臂，想要把太阳抱在怀里。",
+   "subtitle_en": "At last, at the place where the sun goes down, Kuafu caught up with the sun! He opened his arms wide, wanting to hold the sun in his embrace.",
+   "background": "blaze",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "center": [
+     [
+      960,
+      540
+     ],
+     [
+      1000,
+      520
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1500,
+      520
+     ],
+     "scale": 3.0,
+     "rig": "glow",
+     "anims": [
+      {
+       "type": "pulse",
+       "amp": 0.03,
+       "period": 1.6
+      }
+     ]
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      880
+     ],
+     "seed": 16,
+     "opacity": 0.9
+    },
+    {
+     "actor": "kuafu",
+     "at": [
+      620,
+      940
+     ],
+     "scale": 0.95,
+     "rig": "cheer"
+    }
+   ]
+  },
+  {
+   "narration": "可是，太阳实在太热了。夸父口渴极了，他跑到黄河和渭水边，大口大口地喝水。",
+   "subtitle_en": "But the sun was far too hot. Kuafu grew terribly thirsty, so he ran to the Yellow River and the Wei River and drank great gulp after great gulp.",
+   "background": "heat",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1700,
+      200
+     ],
+     "scale": 0.9,
+     "rig": "glow"
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      640
+     ],
+     "seed": 18
+    },
+    {
+     "part": {
+      "shape": "stroke",
+      "points": [
+       [
+        -200,
+        760
+       ],
+       [
+        400,
+        740
+       ],
+       [
+        1000,
+        770
+       ],
+       [
+        1600,
+        745
+       ],
+       [
+        2200,
+        760
+       ]
+      ],
+      "width": 110,
+      "paint": "yellow_river",
+      "cap": "flat",
+      "shadow": 0.3
+     },
+     "at": [
+      960,
+      760
+     ],
+     "origin": [
+      960,
+      760
+     ],
+     "anims": [
+      {
+       "type": "scale",
+       "to": [
+        1.0,
+        0.12
+       ],
+       "t": [
+        0.4,
+        0.95
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "part": {
+      "shape": "stroke",
+      "points": [
+       [
+        -200,
+        870
+       ],
+       [
+        500,
+        855
+       ],
+       [
+        1100,
+        880
+       ],
+       [
+        2200,
+        860
+       ]
+      ],
+      "width": 90,
+      "paint": "wei_river",
+      "cap": "flat",
+      "shadow": 0.3
+     },
+     "at": [
+      960,
+      870
+     ],
+     "origin": [
+      960,
+      870
+     ],
+     "anims": [
+      {
+       "type": "scale",
+       "to": [
+        1.0,
+        0.12
+       ],
+       "t": [
+        0.45,
+        0.95
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "kuafu",
+     "at": [
+      430,
+      975
+     ],
+     "scale": 0.85,
+     "rig": "idle",
+     "reveal": [
+      "mouth_open"
+     ],
+     "hide": [
+      "mouth"
+     ],
+     "anims": [
+      {
+       "type": "rotate",
+       "to": 16,
+       "t": [
+        0.25,
+        0.4
+       ]
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "head",
+       "type": "rotate",
+       "to": 18,
+       "t": [
+        0.25,
+        0.4
+       ]
+      },
+      {
+       "part": "mouth_open",
+       "type": "squash",
+       "amp": 0.4,
+       "period": 0.5,
+       "t": [
+        0.4,
+        1.0
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "黄河和渭水都被他喝干了，可他还是渴。他又朝着北边的大湖跑去。",
+   "subtitle_en": "He drank the Yellow River and the Wei River completely dry, but he was still thirsty. So he set off running toward the great lake in the north.",
+   "background": "heat",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      300,
+      220
+     ],
+     "scale": 1.0,
+     "rig": "glow"
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      760
+     ],
+     "seed": 20
+    },
+    {
+     "actor": "lake",
+     "at": [
+      1650,
+      790
+     ],
+     "scale": 0.6
+    },
+    {
+     "part": {
+      "shape": "stroke",
+      "points": [
+       [
+        -200,
+        900
+       ],
+       [
+        400,
+        880
+       ],
+       [
+        1000,
+        905
+       ],
+       [
+        1600,
+        885
+       ],
+       [
+        2200,
+        895
+       ]
+      ],
+      "width": 70,
+      "paint": "cracked",
+      "cap": "flat",
+      "shadow": 0.3
+     }
+    },
+    {
+     "part": {
+      "shape": "stroke",
+      "points": [
+       [
+        -200,
+        990
+       ],
+       [
+        500,
+        980
+       ],
+       [
+        1100,
+        1000
+       ],
+       [
+        2200,
+        985
+       ]
+      ],
+      "width": 60,
+      "paint": "cracked",
+      "cap": "flat",
+      "shadow": 0.3
+     }
+    },
+    {
+     "actor": "kuafu",
+     "at": [
+      400,
+      930
+     ],
+     "scale": 0.85,
+     "rig": "run",
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1400,
+        830
+       ],
+       "t": [
+        0.1,
+        1.0
+       ],
+       "ease": "linear"
+      },
+      {
+       "type": "scale",
+       "to": 0.55,
+       "t": [
+        0.1,
+        1.0
+       ],
+       "ease": "linear"
+      },
+      {
+       "type": "hop",
+       "height": 22,
+       "period": 0.36
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "可是大湖实在太远了。还没跑到，夸父就累得倒了下去，再也没有起来。",
+   "subtitle_en": "But the great lake was much too far away. Before he could reach it, Kuafu fell to the ground, exhausted, and never rose again.",
+   "background": "dusk_sky",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "shake": {
+     "amp": 7,
+     "t": [
+      0.55,
+      0.65
+     ]
+    }
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1600,
+      800
+     ],
+     "scale": 1.0,
+     "rig": "glow",
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1600,
+        880
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      820
+     ],
+     "seed": 22
+    },
+    {
+     "actor": "kuafu",
+     "at": [
+      450,
+      880
+     ],
+     "scale": 0.85,
+     "rig": "idle",
+     "anims": [
+      {
+       "type": "rotate",
+       "to": 84,
+       "t": [
+        0.35,
+        0.58
+       ],
+       "ease": "in"
+      }
+     ],
+     "part_anims": [
+      {
+       "part": [
+        "eye_l",
+        "eye_r"
+       ],
+       "type": "scale",
+       "to": [
+        1.0,
+        0.15
+       ],
+       "t": [
+        0.55,
+        0.6
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "dust",
+     "at": [
+      950,
+      870
+     ],
+     "scale": 0.8,
+     "anims": [
+      {
+       "type": "pop",
+       "t": [
+        0.56,
+        0.64
+       ]
+      },
+      {
+       "type": "fade",
+       "to": 0,
+       "t": [
+        0.7,
+        0.9
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "他手中的手杖落在地上，变成了一大片桃林，结满了又大又甜的桃子。",
+   "subtitle_en": "The staff fell from his hand to the earth, and turned into a great grove of peach trees, heavy with big, sweet peaches.",
+   "background": "sky_soft",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.06
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1650,
+      210
+     ],
+     "scale": 0.7,
+     "rig": "glow",
+     "anims": [
+      {
+       "type": "pop",
+       "t": [
+        0.0,
+        0.1
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      820
+     ],
+     "seed": 24
+    },
+    {
+     "actor": "staff_ground",
+     "at": [
+      960,
+      900
+     ],
+     "scale": 1.6,
+     "anims": [
+      {
+       "type": "fade",
+       "to": 0,
+       "t": [
+        0.3,
+        0.5
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "peach_tree_fruit",
+     "at": [
+      420,
+      900
+     ],
+     "scale": 1.0,
+     "rig": [
+      "sway",
+      "fruit"
+     ],
+     "anims": [
+      {
+       "type": "grow",
+       "t": [
+        0.3,
+        0.5
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "peach_tree_fruit",
+     "at": [
+      960,
+      910
+     ],
+     "scale": 1.2,
+     "rig": [
+      "sway",
+      "fruit"
+     ],
+     "seed": 2,
+     "anims": [
+      {
+       "type": "grow",
+       "t": [
+        0.35,
+        0.55
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "peach_tree_fruit",
+     "at": [
+      1500,
+      900
+     ],
+     "scale": 1.0,
+     "rig": [
+      "sway",
+      "fruit"
+     ],
+     "seed": 3,
+     "anims": [
+      {
+       "type": "grow",
+       "t": [
+        0.4,
+        0.6
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "peach_tree_fruit",
+     "at": [
+      700,
+      860
+     ],
+     "scale": 0.7,
+     "rig": [
+      "sway",
+      "fruit"
+     ],
+     "seed": 4,
+     "z": -1,
+     "anims": [
+      {
+       "type": "grow",
+       "t": [
+        0.45,
+        0.62
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "peach_tree_fruit",
+     "at": [
+      1240,
+      860
+     ],
+     "scale": 0.75,
+     "rig": [
+      "sway",
+      "fruit"
+     ],
+     "seed": 5,
+     "z": -1,
+     "anims": [
+      {
+       "type": "grow",
+       "t": [
+        0.48,
+        0.65
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "从此，路过的人走累了、口渴了，就可以在桃林里歇一歇，吃一个甜甜的桃子。",
+   "subtitle_en": "Ever since, travellers who are weary and thirsty can rest a while in the peach grove, and eat a sweet, juicy peach.",
+   "background": "sky_soft",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "center": [
+     [
+      960,
+      560
+     ],
+     [
+      960,
+      580
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1650,
+      200
+     ],
+     "scale": 0.7,
+     "rig": "glow"
+    },
+    {
+     "actor": "bird_small",
+     "at": [
+      700,
+      250
+     ],
+     "rig": "flap",
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1200,
+        220
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      820
+     ],
+     "seed": 26
+    },
+    {
+     "actor": "peach_tree_fruit",
+     "at": [
+      300,
+      880
+     ],
+     "scale": 1.1,
+     "rig": "sway"
+    },
+    {
+     "actor": "peach_tree_fruit",
+     "at": [
+      1000,
+      870
+     ],
+     "scale": 1.3,
+     "rig": "sway",
+     "seed": 2
+    },
+    {
+     "actor": "peach_tree_fruit",
+     "at": [
+      1650,
+      880
+     ],
+     "scale": 1.0,
+     "rig": "sway",
+     "seed": 3
+    },
+    {
+     "actor": "traveler",
+     "at": [
+      700,
+      930
+     ],
+     "scale": 0.85,
+     "rig": "idle",
+     "reveal": [
+      "mouth_open"
+     ],
+     "hide": [
+      "mouth"
+     ]
+    },
+    {
+     "actor": "child",
+     "at": [
+      1300,
+      935
+     ],
+     "scale": 0.9,
+     "rig": "wave",
+     "anims": [
+      {
+       "type": "hop",
+       "height": 14,
+       "period": 0.6
+      }
+     ]
+    },
+    {
+     "part": {
+      "shape": "circle",
+      "c": [
+       0,
+       0
+      ],
+      "r": 20,
+      "paint": "peach"
+     },
+     "at": [
+      760,
+      660
+     ],
+     "anims": [
+      {
+       "type": "pop",
+       "t": [
+        0.3,
+        0.4
+       ]
+      },
+      {
+       "type": "bob",
+       "amp": 6,
+       "period": 1.2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "夸父虽然没有捉住太阳，可是他勇敢追梦、永不放弃的精神，一直留在人们的心里。",
+   "subtitle_en": "Kuafu never caught the sun, but his brave spirit of chasing his dream and never giving up has lived on in people's hearts ever since.",
+   "background": "heat",
+   "camera": {
+    "zoom": [
+     1.1,
+     1.0
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      960,
+      760
+     ],
+     "scale": 1.4,
+     "rig": "glow",
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        960,
+        480
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "out"
+      }
+     ]
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      350,
+      900
+     ],
+     "scale": 0.7
+    },
+    {
+     "actor": "mountain",
+     "at": [
+      1600,
+      900
+     ],
+     "scale": 0.65,
+     "seed": 7
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      860
+     ],
+     "seed": 28
+    },
+    {
+     "actor": "peach_tree_fruit",
+     "rig": "sway",
+     "scatter": {
+      "n": 5,
+      "area": [
+       200,
+       900,
+       1720,
+       930
+      ],
+      "scale": [
+       0.45,
+       0.6
+      ],
+      "seed": 5,
+      "min_dist": 250
+     }
+    }
+   ]
+  }
+ ],
+ "end_scene": {
+  "background": "heat",
+  "items": [
+   {
+    "actor": "ground",
+    "at": [
+     0,
+     880
+    ],
+    "seed": 30
+   },
+   {
+    "actor": "peach_tree_fruit",
+    "at": [
+     960,
+     920
+    ],
+    "scale": 0.7,
+    "rig": "sway"
+   }
+  ]
+ }
+}
