@@ -15,8 +15,10 @@ Manifest:
       ]
     }
 
-`refs` are earlier asset ids or image paths (relative to the manifest); they are sent as reference images so a
-character keeps its look across poses and sheets. `variant` asks for another sample of an otherwise identical asset.
+`refs` are earlier asset ids, image paths relative to the manifest, or "@run/file.png" for an image made by another
+manifest (resolved against the output root, the parent of --out). They are sent as reference images so a character
+keeps its look across poses and sheets. `variant` asks for another sample of an otherwise identical asset, and an
+asset's own `style` replaces the manifest's (e.g. for full-bleed backdrops that should not sit on a board).
 
 Each asset has a key: a hash of model, size, aspect, full prompt, variant and its references. An asset whose key
 already has an image in the output folder is skipped, so re-running a manifest only pays for new or edited assets.
@@ -71,7 +73,7 @@ def load_manifest(path: str) -> dict:
         if a.get("aspect", "16:9") not in ASPECTS:
             raise AssetError(f"asset {aid!r}: aspect must be one of {sorted(ASPECTS)}")
         for r in a.get("refs", []):
-            if r not in seen and not os.path.isfile(os.path.join(m["_dir"], r)):
+            if r not in seen and not r.startswith("@") and not os.path.isfile(os.path.join(m["_dir"], r)):
                 raise AssetError(f"asset {aid!r}: ref {r!r} is neither an earlier asset id nor a file")
         seen.add(aid)
     if not seen:
@@ -79,8 +81,15 @@ def load_manifest(path: str) -> dict:
     return m
 
 
+def ref_path(m: dict, r: str, out_dir: str) -> str:
+    """Path of a reference that is not an asset id: '@run/file' under the output root, else manifest-relative."""
+    if r.startswith("@"):
+        return os.path.join(os.path.dirname(os.path.abspath(out_dir)), r[1:])
+    return os.path.join(m["_dir"], r)
+
+
 def full_prompt(m: dict, a: dict) -> str:
-    style = m.get("style", "").strip()
+    style = a.get("style", m.get("style", "")).strip()
     return a["prompt"].strip() + (("\n\n" + style) if style else "")
 
 
@@ -95,7 +104,10 @@ def plan(m: dict, out_dir: str) -> list[dict]:
             if r in keys:
                 ref_ids.append("asset:" + keys[r])
             else:
-                with open(os.path.join(m["_dir"], r), "rb") as f:
+                path = ref_path(m, r, out_dir)
+                if not os.path.isfile(path):
+                    raise AssetError(f"asset {a['id']!r}: reference image {r!r} not found at {path}")
+                with open(path, "rb") as f:
                     ref_ids.append("file:" + hashlib.sha1(f.read()).hexdigest())
         blob = json.dumps([m["model"], m["image_size"], a.get("aspect", "16:9"), full_prompt(m, a),
                            a.get("variant", 1), ref_ids], ensure_ascii=False)
@@ -267,7 +279,7 @@ def run(manifest_path: str, out_dir: str, max_images: int = 12, dry_run: bool = 
                 elif any(x["id"] == r for x in m["assets"]):
                     raise AssetError(f"reference {r!r} was not generated")
                 else:
-                    parts.append(_image_part(os.path.join(m["_dir"], r)))
+                    parts.append(_image_part(ref_path(m, r, out_dir)))
             parts.append({"text": full_prompt(m, a)})
             t0 = time.time()
             data, mime, usage, text = call_gemini(m["model"], parts, a.get("aspect", "16:9"), m["image_size"],
