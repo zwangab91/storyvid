@@ -80,7 +80,86 @@ def part_center(part: dict):
     return tuple(P.mean(0))
 
 
+_IMG_CACHE: dict = {}
+
+
+def _load_rgba(path: str) -> np.ndarray:
+    """Straight-alpha float32 RGBA (RGB order) of an image file, cached."""
+    img = _IMG_CACHE.get(path)
+    if img is None:
+        raw = cv2.imread(path, cv2.IMREAD_UNCHANGED)
+        if raw is None:
+            raise FileNotFoundError(path)
+        if raw.ndim == 2:
+            raw = cv2.cvtColor(raw, cv2.COLOR_GRAY2BGRA)
+        elif raw.shape[2] == 3:
+            raw = cv2.cvtColor(raw, cv2.COLOR_BGR2BGRA)
+        img = cv2.cvtColor(raw, cv2.COLOR_BGRA2RGBA).astype(np.float32) / 255.0
+        _IMG_CACHE[path] = img
+    return img
+
+
+def rasterize_image_part(part: dict, rs: float) -> Sprite:
+    """A piece of generated artwork used as a paper part: {"shape": "image", "src": path, "xywh": [x, y, w, h]}.
+
+    The image's own alpha is the cut line; "clip" (polygon) and "cut" (shapes) can trim it further.
+    """
+    img = _load_rgba(part["src"])
+    ih, iw = img.shape[:2]
+    x, y, w, h = part.get("xywh", [0, 0, iw, ih])
+    sx, sy = w / iw, h / ih
+    a = img[..., 3]
+    ys, xs = np.where(a > 0.004)
+    if len(xs) == 0:
+        return Sprite(np.zeros((2, 2, 4), np.float32), x, y, rs)
+    shadow_k = float(part.get("shadow", 0.6)) * SHADOW["strength"]
+    pad = 4 + (SHADOW["offset"][1] + 3 * SHADOW["blur"] if shadow_k > 0 else 0)
+    bx0, by0 = x + xs.min() * sx - pad, y + ys.min() * sy - pad
+    bx1, by1 = x + (xs.max() + 1) * sx + pad, y + (ys.max() + 1) * sy + pad
+    if "clip" in part:
+        P = np.asarray(part["clip"], float)
+        bx0, by0 = max(bx0, P[:, 0].min() - pad), max(by0, P[:, 1].min() - pad)
+        bx1, by1 = min(bx1, P[:, 0].max() + pad), min(by1, P[:, 1].max() + pad)
+    W_ = int(math.ceil((bx1 - bx0) * rs)) + 1
+    H_ = int(math.ceil((by1 - by0) * rs)) + 1
+    f = sx * rs  # source px -> sprite px
+    if f < 0.999:  # shrinking: area-filter once, then place
+        src = cv2.resize(img, (max(1, round(iw * f)), max(1, round(ih * f * sy / sx))), interpolation=cv2.INTER_AREA)
+        A = np.float32([[iw * f / src.shape[1] * 1.0, 0, (x - bx0) * rs], [0, ih * sy * rs / src.shape[0], (y - by0) * rs]])
+        flags = cv2.INTER_LINEAR
+    else:
+        src = img
+        A = np.float32([[sx * rs, 0, (x - bx0) * rs], [0, sy * rs, (y - by0) * rs]])
+        flags = cv2.INTER_CUBIC
+    rgba = cv2.warpAffine(src, A, (W_, H_), flags=flags, borderMode=cv2.BORDER_CONSTANT, borderValue=(0, 0, 0, 0))
+    alpha = np.clip(rgba[..., 3], 0, 1) * float(part.get("opacity", 1.0))
+    if "clip" in part or part.get("cut"):
+        m8 = np.zeros((H_, W_), np.uint8)
+        if "clip" in part:
+            cv2.fillPoly(m8, [np.round((np.asarray(part["clip"], float) - [bx0, by0]) * rs * 16).astype(np.int32)], 255, cv2.LINE_AA, shift=4)
+        else:
+            m8[:] = 255
+        mask = m8.astype(np.float32) / 255.0
+        for cut in part.get("cut", []):
+            c8 = np.zeros((H_, W_), np.uint8)
+            Q = G.shape_polygon(cut)
+            cv2.fillPoly(c8, [np.round((Q - [bx0, by0]) * rs * 16).astype(np.int32)], 255, cv2.LINE_AA, shift=4)
+            mask *= 1.0 - c8.astype(np.float32) / 255.0
+        alpha *= mask
+    out = np.zeros((H_, W_, 4), np.float32)
+    out[..., :3] = np.clip(rgba[..., :3], 0, 1) * alpha[..., None]
+    out[..., 3] = alpha
+    if shadow_k > 0:
+        dx, dy = SHADOW["offset"]
+        sh = cv2.warpAffine(alpha, np.float32([[1, 0, dx * rs], [0, 1, dy * rs]]), (W_, H_))
+        sh = cv2.GaussianBlur(sh, (0, 0), SHADOW["blur"] * rs) * shadow_k
+        out[..., 3] = alpha + (1 - alpha) * sh
+    return Sprite(out, bx0, by0, rs)
+
+
 def rasterize_part(part: dict, rs: float, bank: TextureBank, story_paints: dict, seed: int) -> Sprite:
+    if part.get("shape") == "image":
+        return rasterize_image_part(part, rs)
     rng = np.random.default_rng(seed)
     shadow_k = float(part.get("shadow", 1.0)) * SHADOW["strength"]
     edge = part.get("edge", "cut")

@@ -26,7 +26,8 @@ shadows, mostly white page backgrounds, simple paper-puppet animation.
   "actors": { "name": ACTOR, ... },          // story-specific characters and props
   "title_scene": {"background": BG, "items": [ITEM, ...]},   // art under the title letters (title sits at y~330)
   "scenes": [SCENE, ...],                    // 8-15 scenes is typical
-  "end_scene": {"background": BG, "items": [ITEM, ...]}      // art under "The End" / "完"
+  "end_scene": {"background": BG, "items": [ITEM, ...]},     // art under "The End" / "完"
+  "title_card": true, "end_card": true                       // set false to skip the generated cards
 }
 ```
 
@@ -105,6 +106,10 @@ Shapes:
 - `{"shape": "cloud", "c": [x, y], "r": [rx, ry], "puffs": 5}`
 - `{"shape": "wave", "x0": -200, "x1": 2120, "y": 700, "amp": 30, "wavelength": 300, "bottom": 1280}` band with a wavy top
 - `{"shape": "text", "text": "z", "font": "title", "size": 60}`
+- `{"shape": "image", "src": "layers/wing.png", "xywh": [x, y, w, h], "clip": [[x, y], ...]}` a piece of generated
+  artwork used as a paper part. The image's alpha is the cut line; `xywh` places the whole image in actor units
+  (default: 1 unit per pixel at 0,0); optional `clip` polygon and `cut` shapes trim it. `src` is relative to the
+  storyboard file. Pivots, parents, rigs and shadows (default 0.6) work as for drawn parts.
 `cut` subtracts shapes (crescent moon, holes, bites). `parent` makes a part follow another part's animation; `pivot`
 is the rotation point for swings (shoulder, hip, neck, wing root).
 

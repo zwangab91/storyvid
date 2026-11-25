@@ -65,6 +65,14 @@ Options: `--height 720` for faster drafts, `--fps 12` for an on-twos cut-out fee
 | `jingwei.json` | zh + English subtitles | 精卫填海, after 《山海经·北山经》: patterned head, white beak, red feet |
 | `kuafu.json` | zh + English subtitles | 夸父逐日, after 《山海经·海外北经》: snake earrings, staff becomes the peach grove 邓林 |
 
+## Hybrid prototype: generated art, procedural motion
+
+`hybrid/` is a proof of concept for combining image-model artwork with this pipeline's motion. An image model paints
+the pieces once (characters, set layers); storyvid cuts them into rigged paper parts and animates every frame on the
+narration timeline, so nothing loops or repeats. The renderer side is general: any image can be a paper part
+(`"shape": "image"`, see the [spec](docs/STORYBOARD_SPEC.md)). The cutting and rigging in `hybrid/` is hand-tuned to
+one generated picture, and there is no asset-generation stage yet. See [hybrid/README.md](hybrid/README.md).
+
 ## Extending
 - New paints: add a recipe to `PRESETS` in `paper.py`, or define one per story under `"paints"`.
 - New reusable props: `LIBRARY` in `library.py` (they are listed to the model automatically).

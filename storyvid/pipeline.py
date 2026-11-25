@@ -38,7 +38,21 @@ TITLE_PALETTE = ["red_cloth", "sun", "grass", "sky", "flower_purple", "fire", "s
 
 def load_story(path: str) -> dict:
     with open(path, encoding="utf-8") as f:
-        return json.load(f)
+        story = json.load(f)
+    base = os.path.dirname(os.path.abspath(path))
+
+    def fix(parts):  # image parts: paths are relative to the storyboard file
+        for p in parts or []:
+            if p.get("shape") == "image" and not os.path.isabs(p["src"]):
+                p["src"] = os.path.join(base, p["src"])
+    for a in (story.get("actors") or {}).values():
+        fix(a.get("parts"))
+    for sc in story.get("scenes", []) + [story.get("title_scene") or {}, story.get("end_scene") or {}]:
+        for it in sc.get("items", []):
+            fix(it.get("parts"))
+            if it.get("part"):
+                fix([it["part"]])
+    return story
 
 
 def build_actors(story: dict) -> dict[str, Actor]:
@@ -153,28 +167,30 @@ def build_scenes(story: dict) -> list[dict]:
     lang = story.get("language", "en")
     zh = lang.startswith("zh")
     scenes = []
-    # ---- title card
+    # ---- title card (optional)
     ts = story.get("title_scene") or {}
-    has_art = bool(ts.get("items"))
-    title_items = _title_items(story["title"], lang, 330 if has_art else 470, 150 if not zh else 170, seed=3)
-    if story.get("subtitle"):
-        title_items.append(_small_text(story["subtitle"], "en" if zh else lang, 330 + 140 if has_art else 640, 44, t0=0.35))
-    scenes.append({"kind": "title", "narration": story.get("title_narration", story["title"]),
-                   "background": ts.get("background", "paper"), "camera": ts.get("camera", {"zoom": [1.0, 1.03]}),
-                   "items": title_items + ts.get("items", []), "min_duration": 4.5, "captions": False})
+    if story.get("title_card", True) is not False:
+        has_art = bool(ts.get("items"))
+        title_items = _title_items(story["title"], lang, 330 if has_art else 470, 150 if not zh else 170, seed=3)
+        if story.get("subtitle"):
+            title_items.append(_small_text(story["subtitle"], "en" if zh else lang, 330 + 140 if has_art else 640, 44, t0=0.35))
+        scenes.append({"kind": "title", "narration": story.get("title_narration", story["title"]),
+                       "background": ts.get("background", "paper"), "camera": ts.get("camera", {"zoom": [1.0, 1.03]}),
+                       "items": title_items + ts.get("items", []), "min_duration": 4.5, "captions": False})
     # ---- story
     for s in story["scenes"]:
         scenes.append(dict(s, kind="story"))
-    # ---- end card
-    es = story.get("end_scene") or {}
-    end_text = story.get("end_text", "完" if zh else "The End")
-    end_items = _title_items(end_text, lang, 420 if es.get("items") else 500, 220 if zh else 160, seed=0, delay=0.05)
-    if story.get("credit"):
-        end_items.append(_small_text(story["credit"], lang, (420 if es.get("items") else 500) + 130, 36,
-                                     color="#6a6a6a", t0=0.25))
-    scenes.append({"kind": "end", "narration": es.get("narration", ""), "background": es.get("background", "paper"),
-                   "camera": es.get("camera", {"zoom": [1.0, 1.02]}), "items": end_items + es.get("items", []),
-                   "min_duration": 4.0, "captions": False})
+    # ---- end card (optional)
+    if story.get("end_card", True) is not False:
+        es = story.get("end_scene") or {}
+        end_text = story.get("end_text", "完" if zh else "The End")
+        end_items = _title_items(end_text, lang, 420 if es.get("items") else 500, 220 if zh else 160, seed=0, delay=0.05)
+        if story.get("credit"):
+            end_items.append(_small_text(story["credit"], lang, (420 if es.get("items") else 500) + 130, 36,
+                                         color="#6a6a6a", t0=0.25))
+        scenes.append({"kind": "end", "narration": es.get("narration", ""), "background": es.get("background", "paper"),
+                       "camera": es.get("camera", {"zoom": [1.0, 1.02]}), "items": end_items + es.get("items", []),
+                       "min_duration": 4.0, "captions": False})
     return [normalise_scene(s, i) for i, s in enumerate(scenes)]
 
 

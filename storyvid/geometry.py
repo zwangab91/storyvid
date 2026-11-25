@@ -223,6 +223,9 @@ def shape_polygon(p: dict) -> np.ndarray:
     if s == "wave":
         return wave_band(p.get("x0", -200), p.get("x1", 2120), p.get("y", 700), p.get("amp", 30),
                          p.get("wavelength", 300), p.get("bottom", 1280), p.get("phase", 0.0), p.get("shape_seed", 0))
+    if s == "image":  # bounding box of the placed image (pivots/centres only; pixels come from render.py)
+        x, y, w, h = p.get("xywh", [0, 0, 100, 100])
+        return np.array([[x, y], [x + w, y], [x + w, y + h], [x, y + h]], float)
     raise ValueError(f"unknown shape {s!r}")
 
 

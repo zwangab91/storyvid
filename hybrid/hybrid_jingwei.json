@@ -1,0 +1,418 @@
+{
+ "title": "精卫填海",
+ "language": "zh",
+ "voice": "melo",
+ "speed": 0.86,
+ "title_card": false,
+ "end_card": false,
+ "music": {
+  "style": "pluck",
+  "seed": 7,
+  "tempo": 66
+ },
+ "actors": {
+  "plate_backdrop": {
+   "parts": [
+    {
+     "id": "bg",
+     "shape": "image",
+     "src": "layers/backdrop.png",
+     "shadow": 0
+    }
+   ]
+  },
+  "plate_sea": {
+   "parts": [
+    {
+     "id": "sea",
+     "shape": "image",
+     "src": "layers/sea.png",
+     "shadow": 0.7
+    }
+   ]
+  },
+  "jingwei_cut": {
+   "parts": [
+    {
+     "id": "wing_up",
+     "shape": "image",
+     "src": "layers/wing_up.png",
+     "pivot": [
+      662,
+      262
+     ]
+    },
+    {
+     "id": "tail",
+     "shape": "image",
+     "src": "layers/tail.png",
+     "pivot": [
+      596,
+      388
+     ]
+    },
+    {
+     "id": "body",
+     "shape": "image",
+     "src": "layers/body.png",
+     "pivot": [
+      760,
+      330
+     ]
+    },
+    {
+     "id": "wing_low",
+     "shape": "image",
+     "src": "layers/wing_low.png",
+     "pivot": [
+      716,
+      348
+     ]
+    },
+    {
+     "id": "pebble",
+     "shape": "image",
+     "src": "layers/pebble.png",
+     "pivot": [
+      915,
+      300
+     ]
+    }
+   ],
+   "rigs": {
+    "fly": [
+     {
+      "part": "wing_up",
+      "type": "swing",
+      "deg": 14,
+      "period": 0.72
+     },
+     {
+      "part": "wing_low",
+      "type": "swing",
+      "deg": 7,
+      "period": 0.72,
+      "phase": 0.5
+     },
+     {
+      "part": "tail",
+      "type": "swing",
+      "deg": 4,
+      "period": 1.44
+     },
+     {
+      "part": "pebble",
+      "type": "swing",
+      "deg": 6,
+      "period": 0.72,
+      "phase": 0.25
+     }
+    ]
+   }
+  },
+  "ring": {
+   "parts": [
+    {
+     "id": "ring",
+     "shape": "ellipse",
+     "c": [
+      0,
+      0
+     ],
+     "r": [
+      62,
+      13
+     ],
+     "paint": "foam",
+     "shadow": 0.3,
+     "cut": [
+      {
+       "shape": "ellipse",
+       "c": [
+        0,
+        0
+       ],
+       "r": [
+        53,
+        8
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "scenes": [
+  {
+   "narration": "直到今天，人们都说，精卫还在飞。",
+   "subtitle_en": "Even today, people say, Jingwei is still flying.",
+   "camera": {
+    "zoom": [
+     1.04,
+     1.1
+    ],
+    "center": [
+     [
+      960,
+      540
+     ],
+     [
+      1000,
+      520
+     ]
+    ]
+   },
+   "hold": 0.6,
+   "items": [
+    {
+     "actor": "plate_backdrop",
+     "at": [
+      -7.5,
+      0
+     ],
+     "scale": 1.40625
+    },
+    {
+     "actor": "plate_sea",
+     "at": [
+      -7.5,
+      0
+     ],
+     "scale": 1.40625,
+     "anims": [
+      {
+       "type": "bob",
+       "amp": 7,
+       "dir": [
+        1,
+        0.35
+       ],
+       "period": 4.5
+      }
+     ]
+    },
+    {
+     "actor": "jingwei_cut",
+     "at": [
+      1103.4,
+      464.1
+     ],
+     "origin": [
+      790,
+      330
+     ],
+     "scale": 1.40625,
+     "rig": "fly",
+     "anims": [
+      {
+       "type": "enter",
+       "from": [
+        380,
+        560
+       ],
+       "t": [
+        0.0,
+        0.7
+       ],
+       "ease": "out"
+      },
+      {
+       "type": "bob",
+       "amp": 10,
+       "period": 1.44
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "她把衔来的小石子，扑通一声，投进了大海。",
+   "subtitle_en": "She dropped the little pebble she had carried into the sea, plop!",
+   "camera": {
+    "zoom": [
+     1.1,
+     1.36
+    ],
+    "center": [
+     [
+      1000,
+      520
+     ],
+     [
+      1140,
+      575
+     ]
+    ],
+    "ease": "inout"
+   },
+   "hold": 0.8,
+   "items": [
+    {
+     "actor": "plate_backdrop",
+     "at": [
+      -7.5,
+      0
+     ],
+     "scale": 1.40625
+    },
+    {
+     "actor": "plate_sea",
+     "at": [
+      -7.5,
+      0
+     ],
+     "scale": 1.40625,
+     "anims": [
+      {
+       "type": "bob",
+       "amp": 7,
+       "dir": [
+        1,
+        0.35
+       ],
+       "period": 4.5,
+       "phase": 0.3
+      }
+     ]
+    },
+    {
+     "actor": "ring",
+     "at": [
+      1279,
+      674
+     ],
+     "z": 1,
+     "anims": [
+      {
+       "type": "pop",
+       "t": [
+        0.585,
+        0.65
+       ]
+      },
+      {
+       "type": "scale",
+       "to": 2.4,
+       "t": [
+        0.585,
+        0.95
+       ],
+       "ease": "out"
+      },
+      {
+       "type": "fade",
+       "to": 0,
+       "t": [
+        0.7,
+        0.95
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "ring",
+     "at": [
+      1279,
+      676
+     ],
+     "z": 1,
+     "scale": 0.6,
+     "anims": [
+      {
+       "type": "pop",
+       "t": [
+        0.62,
+        0.68
+       ]
+      },
+      {
+       "type": "scale",
+       "to": 1.9,
+       "t": [
+        0.62,
+        0.98
+       ],
+       "ease": "out"
+      },
+      {
+       "type": "fade",
+       "to": 0,
+       "t": [
+        0.75,
+        0.98
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "jingwei_cut",
+     "at": [
+      1103.4,
+      464.1
+     ],
+     "origin": [
+      790,
+      330
+     ],
+     "scale": 1.40625,
+     "rig": "fly",
+     "z": 3,
+     "anims": [
+      {
+       "type": "bob",
+       "amp": 10,
+       "period": 1.44,
+       "phase": 0.6
+      },
+      {
+       "type": "move",
+       "to": [
+        1103.4,
+        445
+       ],
+       "t": [
+        0.62,
+        0.95
+       ],
+       "ease": "inout"
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "pebble",
+       "type": "move",
+       "to": [
+        0,
+        175
+       ],
+       "t": [
+        0.42,
+        0.58
+       ],
+       "ease": "in"
+      },
+      {
+       "part": "pebble",
+       "type": "rotate",
+       "to": 160,
+       "t": [
+        0.42,
+        0.58
+       ],
+       "ease": "in"
+      },
+      {
+       "part": "pebble",
+       "type": "show",
+       "t": [
+        0,
+        0.585
+       ],
+       "fade": 0.03
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -55,6 +55,7 @@ storyboards in `stories/` render to:
 | Caching | On-disk `.cache/` (textures as float16 `.npy`, TTS per sentence as WAV), in-memory sprite cache per worker | `paper.py`, `audio.py`, `render.py` |
 | Model download | `scripts/fetch_models.py`: about 170 MB of voice models from npm-registry packages, checked by size and checksum | `scripts/` |
 | Fonts | Fredoka (titles) and Andika (captions), SIL OFL, bundled; system Noto CJK / PingFang / Songti for Chinese | `assets/fonts/` |
+| Hybrid prototype | Image-model art (from Paperwing Studio) cut into rigged `"shape": "image"` parts; OpenCV GrabCut and keying | `hybrid/` |
 
 External requirements: `ffmpeg` on `PATH`. Storyboard generation also needs the `claude` CLI or `ANTHROPIC_API_KEY`;
 rendering an existing storyboard does not.
@@ -125,7 +126,7 @@ rendering an existing storyboard does not.
 - **Parts to sprites:** a part's shape becomes a polygon, its edge is roughened by cut style (`clean`, `cut`,
   `torn`), the texture is mapped inside it, and a soft shadow is baked in (strength 0.2, offset (4, 5), blur 3.5).
   The result is a premultiplied RGBA sprite rasterised at a scale quantised to steps of 2^(1/4), with a mip chain
-  for strong zoom-outs.
+  for strong zoom-outs. `"shape": "image"` parts load an RGBA image instead of painting a texture.
 - **Frames:** for each frame the renderer computes the camera matrix (eased zoom and centre, optional shake), then
   for each item its transform from its animations. Animation times are fractions of the scene, so a storyboard
   stays valid at any narration length. Each part gets a local transform about its pivot from the item's rigs and
@@ -147,7 +148,7 @@ rendering an existing storyboard does not.
 ## 5. Data model
 
 - **Storyboard JSON** (see the [spec](STORYBOARD_SPEC.md)): `title`, `language`, `voice`, `speed`, `music`, `paints`,
-  `actors`, `scenes`, and optional `title_scene` / `end_scene` art under the title and end cards.
+  `actors`, `scenes`, optional `title_scene` / `end_scene` art, and `title_card` / `end_card` switches.
 - **Actor:** a named list of parts, each with an optional `id`, `pivot` and `parent`, plus named `rigs` (lists of
   part animations such as a walk cycle or a wing flap). Story-specific actors live in the storyboard; reusable props
   live in `library.py`.
@@ -166,7 +167,7 @@ rendering an existing storyboard does not.
 - **Why:** continuity comes by construction. The same sprites represent a character in every scene, motion is
   continuous at 24 fps, and the result is editable JSON at near-zero cost per frame.
 - **Trade-off:** the look is limited to what the procedural paints and shapes can express. It is flatter and simpler
-  than image-model art.
+  than image-model art. The hybrid direction (Section 7) addresses this.
 
 ### Decision 2: narration-driven timing with relative animation times
 - **Chosen:** scene length comes from the synthesised voice; animation and camera times are fractions of a scene.
@@ -192,16 +193,48 @@ rendering an existing storyboard does not.
 - **Why:** no intermediate image files, near-linear speed-up with cores, and memory bounded by evicting sprites of
   scenes that have finished (about two scenes resident per worker).
 
+### Relation to Paperwing Studio
+Paperwing Studio (a sibling project) generates one painted keyframe per beat with an image model and plays it with
+a 2D cutout drift or a short AI video clip. Its frames are richer, but holding one still per scene makes motion feel
+repetitive. storyvid's frames are simpler, but its motion is continuous. The hybrid direction combines the two.
+
 ---
 
-## 7. Repository layout
+## 7. Hybrid direction: generate the pieces, not the frames
+
+An image model paints each character and location once, as separate pieces; storyvid cuts them into rigged paper
+parts and animates every frame on the narration timeline.
+
+```text
+ story ─► [storyboard + asset list: Claude] ─► [asset generation: image model, once per character / layer]   (planned)
+                                                        │
+                                                        ▼
+                     [cut + rig: keying, part outlines and pivots proposed by a vision model, joint check]  (prototype: by hand)
+                                                        │
+                                                        ▼
+                     storyboard with "shape": "image" parts ─► Stages 2-4 unchanged                         (ready)
+```
+
+| Piece | Status |
+|---|---|
+| Image parts in the renderer (pivots, parents, rigs, clip/cut masks, baked shadow, camera, caching) | Ready |
+| Cutting a finished illustration into parts (`hybrid/extract_layers.py`, `make_layers.py`) | Prototype, hand-tuned to one image |
+| Asset-generation stage (characters on plain board, location layers, 2K) | Not built |
+| Automatic cutting and rigging | Not built |
+| Storyboard step that requests and references assets | Not built |
+
+Details and the proof of concept: [hybrid/README.md](../hybrid/README.md).
+
+---
+
+## 8. Repository layout
 
 ```text
 storyvid/
 ├── storyvid/
 │   ├── storyboard.py   # story text -> storyboard JSON with Claude; validate, repair, critique
 │   ├── pipeline.py     # CLI (render, make); scenes, timeline, captions, frame maker, parallel encode, mux
-│   ├── render.py       # sprites, rasterising, actors and rigs, camera, compositing
+│   ├── render.py       # sprites, rasterising (drawn and image parts), actors and rigs, camera, compositing
 │   ├── paper.py        # procedural painted-paper textures, paint presets, texture cache
 │   ├── geometry.py     # shape primitives -> polygons, splines, cut-edge roughening
 │   ├── anim.py         # easing and animation evaluation (scene-fraction timing)
@@ -209,6 +242,7 @@ storyvid/
 │   └── audio.py        # Kokoro / MeloTTS narration, music synthesis, ducking and mixing
 ├── stories/            # four pilot storyboards
 ├── docs/               # this document and the storyboard spec
+├── hybrid/             # generated-art prototype (layers, rig, storyboard, comparison)
 ├── scripts/fetch_models.py
 ├── assets/fonts/       # Fredoka, Andika (SIL OFL)
 └── requirements.txt
@@ -218,7 +252,7 @@ Runtime directories (git-ignored): `models/` (voice models), `.cache/` (textures
 
 ---
 
-## 8. Configuration
+## 9. Configuration
 
 | Variable | Purpose |
 |---|---|
