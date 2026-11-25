@@ -1,0 +1,48 @@
+{
+ "_about": "Step 1 test: can the image model paint pieces that cut cleanly off the board, fit back together, and keep one look across samples and poses? 7 images at 2K.",
+ "model": "gemini-nano-banana-2.1",
+ "image_size": "2K",
+ "style": "Style: children's picture-book art made entirely of cut pieces of hand-painted tissue paper. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+ "assets": [
+  {
+   "id": "bird",
+   "aspect": "4:3",
+   "prompt": "A single small bird from the Chinese myth of Jingwei: crow-sized, with a dark indigo-black body, a patterned head, a white beak and bright red feet. Side view facing right, wings spread in flight, the whole bird visible. The bird is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "bird_b",
+   "aspect": "4:3",
+   "variant": 2,
+   "prompt": "A single small bird from the Chinese myth of Jingwei: crow-sized, with a dark indigo-black body, a patterned head, a white beak and bright red feet. Side view facing right, wings spread in flight, the whole bird visible. The bird is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "bird_parts",
+   "aspect": "4:3",
+   "refs": ["bird"],
+   "prompt": "The attached image is a cut-paper bird. Make its puppet parts sheet: the same bird taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the body with head and beak (no wings, no tail, no legs), the near wing, the far wing, the tail, and the two legs with feet. Keep every piece's colours, paints and brush textures exactly as in the attached bird. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "bird_parts_noref",
+   "aspect": "4:3",
+   "prompt": "A puppet parts sheet for a small bird from the Chinese myth of Jingwei (crow-sized, dark indigo-black body, patterned head, white beak, bright red feet), taken apart into separate flat cut-paper pieces laid out on the board like parts before assembly. Pieces: the body with head and beak (no wings, no tail, no legs), the near wing, the far wing, the tail, and the two legs with feet. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "bird_glide",
+   "aspect": "4:3",
+   "refs": ["bird"],
+   "prompt": "The attached image is a cut-paper bird. Show the very same bird, with identical colours, paints and shapes, in a new pose: gliding down to the left with wings half folded, a small round pebble held in its beak. The bird is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "layer_sea",
+   "aspect": "16:9",
+   "refs": ["bird"],
+   "prompt": "Match the paints and paper textures of the attached image. A single wide strip of stormy sea cut from painted tissue paper: deep indigo and teal waves with white crests, a wavy cut top edge, running across the full width of the image as one piece, filling only the bottom third. The rest of the image is plain empty board."
+  },
+  {
+   "id": "layer_mountains",
+   "aspect": "16:9",
+   "refs": ["bird"],
+   "prompt": "Match the paints and paper textures of the attached image. A single wide strip of distant mountains cut from painted tissue paper: soft grey-green and violet peaks with a jagged cut top edge, running across the full width of the image as one piece, sitting in the middle band of the image. Above and below it is plain empty board."
+  }
+ ]
+}

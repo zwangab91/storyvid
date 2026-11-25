@@ -7,3 +7,5 @@ kokoro-onnx>=0.4
 sherpa-onnx>=1.10
 # optional: storyboard generation through the Anthropic API instead of the `claude` CLI
 # anthropic>=0.40
+# asset generation (storyvid.assets)
+requests>=2.31

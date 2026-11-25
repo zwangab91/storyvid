@@ -1,0 +1,100 @@
+# Generate hybrid-pipeline assets (characters, parts sheets, scenery layers) with the Gemini image API.
+#
+# Run it from the Actions tab: "Generate assets" -> "Run workflow". Start with dry_run on: it prints the plan and the
+# estimated cost and calls nothing. With dry_run off it needs the repository secret GEMINI_API_KEY, generates only
+# assets that are new or changed, cuts each image into pieces (storyvid.cutout), and commits the results to the
+# generated-assets branch, so main stays small and paid images are kept even if a later step fails.
+name: Generate assets
+
+on:
+  workflow_dispatch:
+    inputs:
+      manifest:
+        description: Asset manifest to run (path in the repo)
+        required: true
+        default: hybrid/assets/jingwei_step1.json
+      max_images:
+        description: Refuse to run if it would generate more new images than this
+        required: true
+        default: "12"
+      dry_run:
+        description: Only print the plan and estimated cost (no API calls, no cost)
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-assets
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      MANIFEST: ${{ inputs.manifest }}
+      MAX_IMAGES: ${{ inputs.max_images }}
+      DRY_RUN: ${{ inputs.dry_run }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests pillow numpy opencv-python-headless
+
+      - name: Check inputs
+        env:
+          HAS_KEY: ${{ secrets.GEMINI_API_KEY != '' }}
+        run: |
+          case "$MAX_IMAGES" in ''|*[!0-9]*) echo "::error::max_images must be a whole number"; exit 1;; esac
+          case "$MANIFEST" in *.json) ;; *) echo "::error::manifest must be a .json file"; exit 1;; esac
+          [ -f "$MANIFEST" ] || { echo "::error::no such manifest: $MANIFEST"; exit 1; }
+          if [ "$DRY_RUN" != "true" ] && [ "$HAS_KEY" != "true" ]; then
+            echo "::error::Add the repository secret GEMINI_API_KEY (Settings > Secrets and variables > Actions)."
+            exit 1
+          fi
+
+      - name: Check out earlier outputs (generated-assets branch)
+        id: prep
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin generated-assets >/dev/null; then
+            git fetch --depth 1 origin generated-assets
+            git worktree add --detach "$RUNNER_TEMP/gen" FETCH_HEAD
+          else
+            git worktree add --detach "$RUNNER_TEMP/gen"
+            git -C "$RUNNER_TEMP/gen" checkout -q --orphan generated-assets
+            git -C "$RUNNER_TEMP/gen" rm -rfq .
+          fi
+
+      - name: Generate
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          out="$RUNNER_TEMP/gen/$(basename "$MANIFEST" .json)"
+          if [ "$DRY_RUN" = "true" ]; then
+            python -m storyvid.assets "$MANIFEST" --out "$out" --max-images "$MAX_IMAGES" --dry-run
+          else
+            python -m storyvid.assets "$MANIFEST" --out "$out" --max-images "$MAX_IMAGES"
+          fi
+
+      - name: Cut the images into pieces
+        if: ${{ !inputs.dry_run }}
+        run: |
+          out="$RUNNER_TEMP/gen/$(basename "$MANIFEST" .json)"
+          ls "$out"/*.png >/dev/null 2>&1 && python -m storyvid.cutout "$out"/*.png --out "$out" || echo "no images"
+
+      - name: Save outputs to the generated-assets branch
+        if: ${{ always() && !inputs.dry_run && steps.prep.outcome == 'success' }}
+        run: |
+          cd "$RUNNER_TEMP/gen"
+          git add -A
+          if git diff --cached --quiet; then echo "Nothing new to save."; exit 0; fi
+          git commit -q -m "Assets: $(basename "$MANIFEST" .json) (run $GITHUB_RUN_ID)"
+          git push origin HEAD:refs/heads/generated-assets

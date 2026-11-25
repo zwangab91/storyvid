@@ -71,7 +71,9 @@ Options: `--height 720` for faster drafts, `--fps 12` for an on-twos cut-out fee
 the pieces once (characters, set layers); storyvid cuts them into rigged paper parts and animates every frame on the
 narration timeline, so nothing loops or repeats. The renderer side is general: any image can be a paper part
 (`"shape": "image"`, see the [spec](docs/STORYBOARD_SPEC.md)). The cutting and rigging in `hybrid/` is hand-tuned to
-one generated picture, and there is no asset-generation stage yet. See [hybrid/README.md](hybrid/README.md).
+one generated picture. The asset stage that paints pieces on plain board (`storyvid/assets.py`) and the cut-out that
+separates them (`storyvid/cutout.py`) are built; they run in GitHub Actions ("Generate assets" in the Actions tab, dry
+run first) with a `GEMINI_API_KEY` repository secret. See [hybrid/README.md](hybrid/README.md).
 
 ## Extending
 - New paints: add a recipe to `PRESETS` in `paper.py`, or define one per story under `"paints"`.

@@ -8,3 +8,6 @@ hybrid/masks.npy
 hybrid/out/
 hybrid/*_overlay.jpg
 hybrid/layers_sheet.jpg
+
+# local asset runs (CI saves them to the generated-assets branch)
+generated/

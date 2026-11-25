@@ -33,12 +33,20 @@ Prototype only (works for this one picture):
   thresholds, sea-line rule, part outlines and pivots were chosen by looking at it.
 - `hybrid_jingwei.json` was written by hand.
 
+Built, first real run pending:
+- Asset generation (`storyvid/assets.py`): paints each character once on plain cream board, plus parts sheets,
+  poses and scenery strips, from a manifest; references keep a character's look; cached, capped and cost-logged.
+  It runs in GitHub Actions ("Generate assets", dry run by default) with the `GEMINI_API_KEY` repository secret and
+  saves results to the `generated-assets` branch.
+- Cut-out (`storyvid/cutout.py`): keys pieces off the board into RGBA crops and reports whether the image cuts
+  cleanly. Tested on synthetic sheets built from the five generated bird pieces (5 of 5 found, IoU 0.96-0.99).
+- Step 1 test manifest, `assets/jingwei_step1.json`: 7 images at 2K (about $0.44 estimated) asking whether the model
+  paints pieces that cut cleanly, fit back together, and keep one look across samples and poses.
+
 Not built yet:
-- An asset-generation stage (image-model backend) that paints each character once on plain cream board and each
-  location as separate layers, so nothing has to be cut out of a finished picture.
-- Automatic cutting and rigging (e.g. SAM masks plus a vision model proposing part outlines and pivots).
+- Rigging: part outlines inside a whole figure and pivots (e.g. a vision model proposing them, then a joint check).
 - Storyboard generation that requests assets and refers to them.
-- Optional first/last-frame video hero shots spliced into the timeline.
+- Optional first/last-frame video clips for a few key moments, spliced into the timeline.
 
 Known artefacts, from cutting a finished picture: a few teal slivers left in the sea where the lower wing was, a
 scrap of the pebble's string left at the beak after the drop, and some softness because the 1376 px source is

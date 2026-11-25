@@ -56,6 +56,8 @@ storyboards in `stories/` render to:
 | Model download | `scripts/fetch_models.py`: about 170 MB of voice models from npm-registry packages, checked by size and checksum | `scripts/` |
 | Fonts | Fredoka (titles) and Andika (captions), SIL OFL, bundled; system Noto CJK / PingFang / Songti for Chinese | `assets/fonts/` |
 | Hybrid prototype | Image-model art (from Paperwing Studio) cut into rigged `"shape": "image"` parts; OpenCV GrabCut and keying | `hybrid/` |
+| Asset generation | Gemini image API (`gemini-nano-banana-2.1`) over REST with `requests`, run in GitHub Actions: asset manifests, reference images for consistency, content-keyed cache, per-run image cap, spend log | `assets.py`, `.github/workflows/assets.yml` |
+| Cut-out keying | OpenCV: board colour from the image border, CIE Lab distance with a soft ramp, hole filling, connected pieces to RGBA crops plus a cuttability report | `cutout.py` |
 
 External requirements: `ffmpeg` on `PATH`. Storyboard generation also needs the `claude` CLI or `ANTHROPIC_API_KEY`;
 rendering an existing storyboard does not.
@@ -206,10 +208,10 @@ An image model paints each character and location once, as separate pieces; stor
 parts and animates every frame on the narration timeline.
 
 ```text
- story ─► [storyboard + asset list: Claude] ─► [asset generation: image model, once per character / layer]   (planned)
+ story ─► [storyboard + asset list: Claude] ─► [asset generation: image model, once per character / layer]   (built)
                                                         │
                                                         ▼
-                     [cut + rig: keying, part outlines and pivots proposed by a vision model, joint check]  (prototype: by hand)
+                     [cut + rig: keying, part outlines and pivots proposed by a vision model, joint check]  (keying built)
                                                         │
                                                         ▼
                      storyboard with "shape": "image" parts ─► Stages 2-4 unchanged                         (ready)
@@ -219,9 +221,27 @@ parts and animates every frame on the narration timeline.
 |---|---|
 | Image parts in the renderer (pivots, parents, rigs, clip/cut masks, baked shadow, camera, caching) | Ready |
 | Cutting a finished illustration into parts (`hybrid/extract_layers.py`, `make_layers.py`) | Prototype, hand-tuned to one image |
-| Asset-generation stage (characters on plain board, location layers, 2K) | Not built |
-| Automatic cutting and rigging | Not built |
+| Asset-generation stage (`storyvid/assets.py`, the "Generate assets" workflow) | Built; tested against a mocked API; first real run pending |
+| Cutting pieces off a plain board (`storyvid/cutout.py`) | Built; tested on synthetic sheets made from real generated pieces |
+| Rigging: part outlines inside a whole figure, pivots, joint check | Not built (done by hand in the prototype) |
 | Storyboard step that requests and references assets | Not built |
+
+**Asset stage.** A manifest lists assets (a character, its parts sheet, a pose, a scenery strip), each a prompt plus
+optional reference images, usually an earlier asset so the character keeps its look. An asset is identified by a hash
+of model, size, aspect, prompt, variant and references; re-running skips assets that already exist, so only new or
+edited ones are paid for, and editing an asset regenerates the assets that reference it. A run refuses to start above
+a set number of new images, `--dry-run` prints the plan and estimated cost, and `assets.json` logs the tokens and
+approximate cost of every call.
+
+**Why GitHub Actions.** The sandbox this pipeline is developed in can reach only package registries and GitHub, not
+image APIs. The "Generate assets" workflow (manual trigger, dry run by default) runs on GitHub's runners with the
+repository secret `GEMINI_API_KEY`, cuts every image with `cutout.py`, and commits the results to the
+`generated-assets` branch so `main` stays small. Standard runners are free for public repositories.
+
+**Cut-out.** Pieces are painted on plain cream board. The board colour and noise are measured on the image border;
+pixels far enough from it in Lab are paper; enclosed holes are filled because paper is opaque. Each connected piece
+becomes an RGBA crop, and the report flags anything that would make cutting a guess: a non-plain board, a piece cut
+off by the image edge, or board-coloured paint just inside an outline.
 
 Details and the proof of concept: [hybrid/README.md](../hybrid/README.md).
 
@@ -239,16 +259,20 @@ storyvid/
 │   ├── geometry.py     # shape primitives -> polygons, splines, cut-edge roughening
 │   ├── anim.py         # easing and animation evaluation (scene-fraction timing)
 │   ├── library.py      # built-in props and the person template
-│   └── audio.py        # Kokoro / MeloTTS narration, music synthesis, ducking and mixing
+│   ├── audio.py        # Kokoro / MeloTTS narration, music synthesis, ducking and mixing
+│   ├── assets.py       # asset manifests -> generated images (Gemini), cache, cost cap and log
+│   └── cutout.py       # cut pieces off a plain board -> RGBA crops and a cuttability report
 ├── stories/            # four pilot storyboards
 ├── docs/               # this document and the storyboard spec
-├── hybrid/             # generated-art prototype (layers, rig, storyboard, comparison)
+├── hybrid/             # generated-art prototype, and asset manifests in hybrid/assets/
+├── .github/workflows/  # assets.yml: the "Generate assets" workflow
 ├── scripts/fetch_models.py
 ├── assets/fonts/       # Fredoka, Andika (SIL OFL)
 └── requirements.txt
 ```
 
-Runtime directories (git-ignored): `models/` (voice models), `.cache/` (textures, TTS), `out/` (renders).
+Runtime directories (git-ignored): `models/` (voice models), `.cache/` (textures, TTS), `out/` (renders),
+`generated/` (local asset runs). Assets generated in CI live on the `generated-assets` branch.
 
 ---
 
@@ -257,6 +281,7 @@ Runtime directories (git-ignored): `models/` (voice models), `.cache/` (textures
 | Variable | Purpose |
 |---|---|
 | `ANTHROPIC_API_KEY` | Use the Anthropic API backend for storyboards |
+| `GEMINI_API_KEY` | Image API key for asset generation: a repository secret for the workflow, or an environment variable for local runs |
 | `STORYVID_MODELS` | Voice model directory (default `models/`) |
 | `STORYVID_CACHE` | Texture and TTS cache directory (default `.cache/`) |
 | `STORYVID_FONT_ZH`, `STORYVID_FONT_ZH_TITLE` | Override the Chinese caption and title fonts |
