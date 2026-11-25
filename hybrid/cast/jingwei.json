@@ -1,0 +1,80 @@
+{
+ "_about": "Cast for 精卫填海: which generated art plays each actor of stories/jingwei.json. Piece numbers come from the cut reports (cut/<image>/report.json); attach points, pivots without a straight joint, draw order and tuned rig values are the planner's calls (made by looking at the overlays); joints with a straight cut are found by storyvid.rig.",
+ "storyboard": "../../stories/jingwei.json",
+ "backdrops": {
+  "dawn": "jingwei_film/bg_dawn.png",
+  "sky_soft": "jingwei_film/bg_day.png",
+  "storm": "jingwei_film/bg_storm.png"
+ },
+ "actors": {
+  "jingwei": {
+   "kind": "figure", "sheet": "jingwei_step1/cut/bird_parts", "root": 2,
+   "fit": {"width": 349}, "anchor": [0.43, 1.0],
+   "parts": {
+    "wing_b": {"piece": 1, "flip": true, "rot": -12, "attach": [0.472, 0.323], "z": -2},
+    "tail":   {"piece": 3, "attach": [0.063, 0.814], "z": -1},
+    "leg_l":  {"piece": 5, "attach": [0.413, 0.901], "z": -1},
+    "leg_r":  {"piece": 4, "joint_near": [0.2, 0.0], "attach": [0.551, 0.915], "z": -1},
+    "wing_f": {"piece": 0, "attach": [0.48, 0.532], "z": 2},
+    "twig":   {"piece_of": "jingwei_film/cut/props_land", "piece": 2, "joint": false, "scale": 0.85, "attach": [0.99, 0.37], "z": 3, "hidden": true},
+    "pebble": {"piece_of": "jingwei_film/cut/props_land", "piece": 3, "joint": false, "scale": 0.4, "attach": [1.0, 0.37], "z": 3, "hidden": true}
+   },
+   "alias": {"twig_leaf": "twig", "foot_l": "leg_l", "foot_r": "leg_r"},
+   "rigs": {
+    "fly":   [{"part": "wing_f", "type": "swing", "deg": 20, "period": 0.5},
+              {"part": "wing_b", "type": "swing", "deg": 16, "period": 0.5, "phase": 0.08},
+              {"part": ["leg_l", "leg_r"], "type": "rotate", "to": 95, "t": [0, 0.01]},
+              {"part": "tail", "type": "swing", "deg": 4, "period": 0.5}],
+    "glide": [{"part": "wing_f", "type": "swing", "deg": 6, "period": 1.6},
+              {"part": "wing_b", "type": "swing", "deg": 5, "period": 1.6},
+              {"part": ["leg_l", "leg_r"], "type": "rotate", "to": 95, "t": [0, 0.01]}],
+    "idle":  [{"part": "tail", "type": "swing", "deg": 4, "period": 2.2},
+              {"part": "wing_f", "type": "swing", "deg": 2, "period": 2.6}],
+    "cry":   [{"part": "wing_f", "type": "swing", "deg": 14, "period": 0.35},
+              {"part": "wing_b", "type": "swing", "deg": 10, "period": 0.35, "phase": 0.1}]
+   }
+  },
+  "nuwa": {
+   "kind": "figure", "sheet": "jingwei_film/cut/nuwa_parts", "root": 2,
+   "fit": {"height": 313}, "anchor": [0.5, 1.0],
+   "parts": {
+    "leg_l":  {"piece": 4, "joint_near": [0.5, 0.0], "attach": [0.36, 0.55], "z": -2},
+    "leg_r":  {"piece": 5, "joint_near": [0.5, 0.0], "attach": [0.62, 0.55], "z": -2},
+    "arm_r":  {"piece": 3, "pivot_at": [0.07, 0.07], "rot": -34, "attach": [0.8, 0.09], "z": -1},
+    "head":   {"piece": 0, "pivot_at": [0.62, 0.98], "attach": [0.56, 0.11], "z": -1},
+    "arm_l":  {"piece": 1, "pivot_at": [0.92, 0.07], "rot": 34, "attach": [0.23, 0.1], "z": 1}
+   },
+   "alias": {"shoe_l": "leg_l", "shoe_r": "leg_r"}
+  },
+  "sea": {
+   "kind": "layers", "x": [-300, 2220], "bottom": 760,
+   "layers": {
+    "w1": {"sheet": "jingwei_film/cut/sea_back", "top": 0},
+    "w2": {"sheet": "jingwei_step1/cut/layer_sea", "top": 90},
+    "w3": {"sheet": "jingwei_film/cut/sea_front", "top": 210}
+   }
+  },
+  "ground": {
+   "kind": "layers", "x": [-260, 2180], "bottom": 700,
+   "layers": {"ground": {"sheet": "jingwei_film/cut/ground_strip", "top": 0}}
+  },
+  "river":       {"kind": "prop", "sheet": "jingwei_film/cut/river_strip", "piece": 0, "fit": {"width": 2400}, "anchor": [0.5, 0.5], "shadow": 0.3},
+  "sun":         {"kind": "prop", "image": "jingwei_film/props_sky.png", "region": [0.04, 0.28, 0.23, 0.72], "id": "disc", "fit": {"width": 300}, "anchor": [0.5, 0.5], "pivot": [0, 0], "alias": {"rays": "disc"},
+                  "rigs": {"glow": [{"part": "disc", "type": "pulse", "amp": 0.025, "period": 2.4}, {"part": "disc", "type": "sway", "deg": 2, "period": 6}]}},
+  "full_moon":   {"kind": "prop", "sheet": "jingwei_film/cut/props_sky", "piece": 11, "fit": {"width": 180}, "anchor": [0.5, 0.5]},
+  "cloud":       {"kind": "prop", "sheet": "jingwei_film/cut/props_sky", "piece": 12, "fit": {"width": 370}, "anchor": [0.5, 0.7]},
+  "cloud_long":  {"kind": "prop", "image": "jingwei_film/props_sky.png", "region": [0.62, 0.36, 0.88, 0.64], "fit": {"width": 450}, "anchor": [0.5, 0.62]},
+  "lightning":   {"kind": "prop", "sheet": "jingwei_film/cut/props_sky", "piece": 1, "fit": {"height": 330}, "anchor": [0.43, 0.0], "shadow": 0.2},
+  "boat":        {"kind": "prop", "sheet": "jingwei_film/cut/props_sea", "piece": 0, "fit": {"width": 366}, "anchor": [0.5, 0.97]},
+  "oar":         {"kind": "prop", "sheet": "jingwei_film/cut/props_sea", "piece": 3, "rot": -50, "fit": {"width": 150}, "anchor": [0.0, 0.0]},
+  "big_wave":    {"kind": "prop", "sheet": "jingwei_film/cut/props_sea", "piece": 1, "fit": {"height": 520}, "anchor": [0.5, 1.0]},
+  "splash":      {"kind": "prop", "image": "jingwei_film/props_sea.png", "region": [0.07, 0.56, 0.46, 0.95], "fit": {"width": 170}, "anchor": [0.5, 0.5]},
+  "bird_small":  {"kind": "prop", "sheet": "jingwei_film/cut/props_sea", "piece": 7, "id": "gull", "fit": {"width": 90}, "anchor": [0.5, 0.5], "pivot": [0, 0],
+                  "rigs": {"flap": [{"part": "gull", "type": "bob", "amp": 6, "period": 1.1}]}},
+  "mountain":    {"kind": "prop", "sheet": "jingwei_film/cut/props_land", "piece": 1, "fit": {"height": 640}, "anchor": [0.5, 0.97]},
+  "zhe_tree":    {"kind": "prop", "sheet": "jingwei_film/cut/props_land", "piece": 0, "id": "tree", "fit": {"height": 300}, "anchor": [0.5, 0.97], "pivot": [0, 0],
+                  "rigs": {"sway": [{"part": "tree", "type": "swing", "deg": 1.5, "period": 3}]}},
+  "twig":        {"kind": "prop", "sheet": "jingwei_film/cut/props_land", "piece": 2, "fit": {"width": 90}, "anchor": [0.5, 0.5]},
+  "pebble_pile": {"kind": "prop", "sheet": "jingwei_film/cut/props_land", "piece": 4, "fit": {"width": 320}, "anchor": [0.5, 0.97]}
+ }
+}

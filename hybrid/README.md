@@ -43,9 +43,16 @@ Built, first real run pending:
 - Step 1 test manifest, `assets/jingwei_step1.json`: 7 images at 2K (about $0.44 estimated) asking whether the model
   paints pieces that cut cleanly, fit back together, and keep one look across samples and poses.
 
+Built and used for the first full hybrid film:
+- `assets/jingwei_film.json`: the 12 further images 精卫填海 needs (the girl and her parts, sky/sea/land props
+  sheets, ground, river and sea strips, three backdrops), all referencing the step 1 bird for one look ($0.71).
+- Rigging and actor swap (`storyvid/rig.py`) with the cast file `cast/jingwei.json`: `stories/jingwei.json` renders
+  unchanged with all 19 actors and the backdrops replaced by generated art.
+
 Not built yet:
-- Rigging: part outlines inside a whole figure and pivots (e.g. a vision model proposing them, then a joint check).
-- Storyboard generation that requests assets and refers to them.
+- The storyboard step writing the asset list and cast file (for 精卫 the planner wrote both by hand: piece labels,
+  attach points, pivots for pieces without a straight cut, draw order, tuned rig values).
+- Generated replacements for inline shapes in a storyboard (one grey rock in scene 1 is still procedural).
 - Optional first/last-frame video clips for a few key moments, spliced into the timeline.
 
 Known artefacts, from cutting a finished picture: a few teal slivers left in the sea where the lower wing was, a

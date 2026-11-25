@@ -58,6 +58,7 @@ storyboards in `stories/` render to:
 | Hybrid prototype | Image-model art (from Paperwing Studio) cut into rigged `"shape": "image"` parts; OpenCV GrabCut and keying | `hybrid/` |
 | Asset generation | Gemini image API (`gemini-nano-banana-2.1`) over REST with `requests`, run in GitHub Actions: asset manifests, reference images for consistency, content-keyed cache, per-run image cap, spend log | `assets.py`, `.github/workflows/assets.yml` |
 | Cut-out keying | OpenCV: board colour from the image border, CIE Lab distance with a soft ramp, hole filling, connected pieces to RGBA crops plus a cuttability report | `cutout.py` |
+| Rigging and actor swap | NumPy/OpenCV: joints found as the straight cut across a limb's long axis, limbs placed joint-to-attach-point, figures fitted to the replaced actor's footprint; rigs adopted by part name; a cast file maps a storyboard's actors to generated art | `rig.py`, `hybrid/cast/` |
 
 External requirements: `ffmpeg` on `PATH`. Storyboard generation also needs the `claude` CLI or `ANTHROPIC_API_KEY`;
 rendering an existing storyboard does not.
@@ -211,7 +212,7 @@ parts and animates every frame on the narration timeline.
  story ─► [storyboard + asset list: Claude] ─► [asset generation: image model, once per character / layer]   (built)
                                                         │
                                                         ▼
-                     [cut + rig: keying, part outlines and pivots proposed by a vision model, joint check]  (keying built)
+                     [cut + rig: keying, joints, attach points from the planner, joint check]             (built)
                                                         │
                                                         ▼
                      storyboard with "shape": "image" parts ─► Stages 2-4 unchanged                         (ready)
@@ -223,20 +224,36 @@ parts and animates every frame on the narration timeline.
 | Cutting a finished illustration into parts (`hybrid/extract_layers.py`, `make_layers.py`) | Prototype, hand-tuned to one image |
 | Asset-generation stage (`storyvid/assets.py`, the "Generate assets" workflow) | Built; tested against a mocked API; first real run pending |
 | Cutting pieces off a plain board (`storyvid/cutout.py`) | Built; tested on synthetic sheets made from real generated pieces |
-| Rigging: part outlines inside a whole figure, pivots, joint check | Not built (done by hand in the prototype) |
-| Storyboard step that requests and references assets | Not built |
+| Rigging and actor swap (`storyvid/rig.py`, cast files) | Built; joints automatic, attach points from the cast file |
+| Storyboard step that writes the asset list and cast file | Not built: for 精卫 both were written by the planner by hand |
+
+First full film: 精卫填海 (115 s, 14 scenes) rendered from `stories/jingwei.json` unchanged, with all 19 actors and
+the three backdrops swapped for generated art: 19 images for about $1.14 in total.
 
 **Asset stage.** A manifest lists assets (a character, its parts sheet, a pose, a scenery strip), each a prompt plus
 optional reference images, usually an earlier asset so the character keeps its look. An asset is identified by a hash
 of model, size, aspect, prompt, variant and references; re-running skips assets that already exist, so only new or
 edited ones are paid for, and editing an asset regenerates the assets that reference it. A run refuses to start above
 a set number of new images, `--dry-run` prints the plan and estimated cost, and `assets.json` logs the tokens and
-approximate cost of every call.
+approximate cost of every call. A reference can be an image from another manifest's run (`@run/file.png`), and an
+asset can carry its own style text (backdrops are full-bleed rather than on a board).
 
 **Why GitHub Actions.** The sandbox this pipeline is developed in can reach only package registries and GitHub, not
 image APIs. The "Generate assets" workflow (manual trigger, dry run by default) runs on GitHub's runners with the
 repository secret `GEMINI_API_KEY`, cuts every image with `cutout.py`, and commits the results to the
 `generated-assets` branch so `main` stays small. Standard runners are free for public repositories.
+
+**Rigging and the actor swap.** A storyboard names actors (`jingwei`, `sea`, `sun`, ...) and refers to their parts
+and rigs by name. `rig.py` builds a generated-art actor with the same interface, so the storyboard itself does not
+change: figures are assembled from a parts sheet (each limb's joint is found automatically as the straight cut that
+runs across its long axis at one end; the limb is placed so that joint sits on an attach point of the root piece),
+props come from one piece or a keyed region of a props sheet, and strips (sea, ground) are hung at the replaced
+actor's layer heights. Each is scaled to the replaced actor's footprint and origin. Its rigs are copied by part name,
+entries for parts it lacks are dropped and listed, and the cast file can alias names or replace rig values (painted
+wings flap ±20° rather than the procedural ±38°). Scene backgrounds can be swapped for generated backdrops.
+`rig.preview` renders each actor at four moments of its rig as the joint check. The cast file holds what the planner
+decides by looking at the cut overlays: which piece is which part, attach points, pivots for pieces without a straight
+cut, draw order and tuned rig values.
 
 **Cut-out.** Pieces are painted on plain cream board. The board colour and noise are measured on the image border;
 pixels far enough from it in Lab are paper; enclosed holes are filled because paper is opaque. Each connected piece
@@ -261,10 +278,11 @@ storyvid/
 │   ├── library.py      # built-in props and the person template
 │   ├── audio.py        # Kokoro / MeloTTS narration, music synthesis, ducking and mixing
 │   ├── assets.py       # asset manifests -> generated images (Gemini), cache, cost cap and log
-│   └── cutout.py       # cut pieces off a plain board -> RGBA crops and a cuttability report
+│   ├── cutout.py       # cut pieces off a plain board -> RGBA crops and a cuttability report
+│   └── rig.py          # joints, figure assembly, prop/strip actors, rig adoption, storyboard swap, joint check
 ├── stories/            # four pilot storyboards
 ├── docs/               # this document and the storyboard spec
-├── hybrid/             # generated-art prototype, and asset manifests in hybrid/assets/
+├── hybrid/             # generated-art prototype; asset manifests (hybrid/assets/) and cast files (hybrid/cast/)
 ├── .github/workflows/  # assets.yml: the "Generate assets" workflow
 ├── scripts/fetch_models.py
 ├── assets/fonts/       # Fredoka, Andika (SIL OFL)
