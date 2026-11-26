@@ -414,6 +414,10 @@ def main(argv=None):
         cv2.imwrite(os.path.join(a.out, dst), cv2.imread(src, cv2.IMREAD_UNCHANGED))
         cast["backdrops"][k] = dst
     new = hybridize(story, cast, assets, a.out)
+    if cast.get("soundtrack"):  # generated narration and music (storyvid.soundtrack): copy next to the storyboard
+        import shutil
+        shutil.copytree(os.path.join(assets, cast["soundtrack"]), os.path.join(a.out, "soundtrack"), dirs_exist_ok=True)
+        new["soundtrack"] = "soundtrack"
     out = os.path.join(a.out, os.path.splitext(os.path.basename(story_path))[0] + "_hybrid.json")
     with open(out, "w", encoding="utf-8") as f:
         json.dump(new, f, ensure_ascii=False, indent=1)

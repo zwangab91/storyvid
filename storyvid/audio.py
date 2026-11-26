@@ -140,6 +140,143 @@ class Narrator:
         return (np.concatenate(out) if out else np.zeros(1, np.float32)), spans
 
 
+# --------------------------------------------------------------------------- pre-generated narration (Gemini TTS)
+
+def read_tts_wav(path: str) -> np.ndarray:
+    """A generated narration clip as mono float32 at SR, without the provenance block Google appends to it.
+
+    Gemini 3.8 TTS WAVs end with about 3 KB of C2PA content credentials that the RIFF header counts as samples, so a
+    plain player sounds a short burst of loud noise at the end. Speech ends in silence, and read as 16-bit samples the
+    block is mostly text: loud and lopsided (positive), unlike speech. So if what follows the last 60 ms of silence
+    is short, loud and lopsided, cut it."""
+    a, sr = sf.read(path, dtype="float32", always_2d=False)
+    if a.ndim > 1:
+        a = a.mean(1)
+    fr = max(1, int(0.005 * sr))
+    n = len(a) // fr
+    if n > 20:
+        seg = a[: n * fr].reshape(n, fr)
+        quiet = np.sqrt((seg ** 2).mean(1)) < 0.01
+        lo, i, cut = max(0, n - int(0.8 * sr / fr)), n - 1, None
+        while i >= lo:  # the last stretch of >= 60 ms of silence near the end
+            if quiet[i]:
+                j = i
+                while j >= lo and quiet[j]:
+                    j -= 1
+                if i - j >= 12:
+                    cut = i + 1
+                    break
+                i = j
+            else:
+                i -= 1
+        if cut is not None:
+            tail = a[cut * fr:]
+            r = float(np.sqrt((tail ** 2).mean())) if len(tail) else 0.0
+            # what follows is short, loud and lopsided (text bytes are positive samples): the appended block
+            if len(tail) <= 0.4 * sr and r > 0.1 and float(tail.mean()) > 0.15 * r:
+                a = a[: cut * fr]
+    if sr != SR:
+        g = math.gcd(SR, sr)
+        a = resample_poly(a, SR // g, sr // g).astype(np.float32)
+    return a.astype(np.float32)
+
+
+def _weight(s: str, lang: str) -> int:
+    return max(1, len(re.findall(r"[㐀-鿿]", s)) if lang.startswith("zh") else len(re.findall(r"\w", s)))
+
+
+def align_sentences(a: np.ndarray, sents: list[str], lang: str, min_pause: float = 0.1) -> list[tuple]:
+    """Sentence spans in a clip that reads several sentences in one go, from its pauses.
+
+    The expected boundaries come from each sentence's share of the characters; each is snapped to a pause, preferring
+    long pauses (sentence ends are usually the longest) near the expected time, in order. -> [(start_s, end_s, s)]"""
+    dur = len(a) / SR
+    if len(sents) <= 1:
+        return [(0.0, dur, sents[0] if sents else "")]
+    fr = int(0.01 * SR)
+    n = len(a) // fr
+    rms = np.sqrt((a[: n * fr].reshape(n, fr) ** 2).mean(1)) + 1e-9
+    quiet = 20 * np.log10(rms / rms.max()) < -38
+    pauses, k = [], 0
+    while k < n:
+        if quiet[k]:
+            j = k
+            while j < n and quiet[j]:
+                j += 1
+            if (j - k) * 0.01 >= min_pause and k > 0 and j < n:
+                pauses.append((k * 0.01, j * 0.01))
+            k = j
+        else:
+            k += 1
+    w = np.array([_weight(s, lang) for s in sents], float)
+    expect = list(np.cumsum(w)[:-1] / w.sum() * dur)
+    need = len(sents) - 1
+    if len(pauses) < need:
+        cuts = [(t, t) for t in expect]
+    else:
+        # dynamic programme: pick `need` pauses in order, cost = distance to expected time - bonus for length
+        P = len(pauses)
+        cost = [[abs((p0 + p1) / 2 - e) - 0.6 * min(p1 - p0, 1.0) for (p0, p1) in pauses] for e in expect]
+        INF = 1e18
+        best = [[INF] * P for _ in range(need)]
+        back = [[-1] * P for _ in range(need)]
+        for j in range(P):
+            best[0][j] = cost[0][j]
+        for i in range(1, need):
+            run_min, run_arg = INF, -1
+            for j in range(P):
+                if j - 1 >= 0 and best[i - 1][j - 1] < run_min:
+                    run_min, run_arg = best[i - 1][j - 1], j - 1
+                if run_arg >= 0:
+                    best[i][j] = run_min + cost[i][j]
+                    back[i][j] = run_arg
+        j = min(range(P), key=lambda x: best[need - 1][x])
+        picks = []
+        for i in range(need - 1, -1, -1):
+            picks.append(j)
+            j = back[i][j]
+        cuts = [pauses[p] for p in reversed(picks)]
+    spans, t = [], 0.0
+    for s, (c0, c1) in zip(sents, cuts + [(dur, dur)]):
+        spans.append((t, c0, s))
+        t = c1
+    return spans
+
+
+class ClipNarrator:
+    """Narration from clips made by storyvid.soundtrack: one clip per scene, looked up by the scene's text."""
+
+    def __init__(self, folder: str):
+        with open(os.path.join(folder, "assets.json"), encoding="utf-8") as f:
+            rows = json.load(f).get("assets", [])
+        self.folder = folder
+        self.by_text = {r["text"].strip(): os.path.join(folder, r["file"]) for r in rows if r.get("type") == "speech"}
+        self.music = next((os.path.join(folder, r["file"]) for r in rows if r.get("type") == "music"), None)
+        self.raw_rms: list[float] = []  # voiced level of each clip before levelling (sets the music balance)
+
+    def missing(self, texts: list[str]) -> list[str]:
+        return [t for t in texts if t.strip() and t.strip() not in self.by_text]
+
+    def narrate(self, text: str, lang: str, *_):
+        path = self.by_text.get(text.strip())
+        if not path:
+            raise KeyError(f"no narration clip for: {text[:40]}... (re-run storyvid.soundtrack plan and generate)")
+        a = _trim(read_tts_wav(path))
+        self.raw_rms.append(_voiced_rms(a))
+        a = _level(a)
+        return a, align_sentences(a, split_sentences(text, lang), lang)
+
+
+def _voiced_rms(a: np.ndarray) -> float:
+    fr = int(0.03 * SR)
+    n = len(a) // fr
+    if n < 1:
+        return float(np.sqrt((a ** 2).mean()) + 1e-9)
+    rms = np.sqrt((a[:n * fr].reshape(n, fr) ** 2).mean(1))
+    v = rms[rms > rms.max() * 0.15]
+    return float(np.sqrt((v ** 2).mean())) if len(v) else 1e-4
+
+
 def _trim(a, thr=0.004):
     idx = np.where(np.abs(a) > thr)[0]
     if len(idx) == 0:
@@ -257,6 +394,61 @@ def synth_music(duration: float, seed: int = 0, style: str = "musicbox", tempo: 
     mix[:fi] *= np.linspace(0, 1, fi)
     mix[-fo:] *= np.linspace(1, 0, fo)
     return mix / (np.abs(mix).max() + 1e-6) * 0.5
+
+
+# --------------------------------------------------------------------------- generated music (Lyria)
+
+def load_music(path: str) -> np.ndarray:
+    """Any audio file -> stereo float32 (n, 2) at SR, decoded with ffmpeg."""
+    import subprocess
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-f", "f32le", "-ac", "2", "-ar", str(SR), "-"],
+                         check=True, capture_output=True).stdout
+    return np.frombuffer(raw, np.float32).reshape(-1, 2).copy()
+
+
+def loop_music(clip: np.ndarray, duration: float, xfade: float = 2.5, fade_in: float = 1.0,
+               fade_out: float = 3.0) -> np.ndarray:
+    """Repeat a clip to `duration` seconds with equal-power crossfades at the joins, fading in and out at the ends."""
+    clip = clip[: len(clip) - int(0.05 * SR)] if len(clip) > 10 * SR else clip  # drop encoder padding
+    n, x = int(duration * SR), int(xfade * SR)
+    out = np.zeros((n, clip.shape[1]), np.float32)
+    up = np.sin(np.linspace(0, np.pi / 2, x))[:, None].astype(np.float32)
+    down = np.cos(np.linspace(0, np.pi / 2, x))[:, None].astype(np.float32)
+    pos, first = 0, True
+    while pos < n:
+        c = clip.copy()
+        if not first:
+            c[:x] *= up
+        c[-x:] *= down
+        end = min(n, pos + len(c))
+        out[pos:end] += c[: end - pos]
+        pos += len(c) - x
+        first = False
+    fi, fo = int(fade_in * SR), int(fade_out * SR)
+    out[:fi] *= np.linspace(0, 1, fi)[:, None]
+    out[-fo:] *= np.linspace(1, 0, fo)[:, None]
+    return out
+
+
+def mix_bed(narration: np.ndarray, music: np.ndarray, voiced: list[tuple[float, float]], gain_free: float,
+            gain_voice: float, ramp: float = 0.6) -> np.ndarray:
+    """Stereo mix: narration in the centre, music at `gain_free`, lowered to `gain_voice` through every voiced
+    stretch (whole scenes, as Paperwing does, so the music doesn't pump in the pauses). -> (n, 2) float32"""
+    n = len(narration)
+    m = np.zeros((n, 2), np.float32)
+    m[: min(n, len(music))] = music[:n]
+    target = np.full(n, gain_free, np.float32)
+    for a, b in voiced:
+        target[max(0, int(a * SR)):min(n, int(b * SR))] = gain_voice
+    k = max(1, int(ramp * SR))
+    c = np.cumsum(np.concatenate([[0.0], target]), dtype=np.float64)
+    smooth = np.empty(n, np.float32)
+    lo = np.clip(np.arange(n) - k // 2, 0, n)
+    hi = np.clip(np.arange(n) + k // 2 + 1, 0, n)
+    smooth[:] = (c[hi] - c[lo]) / (hi - lo)
+    out = narration[:, None] + m * smooth[:, None]
+    peak = np.abs(out).max()
+    return (out / peak * 0.95 if peak > 0.95 else out).astype(np.float32)
 
 
 def mix_tracks(narration: np.ndarray, music: np.ndarray | None, music_db: float = -21.0, duck_db: float = -7.0):

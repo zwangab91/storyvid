@@ -8,7 +8,8 @@
  "music": {
   "style": "pluck",
   "seed": 7,
-  "tempo": 66
+  "tempo": 66,
+  "prompt": "Poetic gentle storybook acoustic chamber piece blending delicate Chinese guzheng plucks, warm bamboo flute, and soft wooden glockenspiel, hopeful and resilient lullaby mood, no vocals, 30 seconds loopable."
  },
  "paints": {
   "jw_head": {

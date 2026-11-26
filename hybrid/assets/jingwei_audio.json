@@ -1,0 +1,84 @@
+{
+ "kind": "audio",
+ "language": "zh",
+ "speech": {
+  "model": "gemini-3.8-flash-lite-tts",
+  "voice": "Kore",
+  "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+ },
+ "music": {
+  "model": "lyria-3-clip-preview"
+ },
+ "assets": [
+  {
+   "id": "n00",
+   "type": "speech",
+   "text": "精卫填海"
+  },
+  {
+   "id": "n01",
+   "type": "speech",
+   "text": "很久很久以前，炎帝有一个小女儿，名叫女娃。她活泼又勇敢，最喜欢跑到东海边，看太阳从海上升起。"
+  },
+  {
+   "id": "n02",
+   "type": "speech",
+   "text": "有一天，女娃划着一只小船，向大海深处驶去。她想去看一看，太阳究竟是从哪里升起来的。"
+  },
+  {
+   "id": "n03",
+   "type": "speech",
+   "text": "忽然，天空暗了下来。狂风呼呼地刮，卷起了比山还高的巨浪，一下子打翻了小船。女娃再也没有回来。"
+  },
+  {
+   "id": "n04",
+   "type": "speech",
+   "text": "可是，女娃变成了一只小鸟。她的头上有花纹，嘴巴是白色的，小脚是红色的。她总是“精卫、精卫”地叫着，所以人们就叫她精卫。"
+  },
+  {
+   "id": "n05",
+   "type": "speech",
+   "text": "精卫恨透了夺走她生命的大海。她下定决心：要把东海填平，不让它再去伤害别人！"
+  },
+  {
+   "id": "n06",
+   "type": "speech",
+   "text": "她飞到西边的发鸠山。山上长满了柘树，她衔起一根小树枝。"
+  },
+  {
+   "id": "n07",
+   "type": "speech",
+   "text": "她飞过高山，飞过大河，一直飞到东海，把树枝投进海里。扑通一声，树枝就不见了。"
+  },
+  {
+   "id": "n08",
+   "type": "speech",
+   "text": "大海哗哗地大笑：“小鸟儿，算了吧！就算过一百万年，你也填不平我！”"
+  },
+  {
+   "id": "n09",
+   "type": "speech",
+   "text": "精卫大声回答：“就算要一千万年、一万万年，我也一定要把你填平！”"
+  },
+  {
+   "id": "n10",
+   "type": "speech",
+   "text": "从此，精卫每天从西山衔来树枝和石子，一趟又一趟，从不停歇。春去秋来，年复一年。"
+  },
+  {
+   "id": "n11",
+   "type": "speech",
+   "text": "直到今天，人们都说，精卫还在飞，还衔着石子，一点一点地填着大海。"
+  },
+  {
+   "id": "n12",
+   "type": "speech",
+   "text": "精卫填海的故事告诉我们：只要有决心，坚持不放弃，再难的事情也不怕。"
+  },
+  {
+   "id": "music",
+   "type": "music",
+   "prompt": "Poetic gentle storybook acoustic chamber piece blending delicate Chinese guzheng plucks, warm bamboo flute, and soft wooden glockenspiel, hopeful and resilient lullaby mood, no vocals, 30 seconds loopable."
+  }
+ ]
+}

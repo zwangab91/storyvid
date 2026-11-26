@@ -52,6 +52,8 @@ def load_story(path: str) -> dict:
             fix(it.get("parts"))
             if it.get("part"):
                 fix([it["part"]])
+    if story.get("soundtrack") and not os.path.isabs(story["soundtrack"]):  # folder made by storyvid.soundtrack
+        story["soundtrack"] = os.path.join(base, story["soundtrack"])
     return story
 
 
@@ -201,11 +203,19 @@ def build_audio_timeline(story: dict, scenes: list[dict], cache_dir: str):
     voice = story.get("voice", "melo" if lang.startswith("zh") else "af_heart")
     speed = float(story.get("speed", 0.9 if lang.startswith("zh") else 0.92))
     nar = A.Narrator(os.path.join(cache_dir, "tts"))
+    clipnar = A.ClipNarrator(story["soundtrack"]) if story.get("soundtrack") else None
+    if clipnar:  # generated narration (storyvid.soundtrack): every voiced scene must have its clip
+        missing = clipnar.missing([sc.get("narration", "") for sc in scenes])
+        if missing:
+            raise SystemExit(f"soundtrack {story['soundtrack']} has no clip for {len(missing)} scene(s), e.g. "
+                             f"{missing[0][:40]!r}; re-run `storyvid.soundtrack plan` and generate the new lines")
     t = 0.0
     clips = []
     for i, sc in enumerate(scenes):
         text = sc.get("narration", "").strip()
-        if text:
+        if text and clipnar:
+            a, spans = clipnar.narrate(text, lang)
+        elif text:
             a, spans = nar.narrate(text, lang, sc.get("voice", voice), float(sc.get("speed", speed)))
         else:
             a, spans = np.zeros(1, np.float32), []
@@ -223,6 +233,15 @@ def build_audio_timeline(story: dict, scenes: list[dict], cache_dir: str):
         s = int(st * A.SR)
         narration[s:s + len(a)] += a[: len(narration) - s]
     m = story.get("music", {})
+    if m is not False and clipnar and clipnar.music and not m.get("procedural"):
+        # generated music, balanced as Paperwing plays it: the voice at full level, the music at `volume` (0.28) of
+        # its own level, times `duck` (0.45) while a scene is narrated. Our narration is levelled, so scale the music
+        # by the same factor the levelling applied to the voice.
+        k = 0.085 / float(np.median(clipnar.raw_rms)) if clipnar.raw_rms else 1.0
+        vol, duck = float(m.get("volume", 0.28)), float(m.get("duck", 0.45))
+        bed = A.loop_music(A.load_music(clipnar.music), total + 0.5)
+        voiced = [(sc["_start"], sc["_start"] + sc["_dur"]) for sc in scenes if sc.get("narration", "").strip()]
+        return A.mix_bed(narration, bed, voiced, vol * k, vol * duck * k), total
     music = None
     if m is not False:
         style = m.get("style", "pluck" if lang.startswith("zh") else "musicbox")
@@ -449,7 +468,7 @@ def render(story_path: str, out_dir: str, height: int = 1080, fps: int = 24, wor
         print(f"[{name}] preview written in {time.time() - t0:.1f}s")
         return None
     wav = os.path.join(out_dir, f"{name}.wav")
-    sf.write(wav, np.stack([mix, mix], 1), A.SR)
+    sf.write(wav, mix if mix.ndim == 2 else np.stack([mix, mix], 1), A.SR)
     write_srt(scenes, os.path.join(out_dir, f"{name}.srt"))
     nframes = int(math.ceil(total * fps))
     workers = workers or max(1, os.cpu_count() or 1)

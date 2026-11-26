@@ -1,6 +1,7 @@
 {
  "_about": "Cast for 精卫填海: which generated art plays each actor of stories/jingwei.json. Piece numbers come from the cut reports (cut/<image>/report.json); attach points, pivots without a straight joint, draw order and tuned rig values are the planner's calls (made by looking at the overlays); joints with a straight cut are found by storyvid.rig.",
  "storyboard": "../../stories/jingwei.json",
+ "soundtrack": "jingwei_audio",
  "backdrops": {
   "dawn": "jingwei_film/bg_dawn.png",
   "sky_soft": "jingwei_film/bg_day.png",
