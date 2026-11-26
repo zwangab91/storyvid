@@ -1,0 +1,455 @@
+{
+ "kind": "audio",
+ "language": "zh",
+ "speech": {
+  "model": "gemini-3.8-flash-lite-tts",
+  "voice": "Kore",
+  "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+ },
+ "total_cost_usd": 0.0659,
+ "assets": [
+  {
+   "id": "n00",
+   "type": "speech",
+   "key": "7dd669b04dfb2942",
+   "file": "n00.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 147868,
+   "cost_usd": 0.00044,
+   "seconds": 2.0,
+   "created": "2026-11-26T19:21:13Z",
+   "usage": {
+    "promptTokenCount": 5,
+    "candidatesTokenCount": 73,
+    "totalTokenCount": 78,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 5
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 73
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "精卫填海",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n01",
+   "type": "speech",
+   "key": "40268c33099e021c",
+   "file": "n01.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 862108,
+   "cost_usd": 0.00269,
+   "seconds": 3.1,
+   "created": "2026-11-26T19:21:16Z",
+   "usage": {
+    "promptTokenCount": 35,
+    "candidatesTokenCount": 445,
+    "totalTokenCount": 480,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 35
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 445
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "很久很久以前，炎帝有一个小女儿，名叫女娃。她活泼又勇敢，最喜欢跑到东海边，看太阳从海上升起。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n02",
+   "type": "speech",
+   "key": "cfed4f3cffea3cb7",
+   "file": "n02.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 693148,
+   "cost_usd": 0.00216,
+   "seconds": 2.7,
+   "created": "2026-11-26T19:21:19Z",
+   "usage": {
+    "promptTokenCount": 31,
+    "candidatesTokenCount": 357,
+    "totalTokenCount": 388,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 31
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 357
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "有一天，女娃划着一只小船，向大海深处驶去。她想去看一看，太阳究竟是从哪里升起来的。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n03",
+   "type": "speech",
+   "key": "8d8b55e68b21deb3",
+   "file": "n03.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 875068,
+   "cost_usd": 0.00273,
+   "seconds": 3.0,
+   "created": "2026-11-26T19:21:22Z",
+   "usage": {
+    "promptTokenCount": 36,
+    "candidatesTokenCount": 452,
+    "totalTokenCount": 488,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 36
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 452
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "忽然，天空暗了下来。狂风呼呼地刮，卷起了比山还高的巨浪，一下子打翻了小船。女娃再也没有回来。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n04",
+   "type": "speech",
+   "key": "f72b53ee5bb822e8",
+   "file": "n04.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 984988,
+   "cost_usd": 0.00308,
+   "seconds": 3.8,
+   "created": "2026-11-26T19:21:26Z",
+   "usage": {
+    "promptTokenCount": 50,
+    "candidatesTokenCount": 509,
+    "totalTokenCount": 559,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 50
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 509
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "可是，女娃变成了一只小鸟。她的头上有花纹，嘴巴是白色的，小脚是红色的。她总是“精卫、精卫”地叫着，所以人们就叫她精卫。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n05",
+   "type": "speech",
+   "key": "05ec27068a092be4",
+   "file": "n05.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 602428,
+   "cost_usd": 0.00188,
+   "seconds": 2.4,
+   "created": "2026-11-26T19:21:28Z",
+   "usage": {
+    "promptTokenCount": 31,
+    "candidatesTokenCount": 310,
+    "totalTokenCount": 341,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 31
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 310
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "精卫恨透了夺走她生命的大海。她下定决心：要把东海填平，不让它再去伤害别人！",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n06",
+   "type": "speech",
+   "key": "9a293bf83fb851f3",
+   "file": "n06.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 474268,
+   "cost_usd": 0.00148,
+   "seconds": 2.4,
+   "created": "2026-11-26T19:21:31Z",
+   "usage": {
+    "promptTokenCount": 25,
+    "candidatesTokenCount": 244,
+    "totalTokenCount": 269,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 25
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 244
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "她飞到西边的发鸠山。山上长满了柘树，她衔起一根小树枝。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n07",
+   "type": "speech",
+   "key": "480c468ff8dc2f0b",
+   "file": "n07.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 785308,
+   "cost_usd": 0.00245,
+   "seconds": 3.2,
+   "created": "2026-11-26T19:21:34Z",
+   "usage": {
+    "promptTokenCount": 35,
+    "candidatesTokenCount": 405,
+    "totalTokenCount": 440,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 35
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 405
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "她飞过高山，飞过大河，一直飞到东海，把树枝投进海里。扑通一声，树枝就不见了。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n08",
+   "type": "speech",
+   "key": "c35c371fd368aecd",
+   "file": "n08.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 522268,
+   "cost_usd": 0.00162,
+   "seconds": 2.7,
+   "created": "2026-11-26T19:21:36Z",
+   "usage": {
+    "promptTokenCount": 27,
+    "candidatesTokenCount": 268,
+    "totalTokenCount": 295,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 27
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 268
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "大海哗哗地大笑：“小鸟儿，算了吧！就算过一百万年，你也填不平我！”",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n09",
+   "type": "speech",
+   "key": "e0552f3656fdb7e5",
+   "file": "n09.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 433468,
+   "cost_usd": 0.00134,
+   "seconds": 2.4,
+   "created": "2026-11-26T19:21:39Z",
+   "usage": {
+    "promptTokenCount": 24,
+    "candidatesTokenCount": 222,
+    "totalTokenCount": 246,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 24
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 222
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "精卫大声回答：“就算要一千万年、一万万年，我也一定要把你填平！”",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n10",
+   "type": "speech",
+   "key": "00f2f27b0e78af83",
+   "file": "n10.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 769468,
+   "cost_usd": 0.0024,
+   "seconds": 11.4,
+   "created": "2026-11-26T19:21:50Z",
+   "usage": {
+    "promptTokenCount": 36,
+    "candidatesTokenCount": 397,
+    "totalTokenCount": 433,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 36
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 397
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "从此，精卫每天从西山衔来树枝和石子，一趟又一趟，从不停歇。春去秋来，年复一年。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n11",
+   "type": "speech",
+   "key": "d4e5c9a81d2acbe4",
+   "file": "n11.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 626428,
+   "cost_usd": 0.00195,
+   "seconds": 2.7,
+   "created": "2026-11-26T19:21:53Z",
+   "usage": {
+    "promptTokenCount": 26,
+    "candidatesTokenCount": 323,
+    "totalTokenCount": 349,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 26
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 323
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "直到今天，人们都说，精卫还在飞，还衔着石子，一点一点地填着大海。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n12",
+   "type": "speech",
+   "key": "c2d2af4bed35aecd",
+   "file": "n12.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 540028,
+   "cost_usd": 0.00168,
+   "seconds": 26.9,
+   "created": "2026-11-26T19:22:20Z",
+   "usage": {
+    "promptTokenCount": 23,
+    "candidatesTokenCount": 278,
+    "totalTokenCount": 301,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 23
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 278
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "精卫填海的故事告诉我们：只要有决心，坚持不放弃，再难的事情也不怕。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "music",
+   "type": "music",
+   "key": "f32acf279eb76853",
+   "file": "music.mp3",
+   "mime": "audio/mpeg",
+   "model": "lyria-3-clip-preview",
+   "bytes": 696095,
+   "cost_usd": 0.04,
+   "seconds": 18.8,
+   "created": "2026-11-26T19:22:39Z",
+   "prompt": "Poetic gentle storybook acoustic chamber piece blending delicate Chinese guzheng plucks, warm bamboo flute, and soft wooden glockenspiel, hopeful and resilient lullaby mood, no vocals, 30 seconds loopable. Strictly instrumental acoustic chamber arrangement, soft storybook dynamics suitable beneath voice narration, no singing or vocals.",
+   "model_text": "<instrumental>"
+  }
+ ]
+}
