@@ -81,6 +81,15 @@ python -m storyvid.rig hybrid/cast/jingwei.json --assets ../assets --out out/jin
 python -m storyvid.pipeline render out/jingwei_hybrid/jingwei_hybrid.json --out out/jingwei_hybrid
 ```
 
+The narration and music can also come from Google's models, as in Paperwing Studio: Gemini TTS reads each scene in the
+voice Kore with a storyteller direction, and Lyria scores the film. Plan the requests, run them with the same workflow,
+and name the folder as the cast file's (or the storyboard's) `soundtrack`:
+
+```bash
+python -m storyvid.soundtrack plan stories/jingwei.json -o hybrid/assets/jingwei_audio.json   # 13 lines + music, ~$0.07
+# Actions > Generate assets > manifest hybrid/assets/jingwei_audio.json, max_images 20
+```
+
 See [hybrid/README.md](hybrid/README.md).
 
 ## Extending
@@ -90,6 +99,7 @@ See [hybrid/README.md](hybrid/README.md).
 - Different look: textures, edge roughness (`EDGE_AMP`) and shadow (`SHADOW`) are the main style dials.
 
 ## Credits and licences
-Kokoro-82M (Apache-2.0), MeloTTS (MIT) via sherpa-onnx, Fredoka and Andika fonts (SIL OFL). The pilot stories are
+Kokoro-82M (Apache-2.0), MeloTTS (MIT) via sherpa-onnx, Fredoka and Andika fonts (SIL OFL). Generated narration and
+music (optional) come from Google's Gemini TTS and Lyria and carry Google's SynthID watermark and C2PA record. The pilot stories are
 retellings of public-domain tales. The style is generic painted-paper collage; the pipeline doesn't reproduce any
 specific book's characters or artwork.

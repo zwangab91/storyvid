@@ -225,6 +225,8 @@ def build_audio_timeline(story: dict, scenes: list[dict], cache_dir: str):
         dur = max(dur, float(sc.get("min_duration", 3.2)), float(sc.get("duration", 0)))
         sc["_start"], sc["_dur"], sc["_nar_start"] = t, dur, lead
         sc["_spans"] = spans
+        if text and clipnar:
+            sc["_audio"] = a  # a generated clip pauses at commas too: captions within a sentence follow its pauses
         clips.append((t + lead, a))
         t += dur - (XFADE if i < len(scenes) - 1 else 0)
     total = t
@@ -261,12 +263,17 @@ def build_captions(story: dict, scenes: list[dict]):
             sub_list = A.split_sentences(subs, "en") if subs else []
             for k, (a, b, sent) in enumerate(sc["_spans"]):
                 chunks = A.split_caption(sent, lang, maxlen)
+                # keep the sentence's translation on screen for every chunk of that sentence
+                sub = sub_list[k] if (k < len(sub_list) and len(sub_list) == len(sc["_spans"])) else None
+                if len(chunks) > 1 and sc.get("_audio") is not None:
+                    seg = sc["_audio"][int(a * A.SR):int(b * A.SR)]
+                    for c0, c1, c in A.align_sentences(seg, chunks, lang):
+                        caps.append([sc["_nar_start"] + a + c0, sc["_nar_start"] + a + c1, c, sub])
+                    continue
                 L = sum(len(c) for c in chunks)
                 t = a
                 for j, c in enumerate(chunks):
                     d = (b - a) * len(c) / L
-                    # keep the sentence's translation on screen for every chunk of that sentence
-                    sub = sub_list[k] if (k < len(sub_list) and len(sub_list) == len(sc["_spans"])) else None
                     caps.append([sc["_nar_start"] + t, sc["_nar_start"] + t + d, c, sub])
                     t += d
             if subs and len(sub_list) != len(sc["_spans"]) and caps:
@@ -450,6 +457,8 @@ def render(story_path: str, out_dir: str, height: int = 1080, fps: int = 24, wor
     scenes = build_scenes(story)
     mix, total = build_audio_timeline(story, scenes, CACHE)
     build_captions(story, scenes)
+    for sc in scenes:
+        sc.pop("_audio", None)  # only needed for caption timing; keep it out of the render workers
     print(f"[{name}] {len(scenes)} scenes, {total:.1f}s, audio ready in {time.time() - t0:.1f}s", flush=True)
     with open(os.path.join(out_dir, f"{name}.timeline.json"), "w", encoding="utf-8") as f:
         json.dump([{"i": i, "start": round(s["_start"], 2), "dur": round(s["_dur"], 2),

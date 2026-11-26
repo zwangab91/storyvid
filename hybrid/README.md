@@ -33,7 +33,7 @@ Prototype only (works for this one picture):
   thresholds, sea-line rule, part outlines and pivots were chosen by looking at it.
 - `hybrid_jingwei.json` was written by hand.
 
-Built, first real run pending:
+Built and used:
 - Asset generation (`storyvid/assets.py`): paints each character once on plain cream board, plus parts sheets,
   poses and scenery strips, from a manifest; references keep a character's look; cached, capped and cost-logged.
   It runs in GitHub Actions ("Generate assets", dry run by default) with the `GEMINI_API_KEY` repository secret and
@@ -48,6 +48,9 @@ Built and used for the first full hybrid film:
   sheets, ground, river and sea strips, three backdrops), all referencing the step 1 bird for one look ($0.71).
 - Rigging and actor swap (`storyvid/rig.py`) with the cast file `cast/jingwei.json`: `stories/jingwei.json` renders
   unchanged with all 19 actors and the backdrops replaced by generated art.
+- Generated soundtrack (`storyvid/soundtrack.py`), `assets/jingwei_audio.json`: Gemini TTS narration in Paperwing's
+  voice (Kore, storyteller direction), one clip per scene, and a Lyria 3 Clip score looped under it (about $0.07).
+  The cast file's `soundtrack` points the film at it; the film runs 3:07.
 
 Not built yet:
 - The storyboard step writing the asset list and cast file (for 精卫 the planner wrote both by hand: piece labels,

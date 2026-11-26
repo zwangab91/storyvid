@@ -143,12 +143,13 @@ class Narrator:
 # --------------------------------------------------------------------------- pre-generated narration (Gemini TTS)
 
 def read_tts_wav(path: str) -> np.ndarray:
-    """A generated narration clip as mono float32 at SR, without the provenance block Google appends to it.
+    """A generated narration clip as mono float32 at SR.
 
-    Gemini 3.8 TTS WAVs end with about 3 KB of C2PA content credentials that the RIFF header counts as samples, so a
-    plain player sounds a short burst of loud noise at the end. Speech ends in silence, and read as 16-bit samples the
-    block is mostly text: loud and lopsided (positive), unlike speech. So if what follows the last 60 ms of silence
-    is short, loud and lopsided, cut it."""
+    Gemini TTS WAVs carry a C2PA content-credentials record. Straight from the API it sits in its own RIFF chunk,
+    which readers skip, but some copies (AI Studio's log viewer, for one) count it as samples, and then it plays as a
+    short burst of loud noise at the end. Speech ends in silence, and read as 16-bit samples the record is mostly
+    text: loud and lopsided (positive), unlike speech. So if what follows the last 60 ms of silence is short, loud
+    and lopsided, cut it."""
     a, sr = sf.read(path, dtype="float32", always_2d=False)
     if a.ndim > 1:
         a = a.mean(1)
@@ -406,10 +407,39 @@ def load_music(path: str) -> np.ndarray:
     return np.frombuffer(raw, np.float32).reshape(-1, 2).copy()
 
 
-def loop_music(clip: np.ndarray, duration: float, xfade: float = 2.5, fade_in: float = 1.0,
+def find_loop_end(clip: np.ndarray, xfade: float = 2.0) -> int:
+    """Where to leave a music clip so the crossfade back to its start is smooth (in samples).
+
+    Generated clips usually end with a fade-out, which would leave a quiet gap at every join. Search the part before
+    the fade for the point whose last `xfade` seconds sound most like the clip's first `xfade` seconds (frame-by-frame
+    spectral similarity, plus a level match), so the start can take over as if the music simply went on."""
+    mono = clip.mean(1) if clip.ndim == 2 else clip
+    hop, win = 1024, 2048
+    nf = (len(mono) - win) // hop
+    if nf < 40:
+        return len(mono)
+    frames = np.lib.stride_tricks.sliding_window_view(mono, win)[::hop][:nf] * np.hanning(win)
+    spec = np.log1p(np.abs(np.fft.rfft(frames, axis=1))[:, 4:400] * 10)
+    spec /= np.linalg.norm(spec, axis=1, keepdims=True) + 1e-9
+    lvl = 20 * np.log10(np.sqrt((frames ** 2).mean(1)) + 1e-9)
+    ok = np.where(lvl > np.median(lvl) - 6)[0]
+    last = int(ok[-1]) if len(ok) else nf - 1          # before the closing fade
+    w = max(4, int(xfade * SR / hop))
+    head, head_lvl = spec[:w], lvl[:w].mean()
+    best, best_e = -1e9, last
+    for e in range(max(w + 1, int(8 * SR / hop)), last + 1):
+        sim = float((spec[e - w:e] * head).sum(1).mean())
+        score = sim - 0.02 * abs(lvl[e - w:e].mean() - head_lvl)
+        if score > best:
+            best, best_e = score, e
+    return min(len(mono), best_e * hop + win // 2)
+
+
+def loop_music(clip: np.ndarray, duration: float, xfade: float = 2.0, fade_in: float = 1.0,
                fade_out: float = 3.0) -> np.ndarray:
-    """Repeat a clip to `duration` seconds with equal-power crossfades at the joins, fading in and out at the ends."""
-    clip = clip[: len(clip) - int(0.05 * SR)] if len(clip) > 10 * SR else clip  # drop encoder padding
+    """Repeat a clip to `duration` seconds, leaving it at find_loop_end and crossfading (equal power) back into its
+    start; fade in and out at the ends of the film."""
+    clip = clip[: find_loop_end(clip, xfade)] if len(clip) > 12 * SR else clip
     n, x = int(duration * SR), int(xfade * SR)
     out = np.zeros((n, clip.shape[1]), np.float32)
     up = np.sin(np.linspace(0, np.pi / 2, x))[:, None].astype(np.float32)

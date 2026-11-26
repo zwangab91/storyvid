@@ -1,7 +1,8 @@
 # storyvid: architecture and tech stack
 
 storyvid turns a story (English or Mandarin) into a narrated picture-book video in a hand-painted tissue-paper
-collage look. An LLM plans the film as data; local code renders every frame, voices the narration and scores it.
+collage look. An LLM plans the film as data; local code renders every frame, voices the narration and scores it
+(or, optionally, the narration and music come from Gemini TTS and Lyria, generated once per story).
 This document covers the stack, how data moves through it, and why it is built this way. Usage is in the
 [README](../README.md); the storyboard format is in [STORYBOARD_SPEC.md](STORYBOARD_SPEC.md).
 
@@ -49,14 +50,16 @@ storyboards in `stories/` render to:
 | English speech | Kokoro-82M v1.0, 8-bit quantised ONNX, via `kokoro-onnx` (US and UK voices) | `audio.py` |
 | Mandarin speech | MeloTTS zh (VITS) via `sherpa-onnx` | `audio.py` |
 | Music | Procedural synthesis in NumPy/SciPy: music box or Karplus-Strong plucked zither over a pentatonic motif, pads and a synthetic room reverb | `audio.py` |
-| Audio processing | SciPy (`resample_poly`, `fftconvolve`), `soundfile`; side-chain ducking; ffmpeg `loudnorm` (-16 LUFS, -1.5 dBTP) | `audio.py`, `pipeline.py` |
+| Generated narration (optional) | Gemini 3.8 Flash-Lite TTS over REST, voice Kore with a written storyteller direction, one request per scene; captions timed from the pauses | `soundtrack.py`, `audio.py` |
+| Generated music (optional) | Lyria 3 Clip (30 s, 44.1 kHz stereo MP3) through the Gemini Interactions API; looped at a searched loop point with crossfades | `soundtrack.py`, `audio.py` |
+| Audio processing | SciPy (`resample_poly`, `fftconvolve`), `soundfile`; side-chain ducking (procedural bed) or per-scene ducking (generated music); stereo mix; ffmpeg `loudnorm` (-16 LUFS, -1.5 dBTP) | `audio.py`, `pipeline.py` |
 | Video encoding | ffmpeg: libx264 (`veryfast`, CRF 17, yuv420p) per segment, concat demuxer, AAC 192 kbps, `+faststart` | `pipeline.py` |
 | Parallelism | `concurrent.futures.ProcessPoolExecutor`, one worker and one ffmpeg pipe per CPU core | `pipeline.py` |
 | Caching | On-disk `.cache/` (textures as float16 `.npy`, TTS per sentence as WAV), in-memory sprite cache per worker | `paper.py`, `audio.py`, `render.py` |
 | Model download | `scripts/fetch_models.py`: about 170 MB of voice models from npm-registry packages, checked by size and checksum | `scripts/` |
 | Fonts | Fredoka (titles) and Andika (captions), SIL OFL, bundled; system Noto CJK / PingFang / Songti for Chinese | `assets/fonts/` |
 | Hybrid prototype | Image-model art (from Paperwing Studio) cut into rigged `"shape": "image"` parts; OpenCV GrabCut and keying | `hybrid/` |
-| Asset generation | Gemini image API (`gemini-nano-banana-2.1`) over REST with `requests`, run in GitHub Actions: asset manifests, reference images for consistency, content-keyed cache, per-run image cap, spend log | `assets.py`, `.github/workflows/assets.yml` |
+| Asset generation | Gemini image API (`gemini-nano-banana-2.1`) over REST with `requests`, run in GitHub Actions: asset manifests, reference images for consistency, content-keyed cache, per-run image cap, spend log; audio manifests (narration, music) go through the same workflow | `assets.py`, `soundtrack.py`, `.github/workflows/assets.yml` |
 | Cut-out keying | OpenCV: board colour from the image border, CIE Lab distance with a soft ramp, hole filling, connected pieces to RGBA crops plus a cuttability report | `cutout.py` |
 | Rigging and actor swap | NumPy/OpenCV: joints found as the straight cut across a limb's long axis, limbs placed joint-to-attach-point, figures fitted to the replaced actor's footprint; rigs adopted by part name; a cast file maps a storyboard's actors to generated art | `rig.py`, `hybrid/cast/` |
 
@@ -119,6 +122,16 @@ rendering an existing storyboard does not.
 - Music: a procedural bed (music box for Western tales, plucked zither for Chinese ones) whose level is set by
   `music.db` (default -21), ducked by a further 7 dB while the voice is speaking (fast attack, slow release). The final mix is loudness-normalised by
   ffmpeg to -16 LUFS integrated, -1.5 dBTP.
+- **Generated soundtrack (optional).** When the storyboard names a `soundtrack` folder (made by `soundtrack.py`, see
+  section 7), each scene is voiced by its Gemini clip instead: one clip reads the whole scene, so the model plans the
+  phrasing across sentences. Sentence spans for the captions come from the pauses: each boundary expected from the
+  sentences' share of characters is snapped, in order, to a nearby pause, preferring long ones (a dynamic programme);
+  caption chunks within a long sentence are placed on its comma pauses the same way.
+  Generated music is a 30-second clip that usually fades out at its end, so it is left at the point before the fade
+  whose last two seconds sound most like its first two (spectral similarity and level), and looped with equal-power
+  crossfades. It is mixed in stereo at Paperwing Studio's balance: the voice at full level, the music at 0.28 of its
+  own level, times 0.45 through every narrated scene (whole scenes, so it does not pump in the pauses), scaled by the
+  gain that levelling applied to the voice.
 
 ### Stage 3: collage renderer (`paper.py`, `geometry.py`, `render.py`, `anim.py`)
 
@@ -222,13 +235,16 @@ parts and animates every frame on the narration timeline.
 |---|---|
 | Image parts in the renderer (pivots, parents, rigs, clip/cut masks, baked shadow, camera, caching) | Ready |
 | Cutting a finished illustration into parts (`hybrid/extract_layers.py`, `make_layers.py`) | Prototype, hand-tuned to one image |
-| Asset-generation stage (`storyvid/assets.py`, the "Generate assets" workflow) | Built; tested against a mocked API; first real run pending |
+| Asset-generation stage (`storyvid/assets.py`, the "Generate assets" workflow) | Built; used for the 19 images of 精卫 |
+| Generated narration and music (`storyvid/soundtrack.py`, same workflow) | Built; used for 精卫 (13 narration clips and one music clip, about $0.07) |
 | Cutting pieces off a plain board (`storyvid/cutout.py`) | Built; tested on synthetic sheets made from real generated pieces |
 | Rigging and actor swap (`storyvid/rig.py`, cast files) | Built; joints automatic, attach points from the cast file |
 | Storyboard step that writes the asset list and cast file | Not built: for 精卫 both were written by the planner by hand |
 
 First full film: 精卫填海 (115 s, 14 scenes) rendered from `stories/jingwei.json` unchanged, with all 19 actors and
-the three backdrops swapped for generated art: 19 images for about $1.14 in total.
+the three backdrops swapped for generated art: 19 images for about $1.14 in total. With the generated soundtrack
+(Gemini narration in Paperwing's voice and a Lyria score, about $0.07) the same storyboard runs 3:07, since the
+storyteller reads at about 2.4 characters a second against MeloTTS's 4.2.
 
 **Asset stage.** A manifest lists assets (a character, its parts sheet, a pose, a scenery strip), each a prompt plus
 optional reference images, usually an earlier asset so the character keeps its look. An asset is identified by a hash
@@ -255,6 +271,16 @@ wings flap ±20° rather than the procedural ±38°). Scene backgrounds can be s
 decides by looking at the cut overlays: which piece is which part, attach points, pivots for pieces without a straight
 cut, draw order and tuned rig values.
 
+**Soundtrack.** `python -m storyvid.soundtrack plan <storyboard>` writes an audio manifest: one narration request per
+voiced scene (title included) with the model, voice and direction Paperwing Studio uses (Gemini 3.8 Flash-Lite TTS,
+Kore, "Warm, gentle, expressive ... storyteller with unhurried pacing and poetic wonder"), and one Lyria 3 Clip request
+from the storyboard's `music.prompt` plus an instrumental-only suffix. The "Generate assets" workflow runs it like an
+image manifest (cached by request, capped, cost-logged; narration is billed at about 25 audio tokens a second, $6 per
+million through 2026 and $12 from January 2027; Lyria 3 Clip is $0.04 a clip). A cast file's `soundtrack` names the run
+folder, and `rig.py` copies it next to the hybrid storyboard. Gemini's WAVs carry a C2PA provenance record in their own
+RIFF chunk; copies that count it as audio (AI Studio's log viewer makes such copies) play it as a burst of noise, so
+`audio.read_tts_wav` cuts it when present.
+
 **Cut-out.** Pieces are painted on plain cream board. The board colour and noise are measured on the image border;
 pixels far enough from it in Lab are paper; enclosed holes are filled because paper is opaque. Each connected piece
 becomes an RGBA crop, and the report flags anything that would make cutting a guess: a non-plain board, a piece cut
@@ -276,7 +302,8 @@ storyvid/
 │   ├── geometry.py     # shape primitives -> polygons, splines, cut-edge roughening
 │   ├── anim.py         # easing and animation evaluation (scene-fraction timing)
 │   ├── library.py      # built-in props and the person template
-│   ├── audio.py        # Kokoro / MeloTTS narration, music synthesis, ducking and mixing
+│   ├── audio.py        # Kokoro / MeloTTS narration, generated clips, music synthesis and loops, ducking and mixing
+│   ├── soundtrack.py   # audio manifests: Gemini TTS narration per scene and Lyria music, generated in Actions
 │   ├── assets.py       # asset manifests -> generated images (Gemini), cache, cost cap and log
 │   ├── cutout.py       # cut pieces off a plain board -> RGBA crops and a cuttability report
 │   └── rig.py          # joints, figure assembly, prop/strip actors, rig adoption, storyboard swap, joint check
