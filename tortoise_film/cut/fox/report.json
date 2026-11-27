@@ -1,0 +1,43 @@
+{
+ "image": "fox.png",
+ "size": [
+  1792,
+  2400
+ ],
+ "board": {
+  "board_lab": [
+   97.8,
+   0.16,
+   5.67
+  ],
+  "board_noise": 0.79,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    249,
+    359,
+    1382,
+    1790
+   ],
+   "area_frac": 0.2435,
+   "centroid": [
+    819.8,
+    1357.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.055,
+   "file": "piece_00.png",
+   "origin": [
+    243,
+    353
+   ]
+  }
+ ]
+}

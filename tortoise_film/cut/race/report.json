@@ -1,0 +1,87 @@
+{
+ "image": "race.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   98.0,
+   -0.32,
+   5.77
+  ],
+  "board_noise": 0.84,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 3,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    439,
+    172,
+    634,
+    563
+   ],
+   "area_frac": 0.0425,
+   "centroid": [
+    751.0,
+    538.5
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.01,
+   "file": "piece_00.png",
+   "origin": [
+    433,
+    166
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    1548,
+    226,
+    1013,
+    1100
+   ],
+   "area_frac": 0.1759,
+   "centroid": [
+    2052.1,
+    678.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.054,
+   "file": "piece_01.png",
+   "origin": [
+    1542,
+    220
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    149,
+    930,
+    1255,
+    397
+   ],
+   "area_frac": 0.0919,
+   "centroid": [
+    776.5,
+    1126.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.013,
+   "file": "piece_02.png",
+   "origin": [
+    143,
+    924
+   ]
+  }
+ ]
+}

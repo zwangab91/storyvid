@@ -1,0 +1,175 @@
+{
+ "image": "tortoise_parts.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.77,
+   0.16,
+   5.95
+  ],
+  "board_noise": 0.83,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 7,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    1699,
+    297,
+    511,
+    508
+   ],
+   "area_frac": 0.0306,
+   "centroid": [
+    1954.3,
+    518.2
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_00.png",
+   "origin": [
+    1693,
+    291
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    478,
+    301,
+    1229,
+    831
+   ],
+   "area_frac": 0.1746,
+   "centroid": [
+    1093.9,
+    747.4
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_01.png",
+   "origin": [
+    472,
+    295
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    226,
+    947,
+    244,
+    141
+   ],
+   "area_frac": 0.0035,
+   "centroid": [
+    370.9,
+    1033.5
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_02.png",
+   "origin": [
+    220,
+    941
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    443,
+    1127,
+    280,
+    342
+   ],
+   "area_frac": 0.0131,
+   "centroid": [
+    581.1,
+    1297.9
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_03.png",
+   "origin": [
+    437,
+    1121
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    1268,
+    1101,
+    284,
+    466
+   ],
+   "area_frac": 0.0164,
+   "centroid": [
+    1422.0,
+    1348.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_04.png",
+   "origin": [
+    1262,
+    1095
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    1588,
+    1031,
+    297,
+    365
+   ],
+   "area_frac": 0.0137,
+   "centroid": [
+    1744.5,
+    1213.8
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_05.png",
+   "origin": [
+    1582,
+    1025
+   ]
+  },
+  {
+   "index": 6,
+   "bbox": [
+    786,
+    1193,
+    222,
+    183
+   ],
+   "area_frac": 0.0069,
+   "centroid": [
+    887.2,
+    1287.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.001,
+   "file": "piece_06.png",
+   "origin": [
+    780,
+    1187
+   ]
+  }
+ ]
+}

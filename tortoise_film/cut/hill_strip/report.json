@@ -1,0 +1,43 @@
+{
+ "image": "hill_strip.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   97.8,
+   0.16,
+   5.73
+  ],
+  "board_noise": 0.79,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    98,
+    870,
+    2555,
+    426
+   ],
+   "area_frac": 0.1761,
+   "centroid": [
+    1383.1,
+    1120.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.002,
+   "file": "piece_00.png",
+   "origin": [
+    92,
+    864
+   ]
+  }
+ ]
+}

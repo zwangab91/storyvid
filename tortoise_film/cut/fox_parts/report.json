@@ -1,0 +1,131 @@
+{
+ "image": "fox_parts.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.96,
+   -0.17,
+   6.38
+  ],
+  "board_noise": 0.57,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 5,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    392,
+    127,
+    649,
+    1061
+   ],
+   "area_frac": 0.0661,
+   "centroid": [
+    676.0,
+    547.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.077,
+   "file": "piece_00.png",
+   "origin": [
+    386,
+    121
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    1645,
+    191,
+    657,
+    664
+   ],
+   "area_frac": 0.0233,
+   "centroid": [
+    1954.8,
+    575.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_01.png",
+   "origin": [
+    1639,
+    185
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    886,
+    516,
+    914,
+    1022
+   ],
+   "area_frac": 0.1417,
+   "centroid": [
+    1295.4,
+    1077.5
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.001,
+   "file": "piece_02.png",
+   "origin": [
+    880,
+    510
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    773,
+    855,
+    62,
+    243
+   ],
+   "area_frac": 0.0005,
+   "centroid": [
+    806.2,
+    973.4
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.141,
+   "file": "piece_03.png",
+   "origin": [
+    767,
+    849
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    160,
+    981,
+    756,
+    706
+   ],
+   "area_frac": 0.0573,
+   "centroid": [
+    510.7,
+    1387.8
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.122,
+   "file": "piece_04.png",
+   "origin": [
+    154,
+    975
+   ]
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "image": "hare.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.61,
+   0.48,
+   5.73
+  ],
+  "board_noise": 0.9,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    511,
+    262,
+    1400,
+    1199
+   ],
+   "area_frac": 0.1758,
+   "centroid": [
+    1191.0,
+    931.7
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.02,
+   "file": "piece_00.png",
+   "origin": [
+    505,
+    256
+   ]
+  }
+ ]
+}

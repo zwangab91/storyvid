@@ -1,0 +1,43 @@
+{
+ "image": "tortoise.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.74,
+   0.16,
+   6.02
+  ],
+  "board_noise": 0.83,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    312,
+    425,
+    1804,
+    1048
+   ],
+   "area_frac": 0.2527,
+   "centroid": [
+    1176.2,
+    920.7
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.001,
+   "file": "piece_00.png",
+   "origin": [
+    306,
+    419
+   ]
+  }
+ ]
+}
