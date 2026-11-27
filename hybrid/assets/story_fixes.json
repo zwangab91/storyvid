@@ -1,0 +1,49 @@
+{
+ "_about": "Repaints after checking the first runs: 夸父's own day sky (精卫's has a sea-like band along the bottom), Little Red Riding Hood's mother with a honey-yellow apron and the cottage with peach-ochre walls (their cream apron and walls keyed away with the cream board), and a finish line with nothing painted between its posts (the first one had a cream panel that hid the tortoise).",
+ "model": "gemini-nano-banana-2.1",
+ "image_size": "2K",
+ "style": "Style: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+ "assets": [
+  {
+   "id": "bg_day",
+   "aspect": "16:9",
+   "refs": [
+    "@kuafu_film/kuafu.png"
+   ],
+   "style": "Style: children's picture-book art made of hand-painted tissue paper, matching the paints and paper textures of the attached reference: bold acrylic brush streaks and sponge mottling, flat, no 3D shading, no outlines, no text.",
+   "prompt": "A full-bleed soft daytime sky made of overlapping torn bands of hand-painted tissue paper in clear pale blues, a little deeper blue at the top and a touch of warm cream near the bottom. It fills the entire image edge to edge. Only sky: no sun, no clouds, no birds, no land, no water, no waves, no objects of any kind."
+  },
+  {
+   "id": "mother",
+   "aspect": "3:4",
+   "refs": [
+    "@red_film/girl.png"
+   ],
+   "prompt": "A single young mother from a European fairy tale: brown hair in a bun, a kind face, a green dress with a long honey-yellow apron, dark shoes. Standing, front view, arms relaxed at the sides, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "mother_parts",
+   "aspect": "4:3",
+   "refs": [
+    "mother"
+   ],
+   "prompt": "The attached image is a cut-paper woman. Make the puppet parts sheet: the same woman taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck and bun; the body (clothes, without arms and without legs); the arm on the left of the picture with its hand; the arm on the right of the picture with its hand; the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached woman. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "cottage",
+   "aspect": "4:3",
+   "refs": [
+    "@red_film/girl.png"
+   ],
+   "prompt": "A single small cottage from a European fairy tale seen from the front: warm peach and ochre plastered walls, a steep red-brown roof, a brick chimney, a round-topped wooden door on the left and a small blue window on the right, all one piece with a flat base. The cottage is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "finish",
+   "aspect": "4:3",
+   "refs": [
+    "@tortoise_film/hare.png"
+   ],
+   "prompt": "A race finish line cut from painted tissue paper, as one connected piece: two upright wooden posts with a striped red, white and blue banner strung across their tops and a thin red ribbon strung between them lower down. The frame is open: between the posts, above and below the ribbon, nothing is painted and the plain board shows through. The finish line is isolated in the middle of the board with a wide empty margin of board on every side."
+  }
+ ]
+}
