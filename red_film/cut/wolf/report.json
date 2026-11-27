@@ -1,0 +1,65 @@
+{
+ "image": "wolf.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.91,
+   -0.17,
+   6.5
+  ],
+  "board_noise": 0.82,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 2,
+ "cleanly_cuttable": false,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    343,
+    319,
+    1794,
+    1183
+   ],
+   "area_frac": 0.1951,
+   "centroid": [
+    1244.4,
+    900.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.059,
+   "file": "piece_00.png",
+   "origin": [
+    337,
+    313
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    1146,
+    1002,
+    178,
+    75
+   ],
+   "area_frac": 0.0014,
+   "centroid": [
+    1226.7,
+    1045.8
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.998,
+   "file": "piece_01.png",
+   "origin": [
+    1140,
+    996
+   ]
+  }
+ ]
+}

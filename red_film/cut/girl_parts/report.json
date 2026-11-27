@@ -1,0 +1,175 @@
+{
+ "image": "girl_parts.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.91,
+   -0.17,
+   7.33
+  ],
+  "board_noise": 0.89,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 7,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    282,
+    163,
+    478,
+    599
+   ],
+   "area_frac": 0.0445,
+   "centroid": [
+    521.4,
+    455.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.003,
+   "file": "piece_00.png",
+   "origin": [
+    276,
+    157
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    773,
+    543,
+    852,
+    955
+   ],
+   "area_frac": 0.1331,
+   "centroid": [
+    1204.9,
+    1054.8
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_01.png",
+   "origin": [
+    767,
+    537
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    1563,
+    564,
+    239,
+    529
+   ],
+   "area_frac": 0.0118,
+   "centroid": [
+    1685.2,
+    808.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.002,
+   "file": "piece_02.png",
+   "origin": [
+    1557,
+    558
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    608,
+    598,
+    274,
+    513
+   ],
+   "area_frac": 0.0119,
+   "centroid": [
+    741.8,
+    828.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.001,
+   "file": "piece_03.png",
+   "origin": [
+    602,
+    592
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    515,
+    1182,
+    213,
+    440
+   ],
+   "area_frac": 0.0124,
+   "centroid": [
+    638.7,
+    1396.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_04.png",
+   "origin": [
+    509,
+    1176
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    1690,
+    1172,
+    204,
+    447
+   ],
+   "area_frac": 0.0125,
+   "centroid": [
+    1774.0,
+    1386.9
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_05.png",
+   "origin": [
+    1684,
+    1166
+   ]
+  },
+  {
+   "index": 6,
+   "bbox": [
+    1897,
+    1127,
+    348,
+    362
+   ],
+   "area_frac": 0.0224,
+   "centroid": [
+    2072.4,
+    1317.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_06.png",
+   "origin": [
+    1891,
+    1121
+   ]
+  }
+ ]
+}

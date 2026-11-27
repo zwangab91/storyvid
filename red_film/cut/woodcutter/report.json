@@ -1,0 +1,43 @@
+{
+ "image": "woodcutter.png",
+ "size": [
+  1792,
+  2400
+ ],
+ "board": {
+  "board_lab": [
+   97.91,
+   -0.17,
+   7.23
+  ],
+  "board_noise": 0.86,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    512,
+    352,
+    1075,
+    1689
+   ],
+   "area_frac": 0.2123,
+   "centroid": [
+    961.5,
+    1211.4
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.003,
+   "file": "piece_00.png",
+   "origin": [
+    506,
+    346
+   ]
+  }
+ ]
+}

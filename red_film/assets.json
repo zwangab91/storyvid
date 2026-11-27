@@ -1,0 +1,562 @@
+{
+ "model": "gemini-nano-banana-2.1",
+ "image_size": "2K",
+ "total_cost_usd": 0.9111,
+ "assets": [
+  {
+   "id": "girl",
+   "key": "2a721e95eef57524",
+   "file": "girl.png",
+   "aspect": "3:4",
+   "refs": [
+    "@jingwei_step1/bird.png"
+   ],
+   "prompt": "A single little girl from a European fairy tale, about seven years old: Little Red Riding Hood. A bright red hooded cape with the hood up around her face, short brown bob hair, a round friendly face with rosy cheeks, a blue dress with a white apron, dark shoes. Standing, front view, arms relaxed at the sides, a small wicker basket covered with a checked cloth hanging from the hand on the right of the picture, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1356,
+    "candidatesTokenCount": 2031,
+    "totalTokenCount": 4092,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 236
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 705,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06035,
+   "seconds": 24.0,
+   "created": "2026-11-27T15:57:57Z"
+  },
+  {
+   "id": "girl_parts",
+   "key": "599f338a83daa5e6",
+   "file": "girl_parts.png",
+   "aspect": "4:3",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "The attached image is a cut-paper girl. Make the puppet parts sheet: the same girl taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck and the hood; the body (clothes, without arms and without legs) with the cape; the arm on the left of the picture with its hand; the arm on the right of the picture with its hand; the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe; the basket on its own. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached girl. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1416,
+    "candidatesTokenCount": 2112,
+    "totalTokenCount": 4628,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 296
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 1100,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06401,
+   "seconds": 25.3,
+   "created": "2026-11-27T15:58:24Z"
+  },
+  {
+   "id": "mother",
+   "key": "6516665912198390",
+   "file": "mother.png",
+   "aspect": "3:4",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A single young mother from a European fairy tale: brown hair in a bun, a kind face, a green dress with a long cream apron, dark shoes. Standing, front view, arms relaxed at the sides, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1311,
+    "candidatesTokenCount": 2004,
+    "totalTokenCount": 4025,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 191
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 710,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06012,
+   "seconds": 22.6,
+   "created": "2026-11-27T15:58:48Z"
+  },
+  {
+   "id": "mother_parts",
+   "key": "18e3e7f6b952d390",
+   "file": "mother_parts.png",
+   "aspect": "4:3",
+   "refs": [
+    "mother"
+   ],
+   "prompt": "The attached image is a cut-paper woman. Make the puppet parts sheet: the same woman taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck and bun; the body (clothes, without arms and without legs); the arm on the left of the picture with its hand; the arm on the right of the picture with its hand; the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached woman. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1405,
+    "candidatesTokenCount": 2627,
+    "totalTokenCount": 5533,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 285
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 1501,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.07087,
+   "seconds": 39.1,
+   "created": "2026-11-27T15:59:29Z"
+  },
+  {
+   "id": "grandma",
+   "key": "51f962eaf9693405",
+   "file": "grandma.png",
+   "aspect": "3:4",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A single little old grandmother from a European fairy tale: white hair in a bun, small round glasses, rosy cheeks, a purple dress with a red knitted shawl around her shoulders, dark shoes. Standing, front view, arms relaxed at the sides, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1318,
+    "candidatesTokenCount": 2015,
+    "totalTokenCount": 3684,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 198
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 351,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05752,
+   "seconds": 21.0,
+   "created": "2026-11-27T15:59:51Z"
+  },
+  {
+   "id": "grandma_parts",
+   "key": "6d8f442a1e892c81",
+   "file": "grandma_parts.png",
+   "aspect": "4:3",
+   "refs": [
+    "grandma"
+   ],
+   "prompt": "The attached image is a cut-paper grandmother. Make the puppet parts sheet: the same grandmother taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck, bun and glasses; the body (clothes, without arms and without legs) with the shawl; the arm on the left of the picture with its hand; the arm on the right of the picture with its hand; the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached grandmother. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1411,
+    "candidatesTokenCount": 2611,
+    "totalTokenCount": 4903,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 291
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 881,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06611,
+   "seconds": 33.4,
+   "created": "2026-11-27T16:00:26Z"
+  },
+  {
+   "id": "woodcutter",
+   "key": "19790b91edf0c8fb",
+   "file": "woodcutter.png",
+   "aspect": "3:4",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A single sturdy woodcutter from a European fairy tale: a bushy brown beard, a green cap, a red and black plaid shirt, blue trousers and brown boots. Standing, front view, arms relaxed at the sides, a wood axe held upright in the hand on the right of the picture, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1327,
+    "candidatesTokenCount": 2075,
+    "totalTokenCount": 3486,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 207
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 84,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05598,
+   "seconds": 19.0,
+   "created": "2026-11-27T16:00:47Z"
+  },
+  {
+   "id": "woodcutter_parts",
+   "key": "aad99221ad5251bd",
+   "file": "woodcutter_parts.png",
+   "aspect": "4:3",
+   "refs": [
+    "woodcutter"
+   ],
+   "prompt": "The attached image is a cut-paper woodcutter. Make the puppet parts sheet: the same woodcutter taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck, cap and beard; the body (clothes, without arms and without legs); the arm on the left of the picture with its hand; the arm on the right of the picture with its hand gripping the whole axe (the axe is part of this piece); the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached woodcutter. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1422,
+    "candidatesTokenCount": 2146,
+    "totalTokenCount": 4750,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 302
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 1182,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06489,
+   "seconds": 28.9,
+   "created": "2026-11-27T16:01:17Z"
+  },
+  {
+   "id": "wolf",
+   "key": "610ff0b1ae668ad0",
+   "file": "wolf.png",
+   "aspect": "4:3",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A single big bad wolf from a European fairy tale, standing on all four legs in side view facing right: shaggy grey and blue-grey fur, a pale belly, a long bushy tail with a white tip, pointed ears, yellow eyes, a long snout with a black nose and a sly toothy grin showing white pointed teeth. The whole wolf is isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "Here is the big bad wolf, created in the same hand-painted paper collage style as the Red Riding Hood image. Let me know if you would like any adjustments to its pose or appearance!",
+   "usage": {
+    "promptTokenCount": 1323,
+    "candidatesTokenCount": 2042,
+    "totalTokenCount": 3720,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 203
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 355,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05776,
+   "seconds": 20.4,
+   "created": "2026-11-27T16:01:39Z"
+  },
+  {
+   "id": "wolf_parts",
+   "key": "f67b30de938bb04d",
+   "file": "wolf_parts.png",
+   "aspect": "4:3",
+   "refs": [
+    "wolf"
+   ],
+   "prompt": "The attached image is a cut-paper wolf. Make its puppet parts sheet: the same wolf taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with eyes, snout, nose and toothy grin (without the ears); the near ear; the far ear; the body with the neck (without head, legs or tail); the tail; the near front leg; the far front leg; the near back leg; the far back leg. The joint end of every leg, ear, the tail and the neck is cut straight. Keep every colour, paint and texture exactly as in the attached wolf. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1399,
+    "candidatesTokenCount": 2220,
+    "totalTokenCount": 4111,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 279
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 492,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06024,
+   "seconds": 26.8,
+   "created": "2026-11-27T16:02:07Z"
+  },
+  {
+   "id": "forest",
+   "key": "5b6156da699d9f35",
+   "file": "forest.png",
+   "aspect": "16:9",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A props sheet of six separate cut-paper pieces laid out in one row with clear gaps of plain board between them: a tall pine tree in layered greens with a short brown trunk; a round leafy tree with a brown trunk and a big crown in bright greens; a dark forest tree with a brown trunk and a crown in deep dark greens; a red flower on a green stem with two leaves; a yellow flower on a green stem with two leaves; a purple flower on a green stem with two leaves. Every piece stands on a flat base. Nothing overlaps; wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1355,
+    "candidatesTokenCount": 2088,
+    "totalTokenCount": 3868,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 235
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 425,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05868,
+   "seconds": 22.9,
+   "created": "2026-11-27T16:02:31Z"
+  },
+  {
+   "id": "cottage",
+   "key": "c050e5fd150f1999",
+   "file": "cottage.png",
+   "aspect": "4:3",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A single small cottage from a European fairy tale seen from the front: cream plastered walls, a steep red-brown roof, a brick chimney, a round-topped wooden door on the left and a small blue window on the right, all one piece with a flat base. The cottage is isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1310,
+    "candidatesTokenCount": 2050,
+    "totalTokenCount": 3823,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 190
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 463,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05861,
+   "seconds": 20.4,
+   "created": "2026-11-27T16:02:53Z"
+  },
+  {
+   "id": "interior_a",
+   "key": "78c8032c3c661d31",
+   "file": "interior_a.png",
+   "aspect": "16:9",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A props sheet of four separate cut-paper pieces with clear gaps of plain board between them: a wooden bed seen from the side, with a tall rounded headboard on the left, a lower footboard on the right, a plain cream mattress and a white pillow, and no blanket; a patchwork quilt in pink, purple, yellow and blue patches, a long flat rectangle seen from the side; a small wooden table with a red-and-white checked tablecloth, a round loaf of bread and a small cake on it; a white frilly lace nightcap with a little red pom-pom. Nothing overlaps; wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1366,
+    "candidatesTokenCount": 2137,
+    "totalTokenCount": 4185,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 246
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 682,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06099,
+   "seconds": 23.2,
+   "created": "2026-11-27T16:03:18Z"
+  },
+  {
+   "id": "interior_b",
+   "key": "3c389c2b984e9f77",
+   "file": "interior_b.png",
+   "aspect": "16:9",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A props sheet of four separate cut-paper pieces with clear gaps of plain board between them: a tall wooden wardrobe frame seen from the front with no doors, its inside dark brown; the wardrobe's two tall wooden doors side by side as one piece; a cottage window with blue glass and red curtains on both sides; a small plain cross of two crossed wooden slats. Nothing overlaps; wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "Here is the props sheet featuring the four separate cut-paper pieces. They have been crafted in the same layered, hand-painted paper collage style as the reference image, set apart on a plain cream background.",
+   "usage": {
+    "promptTokenCount": 1320,
+    "candidatesTokenCount": 2106,
+    "totalTokenCount": 3718,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 200
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 292,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05776,
+   "seconds": 21.3,
+   "created": "2026-11-27T16:03:41Z"
+  },
+  {
+   "id": "bg_wall",
+   "key": "4bb1de31ab851af3",
+   "file": "bg_wall.png",
+   "aspect": "16:9",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A full-bleed cosy cottage wall made of overlapping pieces of hand-painted tissue paper in warm buttery cream and pale honey yellow, with soft vertical brush streaks like plaster. It fills the entire image edge to edge. Only the wall: no windows, no furniture, no floor, no objects of any kind.\n\nStyle: children's picture-book art made of hand-painted tissue paper, matching the paints and paper textures of the attached reference: bold acrylic brush streaks and sponge mottling, flat, no 3D shading, no outlines, no text.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1235,
+    "candidatesTokenCount": 1969,
+    "totalTokenCount": 3580,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 115
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 376,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05724,
+   "seconds": 20.8,
+   "created": "2026-11-27T16:04:03Z"
+  }
+ ]
+}

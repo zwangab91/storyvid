@@ -1,0 +1,87 @@
+{
+ "image": "mother.png",
+ "size": [
+  1792,
+  2400
+ ],
+ "board": {
+  "board_lab": [
+   97.91,
+   -0.17,
+   6.5
+  ],
+  "board_noise": 0.92,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 3,
+ "cleanly_cuttable": false,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    696,
+    301,
+    410,
+    675
+   ],
+   "area_frac": 0.0435,
+   "centroid": [
+    900.7,
+    622.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.015,
+   "file": "piece_00.png",
+   "origin": [
+    690,
+    295
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    523,
+    852,
+    763,
+    1255
+   ],
+   "area_frac": 0.0866,
+   "centroid": [
+    907.1,
+    1573.7
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.025,
+   "file": "piece_01.png",
+   "origin": [
+    517,
+    846
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    825,
+    1171,
+    172,
+    46
+   ],
+   "area_frac": 0.0006,
+   "centroid": [
+    917.3,
+    1194.8
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.941,
+   "file": "piece_02.png",
+   "origin": [
+    819,
+    1165
+   ]
+  }
+ ]
+}

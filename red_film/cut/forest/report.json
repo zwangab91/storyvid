@@ -1,0 +1,153 @@
+{
+ "image": "forest.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   97.96,
+   -0.52,
+   7.45
+  ],
+  "board_noise": 1.0,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 6,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    92,
+    193,
+    546,
+    1151
+   ],
+   "area_frac": 0.0726,
+   "centroid": [
+    358.9,
+    841.5
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_00.png",
+   "origin": [
+    86,
+    187
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    632,
+    298,
+    660,
+    1052
+   ],
+   "area_frac": 0.0911,
+   "centroid": [
+    958.5,
+    710.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_01.png",
+   "origin": [
+    626,
+    292
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    1338,
+    275,
+    592,
+    1075
+   ],
+   "area_frac": 0.0823,
+   "centroid": [
+    1634.9,
+    713.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_02.png",
+   "origin": [
+    1332,
+    269
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    1888,
+    969,
+    231,
+    379
+   ],
+   "area_frac": 0.0088,
+   "centroid": [
+    2000.5,
+    1137.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.005,
+   "file": "piece_03.png",
+   "origin": [
+    1882,
+    963
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    2158,
+    951,
+    211,
+    398
+   ],
+   "area_frac": 0.0101,
+   "centroid": [
+    2267.1,
+    1134.4
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.005,
+   "file": "piece_04.png",
+   "origin": [
+    2152,
+    945
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    2427,
+    953,
+    205,
+    397
+   ],
+   "area_frac": 0.0099,
+   "centroid": [
+    2530.6,
+    1134.2
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.004,
+   "file": "piece_05.png",
+   "origin": [
+    2421,
+    947
+   ]
+  }
+ ]
+}

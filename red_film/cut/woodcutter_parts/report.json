@@ -1,0 +1,153 @@
+{
+ "image": "woodcutter_parts.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.91,
+   -0.52,
+   7.52
+  ],
+  "board_noise": 0.98,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 6,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    232,
+    170,
+    405,
+    601
+   ],
+   "area_frac": 0.043,
+   "centroid": [
+    436.3,
+    462.4
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.001,
+   "file": "piece_00.png",
+   "origin": [
+    226,
+    164
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    693,
+    397,
+    231,
+    734
+   ],
+   "area_frac": 0.021,
+   "centroid": [
+    802.1,
+    753.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.002,
+   "file": "piece_01.png",
+   "origin": [
+    687,
+    391
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    962,
+    326,
+    481,
+    591
+   ],
+   "area_frac": 0.0543,
+   "centroid": [
+    1202.6,
+    634.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_02.png",
+   "origin": [
+    956,
+    320
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    1478,
+    341,
+    694,
+    1233
+   ],
+   "area_frac": 0.048,
+   "centroid": [
+    1839.0,
+    736.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_03.png",
+   "origin": [
+    1472,
+    335
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    326,
+    867,
+    281,
+    786
+   ],
+   "area_frac": 0.035,
+   "centroid": [
+    435.3,
+    1263.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_04.png",
+   "origin": [
+    320,
+    861
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    1493,
+    880,
+    328,
+    784
+   ],
+   "area_frac": 0.0367,
+   "centroid": [
+    1640.1,
+    1256.5
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_05.png",
+   "origin": [
+    1487,
+    874
+   ]
+  }
+ ]
+}
