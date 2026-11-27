@@ -1,0 +1,48 @@
+{
+ "kind": "video",
+ "model": "gemini-omni-1.2-flash",
+ "total_cost_usd": 1.053,
+ "assets": [
+  {
+   "id": "kuafu_drink",
+   "type": "video",
+   "key": "805c58967c404c5d",
+   "file": "kuafu_drink.mp4",
+   "model": "gemini-omni-1.2-flash",
+   "duration": 15,
+   "bytes": 5681592,
+   "cost_usd": 1.053,
+   "usage": {
+    "total_tokens": 89179,
+    "total_input_tokens": 1361,
+    "input_tokens_by_modality": [
+     {
+      "modality": "text",
+      "tokens": 261
+     },
+     {
+      "modality": "image",
+      "tokens": 1100
+     }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 86880,
+    "output_tokens_by_modality": [
+     {
+      "modality": "video",
+      "tokens": 86880
+     }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 938,
+    "initial_input_tokens": 1361
+   },
+   "prompt": "Animate this hand-made tissue-paper collage illustration as gentle 2D cut-out stop-motion, like a picture book come to life. Motion direction, timed to the narration: 0 to 5 seconds: under the blazing sun the giant Kuafu stands panting in the heat, shoulders heaving, wiping sweat from his brow. 5 to 11 seconds: desperately thirsty, he hurries forward to the rivers, lays his wooden staff down on the ground and drops to his knees on the bank of the blue river. 11 to 15 seconds: he bends down, scoops river water with both cupped hands and gulps it down, again and again, faster and faster, while the blue river and the tan-yellow river shrink and thin into narrow dry ribbons. The sun stays where it is and the camera stays still.\nStyle lock: preserve every scissor-cut paper edge, painted brushstroke and paper texture and the flat 2D picture-book cut-paper look of the starting frame; keep every character's face, hair, clothes and colours exactly as in the starting frame; calm, steady camera like a multi-plane animation stand; never 3D, no new characters, no text, captions or watermarks.",
+   "images": [
+    "kuafu_s8_start.jpg"
+   ],
+   "seconds": 60.7,
+   "created": "2026-11-27T17:45:15Z"
+  }
+ ]
+}
