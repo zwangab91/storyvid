@@ -1,0 +1,153 @@
+{
+ "image": "props_kuafu.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   98.0,
+   -0.53,
+   6.25
+  ],
+  "board_noise": 0.49,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 6,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    133,
+    113,
+    512,
+    712
+   ],
+   "area_frac": 0.0401,
+   "centroid": [
+    391.7,
+    523.4
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.008,
+   "file": "piece_00.png",
+   "origin": [
+    127,
+    107
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    1815,
+    171,
+    787,
+    578
+   ],
+   "area_frac": 0.0683,
+   "centroid": [
+    2286.4,
+    505.8
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_01.png",
+   "origin": [
+    1809,
+    165
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    751,
+    360,
+    1032,
+    266
+   ],
+   "area_frac": 0.0509,
+   "centroid": [
+    1264.6,
+    493.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.001,
+   "file": "piece_02.png",
+   "origin": [
+    745,
+    354
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    256,
+    958,
+    245,
+    416
+   ],
+   "area_frac": 0.0151,
+   "centroid": [
+    378.1,
+    1209.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_03.png",
+   "origin": [
+    250,
+    952
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    2226,
+    976,
+    353,
+    341
+   ],
+   "area_frac": 0.0125,
+   "centroid": [
+    2399.9,
+    1165.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_04.png",
+   "origin": [
+    2220,
+    970
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    634,
+    1062,
+    1466,
+    141
+   ],
+   "area_frac": 0.0219,
+   "centroid": [
+    1448.1,
+    1131.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_05.png",
+   "origin": [
+    628,
+    1056
+   ]
+  }
+ ]
+}

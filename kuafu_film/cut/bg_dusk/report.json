@@ -1,0 +1,20 @@
+{
+ "image": "bg_dusk.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   74.45,
+   21.58,
+   5.52
+  ],
+  "board_noise": 28.28,
+  "border_is_board": 1.0,
+  "threshold": 98.98
+ },
+ "n_pieces": 0,
+ "cleanly_cuttable": false,
+ "pieces": []
+}

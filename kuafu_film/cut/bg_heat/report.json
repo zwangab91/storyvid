@@ -1,0 +1,20 @@
+{
+ "image": "bg_heat.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   83.18,
+   11.27,
+   39.89
+  ],
+  "board_noise": 11.34,
+  "border_is_board": 1.0,
+  "threshold": 39.69
+ },
+ "n_pieces": 0,
+ "cleanly_cuttable": false,
+ "pieces": []
+}

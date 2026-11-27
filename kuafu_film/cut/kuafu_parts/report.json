@@ -1,0 +1,153 @@
+{
+ "image": "kuafu_parts.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.77,
+   0.16,
+   6.25
+  ],
+  "board_noise": 0.85,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 6,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    393,
+    113,
+    470,
+    630
+   ],
+   "area_frac": 0.0392,
+   "centroid": [
+    624.3,
+    386.7
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.009,
+   "file": "piece_00.png",
+   "origin": [
+    387,
+    107
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    1661,
+    93,
+    607,
+    1636
+   ],
+   "area_frac": 0.0422,
+   "centroid": [
+    2017.6,
+    718.2
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_01.png",
+   "origin": [
+    1655,
+    87
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    151,
+    499,
+    216,
+    785
+   ],
+   "area_frac": 0.0237,
+   "centroid": [
+    247.1,
+    855.7
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.001,
+   "file": "piece_02.png",
+   "origin": [
+    145,
+    493
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    850,
+    347,
+    758,
+    992
+   ],
+   "area_frac": 0.1082,
+   "centroid": [
+    1232.4,
+    841.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_03.png",
+   "origin": [
+    844,
+    341
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    425,
+    849,
+    281,
+    855
+   ],
+   "area_frac": 0.0338,
+   "centroid": [
+    535.2,
+    1253.5
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_04.png",
+   "origin": [
+    419,
+    843
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    1638,
+    848,
+    281,
+    857
+   ],
+   "area_frac": 0.034,
+   "centroid": [
+    1806.4,
+    1252.4
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.001,
+   "file": "piece_05.png",
+   "origin": [
+    1632,
+    842
+   ]
+  }
+ ]
+}

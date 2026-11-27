@@ -1,0 +1,153 @@
+{
+ "image": "child_parts.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.96,
+   -0.19,
+   6.25
+  ],
+  "board_noise": 0.64,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 6,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    287,
+    289,
+    389,
+    590
+   ],
+   "area_frac": 0.02,
+   "centroid": [
+    475.7,
+    563.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.002,
+   "file": "piece_00.png",
+   "origin": [
+    281,
+    283
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    987,
+    77,
+    426,
+    542
+   ],
+   "area_frac": 0.0351,
+   "centroid": [
+    1199.0,
+    357.8
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_01.png",
+   "origin": [
+    981,
+    71
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    1694,
+    287,
+    416,
+    591
+   ],
+   "area_frac": 0.0213,
+   "centroid": [
+    1905.3,
+    558.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.002,
+   "file": "piece_02.png",
+   "origin": [
+    1688,
+    281
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    957,
+    646,
+    495,
+    750
+   ],
+   "area_frac": 0.0664,
+   "centroid": [
+    1200.3,
+    1044.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_03.png",
+   "origin": [
+    951,
+    640
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    359,
+    951,
+    296,
+    733
+   ],
+   "area_frac": 0.0348,
+   "centroid": [
+    516.4,
+    1298.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_04.png",
+   "origin": [
+    353,
+    945
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    1747,
+    952,
+    295,
+    733
+   ],
+   "area_frac": 0.0346,
+   "centroid": [
+    1882.2,
+    1300.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_05.png",
+   "origin": [
+    1741,
+    946
+   ]
+  }
+ ]
+}

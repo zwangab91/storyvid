@@ -1,0 +1,153 @@
+{
+ "image": "traveler_parts.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.74,
+   0.16,
+   6.5
+  ],
+  "board_noise": 0.92,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 6,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    896,
+    84,
+    608,
+    421
+   ],
+   "area_frac": 0.0282,
+   "centroid": [
+    1199.9,
+    278.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_00.png",
+   "origin": [
+    890,
+    78
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    178,
+    556,
+    698,
+    479
+   ],
+   "area_frac": 0.0277,
+   "centroid": [
+    512.8,
+    755.8
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.001,
+   "file": "piece_01.png",
+   "origin": [
+    172,
+    550
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    968,
+    539,
+    474,
+    795
+   ],
+   "area_frac": 0.0721,
+   "centroid": [
+    1201.7,
+    944.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_02.png",
+   "origin": [
+    962,
+    533
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    1519,
+    558,
+    694,
+    478
+   ],
+   "area_frac": 0.028,
+   "centroid": [
+    1877.1,
+    760.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_03.png",
+   "origin": [
+    1513,
+    552
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    648,
+    880,
+    307,
+    825
+   ],
+   "area_frac": 0.0368,
+   "centroid": [
+    779.2,
+    1268.7
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_04.png",
+   "origin": [
+    642,
+    874
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    1452,
+    880,
+    306,
+    824
+   ],
+   "area_frac": 0.0369,
+   "centroid": [
+    1626.1,
+    1268.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_05.png",
+   "origin": [
+    1446,
+    874
+   ]
+  }
+ ]
+}

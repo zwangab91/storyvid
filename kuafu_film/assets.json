@@ -1,0 +1,451 @@
+{
+ "model": "gemini-nano-banana-2.1",
+ "image_size": "2K",
+ "total_cost_usd": 0.718,
+ "assets": [
+  {
+   "id": "kuafu",
+   "key": "f07e93be2950f5f7",
+   "file": "kuafu.png",
+   "aspect": "3:4",
+   "refs": [
+    "@jingwei_step1/bird.png"
+   ],
+   "prompt": "A single giant from ancient Chinese myth: Kuafu, a towering broad-shouldered giant with a kind, determined face, warm bronze skin, long loose black hair falling past his shoulders, a small yellow snake coiled on each ear as an earring, a short ochre-brown tunic belted at the waist, brown leggings and simple bark shoes. Standing, front view, arms relaxed at the sides, with a tall wooden staff with a knobbed top held upright in the hand on the right of the picture, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1370,
+    "candidatesTokenCount": 2040,
+    "totalTokenCount": 3821,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 250
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 411,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05824,
+   "seconds": 23.1,
+   "created": "2026-11-27T15:51:05Z"
+  },
+  {
+   "id": "kuafu_parts",
+   "key": "d6bd44ab9be775ad",
+   "file": "kuafu_parts.png",
+   "aspect": "4:3",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "The attached image is a cut-paper giant. Make the puppet parts sheet: the same giant taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck and both snake earrings; the body (clothes, without arms and without legs); the arm on the left of the picture with its hand; the arm on the right of the picture with its hand gripping the whole staff (the staff is part of this piece); the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached giant. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1419,
+    "candidatesTokenCount": 2071,
+    "totalTokenCount": 3974,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 299
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 484,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05909,
+   "seconds": 24.2,
+   "created": "2026-11-27T15:51:30Z"
+  },
+  {
+   "id": "traveler",
+   "key": "0535f63dd37fba0c",
+   "file": "traveler.png",
+   "aspect": "3:4",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "A single traveller from ancient China, a grown man: a wide woven straw hat, a blue cloth jacket, earth-brown trousers, tan skin, short black hair and a friendly face. Standing, front view, arms relaxed at the sides, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1317,
+    "candidatesTokenCount": 2040,
+    "totalTokenCount": 3918,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 197
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 561,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05928,
+   "seconds": 20.1,
+   "created": "2026-11-27T15:51:51Z"
+  },
+  {
+   "id": "traveler_parts",
+   "key": "2343052e5566aeae",
+   "file": "traveler_parts.png",
+   "aspect": "4:3",
+   "refs": [
+    "traveler"
+   ],
+   "prompt": "The attached image is a cut-paper man. Make the puppet parts sheet: the same man taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck and the straw hat; the body (clothes, without arms and without legs); the arm on the left of the picture with its hand; the arm on the right of the picture with its hand; the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached man. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1407,
+    "candidatesTokenCount": 2113,
+    "totalTokenCount": 4491,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 287
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 971,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06304,
+   "seconds": 23.5,
+   "created": "2026-11-27T15:52:16Z"
+  },
+  {
+   "id": "child",
+   "key": "a2c236f0ef446c6c",
+   "file": "child.png",
+   "aspect": "3:4",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "A single small child from ancient China, about five years old: black hair in a little bun, a green cloth tunic, tan skin and a cheerful round face. Standing, front view, arms relaxed at the sides, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1312,
+    "candidatesTokenCount": 1977,
+    "totalTokenCount": 3323,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 192
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 34,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05485,
+   "seconds": 17.8,
+   "created": "2026-11-27T15:52:34Z"
+  },
+  {
+   "id": "child_parts",
+   "key": "0ecf2c024fd4bb3a",
+   "file": "child_parts.png",
+   "aspect": "4:3",
+   "refs": [
+    "child"
+   ],
+   "prompt": "The attached image is a cut-paper child. Make the puppet parts sheet: the same child taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck and bun; the body (clothes, without arms and without legs); the arm on the left of the picture with its hand; the arm on the right of the picture with its hand; the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached child. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1405,
+    "candidatesTokenCount": 2535,
+    "totalTokenCount": 5584,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 285
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 1644,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.07125,
+   "seconds": 37.2,
+   "created": "2026-11-27T15:53:13Z"
+  },
+  {
+   "id": "sun_big",
+   "key": "4ff30e5905a94ef8",
+   "file": "sun_big.png",
+   "aspect": "1:1",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "One huge blazing sun cut from painted tissue paper: a round disc of hot gold, orange and red brush streaks with a ring of flame-like pointed rays all around it, all one single piece. The sun is isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1294,
+    "candidatesTokenCount": 1949,
+    "totalTokenCount": 3884,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 174
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 641,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05917,
+   "seconds": 20.4,
+   "created": "2026-11-27T15:53:34Z"
+  },
+  {
+   "id": "props_kuafu",
+   "key": "fa8a275b18f95bc9",
+   "file": "props_kuafu.png",
+   "aspect": "16:9",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "A props sheet of six separate cut-paper pieces laid out with clear gaps of plain board between them: a small evergreen pine tree with a short brown trunk; a small calm lake of blue water seen from a low angle, so it is a wide flat oval; a soft puff of ochre dust cloud; a single clear blue drop of sweat; a long straight wooden staff with a knobbed top lying flat and horizontal (the same staff as the attached giant's); a small yellow five-pointed star. Nothing overlaps; wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1348,
+    "candidatesTokenCount": 2101,
+    "totalTokenCount": 4195,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 746,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06117,
+   "seconds": 21.4,
+   "created": "2026-11-27T15:53:56Z"
+  },
+  {
+   "id": "peaches",
+   "key": "8155a3ac38986649",
+   "file": "peaches.png",
+   "aspect": "4:3",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "A props sheet of two separate cut-paper pieces with a clear gap of plain board between them: a peach tree with a twisting brown trunk and a full round crown of green leaves and pink peach blossoms, with no fruit on it; and one single ripe peach, round and blush pink and orange, with one small green leaf. Nothing overlaps; wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1311,
+    "candidatesTokenCount": 1987,
+    "totalTokenCount": 3886,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 191
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 588,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05908,
+   "seconds": 20.5,
+   "created": "2026-11-27T15:54:18Z"
+  },
+  {
+   "id": "bg_heat",
+   "key": "eeaaac35efb5df4d",
+   "file": "bg_heat.png",
+   "aspect": "16:9",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "A full-bleed hot summer sky made of overlapping torn bands of hand-painted tissue paper in pale gold, warm yellow and soft apricot, shimmering with heat. It fills the entire image edge to edge. Only sky: no sun, no clouds, no birds, no land, no objects of any kind.\n\nStyle: children's picture-book art made of hand-painted tissue paper, matching the paints and paper textures of the attached reference: bold acrylic brush streaks and sponge mottling, flat, no 3D shading, no outlines, no text.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1235,
+    "candidatesTokenCount": 1983,
+    "totalTokenCount": 3724,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 115
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 506,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05832,
+   "seconds": 20.4,
+   "created": "2026-11-27T15:54:40Z"
+  },
+  {
+   "id": "bg_blaze",
+   "key": "63e2964b7d9658a7",
+   "file": "bg_blaze.png",
+   "aspect": "16:9",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "A full-bleed blazing sky made of overlapping torn bands of hand-painted tissue paper in fiery orange, vermilion and hot gold, as if the air itself were burning. It fills the entire image edge to edge. Only sky: no sun, no clouds, no birds, no land, no objects of any kind.\n\nStyle: children's picture-book art made of hand-painted tissue paper, matching the paints and paper textures of the attached reference: bold acrylic brush streaks and sponge mottling, flat, no 3D shading, no outlines, no text.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1238,
+    "candidatesTokenCount": 1957,
+    "totalTokenCount": 3304,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 118
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 109,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05515,
+   "seconds": 17.6,
+   "created": "2026-11-27T15:54:58Z"
+  },
+  {
+   "id": "bg_dusk",
+   "key": "69c33c3f6d06c4f2",
+   "file": "bg_dusk.png",
+   "aspect": "16:9",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "A full-bleed dusk sky made of overlapping torn bands of hand-painted tissue paper: rose, coral and apricot near the bottom fading to soft lilac at the top. It fills the entire image edge to edge. Only sky: no sun, no clouds, no birds, no land, no objects of any kind.\n\nStyle: children's picture-book art made of hand-painted tissue paper, matching the paints and paper textures of the attached reference: bold acrylic brush streaks and sponge mottling, flat, no 3D shading, no outlines, no text.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1237,
+    "candidatesTokenCount": 2016,
+    "totalTokenCount": 3860,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 117
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 607,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05933,
+   "seconds": 19.6,
+   "created": "2026-11-27T15:55:19Z"
+  }
+ ]
+}

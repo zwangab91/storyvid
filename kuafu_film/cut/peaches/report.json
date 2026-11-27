@@ -1,0 +1,65 @@
+{
+ "image": "peaches.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.77,
+   -0.36,
+   6.25
+  ],
+  "board_noise": 0.67,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 2,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    125,
+    144,
+    1249,
+    1521
+   ],
+   "area_frac": 0.2323,
+   "centroid": [
+    751.1,
+    742.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.009,
+   "file": "piece_00.png",
+   "origin": [
+    119,
+    138
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    1549,
+    561,
+    599,
+    665
+   ],
+   "area_frac": 0.0656,
+   "centroid": [
+    1856.8,
+    906.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.004,
+   "file": "piece_01.png",
+   "origin": [
+    1543,
+    555
+   ]
+  }
+ ]
+}

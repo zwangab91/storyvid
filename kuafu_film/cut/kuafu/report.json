@@ -1,0 +1,43 @@
+{
+ "image": "kuafu.png",
+ "size": [
+  1792,
+  2400
+ ],
+ "board": {
+  "board_lab": [
+   97.77,
+   -0.02,
+   6.25
+  ],
+  "board_noise": 0.8,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    409,
+    141,
+    1113,
+    2146
+   ],
+   "area_frac": 0.297,
+   "centroid": [
+    921.3,
+    1147.5
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.002,
+   "file": "piece_00.png",
+   "origin": [
+    403,
+    135
+   ]
+  }
+ ]
+}

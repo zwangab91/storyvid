@@ -1,0 +1,43 @@
+{
+ "image": "child.png",
+ "size": [
+  1792,
+  2400
+ ],
+ "board": {
+  "board_lab": [
+   97.96,
+   -0.19,
+   5.95
+  ],
+  "board_noise": 0.7,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    482,
+    226,
+    835,
+    2032
+   ],
+   "area_frac": 0.2353,
+   "centroid": [
+    900.6,
+    1297.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.005,
+   "file": "piece_00.png",
+   "origin": [
+    476,
+    220
+   ]
+  }
+ ]
+}

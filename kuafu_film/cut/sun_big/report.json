@@ -1,0 +1,43 @@
+{
+ "image": "sun_big.png",
+ "size": [
+  2048,
+  2048
+ ],
+ "board": {
+  "board_lab": [
+   97.56,
+   0.16,
+   6.38
+  ],
+  "board_noise": 0.97,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    135,
+    142,
+    1774,
+    1772
+   ],
+   "area_frac": 0.4108,
+   "centroid": [
+    1023.0,
+    1023.2
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.007,
+   "file": "piece_00.png",
+   "origin": [
+    129,
+    136
+   ]
+  }
+ ]
+}
