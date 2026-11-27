@@ -67,6 +67,16 @@ Three more hybrid films, made the same way (art, cut-out, cast file, generated n
   a figure's root can turn about a chosen point (`"root_pivot"`, a tree's foot).
 - Path, river, floor and cracked-earth strips and a few small marks are still drawn procedurally inside the scenes.
 
+Motion test on 夸父 scenes 7-8 (`stories/kuafu_motion_test.json`, `cast/kuafu_motion_test.json`):
+- Actions on the narration's words (`"on"`/`"until"`, see the spec): he runs in and stops on 追上了太阳, opens his
+  arms on 张开双臂 and closes them on 抱在怀里; he pants on 太热了, runs into the river on 跑到…渭水边, and on
+  大口大口地喝水 two painted replacement poses (`assets/kuafu_poses.json`, scooping and drinking, $0.12) alternate
+  four times while the rivers drain.
+- The same moment as a Gemini Omni clip (`storyvid/videoclip.py`, `assets/kuafu_drink_clip.json`): 15 s from our own
+  first frame of the scene, $1.05. It acts the whole beat (wipes his brow, kneels, scoops, the rivers dry up) and keeps
+  the character recognisable, but the kneel is awkward, the staff ends up floating, and the action runs about 2 s ahead
+  of the narration.
+
 Not built yet:
 - The storyboard step writing the asset list and cast file (for 精卫 the planner wrote both by hand: piece labels,
   attach points, pivots for pieces without a straight cut, draw order, tuned rig values).

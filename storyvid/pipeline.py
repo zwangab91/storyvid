@@ -321,10 +321,11 @@ def resolve_beats(scenes: list[dict]):
     """Let an action happen on the words that describe it rather than at a fixed fraction of the scene.
 
     Any item anim, part anim or rig window may say `"on": "<words>"` instead of `"t"`: it starts when those words are
-    spoken and lasts `"for"` seconds (default 0.5), or until `"until": "<later words>"` are spoken; `"offset"` shifts
-    it in seconds. Times come from the captions, which are aligned to the narration's pauses; without captions
-    (previews, validation) the words are placed proportionally through the narration. Words not in the narration
-    raise BeatError."""
+    spoken and lasts `"for"` seconds (default 0.5), or until `"until": "<later words>"` are spoken. `"offset"` moves the
+    start and `"end_offset"` the end, in seconds; "@start" and "@end" stand for the scene's first and last moment.
+    Times come from the captions, which are aligned to the narration's pauses; without captions (previews,
+    validation) the words are placed proportionally through the narration. Words not in the narration raise
+    BeatError."""
     for sc in scenes:
         dur = sc.get("_dur")
         text = sc.get("narration", "") or ""
@@ -333,7 +334,11 @@ def resolve_beats(scenes: list[dict]):
         nar0 = sc.get("_nar_start", LEAD)
         nar1 = max(nar0 + 0.5, dur - TAIL)
 
-        def when(words, sc=sc, text=text, nar0=nar0, nar1=nar1):
+        def when(words, sc=sc, text=text, nar0=nar0, nar1=nar1, dur=dur):
+            if words == "@start":
+                return 0.0
+            if words == "@end":
+                return dur
             for a, b, chunk, _sub in sc.get("_captions", []):
                 k = chunk.find(words)
                 if k >= 0:
@@ -346,7 +351,8 @@ def resolve_beats(scenes: list[dict]):
         def fix(spec):
             if isinstance(spec, dict) and "on" in spec:
                 t0 = when(spec["on"]) + float(spec.get("offset", 0.0))
-                t1 = when(spec["until"]) + float(spec.get("offset", 0.0)) if "until" in spec else t0 + float(spec.get("for", 0.5))
+                t1 = (when(spec["until"]) + float(spec.get("end_offset", 0.0)) if "until" in spec
+                      else t0 + float(spec.get("for", 0.5)))
                 spec["t"] = [min(1.0, max(0.0, t0 / dur)), min(1.0, max(0.0, max(t1, t0) / dur))]
 
         for it in sc.get("_items", []):

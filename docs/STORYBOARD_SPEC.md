@@ -85,6 +85,22 @@ Easing: `"ease": "linear" | "in" | "out" | "inout" | "sine" | "back" | "bounce"`
 Moves chain: a later `move` starts where the earlier one ended.
 Part-only: `blink {period}` (squashes the part vertically for a moment).
 
+**Act on the words.** Instead of `t`, any anim, part anim or rig window can say when it happens by the narration:
+`"on": "张开双臂"` starts it when those words are spoken; `"for": 0.8` (seconds, default 0.5) or `"until": "抱在怀里"`
+ends it; `"offset"` moves the start and `"end_offset"` the end (seconds); `"@start"` and `"@end"` are the scene's
+edges. Times come from the narration itself (captions are aligned to its pauses), so an action lands on its line even
+when the voice speeds up or slows down. Prefer this for every action the narration describes: the character does what
+the words say while they are said, then rests, instead of one loop running through the whole scene. Words that are not
+in the narration are a validation error. Example (a giant opens his arms, then closes them around the sun):
+```json
+{"actor": "kuafu", "rig": [{"name": "run", "on": "终于", "until": "追上了太阳"}, "idle"],
+ "part_anims": [{"part": "arm_l", "type": "rotate", "to": 105, "on": "张开双臂", "for": 0.9, "ease": "out"},
+                {"part": "arm_l", "type": "rotate", "to": 62, "on": "抱在怀里", "for": 1.1}]}
+```
+For poses a puppet can't reach (kneeling, crouching, lying down), use pose actors (separate drawings of the same
+character, `"character"` shared) and swap them with `show` windows on the words; give swaps `"fade": 0.001` so they cut
+cleanly, like replacement animation.
+
 ## Actor
 ```json
 {"parts": [PART, ...], "rigs": {"run": [PART_ANIM, ...], "idle": [...]}}
