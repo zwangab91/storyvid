@@ -103,7 +103,8 @@ rendering an existing storyboard does not.
   returns a scene list (10-14 scenes by default) with narration (plus `subtitle_en` for Chinese), story-specific
   paints, actors built from cut-paper parts, rigs, animations and camera moves.
 - **Validation renders the draft.** Every scene is built and rendered at 384×216 at three moments. Exceptions (an
-  unknown paint, a missing rig or part, bad geometry) and narration/subtitle sentence-count mismatches go back to
+  unknown paint, a missing rig or part, bad geometry), narration/subtitle sentence-count mismatches and a character
+  on screen twice at once (an actor with an idle, walk, run, fly or talk rig, or a person) go back to
   Claude for up to 3 repair rounds.
 - **Optional visual critique** (`--critique N`; the `make` command defaults to 1): the contact sheet image is shown to
   Claude, which returns a revised storyboard. A revision is kept only if it still validates.

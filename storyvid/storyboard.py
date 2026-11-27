@@ -114,6 +114,46 @@ def extract_json(text: str) -> dict:
 
 # --------------------------------------------------------------------------- validation
 
+CHARACTER_RIGS = {"idle", "walk", "run", "fly", "talk"}
+
+
+def is_character(spec: dict) -> bool:
+    """A story actor that is a character (shown once at a time): a person, or anything with a motion rig like idle,
+    walk, run, fly or talk. `"character": true/false` on the actor overrides (false for, say, a flock of gulls)."""
+    if "character" in spec:
+        return bool(spec["character"])
+    return spec.get("template") == "person" or bool(CHARACTER_RIGS & set(spec.get("rigs", {})))
+
+
+def duplicate_characters(story: dict, scenes: list[dict]) -> list[str]:
+    """Scenes that show one character twice at the same moment (two Jingwei birds, say). Copies that take turns are
+    fine: one shown only in a time window, or one off screen while the other is on."""
+    from .anim import apply_anims, new_state
+    chars = {a for a, spec in story.get("actors", {}).items() if is_character(spec)}
+    errs = []
+    for i, sc in enumerate(scenes):
+        by: dict[str, list] = {}
+        for it in sc.get("items", []):
+            if it.get("actor") in chars:
+                by.setdefault(it["actor"], []).append(it)
+        for actor, its in by.items():
+            if len(its) < 2:
+                continue
+            for u in [k / 40 for k in range(1, 40)]:
+                on = 0
+                for it in its:
+                    st = new_state(*it.get("at", (0, 0)), scale=it.get("scale", 1.0), opacity=it.get("opacity", 1.0))
+                    st = apply_anims(st, it.get("anims", []), u, 6.0, int(it.get("seed", 0)))
+                    on += st["vis"] and st["op"] > 0.05 and -150 < st["x"] < 2070 and -150 < st["y"] < 1230
+                if on > 1:
+                    where = "title scene" if i == 0 else ("end scene" if i == len(scenes) - 1 else f"scenes[{i - 1}]")
+                    errs.append(f"{where}: the character {actor!r} is on screen {on} times at once (at {u:.0%} of the "
+                                f"scene); show a character once, and show repeated action with one item (a path, "
+                                f"part show windows) - or mark the actor \"character\": false if copies are meant")
+                    break
+    return errs
+
+
 def validate(story: dict, sheet_path: str | None = None) -> list[str]:
     """Build and render every scene at low res. Returns a list of problems (empty = OK)."""
     from . import pipeline as P
@@ -142,6 +182,7 @@ def validate(story: dict, sheet_path: str | None = None) -> list[str]:
                 where = "title scene" if i == 0 else ("end scene" if i == len(scenes) - 1 else f"scenes[{i - 1}]")
                 errs.append(f"{where} at t={u}: {type(e).__name__}: {e}")
                 break
+    errs += duplicate_characters(story, scenes)
     if story.get("language", "en").startswith("zh"):
         for i, sc in enumerate(story["scenes"]):
             a = split_sentences(sc.get("narration", ""), "zh")

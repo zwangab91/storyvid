@@ -2452,7 +2452,9 @@
      "scale": 0.5,
      "rig": "fly",
      "reveal": [
-      "pebble"
+      "pebble",
+      "twig",
+      "twig_leaf"
      ],
      "anims": [
       {
@@ -2509,59 +2511,34 @@
        "type": "flip",
        "at": 0.67
       }
-     ]
-    },
-    {
-     "actor": "jingwei",
-     "at": [
-      700,
-      250
      ],
-     "scale": 0.35,
-     "rig": "fly",
-     "seed": 2,
-     "reveal": [
-      "twig",
-      "twig_leaf"
-     ],
-     "anims": [
+     "part_anims": [
       {
-       "type": "path",
-       "points": [
-        [
-         1350,
-         300
-        ],
-        [
-         800,
-         260
-        ],
-        [
-         200,
-         300
-        ],
-        [
-         800,
-         260
-        ],
-        [
-         1350,
-         300
-        ]
-       ],
+       "part": "pebble",
+       "type": "show",
        "t": [
         0,
+        0.5
+       ],
+       "fade": 0.15
+      },
+      {
+       "part": "twig",
+       "type": "show",
+       "t": [
+        0.5,
         1
        ],
-       "ease": "linear"
+       "fade": 0.15
       },
       {
-       "type": "flip",
-       "at": 0.3
-      },
-      {
-       "type": "flip",
-       "at": 0.75
+       "part": "twig_leaf",
+       "type": "show",
+       "t": [
+        0.5,
+        1
+       ],
+       "fade": 0.15
       }
      ]
     }
