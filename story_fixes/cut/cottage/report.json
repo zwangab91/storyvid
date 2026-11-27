@@ -1,0 +1,43 @@
+{
+ "image": "cottage.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.91,
+   -0.52,
+   7.45
+  ],
+  "board_noise": 1.0,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    612,
+    376,
+    1189,
+    1113
+   ],
+   "area_frac": 0.2354,
+   "centroid": [
+    1222.5,
+    1003.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_00.png",
+   "origin": [
+    606,
+    370
+   ]
+  }
+ ]
+}

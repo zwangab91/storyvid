@@ -1,0 +1,153 @@
+{
+ "image": "mother_parts.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.97,
+   -0.52,
+   7.33
+  ],
+  "board_noise": 1.07,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 6,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    458,
+    108,
+    438,
+    706
+   ],
+   "area_frac": 0.0478,
+   "centroid": [
+    677.5,
+    438.9
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_00.png",
+   "origin": [
+    452,
+    102
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    229,
+    514,
+    162,
+    754
+   ],
+   "area_frac": 0.0187,
+   "centroid": [
+    301.8,
+    877.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.004,
+   "file": "piece_01.png",
+   "origin": [
+    223,
+    508
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    857,
+    444,
+    719,
+    1204
+   ],
+   "area_frac": 0.14,
+   "centroid": [
+    1214.7,
+    1132.4
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_02.png",
+   "origin": [
+    851,
+    438
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    1934,
+    515,
+    203,
+    747
+   ],
+   "area_frac": 0.0183,
+   "centroid": [
+    2041.8,
+    874.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.002,
+   "file": "piece_03.png",
+   "origin": [
+    1928,
+    509
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    518,
+    1401,
+    224,
+    246
+   ],
+   "area_frac": 0.008,
+   "centroid": [
+    652.3,
+    1534.4
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_04.png",
+   "origin": [
+    512,
+    1395
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    1688,
+    1400,
+    224,
+    247
+   ],
+   "area_frac": 0.0081,
+   "centroid": [
+    1777.5,
+    1533.7
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_05.png",
+   "origin": [
+    1682,
+    1394
+   ]
+  }
+ ]
+}
