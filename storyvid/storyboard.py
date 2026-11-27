@@ -198,6 +198,7 @@ def check_characters(story: dict, scenes: list[dict] | None = None, fm=None, sam
         scenes = P.build_scenes(story)
         for sc in scenes:
             sc["_dur"], sc["_captions"], sc["_start"] = 6.0, [], 0.0
+        P.resolve_beats(scenes)
     if fm is None:
         fm = P.FrameMaker(story, scenes, 384, 216, P.CACHE)
     who = {a: character_of(a, spec) for a, spec in story.get("actors", {}).items()}
@@ -251,6 +252,10 @@ def validate(story: dict, sheet_path: str | None = None) -> list[str]:
         return [f"building scenes failed: {type(e).__name__}: {e}"]
     for sc in scenes:
         sc["_dur"], sc["_captions"], sc["_start"] = 6.0, [], 0.0
+    try:
+        P.resolve_beats(scenes)
+    except P.BeatError as e:
+        errs.append(str(e))
     try:
         fm = P.FrameMaker(story, scenes, 384, 216, P.CACHE)
     except Exception as e:  # noqa: BLE001

@@ -313,6 +313,50 @@ def build_captions(story: dict, scenes: list[dict]):
         sc["_captions"] = caps
 
 
+class BeatError(ValueError):
+    pass
+
+
+def resolve_beats(scenes: list[dict]):
+    """Let an action happen on the words that describe it rather than at a fixed fraction of the scene.
+
+    Any item anim, part anim or rig window may say `"on": "<words>"` instead of `"t"`: it starts when those words are
+    spoken and lasts `"for"` seconds (default 0.5), or until `"until": "<later words>"` are spoken; `"offset"` shifts
+    it in seconds. Times come from the captions, which are aligned to the narration's pauses; without captions
+    (previews, validation) the words are placed proportionally through the narration. Words not in the narration
+    raise BeatError."""
+    for sc in scenes:
+        dur = sc.get("_dur")
+        text = sc.get("narration", "") or ""
+        if not dur:
+            continue
+        nar0 = sc.get("_nar_start", LEAD)
+        nar1 = max(nar0 + 0.5, dur - TAIL)
+
+        def when(words, sc=sc, text=text, nar0=nar0, nar1=nar1):
+            for a, b, chunk, _sub in sc.get("_captions", []):
+                k = chunk.find(words)
+                if k >= 0:
+                    return a + (b - a) * k / max(1, len(chunk))
+            k = text.find(words)
+            if k < 0:
+                raise BeatError(f"scene narration has no words {words!r} (for an \"on\"/\"until\" beat)")
+            return nar0 + (nar1 - nar0) * k / max(1, len(text))
+
+        def fix(spec):
+            if isinstance(spec, dict) and "on" in spec:
+                t0 = when(spec["on"]) + float(spec.get("offset", 0.0))
+                t1 = when(spec["until"]) + float(spec.get("offset", 0.0)) if "until" in spec else t0 + float(spec.get("for", 0.5))
+                spec["t"] = [min(1.0, max(0.0, t0 / dur)), min(1.0, max(0.0, max(t1, t0) / dur))]
+
+        for it in sc.get("_items", []):
+            for spec in list(it.get("anims", []) or []) + list(it.get("part_anims", []) or []):
+                fix(spec)
+            r = it.get("rig")
+            for spec in (r if isinstance(r, list) else [r]):
+                fix(spec)
+
+
 def write_srt(scenes, path):
     def ts(x):
         ms = int(round(x * 1000))
@@ -484,6 +528,7 @@ def render(story_path: str, out_dir: str, height: int = 1080, fps: int = 24, wor
     scenes = build_scenes(story)
     mix, total = build_audio_timeline(story, scenes, CACHE)
     build_captions(story, scenes)
+    resolve_beats(scenes)
     for sc in scenes:
         sc.pop("_audio", None)  # only needed for caption timing; keep it out of the render workers
     print(f"[{name}] {len(scenes)} scenes, {total:.1f}s, audio ready in {time.time() - t0:.1f}s", flush=True)
