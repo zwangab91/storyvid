@@ -1,0 +1,488 @@
+{
+ "kind": "audio",
+ "language": "zh",
+ "speech": {
+  "model": "gemini-3.8-flash-lite-tts",
+  "voice": "Kore",
+  "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+ },
+ "total_cost_usd": 0.0638,
+ "assets": [
+  {
+   "id": "n00",
+   "type": "speech",
+   "key": "2503507675e7c72c",
+   "file": "n00.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 123388,
+   "cost_usd": 0.00037,
+   "seconds": 1.8,
+   "created": "2026-11-27T16:10:04Z",
+   "usage": {
+    "promptTokenCount": 5,
+    "candidatesTokenCount": 61,
+    "totalTokenCount": 66,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 5
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 61
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "夸父逐日",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n01",
+   "type": "speech",
+   "key": "576c5d0ed3de789d",
+   "file": "n01.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 796348,
+   "cost_usd": 0.00249,
+   "seconds": 3.2,
+   "created": "2026-11-27T16:10:07Z",
+   "usage": {
+    "promptTokenCount": 39,
+    "candidatesTokenCount": 411,
+    "totalTokenCount": 450,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 39
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 411
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "远古的时候，北方的大山里住着一群巨人。他们的首领叫夸父，个子比山还要高，力气大得能搬动一座石头山。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n02",
+   "type": "speech",
+   "key": "de576738d9768808",
+   "file": "n02.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 648988,
+   "cost_usd": 0.00202,
+   "seconds": 2.6,
+   "created": "2026-11-27T16:10:10Z",
+   "usage": {
+    "promptTokenCount": 30,
+    "candidatesTokenCount": 334,
+    "totalTokenCount": 364,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 30
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 334
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "那时候，太阳每天从东边升起，又从西边落下。太阳一落山，大地就变得又冷又黑。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n03",
+   "type": "speech",
+   "key": "9efe38e896085c70",
+   "file": "n03.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 426268,
+   "cost_usd": 0.00132,
+   "seconds": 2.3,
+   "created": "2026-11-27T16:10:12Z",
+   "usage": {
+    "promptTokenCount": 21,
+    "candidatesTokenCount": 219,
+    "totalTokenCount": 240,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 21
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 219
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "夸父想：“我要追上太阳，把它捉住，让它永远照亮大地！”",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n04",
+   "type": "speech",
+   "key": "a15f9dff3b865a2e",
+   "file": "n04.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 378268,
+   "cost_usd": 0.00117,
+   "seconds": 2.3,
+   "created": "2026-11-27T16:10:14Z",
+   "usage": {
+    "promptTokenCount": 18,
+    "candidatesTokenCount": 193,
+    "totalTokenCount": 211,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 18
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 193
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "于是，他拿起手杖，迈开大步，朝着太阳追去。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n05",
+   "type": "speech",
+   "key": "8d88b702a390d0e7",
+   "file": "n05.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 520828,
+   "cost_usd": 0.00162,
+   "seconds": 2.5,
+   "created": "2026-11-27T16:10:17Z",
+   "usage": {
+    "promptTokenCount": 25,
+    "candidatesTokenCount": 268,
+    "totalTokenCount": 293,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 25
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 268
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "他跑过一座座高山，跨过一条条大河，脚步把大地震得咚咚响。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n06",
+   "type": "speech",
+   "key": "3cb7b87e79a07af0",
+   "file": "n06.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 534748,
+   "cost_usd": 0.00166,
+   "seconds": 2.7,
+   "created": "2026-11-27T16:10:19Z",
+   "usage": {
+    "promptTokenCount": 21,
+    "candidatesTokenCount": 275,
+    "totalTokenCount": 296,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 21
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 275
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "太阳越来越近，越来越大，也越来越热。夸父跑得满头大汗。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n07",
+   "type": "speech",
+   "key": "b917858bfb164ab8",
+   "file": "n07.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 654748,
+   "cost_usd": 0.00204,
+   "seconds": 2.6,
+   "created": "2026-11-27T16:10:22Z",
+   "usage": {
+    "promptTokenCount": 29,
+    "candidatesTokenCount": 337,
+    "totalTokenCount": 366,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 29
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 337
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "终于，在太阳落下的地方，夸父追上了太阳！他张开双臂，想要把太阳抱在怀里。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n08",
+   "type": "speech",
+   "key": "115d4f4fb9656066",
+   "file": "n08.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 676828,
+   "cost_usd": 0.00211,
+   "seconds": 2.5,
+   "created": "2026-11-27T16:10:25Z",
+   "usage": {
+    "promptTokenCount": 33,
+    "candidatesTokenCount": 349,
+    "totalTokenCount": 382,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 33
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 349
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "可是，太阳实在太热了。夸父口渴极了，他跑到黄河和渭水边，大口大口地喝水。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n09",
+   "type": "speech",
+   "key": "dd60b90973f84384",
+   "file": "n09.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 599068,
+   "cost_usd": 0.00186,
+   "seconds": 2.6,
+   "created": "2026-11-27T16:10:27Z",
+   "usage": {
+    "promptTokenCount": 26,
+    "candidatesTokenCount": 308,
+    "totalTokenCount": 334,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 26
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 308
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "黄河和渭水都被他喝干了，可他还是渴。他又朝着北边的大湖跑去。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n10",
+   "type": "speech",
+   "key": "c15690c6a985517a",
+   "file": "n10.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 535228,
+   "cost_usd": 0.00166,
+   "seconds": 2.7,
+   "created": "2026-11-27T16:10:30Z",
+   "usage": {
+    "promptTokenCount": 25,
+    "candidatesTokenCount": 275,
+    "totalTokenCount": 300,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 25
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 275
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "可是大湖实在太远了。还没跑到，夸父就累得倒了下去，再也没有起来。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n11",
+   "type": "speech",
+   "key": "c3c98686ae152fd5",
+   "file": "n11.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 554908,
+   "cost_usd": 0.00172,
+   "seconds": 2.5,
+   "created": "2026-11-27T16:10:32Z",
+   "usage": {
+    "promptTokenCount": 25,
+    "candidatesTokenCount": 285,
+    "totalTokenCount": 310,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 25
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 285
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "他手中的手杖落在地上，变成了一大片桃林，结满了又大又甜的桃子。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n12",
+   "type": "speech",
+   "key": "870fcdacfe3bb347",
+   "file": "n12.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 584668,
+   "cost_usd": 0.00182,
+   "seconds": 2.6,
+   "created": "2026-11-27T16:10:35Z",
+   "usage": {
+    "promptTokenCount": 31,
+    "candidatesTokenCount": 301,
+    "totalTokenCount": 332,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 31
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 301
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "从此，路过的人走累了、口渴了，就可以在桃林里歇一歇，吃一个甜甜的桃子。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "n13",
+   "type": "speech",
+   "key": "f3cd779977e1c153",
+   "file": "n13.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 614428,
+   "cost_usd": 0.00191,
+   "seconds": 4.4,
+   "created": "2026-11-27T16:10:39Z",
+   "usage": {
+    "promptTokenCount": 26,
+    "candidatesTokenCount": 316,
+    "totalTokenCount": 342,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 26
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 316
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "夸父虽然没有捉住太阳，可是他勇敢追梦、永不放弃的精神，一直留在人们的心里。",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+  },
+  {
+   "id": "music",
+   "type": "music",
+   "key": "10ff09b216fe7251",
+   "file": "music.mp3",
+   "mime": "audio/mpeg",
+   "model": "lyria-3-clip-preview",
+   "bytes": 744370,
+   "cost_usd": 0.04,
+   "seconds": 10.4,
+   "created": "2026-11-27T16:10:50Z",
+   "prompt": "Uplifting cinematic storybook acoustic chamber score with light frame drum pulse, resonant Chinese guzheng, warm woodwinds, and bright glockenspiel finale, adventurous yet gentle picture-book tone, no vocals, 30 seconds loopable. Strictly instrumental acoustic chamber arrangement, soft storybook dynamics suitable beneath voice narration, no singing or vocals.",
+   "model_text": "<instrumental>"
+  }
+ ]
+}
