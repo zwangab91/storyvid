@@ -1,0 +1,81 @@
+{
+ "model": "gemini-nano-banana-2.1",
+ "image_size": "2K",
+ "total_cost_usd": 0.1167,
+ "assets": [
+  {
+   "id": "kuafu_scoop",
+   "key": "b1f9519098fdb82c",
+   "file": "kuafu_scoop.png",
+   "aspect": "4:3",
+   "refs": [
+    "@kuafu_film/kuafu.png"
+   ],
+   "prompt": "The attached image is a cut-paper giant. Show the very same giant, with an identical face, long loose black hair, small yellow snake earrings, ochre-brown belted tunic, brown leggings and bark shoes, in exactly the same colours, paints and paper textures, in a new pose: side view facing right, kneeling on both knees, his body bent forward and down, both arms reaching down in front of his knees with his hands cupped together low near the ground as if scooping water from a river. He is not holding his staff. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1369,
+    "candidatesTokenCount": 2015,
+    "totalTokenCount": 3622,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 249
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 238,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05675,
+   "seconds": 21.0,
+   "created": "2026-11-27T17:42:46Z"
+  },
+  {
+   "id": "kuafu_sip",
+   "key": "672bb7e0c8f83e59",
+   "file": "kuafu_sip.png",
+   "aspect": "4:3",
+   "refs": [
+    "@kuafu_film/kuafu.png"
+   ],
+   "prompt": "The attached image is a cut-paper giant. Show the very same giant, with an identical face, long loose black hair, small yellow snake earrings, ochre-brown belted tunic, brown leggings and bark shoes, in exactly the same colours, paints and paper textures, in a new pose: side view facing right, kneeling upright on both knees, head tilted back, both hands cupped together and raised to his mouth, gulping water from his cupped hands, with a few small blue drops falling from them. He is not holding his staff. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1369,
+    "candidatesTokenCount": 2402,
+    "totalTokenCount": 4054,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 249
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 283,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05999,
+   "seconds": 26.0,
+   "created": "2026-11-27T17:43:13Z"
+  }
+ ]
+}
