@@ -1,0 +1,72 @@
+{
+ "_about": "Everything The Tortoise and the Hare (stories/tortoise_and_hare.json) needs. Open-air scenes keep the plain cream page; trees and flowers come from the Little Red Riding Hood forest sheet, the sun, clouds, gull and ground from 精卫, the sunset sky from 夸父. The hare is painted first with the 精卫 bird as the paper-texture reference; every other image references it.",
+ "model": "gemini-nano-banana-2.1",
+ "image_size": "2K",
+ "style": "Style: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+ "assets": [
+  {
+   "id": "hare",
+   "aspect": "4:3",
+   "refs": [
+    "@jingwei_step1/bird.png"
+   ],
+   "prompt": "A single hare from an Aesop fable in side view facing right, crouched and ready to spring: warm brown fur with a cream belly, long upright ears with pink insides, a white fluffy tail, a bright eye, long whiskers and a confident grin. The whole hare is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "hare_parts",
+   "aspect": "4:3",
+   "refs": [
+    "hare"
+   ],
+   "prompt": "The attached image is a cut-paper hare. Make its puppet parts sheet: the same hare taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with eye, nose and whiskers (without the ears); a second copy of the very same head with its eye closed as if fast asleep (without the ears); the near ear; the far ear; the body (without head, legs or tail); the front leg with its paw; the back leg with its foot; the tail. The joint end of every leg, ear and the neck is cut straight. Keep every colour, paint and texture exactly as in the attached hare. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "tortoise",
+   "aspect": "4:3",
+   "refs": [
+    "hare"
+   ],
+   "prompt": "A single tortoise from an Aesop fable in side view facing right, walking: a high domed shell of olive and mossy green patches with a golden rim, a wrinkled green head on a stretched-out neck with a bright eye and a small smile, four stumpy green legs and a little pointed tail. The whole tortoise is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "tortoise_parts",
+   "aspect": "4:3",
+   "refs": [
+    "tortoise"
+   ],
+   "prompt": "The attached image is a cut-paper tortoise. Make its puppet parts sheet: the same tortoise taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the shell with the body under it (without head, neck, legs or tail); the head with its neck; the near front leg; the far front leg; the near back leg; the far back leg; the tail. The joint end of every leg, the neck and the tail is cut straight. Keep every colour, paint and texture exactly as in the attached tortoise. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "fox",
+   "aspect": "3:4",
+   "refs": [
+    "hare"
+   ],
+   "prompt": "A single fox from an Aesop fable, the judge of the race, sitting upright in side view facing right: orange and rust fur with a white chest and a white-tipped bushy tail, pointed ears, a bright eye, holding up a thin wooden stick with a small red flag in its front paw. The whole fox is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "fox_parts",
+   "aspect": "4:3",
+   "refs": [
+    "fox"
+   ],
+   "prompt": "The attached image is a cut-paper fox. Make its puppet parts sheet: the same fox taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with ears (and the neck); the sitting body with the hind legs (without head, front leg or tail); the tail; the front leg with its paw holding the stick and the red flag (stick and flag are part of this piece). The joint end of the leg, the neck and the tail is cut straight. Keep every colour, paint and texture exactly as in the attached fox. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "race",
+   "aspect": "16:9",
+   "refs": [
+    "hare"
+   ],
+   "prompt": "A props sheet of three separate cut-paper pieces with clear gaps of plain board between them: a small tuft of grass blades with a flat base; a small pond of blue water with two green lily pads, seen from a low angle so it is a wide flat oval; a race finish line, two upright wooden posts with a striped red, white and blue banner across their tops and a thin red ribbon stretched between them lower down. Nothing overlaps; wide empty margin of board around the edges."
+  },
+  {
+   "id": "hill_strip",
+   "aspect": "16:9",
+   "refs": [
+    "hare"
+   ],
+   "prompt": "A single wide gentle hill cut from painted tissue paper: a long low rounded dome in fresh meadow greens with lighter streaks and a flat bottom edge, spanning almost the full width of the image as one piece and filling only the bottom half. The rest of the image is plain empty board."
+  }
+ ]
+}

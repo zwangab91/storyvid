@@ -7,6 +7,7 @@
   "music": {"style": "musicbox", "seed": 4, "tempo": 88,
             "prompt": "Playful pastoral acoustic chamber piece for an old Greek fable, a slow steady oboe theme over plucked lyre-like harp, quick fluttering flute runs, and soft hand-drum taps, warm humorous storybook mood, no vocals, 30 seconds loopable."},
   "paints": {
+    "sunset_sky": {"colors": ["#f6b26b", "#f9cf8a", "#f08a5d", "#fbe2ae"], "style": "streaks", "angle": 0, "contrast": 0.75},
     "hare_fur": {"colors": ["#a86d3c", "#cc9156", "#6f4425", "#e6b47c", "#8d7c9c"], "style": "streaks"},
     "tort_skin": {"colors": ["#8fa24a", "#b2c463", "#6a7b30", "#d0d77c", "#5f8a6a"], "style": "dabs"},
     "tort_shell": {"colors": ["#6f8f3a", "#94b347", "#b38a3c", "#5a7f9a", "#7da34a", "#3b4a1c"], "style": "cells", "cells": 110},
@@ -287,7 +288,7 @@
     },
     {
       "narration": "When at last the hare woke up, the sun was going down. He leapt to his feet and ran as fast as he could!",
-      "background": {"colors": ["#f6b26b", "#f9cf8a", "#f08a5d", "#fbe2ae"], "style": "streaks", "angle": 0, "contrast": 0.75},
+      "background": "sunset_sky",
       "camera": {"zoom": [1.0, 1.05], "shake": {"amp": 5, "t": [0.55, 1.0]}},
       "items": [
         {"actor": "sun", "at": [1500, 760], "scale": 1.1, "rig": "glow", "anims": [{"type": "move", "to": [1500, 820], "t": [0, 1], "ease": "linear"}]},

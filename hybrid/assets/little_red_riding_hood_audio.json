@@ -1,0 +1,99 @@
+{
+ "kind": "audio",
+ "language": "en",
+ "speech": {
+  "model": "gemini-3.8-flash-lite-tts",
+  "voice": "Kore",
+  "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+ },
+ "music": {
+  "model": "lyria-3-clip-preview"
+ },
+ "assets": [
+  {
+   "id": "n00",
+   "type": "speech",
+   "text": "Little Red Riding Hood"
+  },
+  {
+   "id": "n01",
+   "type": "speech",
+   "text": "Once upon a time, at the edge of a great forest, there lived a little girl. Her grandmother had sewn her a bright red riding hood, and she loved it so much that she wore it every single day. And so everyone called her Little Red Riding Hood."
+  },
+  {
+   "id": "n02",
+   "type": "speech",
+   "text": "One morning, her mother packed a basket with fresh bread and sweet honey cake. \"Take this to Grandmother, who is feeling poorly,\" she said. \"Stay on the path, and do not stop to talk to strangers.\""
+  },
+  {
+   "id": "n03",
+   "type": "speech",
+   "text": "So off she went, down the winding path into the woods, swinging her basket and humming a happy little song."
+  },
+  {
+   "id": "n04",
+   "type": "speech",
+   "text": "Deep in the woods, a wolf slipped out from behind a tree. \"Good morning, little one,\" he said, with a sly smile. \"And where are you going today?\""
+  },
+  {
+   "id": "n05",
+   "type": "speech",
+   "text": "\"To my grandmother's house, at the very end of the path,\" said Little Red Riding Hood. \"Then why not pick her some flowers?\" said the wolf. \"See how pretty they are!\""
+  },
+  {
+   "id": "n06",
+   "type": "speech",
+   "text": "And while she gathered flowers, the wolf raced ahead to Grandmother's house, as fast as his legs could carry him."
+  },
+  {
+   "id": "n07",
+   "type": "speech",
+   "text": "He knocked on the door: knock, knock, knock. But when Grandmother peeked out of the window and saw his long, sharp teeth, she hid inside the wardrobe!"
+  },
+  {
+   "id": "n08",
+   "type": "speech",
+   "text": "Then the wolf put on Grandmother's nightcap, climbed into her bed, and pulled the blanket right up to his nose."
+  },
+  {
+   "id": "n09",
+   "type": "speech",
+   "text": "Soon Little Red Riding Hood knocked, and came inside. \"Oh, Grandmother,\" she said, \"what big ears you have!\" \"All the better to hear you with, my dear.\""
+  },
+  {
+   "id": "n10",
+   "type": "speech",
+   "text": "\"Grandmother, what big eyes you have!\" \"All the better to see you with, my dear.\""
+  },
+  {
+   "id": "n11",
+   "type": "speech",
+   "text": "\"And Grandmother, what big teeth you have!\" \"All the better to EAT you with!\" And out of the bed leapt the wolf!"
+  },
+  {
+   "id": "n12",
+   "type": "speech",
+   "text": "Little Red Riding Hood screamed so loudly that a woodcutter, chopping wood nearby, came running through the door with his axe!"
+  },
+  {
+   "id": "n13",
+   "type": "speech",
+   "text": "The wolf took one look at the woodcutter, leapt out of the window, and ran deep, deep into the forest. And he was never seen again."
+  },
+  {
+   "id": "n14",
+   "type": "speech",
+   "text": "Then out of the wardrobe stepped Grandmother, safe and sound. And they all sat down together to share the bread and the honey cake."
+  },
+  {
+   "id": "n15",
+   "type": "speech",
+   "text": "And Little Red Riding Hood made a promise: from that day on, she would always, always stay on the path."
+  },
+  {
+   "id": "music",
+   "type": "music",
+   "prompt": "Charming European fairytale acoustic chamber music, gentle flute melody with light harp arpeggios, soft pizzicato cello footsteps, warm whimsical storybook mood, no vocals, 30 seconds loopable."
+  }
+ ]
+}

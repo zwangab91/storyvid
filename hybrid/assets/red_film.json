@@ -1,0 +1,129 @@
+{
+ "_about": "Everything Little Red Riding Hood (stories/little_red_riding_hood.json) needs. Open-air scenes keep the plain cream page; the sun, clouds and gull come from 精卫 and the dusk sky from 夸父. The girl is painted first with the 精卫 bird as the paper-texture reference; every other image references her.",
+ "model": "gemini-nano-banana-2.1",
+ "image_size": "2K",
+ "style": "Style: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+ "assets": [
+  {
+   "id": "girl",
+   "aspect": "3:4",
+   "refs": [
+    "@jingwei_step1/bird.png"
+   ],
+   "prompt": "A single little girl from a European fairy tale, about seven years old: Little Red Riding Hood. A bright red hooded cape with the hood up around her face, short brown bob hair, a round friendly face with rosy cheeks, a blue dress with a white apron, dark shoes. Standing, front view, arms relaxed at the sides, a small wicker basket covered with a checked cloth hanging from the hand on the right of the picture, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "girl_parts",
+   "aspect": "4:3",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "The attached image is a cut-paper girl. Make the puppet parts sheet: the same girl taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck and the hood; the body (clothes, without arms and without legs) with the cape; the arm on the left of the picture with its hand; the arm on the right of the picture with its hand; the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe; the basket on its own. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached girl. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "mother",
+   "aspect": "3:4",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A single young mother from a European fairy tale: brown hair in a bun, a kind face, a green dress with a long cream apron, dark shoes. Standing, front view, arms relaxed at the sides, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "mother_parts",
+   "aspect": "4:3",
+   "refs": [
+    "mother"
+   ],
+   "prompt": "The attached image is a cut-paper woman. Make the puppet parts sheet: the same woman taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck and bun; the body (clothes, without arms and without legs); the arm on the left of the picture with its hand; the arm on the right of the picture with its hand; the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached woman. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "grandma",
+   "aspect": "3:4",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A single little old grandmother from a European fairy tale: white hair in a bun, small round glasses, rosy cheeks, a purple dress with a red knitted shawl around her shoulders, dark shoes. Standing, front view, arms relaxed at the sides, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "grandma_parts",
+   "aspect": "4:3",
+   "refs": [
+    "grandma"
+   ],
+   "prompt": "The attached image is a cut-paper grandmother. Make the puppet parts sheet: the same grandmother taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck, bun and glasses; the body (clothes, without arms and without legs) with the shawl; the arm on the left of the picture with its hand; the arm on the right of the picture with its hand; the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached grandmother. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "woodcutter",
+   "aspect": "3:4",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A single sturdy woodcutter from a European fairy tale: a bushy brown beard, a green cap, a red and black plaid shirt, blue trousers and brown boots. Standing, front view, arms relaxed at the sides, a wood axe held upright in the hand on the right of the picture, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "woodcutter_parts",
+   "aspect": "4:3",
+   "refs": [
+    "woodcutter"
+   ],
+   "prompt": "The attached image is a cut-paper woodcutter. Make the puppet parts sheet: the same woodcutter taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck, cap and beard; the body (clothes, without arms and without legs); the arm on the left of the picture with its hand; the arm on the right of the picture with its hand gripping the whole axe (the axe is part of this piece); the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached woodcutter. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "wolf",
+   "aspect": "4:3",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A single big bad wolf from a European fairy tale, standing on all four legs in side view facing right: shaggy grey and blue-grey fur, a pale belly, a long bushy tail with a white tip, pointed ears, yellow eyes, a long snout with a black nose and a sly toothy grin showing white pointed teeth. The whole wolf is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "wolf_parts",
+   "aspect": "4:3",
+   "refs": [
+    "wolf"
+   ],
+   "prompt": "The attached image is a cut-paper wolf. Make its puppet parts sheet: the same wolf taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with eyes, snout, nose and toothy grin (without the ears); the near ear; the far ear; the body with the neck (without head, legs or tail); the tail; the near front leg; the far front leg; the near back leg; the far back leg. The joint end of every leg, ear, the tail and the neck is cut straight. Keep every colour, paint and texture exactly as in the attached wolf. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "forest",
+   "aspect": "16:9",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A props sheet of six separate cut-paper pieces laid out in one row with clear gaps of plain board between them: a tall pine tree in layered greens with a short brown trunk; a round leafy tree with a brown trunk and a big crown in bright greens; a dark forest tree with a brown trunk and a crown in deep dark greens; a red flower on a green stem with two leaves; a yellow flower on a green stem with two leaves; a purple flower on a green stem with two leaves. Every piece stands on a flat base. Nothing overlaps; wide empty margin of board around the edges."
+  },
+  {
+   "id": "cottage",
+   "aspect": "4:3",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A single small cottage from a European fairy tale seen from the front: cream plastered walls, a steep red-brown roof, a brick chimney, a round-topped wooden door on the left and a small blue window on the right, all one piece with a flat base. The cottage is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "interior_a",
+   "aspect": "16:9",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A props sheet of four separate cut-paper pieces with clear gaps of plain board between them: a wooden bed seen from the side, with a tall rounded headboard on the left, a lower footboard on the right, a plain cream mattress and a white pillow, and no blanket; a patchwork quilt in pink, purple, yellow and blue patches, a long flat rectangle seen from the side; a small wooden table with a red-and-white checked tablecloth, a round loaf of bread and a small cake on it; a white frilly lace nightcap with a little red pom-pom. Nothing overlaps; wide empty margin of board around the edges."
+  },
+  {
+   "id": "interior_b",
+   "aspect": "16:9",
+   "refs": [
+    "girl"
+   ],
+   "prompt": "A props sheet of four separate cut-paper pieces with clear gaps of plain board between them: a tall wooden wardrobe frame seen from the front with no doors, its inside dark brown; the wardrobe's two tall wooden doors side by side as one piece; a cottage window with blue glass and red curtains on both sides; a small plain cross of two crossed wooden slats. Nothing overlaps; wide empty margin of board around the edges."
+  },
+  {
+   "id": "bg_wall",
+   "aspect": "16:9",
+   "refs": [
+    "girl"
+   ],
+   "style": "Style: children's picture-book art made of hand-painted tissue paper, matching the paints and paper textures of the attached reference: bold acrylic brush streaks and sponge mottling, flat, no 3D shading, no outlines, no text.",
+   "prompt": "A full-bleed cosy cottage wall made of overlapping pieces of hand-painted tissue paper in warm buttery cream and pale honey yellow, with soft vertical brush streaks like plaster. It fills the entire image edge to edge. Only the wall: no windows, no furniture, no floor, no objects of any kind."
+  }
+ ]
+}

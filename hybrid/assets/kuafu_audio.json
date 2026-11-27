@@ -1,0 +1,89 @@
+{
+ "kind": "audio",
+ "language": "zh",
+ "speech": {
+  "model": "gemini-3.8-flash-lite-tts",
+  "voice": "Kore",
+  "style": "Warm, gentle, expressive Mandarin Chinese children’s picture-book storyteller with unhurried pacing and poetic wonder"
+ },
+ "music": {
+  "model": "lyria-3-clip-preview"
+ },
+ "assets": [
+  {
+   "id": "n00",
+   "type": "speech",
+   "text": "夸父逐日"
+  },
+  {
+   "id": "n01",
+   "type": "speech",
+   "text": "远古的时候，北方的大山里住着一群巨人。他们的首领叫夸父，个子比山还要高，力气大得能搬动一座石头山。"
+  },
+  {
+   "id": "n02",
+   "type": "speech",
+   "text": "那时候，太阳每天从东边升起，又从西边落下。太阳一落山，大地就变得又冷又黑。"
+  },
+  {
+   "id": "n03",
+   "type": "speech",
+   "text": "夸父想：“我要追上太阳，把它捉住，让它永远照亮大地！”"
+  },
+  {
+   "id": "n04",
+   "type": "speech",
+   "text": "于是，他拿起手杖，迈开大步，朝着太阳追去。"
+  },
+  {
+   "id": "n05",
+   "type": "speech",
+   "text": "他跑过一座座高山，跨过一条条大河，脚步把大地震得咚咚响。"
+  },
+  {
+   "id": "n06",
+   "type": "speech",
+   "text": "太阳越来越近，越来越大，也越来越热。夸父跑得满头大汗。"
+  },
+  {
+   "id": "n07",
+   "type": "speech",
+   "text": "终于，在太阳落下的地方，夸父追上了太阳！他张开双臂，想要把太阳抱在怀里。"
+  },
+  {
+   "id": "n08",
+   "type": "speech",
+   "text": "可是，太阳实在太热了。夸父口渴极了，他跑到黄河和渭水边，大口大口地喝水。"
+  },
+  {
+   "id": "n09",
+   "type": "speech",
+   "text": "黄河和渭水都被他喝干了，可他还是渴。他又朝着北边的大湖跑去。"
+  },
+  {
+   "id": "n10",
+   "type": "speech",
+   "text": "可是大湖实在太远了。还没跑到，夸父就累得倒了下去，再也没有起来。"
+  },
+  {
+   "id": "n11",
+   "type": "speech",
+   "text": "他手中的手杖落在地上，变成了一大片桃林，结满了又大又甜的桃子。"
+  },
+  {
+   "id": "n12",
+   "type": "speech",
+   "text": "从此，路过的人走累了、口渴了，就可以在桃林里歇一歇，吃一个甜甜的桃子。"
+  },
+  {
+   "id": "n13",
+   "type": "speech",
+   "text": "夸父虽然没有捉住太阳，可是他勇敢追梦、永不放弃的精神，一直留在人们的心里。"
+  },
+  {
+   "id": "music",
+   "type": "music",
+   "prompt": "Uplifting cinematic storybook acoustic chamber score with light frame drum pulse, resonant Chinese guzheng, warm woodwinds, and bright glockenspiel finale, adventurous yet gentle picture-book tone, no vocals, 30 seconds loopable."
+  }
+ ]
+}

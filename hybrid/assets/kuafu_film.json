@@ -1,0 +1,107 @@
+{
+ "_about": "Everything 夸父逐日 (stories/kuafu.json) needs beyond what 精卫 made (its daytime sky, clouds, moon, mountain, gull and ground strip are reused). The giant is painted first with the 精卫 bird as the paper-texture reference; every other image references him, so the film has one look.",
+ "model": "gemini-nano-banana-2.1",
+ "image_size": "2K",
+ "style": "Style: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+ "assets": [
+  {
+   "id": "kuafu",
+   "aspect": "3:4",
+   "refs": [
+    "@jingwei_step1/bird.png"
+   ],
+   "prompt": "A single giant from ancient Chinese myth: Kuafu, a towering broad-shouldered giant with a kind, determined face, warm bronze skin, long loose black hair falling past his shoulders, a small yellow snake coiled on each ear as an earring, a short ochre-brown tunic belted at the waist, brown leggings and simple bark shoes. Standing, front view, arms relaxed at the sides, with a tall wooden staff with a knobbed top held upright in the hand on the right of the picture, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "kuafu_parts",
+   "aspect": "4:3",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "The attached image is a cut-paper giant. Make the puppet parts sheet: the same giant taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck and both snake earrings; the body (clothes, without arms and without legs); the arm on the left of the picture with its hand; the arm on the right of the picture with its hand gripping the whole staff (the staff is part of this piece); the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached giant. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "traveler",
+   "aspect": "3:4",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "A single traveller from ancient China, a grown man: a wide woven straw hat, a blue cloth jacket, earth-brown trousers, tan skin, short black hair and a friendly face. Standing, front view, arms relaxed at the sides, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "traveler_parts",
+   "aspect": "4:3",
+   "refs": [
+    "traveler"
+   ],
+   "prompt": "The attached image is a cut-paper man. Make the puppet parts sheet: the same man taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck and the straw hat; the body (clothes, without arms and without legs); the arm on the left of the picture with its hand; the arm on the right of the picture with its hand; the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached man. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "child",
+   "aspect": "3:4",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "A single small child from ancient China, about five years old: black hair in a little bun, a green cloth tunic, tan skin and a cheerful round face. Standing, front view, arms relaxed at the sides, the whole figure visible from the top of the head to the shoes. The figure is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "child_parts",
+   "aspect": "4:3",
+   "refs": [
+    "child"
+   ],
+   "prompt": "The attached image is a cut-paper child. Make the puppet parts sheet: the same child taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair and neck and bun; the body (clothes, without arms and without legs); the arm on the left of the picture with its hand; the arm on the right of the picture with its hand; the leg on the left of the picture with its shoe; the leg on the right of the picture with its shoe. The joint end of every limb (shoulder, hip, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached child. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "sun_big",
+   "aspect": "1:1",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "One huge blazing sun cut from painted tissue paper: a round disc of hot gold, orange and red brush streaks with a ring of flame-like pointed rays all around it, all one single piece. The sun is isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "props_kuafu",
+   "aspect": "16:9",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "A props sheet of six separate cut-paper pieces laid out with clear gaps of plain board between them: a small evergreen pine tree with a short brown trunk; a small calm lake of blue water seen from a low angle, so it is a wide flat oval; a soft puff of ochre dust cloud; a single clear blue drop of sweat; a long straight wooden staff with a knobbed top lying flat and horizontal (the same staff as the attached giant's); a small yellow five-pointed star. Nothing overlaps; wide empty margin of board around the edges."
+  },
+  {
+   "id": "peaches",
+   "aspect": "4:3",
+   "refs": [
+    "kuafu"
+   ],
+   "prompt": "A props sheet of two separate cut-paper pieces with a clear gap of plain board between them: a peach tree with a twisting brown trunk and a full round crown of green leaves and pink peach blossoms, with no fruit on it; and one single ripe peach, round and blush pink and orange, with one small green leaf. Nothing overlaps; wide empty margin of board around the edges."
+  },
+  {
+   "id": "bg_heat",
+   "aspect": "16:9",
+   "refs": [
+    "kuafu"
+   ],
+   "style": "Style: children's picture-book art made of hand-painted tissue paper, matching the paints and paper textures of the attached reference: bold acrylic brush streaks and sponge mottling, flat, no 3D shading, no outlines, no text.",
+   "prompt": "A full-bleed hot summer sky made of overlapping torn bands of hand-painted tissue paper in pale gold, warm yellow and soft apricot, shimmering with heat. It fills the entire image edge to edge. Only sky: no sun, no clouds, no birds, no land, no objects of any kind."
+  },
+  {
+   "id": "bg_blaze",
+   "aspect": "16:9",
+   "refs": [
+    "kuafu"
+   ],
+   "style": "Style: children's picture-book art made of hand-painted tissue paper, matching the paints and paper textures of the attached reference: bold acrylic brush streaks and sponge mottling, flat, no 3D shading, no outlines, no text.",
+   "prompt": "A full-bleed blazing sky made of overlapping torn bands of hand-painted tissue paper in fiery orange, vermilion and hot gold, as if the air itself were burning. It fills the entire image edge to edge. Only sky: no sun, no clouds, no birds, no land, no objects of any kind."
+  },
+  {
+   "id": "bg_dusk",
+   "aspect": "16:9",
+   "refs": [
+    "kuafu"
+   ],
+   "style": "Style: children's picture-book art made of hand-painted tissue paper, matching the paints and paper textures of the attached reference: bold acrylic brush streaks and sponge mottling, flat, no 3D shading, no outlines, no text.",
+   "prompt": "A full-bleed dusk sky made of overlapping torn bands of hand-painted tissue paper: rose, coral and apricot near the bottom fading to soft lilac at the top. It fills the entire image edge to edge. Only sky: no sun, no clouds, no birds, no land, no objects of any kind."
+  }
+ ]
+}
