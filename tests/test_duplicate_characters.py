@@ -53,8 +53,14 @@ CASES = [
     ("brief double: show windows overlap 4%",
      story_with([bird(anims=[{"type": "show", "t": [0, 0.52], "fade": 0.05}]),
                  bird(at=[1300, 300], anims=[{"type": "show", "t": [0.48, 1], "fade": 0.05}])]), True),
-    ("a flock declared as a group actor", story_with([{"actor": "gulls", "at": [300 + 300 * k, 300]} for k in range(4)],
-                                                    actors={"gulls": dict(copy.deepcopy(BASE["actors"]["jingwei"]), character=False)}), False),
+    ("a flock declared as scenery", story_with([{"actor": "gulls", "at": [300 + 300 * k, 300]} for k in range(4)],
+                                              actors={"gulls": dict(copy.deepcopy(BASE["actors"]["jingwei"]), character=False)}), False),
+    ("a herd of sheep, count many", story_with([{"actor": "sheep", "at": [200 + 220 * k, 700]} for k in range(7)],
+                                               actors={"sheep": dict(fish, character="sheep", count="many")}), False),
+    ("three pigs from one actor, count 3, 3 shown", story_with([{"actor": "pig", "at": [400 + 500 * k, 700]} for k in range(3)],
+                                                               actors={"pig": dict(fish, character="pig", count=3)}), False),
+    ("three pigs from one actor, count 3, 4 shown", story_with([{"actor": "pig", "at": [250 + 450 * k, 700]} for k in range(4)],
+                                                               actors={"pig": dict(fish, character="pig", count=3)}), True),
 ]
 
 
@@ -75,6 +81,11 @@ def run(check):
     got = SB.undeclared_actors(undeclared)
     bad += len(got) != 1
     print(f"{'actor without a character declaration':<46} {'error':<10} {'error' if got else 'none':<10}")
+    bad_count = copy.deepcopy(BASE)
+    bad_count["actors"]["jingwei"]["count"] = 0
+    got = SB.bad_counts(bad_count)
+    bad += len(got) != 1
+    print(f"{'count of 0':<46} {'error':<10} {'error' if got else 'none':<10}")
     print(f"{bad} wrong")
     return bad
 

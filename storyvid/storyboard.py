@@ -133,6 +133,28 @@ def character_of(name: str, spec: dict) -> str | None:
     return name if (spec.get("template") == "person" or CHARACTER_RIGS & set(spec.get("rigs", {}))) else None
 
 
+def count_of(spec: dict) -> float:
+    """How many of a character the story has: `"count"` is a number (3 little pigs) or "many" (a herd, a flock);
+    default 1, an individual."""
+    c = spec.get("count", 1)
+    return float("inf") if c == "many" else float(c)
+
+
+def bad_counts(story: dict) -> list[str]:
+    errs, seen = [], {}
+    for a, spec in story.get("actors", {}).items():
+        c = spec.get("count", 1)
+        if not (c == "many" or (isinstance(c, int) and not isinstance(c, bool) and c >= 1)):
+            errs.append(f"actors.{a}: \"count\" must be a whole number of at least 1, or \"many\"")
+            continue
+        cid = character_of(a, spec)
+        if cid:
+            if cid in seen and seen[cid][1] != c:
+                errs.append(f"actors.{a} and actors.{seen[cid][0]} depict {cid!r} but give different counts")
+            seen.setdefault(cid, (a, c))
+    return errs
+
+
 def _coverage(fm, sc: dict, item: dict, u: float) -> int:
     """Pixels of the frame (at fm's size) where `item` alone shows at moment u, counted only while the item is at
     least 60% opaque. Opacity comes from the item's own animation state (fades, show windows), because overlapping
@@ -155,20 +177,21 @@ def _coverage(fm, sc: dict, item: dict, u: float) -> int:
 
 def undeclared_actors(story: dict) -> list[str]:
     """Every story actor must say who it depicts, so two actors drawing one character can be told apart from two
-    characters (and a flock from a character drawn twice)."""
+    characters."""
     return [f"actors.{a}: say who it depicts with \"character\": a character id (pose or costume variants of one "
-            f"character share it, e.g. \"wolf_in_bed\": {{\"character\": \"wolf\", ...}}), or false for scenery, "
-            f"props and groups such as a flock" for a, spec in story.get("actors", {}).items()
-            if "character" not in spec]
+            f"character share it, e.g. \"wolf_in_bed\": {{\"character\": \"wolf\", ...}}; add \"count\" when the "
+            f"story has several, e.g. 3 or \"many\" for a herd), or false for scenery and props"
+            for a, spec in story.get("actors", {}).items() if "character" not in spec]
 
 
 def check_characters(story: dict, scenes: list[dict] | None = None, fm=None, samples: int = 48,
                      min_px: int = 20) -> list[str]:
-    """Moments when one character is on screen twice (two Jingwei birds, say).
+    """Moments when a character is on screen more times than the story has it: twice for an individual (two Jingwei
+    birds, say), four times for "count": 3. "count": "many" (a herd, a flock) is never limited.
 
     Each item that depicts a character is rendered on its own at `samples` moments of the scene; a copy counts when it
     is at least 60% opaque and shows on at least `min_px` pixels of the 384x216 check frame. Any moment with two or more
-    copies is a problem. A dissolve between two poses passes, because during a crossfade the two never both reach
+    copies than the count is a problem. A dissolve between two poses passes, because during a crossfade the two never both reach
     60%; copies that take turns pass; an item marked `"duplicate": "<why>"` (a reflection, a memory) is left out."""
     from . import pipeline as P
     if scenes is None:
@@ -178,6 +201,10 @@ def check_characters(story: dict, scenes: list[dict] | None = None, fm=None, sam
     if fm is None:
         fm = P.FrameMaker(story, scenes, 384, 216, P.CACHE)
     who = {a: character_of(a, spec) for a, spec in story.get("actors", {}).items()}
+    limit = {}
+    for a, spec in story.get("actors", {}).items():
+        if who[a]:
+            limit[who[a]] = max(limit.get(who[a], 0), count_of(spec))
     errs = []
     for i, sc in enumerate(scenes):
         groups: dict[str, list] = {}
@@ -186,17 +213,19 @@ def check_characters(story: dict, scenes: list[dict] | None = None, fm=None, sam
             if cid and not it.get("duplicate"):
                 groups.setdefault(cid, []).append(it)
         for cid, its in groups.items():
-            if len(its) < 2:
+            if len(its) <= limit[cid]:
                 continue
             for k in range(samples):
                 u = (k + 0.5) / samples
                 on = sum(_coverage(fm, sc, it, u) >= min_px for it in its)
-                if on > 1:
+                if on > limit[cid]:
                     where = "title scene" if i == 0 else ("end scene" if i == len(scenes) - 1 else f"scenes[{i - 1}]")
                     actors = sorted({it["actor"] for it in its})
-                    errs.append(f"{where}: the character {cid!r} ({', '.join(actors)}) is on screen {on} times at once "
-                                f"(around {u:.0%} of the scene). Show a character once and show repeated action with "
-                                f"one item (a path, part show windows); mark an intended copy \"duplicate\": \"<why>\".")
+                    have = "one" if limit[cid] == 1 else f"{int(limit[cid])}"
+                    errs.append(f"{where}: {cid!r} ({', '.join(actors)}) is on screen {on} times at once (around "
+                                f"{u:.0%} of the scene) but the story has {have}. Show repeated action with one item "
+                                f"(a path, part show windows); if the story has more, set \"count\" (a number or "
+                                f"\"many\") on the actor; mark an intended copy \"duplicate\": \"<why>\".")
                     break
     return errs
 
@@ -211,7 +240,7 @@ def validate(story: dict, sheet_path: str | None = None) -> list[str]:
             errs.append(f"missing top-level key {key!r}")
     if errs:
         return errs
-    errs += undeclared_actors(story)
+    errs += undeclared_actors(story) + bad_counts(story)
     try:
         scenes = P.build_scenes(story)
     except Exception as e:  # noqa: BLE001

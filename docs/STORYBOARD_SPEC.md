@@ -56,14 +56,16 @@ Default camera is a slow push-in from zoom 1.0 to 1.035. Close-ups: zoom 1.3-2.0
 - Inline one-off shapes: `{"part": PART}` with absolute coordinates (no `at` needed), e.g. a path or a pond.
 - `scatter` repeats an item: `{"actor": "grass_tuft", "rig": "sway", "scatter": {"n": 8, "area": [x0, y0, x1, y1], "scale": [0.7, 1.0], "seed": 2, "min_dist": 60}}`.
 - `origin`: pivot point (actor-local) for the item's rotation and scale. Defaults to the actor origin.
-- **Every story actor says who it depicts** with `"character"`: a character id, or `false` for scenery, props and
-  groups (a flock, a grove). Pose or costume variants of one character share the id
-  (`"wolf_in_bed": {"character": "wolf", ...}`). Validation rejects an actor without it.
-- **A character appears once at a time.** Validation renders each character's items on their own and rejects any
-  moment where one character is visibly on screen twice. Show repeated action with one item: a `path` with several
-  loops, and `part_anims` `show` windows to change what it carries. Copies that take turns pass (`show` windows, one
-  off screen while the other is on, a dissolve between poses). Mark an intended copy (a reflection, a memory) on the
-  item with `"duplicate": "<why>"`.
+- **Every story actor says who it depicts** with `"character"`: a character id, or `false` for scenery and props.
+  Pose or costume variants of one character share the id (`"wolf_in_bed": {"character": "wolf", ...}`). Validation
+  rejects an actor without it.
+- **And how many the story has** with `"count"`: 1 by default (an individual: Jingwei, the wolf), a number for a fixed
+  group drawn from one actor (`"pig": {"character": "pig", "count": 3}`), or `"many"` for a herd, a flock or a crowd.
+- **Never more on screen than the story has.** Validation renders each character's items on their own and rejects any
+  moment with more visible copies than its count; for an individual, that means twice. Show repeated action with one
+  item: a `path` with several loops, and `part_anims` `show` windows to change what it carries. Copies that take turns
+  pass (`show` windows, one off screen while the other is on, a dissolve between poses). Mark an intended extra copy
+  (a reflection, a memory) on the item with `"duplicate": "<why>"`.
 
 ## Animations (ANIM; for items, and for parts via part_anims/rigs)
 Timed (use `t`): `move {to:[x,y]}`, `by {d:[dx,dy]}`, `path {points:[[x,y],...], orient?}`, `enter {from: "left"|"right"|"top"|"bottom"|[x,y]}`,
