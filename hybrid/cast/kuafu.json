@@ -1,0 +1,597 @@
+{
+ "_about": "Cast for 夸父逐日: which generated art plays each actor of stories/kuafu.json. Piece numbers come from the cut reports; attach points, pivots, draw order and rotations were set by looking at each piece on a grid and at the assembled figures (castview).",
+ "storyboard": "../../stories/kuafu.json",
+ "soundtrack": "kuafu_audio",
+ "backdrops": {
+  "heat": "kuafu_film/bg_heat.png",
+  "sky_soft": "story_fixes/bg_day.png",
+  "blaze": "kuafu_film/bg_blaze.png",
+  "dusk_sky": "kuafu_film/bg_dusk.png"
+ },
+ "actors": {
+  "kuafu": {
+   "kind": "figure",
+   "sheet": "kuafu_film/cut/kuafu_parts",
+   "root": 3,
+   "fit": {
+    "height": 560
+   },
+   "anchor": [
+    0.45,
+    1.0
+   ],
+   "parts": {
+    "head": {
+     "piece": 0,
+     "pivot_at": [
+      0.5,
+      0.66
+     ],
+     "attach": [
+      0.5,
+      0.03
+     ],
+     "z": 2
+    },
+    "arm_l": {
+     "piece": 2,
+     "attach": [
+      0.1,
+      0.22
+     ],
+     "z": -1,
+     "rot": 0,
+     "pivot_at": [
+      0.75,
+      0.04
+     ]
+    },
+    "arm_r": {
+     "piece": 1,
+     "attach": [
+      0.9,
+      0.22
+     ],
+     "z": -1,
+     "rot": 0,
+     "pivot_at": [
+      0.07,
+      0.21
+     ]
+    },
+    "leg_l": {
+     "piece": 4,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.36,
+      0.8
+     ],
+     "z": -2
+    },
+    "leg_r": {
+     "piece": 5,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.63,
+      0.8
+     ],
+     "z": -2
+    }
+   },
+   "alias": {
+    "shoe_l": "leg_l",
+    "shoe_r": "leg_r",
+    "hand_l": "arm_l",
+    "hand_r": "arm_r",
+    "staff": "arm_r",
+    "staff_knob": "arm_r",
+    "snake_l": "head",
+    "snake_r": "head",
+    "snake_l_head": "head",
+    "snake_r_head": "head",
+    "hair": "head",
+    "hair_back": "head",
+    "pants": "body"
+   }
+  },
+  "traveler": {
+   "kind": "figure",
+   "sheet": "kuafu_film/cut/traveler_parts",
+   "root": 2,
+   "fit": {
+    "height": 346
+   },
+   "anchor": [
+    0.5,
+    1.0
+   ],
+   "parts": {
+    "head": {
+     "piece": 0,
+     "pivot_at": [
+      0.5,
+      0.97
+     ],
+     "attach": [
+      0.5,
+      0.06
+     ],
+     "z": -1
+    },
+    "arm_l": {
+     "piece": 1,
+     "attach": [
+      0.08,
+      0.12
+     ],
+     "z": -1,
+     "rot": 62,
+     "pivot_at": [
+      0.92,
+      0.12
+     ]
+    },
+    "arm_r": {
+     "piece": 3,
+     "attach": [
+      0.92,
+      0.12
+     ],
+     "z": -1,
+     "rot": -62,
+     "pivot_at": [
+      0.08,
+      0.12
+     ]
+    },
+    "leg_l": {
+     "piece": 4,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.33,
+      0.8
+     ],
+     "z": -2
+    },
+    "leg_r": {
+     "piece": 5,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.67,
+      0.8
+     ],
+     "z": -2
+    }
+   },
+   "alias": {
+    "shoe_l": "leg_l",
+    "shoe_r": "leg_r",
+    "hand_l": "arm_l",
+    "hand_r": "arm_r"
+   }
+  },
+  "child": {
+   "kind": "figure",
+   "sheet": "kuafu_film/cut/child_parts",
+   "root": 3,
+   "fit": {
+    "height": 277
+   },
+   "anchor": [
+    0.5,
+    1.0
+   ],
+   "parts": {
+    "head": {
+     "piece": 1,
+     "pivot_at": [
+      0.5,
+      0.97
+     ],
+     "attach": [
+      0.5,
+      0.04
+     ],
+     "z": -1
+    },
+    "arm_l": {
+     "piece": 0,
+     "attach": [
+      0.1,
+      0.1
+     ],
+     "z": -1,
+     "rot": 42,
+     "pivot_at": [
+      0.86,
+      0.07
+     ]
+    },
+    "arm_r": {
+     "piece": 2,
+     "attach": [
+      0.9,
+      0.1
+     ],
+     "z": -1,
+     "rot": -42,
+     "pivot_at": [
+      0.14,
+      0.07
+     ]
+    },
+    "leg_l": {
+     "piece": 4,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.35,
+      0.8
+     ],
+     "z": -2
+    },
+    "leg_r": {
+     "piece": 5,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.65,
+      0.8
+     ],
+     "z": -2
+    }
+   },
+   "alias": {
+    "shoe_l": "leg_l",
+    "shoe_r": "leg_r",
+    "hand_l": "arm_l",
+    "hand_r": "arm_r"
+   }
+  },
+  "sun": {
+   "kind": "prop",
+   "sheet": "kuafu_film/cut/sun_big",
+   "piece": 0,
+   "id": "disc",
+   "fit": {
+    "width": 341
+   },
+   "anchor": [
+    0.5,
+    0.5
+   ],
+   "pivot": [
+    0,
+    0
+   ],
+   "alias": {
+    "rays": "disc"
+   },
+   "rigs": {
+    "glow": [
+     {
+      "part": "disc",
+      "type": "pulse",
+      "amp": 0.025,
+      "period": 2.4
+     },
+     {
+      "part": "disc",
+      "type": "sway",
+      "deg": 2,
+      "period": 6
+     }
+    ]
+   }
+  },
+  "mountain": {
+   "kind": "prop",
+   "sheet": "jingwei_film/cut/props_land",
+   "piece": 1,
+   "fit": {
+    "height": 640
+   },
+   "anchor": [
+    0.5,
+    0.97
+   ]
+  },
+  "ground": {
+   "kind": "layers",
+   "x": [
+    -260,
+    2180
+   ],
+   "bottom": 700,
+   "layers": {
+    "ground": {
+     "sheet": "jingwei_film/cut/ground_strip",
+     "top": 0
+    }
+   }
+  },
+  "cloud": {
+   "kind": "prop",
+   "sheet": "jingwei_film/cut/props_sky",
+   "piece": 12,
+   "fit": {
+    "width": 370
+   },
+   "anchor": [
+    0.5,
+    0.7
+   ]
+  },
+  "cloud_long": {
+   "kind": "prop",
+   "image": "jingwei_film/props_sky.png",
+   "region": [
+    0.62,
+    0.36,
+    0.88,
+    0.64
+   ],
+   "fit": {
+    "width": 450
+   },
+   "anchor": [
+    0.5,
+    0.62
+   ]
+  },
+  "moon": {
+   "kind": "prop",
+   "sheet": "jingwei_film/cut/props_sky",
+   "piece": 11,
+   "fit": {
+    "width": 168
+   },
+   "anchor": [
+    0.5,
+    0.5
+   ]
+  },
+  "star": {
+   "kind": "prop",
+   "sheet": "kuafu_film/cut/props_kuafu",
+   "piece": 4,
+   "id": "star",
+   "fit": {
+    "width": 50
+   },
+   "anchor": [
+    0.5,
+    0.52
+   ],
+   "pivot": [
+    0,
+    0
+   ]
+  },
+  "pine": {
+   "kind": "prop",
+   "sheet": "kuafu_film/cut/props_kuafu",
+   "piece": 0,
+   "id": "pine",
+   "fit": {
+    "height": 531
+   },
+   "anchor": [
+    0.5,
+    0.98
+   ],
+   "pivot": [
+    0,
+    0
+   ],
+   "alias": {
+    "t1": "pine",
+    "t2": "pine",
+    "t3": "pine",
+    "trunk": "pine"
+   }
+  },
+  "lake": {
+   "kind": "prop",
+   "sheet": "kuafu_film/cut/props_kuafu",
+   "piece": 2,
+   "fit": {
+    "width": 324
+   },
+   "anchor": [
+    0.5,
+    0.5
+   ]
+  },
+  "dust": {
+   "kind": "prop",
+   "sheet": "kuafu_film/cut/props_kuafu",
+   "piece": 1,
+   "fit": {
+    "width": 312
+   },
+   "anchor": [
+    0.45,
+    0.62
+   ]
+  },
+  "sweat": {
+   "kind": "prop",
+   "sheet": "kuafu_film/cut/props_kuafu",
+   "piece": 3,
+   "id": "drop",
+   "fit": {
+    "height": 28
+   },
+   "anchor": [
+    0.5,
+    0.57
+   ]
+  },
+  "staff_ground": {
+   "kind": "prop",
+   "sheet": "kuafu_film/cut/props_kuafu",
+   "piece": 5,
+   "id": "staff",
+   "fit": {
+    "width": 698
+   },
+   "anchor": [
+    0.48,
+    0.58
+   ],
+   "alias": {
+    "knob": "staff"
+   }
+  },
+  "peach_tree_fruit": {
+   "kind": "figure",
+   "sheet": "kuafu_film/cut/peaches",
+   "root": 0,
+   "root_id": "tree",
+   "root_pivot": [
+    0.5,
+    0.98
+   ],
+   "fit": {
+    "height": 406
+   },
+   "anchor": [
+    0.5,
+    1.0
+   ],
+   "parts": {
+    "p1": {
+     "piece": 1,
+     "joint": false,
+     "scale": 0.3,
+     "attach": [
+      0.2,
+      0.3
+     ],
+     "z": 1
+    },
+    "p2": {
+     "piece": 1,
+     "joint": false,
+     "scale": 0.3,
+     "attach": [
+      0.45,
+      0.15
+     ],
+     "z": 1
+    },
+    "p3": {
+     "piece": 1,
+     "joint": false,
+     "scale": 0.3,
+     "attach": [
+      0.72,
+      0.25
+     ],
+     "z": 1
+    },
+    "p4": {
+     "piece": 1,
+     "joint": false,
+     "scale": 0.3,
+     "attach": [
+      0.32,
+      0.48
+     ],
+     "z": 1
+    },
+    "p5": {
+     "piece": 1,
+     "joint": false,
+     "scale": 0.3,
+     "attach": [
+      0.62,
+      0.45
+     ],
+     "z": 1
+    },
+    "p6": {
+     "piece": 1,
+     "joint": false,
+     "scale": 0.3,
+     "attach": [
+      0.85,
+      0.42
+     ],
+     "z": 1
+    }
+   },
+   "rigs": {
+    "sway": [
+     {
+      "part": "tree",
+      "type": "swing",
+      "deg": 1.6,
+      "period": 3.2
+     }
+    ],
+    "fruit": [
+     {
+      "part": [
+       "p1",
+       "p2",
+       "p3",
+       "p4",
+       "p5",
+       "p6"
+      ],
+      "type": "pop",
+      "t": [
+       0.55,
+       0.7
+      ]
+     }
+    ]
+   }
+  },
+  "bird_small": {
+   "kind": "prop",
+   "sheet": "jingwei_film/cut/props_sea",
+   "piece": 7,
+   "id": "gull",
+   "fit": {
+    "width": 90
+   },
+   "anchor": [
+    0.5,
+    0.5
+   ],
+   "pivot": [
+    0,
+    0
+   ],
+   "rigs": {
+    "flap": [
+     {
+      "part": "gull",
+      "type": "bob",
+      "amp": 6,
+      "period": 1.1
+     }
+    ]
+   }
+  }
+ }
+}

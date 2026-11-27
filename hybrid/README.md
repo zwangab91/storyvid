@@ -52,6 +52,21 @@ Built and used for the first full hybrid film:
   voice (Kore, storyteller direction), one clip per scene, and a Lyria 3 Clip score looped under it (about $0.07).
   The cast file's `soundtrack` points the film at it; the film runs 3:07.
 
+Three more hybrid films, made the same way (art, cut-out, cast file, generated narration and music):
+- 夸父逐日 (`assets/kuafu_film.json`, `cast/kuafu.json`, 12 images), Little Red Riding Hood (`assets/red_film.json`,
+  `cast/little_red_riding_hood.json`, 15 images) and The Tortoise and the Hare (`assets/tortoise_film.json`,
+  `cast/tortoise_and_hare.json`, 8 images), plus `assets/story_fixes.json` (5 repaints) and one audio manifest each.
+  About $2.61 in all: $2.42 of art and $0.20 of narration and music. Each figure's parts sheet is painted from its full
+  figure; the first figure of each story takes its paper texture from the 精卫 bird, so the four films share one look,
+  and scenery that fits (clouds, moon, gull, ground, mountain, sun) is reused across them.
+- Story beats that need extra parts: the wolf's ears are separate pieces so they can grow ("what big ears"), and
+  grandma's nightcap hangs from his head, hidden until he is in bed; the hare's sleeping head (eyes closed) hangs from
+  its waking head and replaces it when the storyboard hides the eye; peaches pop onto the peach trees one by one.
+- Lessons: cream or white paint on the cream board is keyed away with the board (the mother's apron and the cottage
+  walls were repainted honey-yellow and peach-ochre); a cut piece can be cropped (`"crop"`) to use one door of a pair;
+  a figure's root can turn about a chosen point (`"root_pivot"`, a tree's foot).
+- Path, river, floor and cracked-earth strips and a few small marks are still drawn procedurally inside the scenes.
+
 Not built yet:
 - The storyboard step writing the asset list and cast file (for 精卫 the planner wrote both by hand: piece labels,
   attach points, pivots for pieces without a straight cut, draw order, tuned rig values).

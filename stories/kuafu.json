@@ -5,6 +5,7 @@
  "voice": "melo",
  "speed": 0.86,
  "credit": "《山海经·海外北经》：夸父与日逐走……弃其杖，化为邓林。",
+ "title_style": {"paints": "ink", "text_color": "#2b2a3a", "plate": "cream"},
  "music": {
   "style": "pluck",
   "seed": 23,
@@ -12,6 +13,7 @@
   "prompt": "Uplifting cinematic storybook acoustic chamber score with light frame drum pulse, resonant Chinese guzheng, warm woodwinds, and bright glockenspiel finale, adventurous yet gentle picture-book tone, no vocals, 30 seconds loopable."
  },
  "paints": {
+  "ink": {"colors": ["#2b2d3a", "#3f4356", "#15161e", "#3d5a8a", "#2d4a5e"], "style": "streaks"},
   "sky_soft": {
    "colors": [
     "#b3dcf6",

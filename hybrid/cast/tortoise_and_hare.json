@@ -1,0 +1,687 @@
+{
+ "_about": "Cast for The Tortoise and the Hare: which generated art plays each actor of stories/tortoise_and_hare.json. Piece numbers come from the cut reports; attach points, pivots, draw order and rotations were set from each piece on a grid and the assembled figures (castview). The hare's sleeping head hangs from its waking head, so hiding one shows the other in the same place; its rigs are the procedural ones without the eye entries (a blink would squash the painted head).",
+ "storyboard": "../../stories/tortoise_and_hare.json",
+ "soundtrack": "tortoise_and_hare_audio",
+ "backdrops": {
+  "sunset_sky": "kuafu_film/bg_dusk.png"
+ },
+ "actors": {
+  "hare": {
+   "kind": "figure",
+   "sheet": "tortoise_film/cut/hare_parts",
+   "root": 4,
+   "fit": {
+    "width": 391
+   },
+   "anchor": [
+    0.41,
+    0.98
+   ],
+   "parts": {
+    "head": {
+     "piece": 0,
+     "pivot_at": [
+      0.15,
+      0.72
+     ],
+     "attach": [
+      0.85,
+      0.18
+     ],
+     "z": 2
+    },
+    "head_sleep": {
+     "piece": 1,
+     "pivot_at": [
+      0.15,
+      0.72
+     ],
+     "attach": [
+      0.85,
+      0.18
+     ],
+     "parent": "head",
+     "hidden": true,
+     "z": 2
+    },
+    "ear_b": {
+     "piece": 3,
+     "joint_near": [
+      0.5,
+      1.0
+     ],
+     "attach": [
+      0.9,
+      -0.12
+     ],
+     "parent": "head",
+     "z": 1
+    },
+    "ear_f": {
+     "piece": 2,
+     "joint_near": [
+      0.7,
+      1.0
+     ],
+     "attach": [
+      0.949,
+      -0.11
+     ],
+     "parent": "head",
+     "z": 3
+    },
+    "leg_b": {
+     "piece": 6,
+     "pivot_at": [
+      0.3,
+      0.3
+     ],
+     "attach": [
+      0.2,
+      0.5
+     ],
+     "z": 1
+    },
+    "leg_f": {
+     "piece": 5,
+     "pivot_at": [
+      0.45,
+      0.08
+     ],
+     "attach": [
+      0.72,
+      0.45
+     ],
+     "z": 1
+    },
+    "tail": {
+     "piece": 7,
+     "joint": false,
+     "attach": [
+      0.02,
+      0.35
+     ],
+     "z": -1
+    }
+   },
+   "alias": {
+    "eye": "head",
+    "eye_shut": "head_sleep",
+    "foot_b": "leg_b",
+    "foot_f": "leg_f",
+    "belly": "body",
+    "ear_in": "ear_f"
+   },
+   "rigs": {
+    "run": [
+     {
+      "part": "leg_b",
+      "type": "swing",
+      "deg": 24,
+      "period": 0.34
+     },
+     {
+      "part": "leg_f",
+      "type": "swing",
+      "deg": 36,
+      "period": 0.34,
+      "phase": 0.5
+     },
+     {
+      "part": [
+       "ear_b",
+       "ear_f"
+      ],
+      "type": "swing",
+      "deg": 8,
+      "period": 0.34,
+      "phase": 0.25
+     }
+    ],
+    "idle": [
+     {
+      "part": [
+       "ear_b",
+       "ear_f"
+      ],
+      "type": "swing",
+      "deg": 4,
+      "period": 2.2
+     },
+     {
+      "part": "head",
+      "type": "swing",
+      "deg": 2,
+      "period": 3.1
+     }
+    ],
+    "laugh": [
+     {
+      "part": "head",
+      "type": "swing",
+      "deg": 7,
+      "period": 0.45
+     },
+     {
+      "part": "body",
+      "type": "squash",
+      "amp": 0.05,
+      "period": 0.45
+     },
+     {
+      "part": [
+       "ear_b",
+       "ear_f"
+      ],
+      "type": "swing",
+      "deg": 10,
+      "period": 0.45,
+      "phase": 0.3
+     }
+    ],
+    "sleep": [
+     {
+      "part": "body",
+      "type": "pulse",
+      "amp": 0.03,
+      "period": 2.6
+     },
+     {
+      "part": "head",
+      "type": "rotate",
+      "to": 14,
+      "t": [
+       0,
+       0.2
+      ]
+     },
+     {
+      "part": [
+       "ear_b",
+       "ear_f"
+      ],
+      "type": "rotate",
+      "to": -48,
+      "t": [
+       0,
+       0.25
+      ]
+     }
+    ],
+    "droop": [
+     {
+      "part": [
+       "ear_b",
+       "ear_f"
+      ],
+      "type": "rotate",
+      "to": -55,
+      "t": [
+       0.15,
+       0.5
+      ]
+     },
+     {
+      "part": "head",
+      "type": "rotate",
+      "to": 16,
+      "t": [
+       0.1,
+       0.45
+      ]
+     }
+    ]
+   }
+  },
+  "tortoise": {
+   "kind": "figure",
+   "sheet": "tortoise_film/cut/tortoise_parts",
+   "root": 1,
+   "root_id": "shell",
+   "fit": {
+    "width": 368
+   },
+   "anchor": [
+    0.41,
+    0.91
+   ],
+   "parts": {
+    "head": {
+     "piece": 0,
+     "pivot_at": [
+      0.1,
+      0.8
+     ],
+     "attach": [
+      0.95,
+      0.68
+     ],
+     "z": -1
+    },
+    "tail": {
+     "piece": 2,
+     "pivot_at": [
+      0.9,
+      0.4
+     ],
+     "attach": [
+      0.03,
+      0.8
+     ],
+     "z": -1
+    },
+    "leg_bf": {
+     "piece": 3,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.25,
+      0.86
+     ],
+     "z": 1
+    },
+    "leg_ff": {
+     "piece": 4,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.74,
+      0.86
+     ],
+     "z": 1
+    },
+    "leg_bb": {
+     "piece": 6,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.36,
+      0.83
+     ],
+     "z": -1
+    },
+    "leg_fb": {
+     "piece": 5,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.86,
+      0.83
+     ],
+     "z": -1
+    }
+   },
+   "alias": {
+    "neck": "head",
+    "rim": "shell",
+    "smile": "head",
+    "cheek": "head"
+   }
+  },
+  "fox": {
+   "kind": "figure",
+   "sheet": "tortoise_film/cut/fox_parts",
+   "root": 2,
+   "fit": {
+    "height": 340
+   },
+   "anchor": [
+    0.5,
+    0.98
+   ],
+   "parts": {
+    "head": {
+     "piece": 0,
+     "pivot_at": [
+      0.45,
+      0.45
+     ],
+     "attach": [
+      0.72,
+      0.12
+     ],
+     "z": 2
+    },
+    "arm": {
+     "piece": 1,
+     "pivot_at": [
+      0.05,
+      0.78
+     ],
+     "attach": [
+      0.78,
+      0.35
+     ],
+     "z": 3
+    },
+    "tail": {
+     "piece": 4,
+     "pivot_at": [
+      0.95,
+      0.82
+     ],
+     "attach": [
+      0.12,
+      0.9
+     ],
+     "z": -1
+    }
+   },
+   "alias": {
+    "stick": "arm",
+    "flag": "arm",
+    "paw": "body",
+    "leg": "body",
+    "chest": "head",
+    "jaw": "head",
+    "ear_f": "head",
+    "ear_b": "head",
+    "ear_in": "head",
+    "tail_tip": "tail",
+    "nose": "head"
+   }
+  },
+  "tree": {
+   "kind": "prop",
+   "sheet": "red_film/cut/forest",
+   "piece": 1,
+   "fit": {
+    "height": 485
+   },
+   "anchor": [
+    0.54,
+    0.99
+   ],
+   "id": "tree",
+   "pivot": [
+    0,
+    0
+   ],
+   "alias": {
+    "crown": "tree",
+    "crown_b": "tree",
+    "trunk": "tree"
+   }
+  },
+  "tree_dark": {
+   "kind": "prop",
+   "sheet": "red_film/cut/forest",
+   "piece": 2,
+   "fit": {
+    "height": 483
+   },
+   "anchor": [
+    0.47,
+    0.99
+   ],
+   "id": "tree",
+   "pivot": [
+    0,
+    0
+   ],
+   "alias": {
+    "crown": "tree",
+    "crown_b": "tree",
+    "trunk": "tree"
+   }
+  },
+  "pine": {
+   "kind": "prop",
+   "sheet": "red_film/cut/forest",
+   "piece": 0,
+   "fit": {
+    "height": 531
+   },
+   "anchor": [
+    0.5,
+    0.98
+   ],
+   "id": "pine",
+   "pivot": [
+    0,
+    0
+   ],
+   "alias": {
+    "t1": "pine",
+    "t2": "pine",
+    "t3": "pine",
+    "trunk": "pine"
+   }
+  },
+  "flower_red": {
+   "kind": "prop",
+   "sheet": "red_film/cut/forest",
+   "piece": 3,
+   "fit": {
+    "height": 227
+   },
+   "anchor": [
+    0.5,
+    0.97
+   ],
+   "id": "stem",
+   "pivot": [
+    0,
+    0
+   ]
+  },
+  "flower_yellow": {
+   "kind": "prop",
+   "sheet": "red_film/cut/forest",
+   "piece": 4,
+   "fit": {
+    "height": 206
+   },
+   "anchor": [
+    0.5,
+    0.97
+   ],
+   "id": "stem",
+   "pivot": [
+    0,
+    0
+   ]
+  },
+  "flower_purple": {
+   "kind": "prop",
+   "sheet": "red_film/cut/forest",
+   "piece": 5,
+   "fit": {
+    "height": 246
+   },
+   "anchor": [
+    0.5,
+    0.97
+   ],
+   "id": "stem",
+   "pivot": [
+    0,
+    0
+   ]
+  },
+  "grass_tuft": {
+   "kind": "prop",
+   "sheet": "tortoise_film/cut/race",
+   "piece": 0,
+   "fit": {
+    "width": 118
+   },
+   "anchor": [
+    0.43,
+    0.93
+   ],
+   "id": "b0",
+   "pivot": [
+    0,
+    0
+   ],
+   "alias": {
+    "b1": "b0",
+    "b2": "b0",
+    "b3": "b0",
+    "b4": "b0"
+   }
+  },
+  "pond": {
+   "kind": "prop",
+   "sheet": "tortoise_film/cut/race",
+   "piece": 2,
+   "fit": {
+    "width": 466
+   },
+   "anchor": [
+    0.51,
+    0.51
+   ],
+   "alias": {
+    "water": "pond",
+    "pad1": "pond",
+    "pad2": "pond"
+   }
+  },
+  "finish": {
+   "kind": "prop",
+   "sheet": "story_fixes/cut/finish",
+   "piece": 0,
+   "fit": {
+    "width": 383
+   },
+   "anchor": [
+    0.5,
+    0.96
+   ]
+  },
+  "hill": {
+   "kind": "prop",
+   "sheet": "tortoise_film/cut/hill_strip",
+   "piece": 0,
+   "fit": {
+    "width": 1402
+   },
+   "anchor": [
+    0.5,
+    0.72
+   ],
+   "id": "hill"
+  },
+  "sun": {
+   "kind": "prop",
+   "image": "jingwei_film/props_sky.png",
+   "region": [
+    0.04,
+    0.28,
+    0.23,
+    0.72
+   ],
+   "id": "disc",
+   "fit": {
+    "width": 300
+   },
+   "anchor": [
+    0.5,
+    0.5
+   ],
+   "pivot": [
+    0,
+    0
+   ],
+   "alias": {
+    "rays": "disc"
+   },
+   "rigs": {
+    "glow": [
+     {
+      "part": "disc",
+      "type": "pulse",
+      "amp": 0.025,
+      "period": 2.4
+     },
+     {
+      "part": "disc",
+      "type": "sway",
+      "deg": 2,
+      "period": 6
+     }
+    ]
+   }
+  },
+  "cloud": {
+   "kind": "prop",
+   "sheet": "jingwei_film/cut/props_sky",
+   "piece": 12,
+   "fit": {
+    "width": 370
+   },
+   "anchor": [
+    0.5,
+    0.7
+   ]
+  },
+  "cloud_long": {
+   "kind": "prop",
+   "image": "jingwei_film/props_sky.png",
+   "region": [
+    0.62,
+    0.36,
+    0.88,
+    0.64
+   ],
+   "fit": {
+    "width": 450
+   },
+   "anchor": [
+    0.5,
+    0.62
+   ]
+  },
+  "bird_small": {
+   "kind": "prop",
+   "sheet": "jingwei_film/cut/props_sea",
+   "piece": 7,
+   "id": "gull",
+   "fit": {
+    "width": 90
+   },
+   "anchor": [
+    0.5,
+    0.5
+   ],
+   "pivot": [
+    0,
+    0
+   ],
+   "rigs": {
+    "flap": [
+     {
+      "part": "gull",
+      "type": "bob",
+      "amp": 6,
+      "period": 1.1
+     }
+    ]
+   }
+  },
+  "ground": {
+   "kind": "layers",
+   "x": [
+    -260,
+    2180
+   ],
+   "bottom": 700,
+   "layers": {
+    "ground": {
+     "sheet": "jingwei_film/cut/ground_strip",
+     "top": 0
+    }
+   }
+  }
+ }
+}

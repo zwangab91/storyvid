@@ -1,0 +1,924 @@
+{
+ "_about": "Cast for Little Red Riding Hood: which generated art plays each actor of stories/little_red_riding_hood.json. Piece numbers come from the cut reports; attach points, pivots, draw order and rotations were set from each piece on a grid and the assembled figures (castview). The wolf's ears and the nightcap hang from his head so the ears can grow and the cap can be put on in bed.",
+ "storyboard": "../../stories/little_red_riding_hood.json",
+ "soundtrack": "little_red_riding_hood_audio",
+ "backdrops": {
+  "wall": "red_film/bg_wall.png",
+  "dusk_sky": "kuafu_film/bg_dusk.png"
+ },
+ "actors": {
+  "girl": {
+   "kind": "figure",
+   "sheet": "red_film/cut/girl_parts",
+   "root": 1,
+   "fit": {
+    "height": 317
+   },
+   "anchor": [
+    0.45,
+    1.0
+   ],
+   "parts": {
+    "head": {
+     "piece": 0,
+     "pivot_at": [
+      0.5,
+      0.88
+     ],
+     "attach": [
+      0.5,
+      0.07
+     ],
+     "z": 2
+    },
+    "arm_l": {
+     "piece": 3,
+     "pivot_at": [
+      0.82,
+      0.05
+     ],
+     "attach": [
+      0.22,
+      0.2
+     ],
+     "z": 1
+    },
+    "arm_r": {
+     "piece": 2,
+     "pivot_at": [
+      0.18,
+      0.05
+     ],
+     "attach": [
+      0.78,
+      0.2
+     ],
+     "z": 1
+    },
+    "basket": {
+     "piece": 6,
+     "joint": false,
+     "pivot_at": [
+      0.5,
+      0.08
+     ],
+     "scale": 0.8,
+     "attach": [
+      0.94,
+      0.69
+     ],
+     "parent": "arm_r",
+     "z": 3
+    },
+    "leg_l": {
+     "piece": 4,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.38,
+      0.86
+     ],
+     "z": -2
+    },
+    "leg_r": {
+     "piece": 5,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.62,
+      0.86
+     ],
+     "z": -2
+    }
+   },
+   "alias": {
+    "shoe_l": "leg_l",
+    "shoe_r": "leg_r",
+    "hand_l": "arm_l",
+    "hand_r": "arm_r",
+    "hair": "head",
+    "neck": "body",
+    "hood_rim": "head",
+    "bob_l": "head",
+    "bob_r": "head",
+    "cape": "body",
+    "apron": "body",
+    "basket_handle": "basket",
+    "basket_cloth": "basket"
+   }
+  },
+  "grandma": {
+   "kind": "figure",
+   "sheet": "red_film/cut/grandma_parts",
+   "root": 1,
+   "fit": {
+    "height": 366
+   },
+   "anchor": [
+    0.5,
+    1.0
+   ],
+   "parts": {
+    "head": {
+     "piece": 0,
+     "pivot_at": [
+      0.5,
+      0.93
+     ],
+     "attach": [
+      0.47,
+      0.04
+     ],
+     "z": 2
+    },
+    "arm_l": {
+     "piece": 3,
+     "pivot_at": [
+      0.6,
+      0.03
+     ],
+     "attach": [
+      0.16,
+      0.2
+     ],
+     "z": -1
+    },
+    "arm_r": {
+     "piece": 2,
+     "pivot_at": [
+      0.15,
+      0.04
+     ],
+     "attach": [
+      0.84,
+      0.2
+     ],
+     "z": -1
+    },
+    "leg_l": {
+     "piece": 4,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.38,
+      0.93
+     ],
+     "z": -2
+    },
+    "leg_r": {
+     "piece": 5,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.62,
+      0.93
+     ],
+     "z": -2
+    }
+   },
+   "alias": {
+    "shoe_l": "leg_l",
+    "shoe_r": "leg_r",
+    "hand_l": "arm_l",
+    "hand_r": "arm_r",
+    "hair": "head",
+    "neck": "body",
+    "shawl": "body"
+   }
+  },
+  "grandma_peek": {
+   "kind": "figure",
+   "sheet": "red_film/cut/grandma_parts",
+   "root": 1,
+   "fit": {
+    "height": 390
+   },
+   "anchor": [
+    0.5,
+    1.0
+   ],
+   "parts": {
+    "head": {
+     "piece": 0,
+     "pivot_at": [
+      0.5,
+      0.93
+     ],
+     "attach": [
+      0.47,
+      0.04
+     ],
+     "z": 2
+    },
+    "arm_l": {
+     "piece": 3,
+     "pivot_at": [
+      0.6,
+      0.03
+     ],
+     "attach": [
+      0.16,
+      0.2
+     ],
+     "z": -1
+    },
+    "arm_r": {
+     "piece": 2,
+     "pivot_at": [
+      0.15,
+      0.04
+     ],
+     "attach": [
+      0.84,
+      0.2
+     ],
+     "z": -1
+    },
+    "leg_l": {
+     "piece": 4,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.38,
+      0.93
+     ],
+     "z": -2
+    },
+    "leg_r": {
+     "piece": 5,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.62,
+      0.93
+     ],
+     "z": -2
+    },
+    "hat": {
+     "piece_of": "red_film/cut/interior_a",
+     "piece": 3,
+     "joint": false,
+     "pivot_at": [
+      0.5,
+      0.6
+     ],
+     "scale": 0.85,
+     "attach": [
+      0.47,
+      -0.34
+     ],
+     "parent": "head",
+     "z": 3
+    }
+   },
+   "alias": {
+    "shoe_l": "leg_l",
+    "shoe_r": "leg_r",
+    "hand_l": "arm_l",
+    "hand_r": "arm_r",
+    "hair": "head",
+    "neck": "body"
+   }
+  },
+  "woodcutter": {
+   "kind": "figure",
+   "sheet": "red_film/cut/woodcutter_parts",
+   "root": 2,
+   "fit": {
+    "height": 402
+   },
+   "anchor": [
+    0.4,
+    1.0
+   ],
+   "parts": {
+    "head": {
+     "piece": 0,
+     "pivot_at": [
+      0.5,
+      0.95
+     ],
+     "attach": [
+      0.5,
+      0.06
+     ],
+     "z": -1
+    },
+    "arm_l": {
+     "piece": 1,
+     "pivot_at": [
+      0.7,
+      0.04
+     ],
+     "attach": [
+      0.08,
+      0.1
+     ],
+     "z": -1
+    },
+    "arm_r": {
+     "piece": 3,
+     "pivot_at": [
+      0.06,
+      0.05
+     ],
+     "attach": [
+      0.92,
+      0.1
+     ],
+     "z": -1
+    },
+    "leg_l": {
+     "piece": 4,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.3,
+      0.92
+     ],
+     "z": -2
+    },
+    "leg_r": {
+     "piece": 5,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.68,
+      0.92
+     ],
+     "z": -2
+    }
+   },
+   "alias": {
+    "shoe_l": "leg_l",
+    "shoe_r": "leg_r",
+    "hand_l": "arm_l",
+    "hand_r": "arm_r",
+    "hair": "head",
+    "neck": "body",
+    "beard": "head",
+    "hat": "head",
+    "axe": "arm_r"
+   }
+  },
+  "wolf": {
+   "kind": "figure",
+   "sheet": "red_film/cut/wolf_parts",
+   "root": 3,
+   "fit": {
+    "width": 617
+   },
+   "anchor": [
+    0.48,
+    0.99
+   ],
+   "parts": {
+    "head": {
+     "piece": 0,
+     "pivot_at": [
+      0.15,
+      0.6
+     ],
+     "attach": [
+      0.93,
+      0.25
+     ],
+     "z": 2
+    },
+    "ear_b": {
+     "piece": 2,
+     "joint_near": [
+      0.5,
+      1.0
+     ],
+     "attach": [
+      0.999,
+      -0.02
+     ],
+     "parent": "head",
+     "z": 1
+    },
+    "ear_f": {
+     "piece": 1,
+     "joint_near": [
+      0.5,
+      1.0
+     ],
+     "attach": [
+      1.063,
+      -0.01
+     ],
+     "parent": "head",
+     "z": 4
+    },
+    "cap": {
+     "piece_of": "red_film/cut/interior_a",
+     "piece": 3,
+     "joint": false,
+     "pivot_at": [
+      0.5,
+      0.65
+     ],
+     "scale": 0.75,
+     "attach": [
+      1.037,
+      0.006
+     ],
+     "parent": "head",
+     "z": 3,
+     "hidden": true
+    },
+    "tail": {
+     "piece": 4,
+     "pivot_at": [
+      0.93,
+      0.06
+     ],
+     "attach": [
+      0.04,
+      0.25
+     ],
+     "z": -1
+    },
+    "leg_bb": {
+     "piece": 6,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.22,
+      0.68
+     ],
+     "z": -1
+    },
+    "leg_fb": {
+     "piece": 7,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.84,
+      0.7
+     ],
+     "z": -1
+    },
+    "leg_bf": {
+     "piece": 5,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.16,
+      0.7
+     ],
+     "z": 1
+    },
+    "leg_ff": {
+     "piece": 8,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.78,
+      0.72
+     ],
+     "z": 1
+    }
+   },
+   "alias": {
+    "neck": "head",
+    "tail_tip": "tail",
+    "paw_b": "leg_bf",
+    "paw_f": "leg_ff",
+    "ear_in": "ear_f",
+    "belly": "body",
+    "muzzle": "head",
+    "cap_tail": "cap",
+    "cap_pom": "cap",
+    "cap_band": "cap"
+   }
+  },
+  "pine": {
+   "kind": "prop",
+   "sheet": "red_film/cut/forest",
+   "piece": 0,
+   "fit": {
+    "height": 531
+   },
+   "anchor": [
+    0.5,
+    0.98
+   ],
+   "id": "pine",
+   "pivot": [
+    0,
+    0
+   ],
+   "alias": {
+    "t1": "pine",
+    "t2": "pine",
+    "t3": "pine",
+    "trunk": "pine"
+   }
+  },
+  "tree": {
+   "kind": "prop",
+   "sheet": "red_film/cut/forest",
+   "piece": 1,
+   "fit": {
+    "height": 485
+   },
+   "anchor": [
+    0.54,
+    0.99
+   ],
+   "id": "tree",
+   "pivot": [
+    0,
+    0
+   ],
+   "alias": {
+    "crown": "tree",
+    "crown_b": "tree",
+    "trunk": "tree"
+   }
+  },
+  "tree_dark": {
+   "kind": "prop",
+   "sheet": "red_film/cut/forest",
+   "piece": 2,
+   "fit": {
+    "height": 483
+   },
+   "anchor": [
+    0.47,
+    0.99
+   ],
+   "id": "tree",
+   "pivot": [
+    0,
+    0
+   ],
+   "alias": {
+    "crown": "tree",
+    "crown_b": "tree",
+    "trunk": "tree"
+   }
+  },
+  "flower_red": {
+   "kind": "prop",
+   "sheet": "red_film/cut/forest",
+   "piece": 3,
+   "fit": {
+    "height": 227
+   },
+   "anchor": [
+    0.5,
+    0.97
+   ],
+   "id": "stem",
+   "pivot": [
+    0,
+    0
+   ]
+  },
+  "flower_yellow": {
+   "kind": "prop",
+   "sheet": "red_film/cut/forest",
+   "piece": 4,
+   "fit": {
+    "height": 206
+   },
+   "anchor": [
+    0.5,
+    0.97
+   ],
+   "id": "stem",
+   "pivot": [
+    0,
+    0
+   ]
+  },
+  "flower_purple": {
+   "kind": "prop",
+   "sheet": "red_film/cut/forest",
+   "piece": 5,
+   "fit": {
+    "height": 246
+   },
+   "anchor": [
+    0.5,
+    0.97
+   ],
+   "id": "stem",
+   "pivot": [
+    0,
+    0
+   ]
+  },
+  "cottage": {
+   "kind": "prop",
+   "sheet": "story_fixes/cut/cottage",
+   "piece": 0,
+   "fit": {
+    "width": 482
+   },
+   "anchor": [
+    0.5,
+    0.99
+   ]
+  },
+  "bed": {
+   "kind": "prop",
+   "sheet": "red_film/cut/interior_a",
+   "piece": 0,
+   "fit": {
+    "width": 445
+   },
+   "anchor": [
+    0.48,
+    0.99
+   ]
+  },
+  "quilt": {
+   "kind": "prop",
+   "sheet": "red_film/cut/interior_a",
+   "piece": 1,
+   "fit": {
+    "width": 356
+   },
+   "anchor": [
+    0.38,
+    1.36
+   ]
+  },
+  "table": {
+   "kind": "prop",
+   "sheet": "red_film/cut/interior_a",
+   "piece": 2,
+   "fit": {
+    "width": 520
+   },
+   "anchor": [
+    0.5,
+    0.99
+   ]
+  },
+  "wardrobe": {
+   "kind": "prop",
+   "sheet": "red_film/cut/interior_b",
+   "piece": 0,
+   "fit": {
+    "height": 571
+   },
+   "anchor": [
+    0.5,
+    1.01
+   ]
+  },
+  "wardrobe_doors": {
+   "kind": "prop",
+   "sheet": "red_film/cut/interior_b",
+   "piece": 2,
+   "crop": [
+    0.0,
+    0.0,
+    0.5,
+    1.0
+   ],
+   "id": "door_l",
+   "fit": {
+    "height": 490
+   },
+   "anchor": [
+    0.98,
+    1.076
+   ],
+   "alias": {
+    "panel_l": "door_l",
+    "knob_l": "door_l"
+   }
+  },
+  "window": {
+   "kind": "prop",
+   "sheet": "red_film/cut/interior_b",
+   "piece": 1,
+   "fit": {
+    "width": 378
+   },
+   "anchor": [
+    0.5,
+    0.5
+   ]
+  },
+  "window_bars": {
+   "kind": "prop",
+   "sheet": "red_film/cut/interior_b",
+   "piece": 3,
+   "fit": {
+    "height": 95
+   },
+   "anchor": [
+    0.5,
+    0.5
+   ]
+  },
+  "sun": {
+   "kind": "prop",
+   "image": "jingwei_film/props_sky.png",
+   "region": [
+    0.04,
+    0.28,
+    0.23,
+    0.72
+   ],
+   "id": "disc",
+   "fit": {
+    "width": 300
+   },
+   "anchor": [
+    0.5,
+    0.5
+   ],
+   "pivot": [
+    0,
+    0
+   ],
+   "alias": {
+    "rays": "disc"
+   },
+   "rigs": {
+    "glow": [
+     {
+      "part": "disc",
+      "type": "pulse",
+      "amp": 0.025,
+      "period": 2.4
+     },
+     {
+      "part": "disc",
+      "type": "sway",
+      "deg": 2,
+      "period": 6
+     }
+    ]
+   }
+  },
+  "cloud": {
+   "kind": "prop",
+   "sheet": "jingwei_film/cut/props_sky",
+   "piece": 12,
+   "fit": {
+    "width": 370
+   },
+   "anchor": [
+    0.5,
+    0.7
+   ]
+  },
+  "bird_small": {
+   "kind": "prop",
+   "sheet": "jingwei_film/cut/props_sea",
+   "piece": 7,
+   "id": "gull",
+   "fit": {
+    "width": 90
+   },
+   "anchor": [
+    0.5,
+    0.5
+   ],
+   "pivot": [
+    0,
+    0
+   ],
+   "rigs": {
+    "flap": [
+     {
+      "part": "gull",
+      "type": "bob",
+      "amp": 6,
+      "period": 1.1
+     }
+    ]
+   }
+  },
+  "ground": {
+   "kind": "layers",
+   "x": [
+    -260,
+    2180
+   ],
+   "bottom": 700,
+   "layers": {
+    "ground": {
+     "sheet": "jingwei_film/cut/ground_strip",
+     "top": 0
+    }
+   }
+  },
+  "mother": {
+   "kind": "figure",
+   "sheet": "story_fixes/cut/mother_parts",
+   "root": 2,
+   "fit": {
+    "height": 394
+   },
+   "anchor": [
+    0.5,
+    1.0
+   ],
+   "parts": {
+    "head": {
+     "piece": 0,
+     "pivot_at": [
+      0.5,
+      0.95
+     ],
+     "attach": [
+      0.5,
+      0.05
+     ],
+     "z": -1
+    },
+    "arm_l": {
+     "piece": 1,
+     "pivot_at": [
+      0.6,
+      0.03
+     ],
+     "attach": [
+      0.12,
+      0.12
+     ],
+     "z": -1
+    },
+    "arm_r": {
+     "piece": 3,
+     "pivot_at": [
+      0.4,
+      0.03
+     ],
+     "attach": [
+      0.88,
+      0.12
+     ],
+     "z": -1
+    },
+    "leg_l": {
+     "piece": 4,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.4,
+      0.96
+     ],
+     "z": -2
+    },
+    "leg_r": {
+     "piece": 5,
+     "joint_near": [
+      0.5,
+      0.0
+     ],
+     "attach": [
+      0.6,
+      0.96
+     ],
+     "z": -2
+    }
+   },
+   "alias": {
+    "shoe_l": "leg_l",
+    "shoe_r": "leg_r",
+    "hand_l": "arm_l",
+    "hand_r": "arm_r",
+    "hair": "head",
+    "neck": "body",
+    "apron": "body"
+   }
+  }
+ }
+}

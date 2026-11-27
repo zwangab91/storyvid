@@ -15,7 +15,9 @@ A cast file maps each actor a storyboard uses to generated art:
 Figures: every limb's joint is found on its own (the straight cut edge, which the image model leaves where a piece
 was cut from the body); the limb is then moved so that joint sits on its attach point, given as a fraction of the root
 piece's box (the planner's call). Optional per part: "flip", "rot" (degrees, before placing), "z" (draw order),
-"hidden", "offset" (fine adjustment in sheet pixels). The assembled figure is scaled to "fit" (width or height in
+"hidden", "offset" (fine adjustment in sheet pixels). A prop can use part of a cut piece ("crop", fractions of its
+box). The root piece can be named ("root_id", default "body") and
+given a pivot ("root_pivot", a fraction of its box) for rigs that turn the whole figure. The assembled figure is scaled to "fit" (width or height in
 storyboard units) and placed so "anchor" (a fraction of its box) is the actor origin, matching the procedural actor
 it replaces. Rigs are copied from that actor; entries for parts the figure does not have are dropped (and listed),
 or redirected with "alias": {"crown": "tree"}.
@@ -153,7 +155,10 @@ def build_figure(name: str, spec: dict, assets_root: str, out_dir: str, log=prin
     root_img = read_rgba(os.path.join(sheet["dir"], root["file"]))
     rh, rw = root_img.shape[:2]
     ox, oy = root["origin"]
-    placed = [{"id": spec.get("root_id", "body"), "img": root_img, "pos": np.array([ox, oy], float), "pivot": None,
+    root_pivot = None
+    if "root_pivot" in spec:  # where the root turns, as a fraction of its box (a tree sways from the foot of its trunk)
+        root_pivot = np.array([ox + spec["root_pivot"][0] * rw, oy + spec["root_pivot"][1] * rh])
+    placed = [{"id": spec.get("root_id", "body"), "img": root_img, "pos": np.array([ox, oy], float), "pivot": root_pivot,
                "z": 0, "hidden": False, "parent": None}]
     for pid, ps in spec["parts"].items():
         if "piece_of" in ps:  # a piece from another sheet (e.g. a prop held in the beak)
@@ -201,7 +206,7 @@ def build_figure(name: str, spec: dict, assets_root: str, out_dir: str, log=prin
 
 
 def build_prop(name: str, spec: dict, assets_root: str, out_dir: str) -> dict:
-    if "region" in spec:  # a box of a sheet, keyed as a whole (an object made of several loose bits, e.g. a sun's rays)
+    if "region" in spec:  # a box of a sheet image, keyed as a whole (an object made of several loose bits, e.g. a sun's rays)
         from .cutout import key_mask
         src = cv2.imread(os.path.join(assets_root, spec["image"]), cv2.IMREAD_COLOR)
         H, W = src.shape[:2]
@@ -217,6 +222,10 @@ def build_prop(name: str, spec: dict, assets_root: str, out_dir: str) -> dict:
         sheet = load_sheet(assets_root, spec["sheet"])
         pc = sheet["pieces"][spec["piece"]]
         img = read_rgba(os.path.join(sheet["dir"], pc["file"]))
+    if "crop" in spec:  # part of a cut piece, as fractions of its box (e.g. one door of a pair)
+        u0, v0, u1, v1 = spec["crop"]
+        h, w = img.shape[:2]
+        img = img[int(v0 * h):int(v1 * h), int(u0 * w):int(u1 * w)]
     img, _ = transform_piece(img, spec.get("flip", False), spec.get("rot", 0.0))
     h, w = img.shape[:2]
     k, org = _fit_and_anchor([(0, 0, w, h)], spec["fit"], spec.get("anchor", [0.5, 0.5]))
