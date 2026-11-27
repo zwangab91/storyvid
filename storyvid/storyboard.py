@@ -117,39 +117,72 @@ def extract_json(text: str) -> dict:
 CHARACTER_RIGS = {"idle", "walk", "run", "fly", "talk"}
 
 
-def is_character(spec: dict) -> bool:
-    """A story actor that is a character (shown once at a time): a person, or anything with a motion rig like idle,
-    walk, run, fly or talk. `"character": true/false` on the actor overrides (false for, say, a flock of gulls)."""
-    if "character" in spec:
-        return bool(spec["character"])
-    return spec.get("template") == "person" or bool(CHARACTER_RIGS & set(spec.get("rigs", {})))
+def character_of(name: str, spec: dict) -> str | None:
+    """Who an actor depicts, or None for scenery and props.
+
+    `"character": "<id>"` names it, so pose or costume variants of one character share an identity; `true` means the
+    actor's own name; `false` means not a character (a flock, a grove). Without the key, a person or an actor with an
+    idle, walk, run, fly or talk rig counts as a character of its own name."""
+    c = spec.get("character")
+    if isinstance(c, str) and c:
+        return c
+    if c is True:
+        return name
+    if c is False:
+        return None
+    return name if (spec.get("template") == "person" or CHARACTER_RIGS & set(spec.get("rigs", {}))) else None
 
 
-def duplicate_characters(story: dict, scenes: list[dict]) -> list[str]:
-    """Scenes that show one character twice at the same moment (two Jingwei birds, say). Copies that take turns are
-    fine: one shown only in a time window, or one off screen while the other is on."""
-    from .anim import apply_anims, new_state
-    chars = {a for a, spec in story.get("actors", {}).items() if is_character(spec)}
+def _coverage(fm, sc: dict, item: dict, u: float) -> int:
+    """Pixels of the frame (at fm's size) that `item` alone covers at least 60% at moment u, as rendered: camera,
+    animation, opacity, show windows and hidden parts included. Rendered on black and on white; alpha is the
+    difference."""
+    one = dict(sc)
+    one["_items"] = [item]
+    black = np.zeros((fm.H, fm.W, 3), np.float32)
+    white = np.ones((fm.H, fm.W, 3), np.float32)
+    fm.renderer.render(one, u, black)
+    fm.renderer.render(one, u, white)
+    return int(((1.0 - (white - black).mean(2)) > 0.6).sum())
+
+
+def check_characters(story: dict, scenes: list[dict] | None = None, fm=None, samples: int = 24,
+                     min_px: int = 20) -> list[str]:
+    """Moments when one character is on screen twice (two Jingwei birds, say).
+
+    Each item that depicts a character is rendered on its own at `samples` moments of the scene; a copy counts when it
+    covers at least `min_px` pixels of the 384x216 check frame at 60% opacity or more. A problem is two or more copies
+    visible together at two moments in a row, so a quick dissolve between two poses passes. Copies that take turns
+    pass, and an item marked `"duplicate": "<why>"` (a reflection, a memory) is left out."""
+    from . import pipeline as P
+    if scenes is None:
+        scenes = P.build_scenes(story)
+        for sc in scenes:
+            sc["_dur"], sc["_captions"], sc["_start"] = 6.0, [], 0.0
+    if fm is None:
+        fm = P.FrameMaker(story, scenes, 384, 216, P.CACHE)
+    who = {a: character_of(a, spec) for a, spec in story.get("actors", {}).items()}
     errs = []
     for i, sc in enumerate(scenes):
-        by: dict[str, list] = {}
-        for it in sc.get("items", []):
-            if it.get("actor") in chars:
-                by.setdefault(it["actor"], []).append(it)
-        for actor, its in by.items():
+        groups: dict[str, list] = {}
+        for it in sc.get("_items", []):
+            cid = who.get(it.get("actor"))
+            if cid and not it.get("duplicate"):
+                groups.setdefault(cid, []).append(it)
+        for cid, its in groups.items():
             if len(its) < 2:
                 continue
-            for u in [k / 40 for k in range(1, 40)]:
-                on = 0
-                for it in its:
-                    st = new_state(*it.get("at", (0, 0)), scale=it.get("scale", 1.0), opacity=it.get("opacity", 1.0))
-                    st = apply_anims(st, it.get("anims", []), u, 6.0, int(it.get("seed", 0)))
-                    on += st["vis"] and st["op"] > 0.05 and -150 < st["x"] < 2070 and -150 < st["y"] < 1230
-                if on > 1:
+            run = 0
+            for k in range(samples):
+                u = (k + 0.5) / samples
+                on = sum(_coverage(fm, sc, it, u) >= min_px for it in its)
+                run = run + 1 if on > 1 else 0
+                if run >= 2:
                     where = "title scene" if i == 0 else ("end scene" if i == len(scenes) - 1 else f"scenes[{i - 1}]")
-                    errs.append(f"{where}: the character {actor!r} is on screen {on} times at once (at {u:.0%} of the "
-                                f"scene); show a character once, and show repeated action with one item (a path, "
-                                f"part show windows) - or mark the actor \"character\": false if copies are meant")
+                    actors = sorted({it["actor"] for it in its})
+                    errs.append(f"{where}: the character {cid!r} ({', '.join(actors)}) is on screen {on} times at once "
+                                f"(around {u:.0%} of the scene). Show a character once and show repeated action with "
+                                f"one item (a path, part show windows); mark an intended copy \"duplicate\": \"<why>\".")
                     break
     return errs
 
@@ -182,7 +215,7 @@ def validate(story: dict, sheet_path: str | None = None) -> list[str]:
                 where = "title scene" if i == 0 else ("end scene" if i == len(scenes) - 1 else f"scenes[{i - 1}]")
                 errs.append(f"{where} at t={u}: {type(e).__name__}: {e}")
                 break
-    errs += duplicate_characters(story, scenes)
+    errs += check_characters(story, scenes, fm)
     if story.get("language", "en").startswith("zh"):
         for i, sc in enumerate(story["scenes"]):
             a = split_sentences(sc.get("narration", ""), "zh")
@@ -223,7 +256,7 @@ def generate(story_text, title, lang="en", subtitle=None, scenes="10-14", backen
         ask = (f"{spec_text()}\n\nThe attached image is a contact sheet of the storyboard below (scene 0 = title card, "
                "last = end card; each tile is the scene at 60% of its duration, captions omitted). Critique it as a "
                "picture-book art director: characters off-ground or cut off, overlaps, unreadable shapes, empty or "
-               "cluttered compositions, inconsistent characters. Then return the improved full storyboard JSON only.\n"
+               "cluttered compositions, inconsistent characters, one character shown twice in a scene. Then return the improved full storyboard JSON only.\n"
                "```json\n" + json.dumps(story, ensure_ascii=False) + "\n```")
         try:
             cand = extract_json(ask_llm(ask, backend, model, image=sheet))

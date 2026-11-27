@@ -104,8 +104,15 @@ rendering an existing storyboard does not.
   paints, actors built from cut-paper parts, rigs, animations and camera moves.
 - **Validation renders the draft.** Every scene is built and rendered at 384×216 at three moments. Exceptions (an
   unknown paint, a missing rig or part, bad geometry), narration/subtitle sentence-count mismatches and a character
-  on screen twice at once (an actor with an idle, walk, run, fly or talk rig, or a person) go back to
+  on screen twice at once go back to
   Claude for up to 3 repair rounds.
+- **One character, once at a time.** Each item that depicts a character (a person, an actor with a motion rig, or one
+  that names its `character`, which lets pose variants share an identity) is rendered on its own at 24 moments, on
+  black and on white; the difference is its coverage, with camera, animation, opacity and hidden parts included. Two
+  copies covering at least 20 pixels of the 384×216 frame at 60% opacity, at two moments in a row, are a problem.
+  Turn-taking copies and quick dissolves pass; an item marked `"duplicate"` (a reflection) is left out. Cases are in
+  `tests/test_duplicate_characters.py`. The critique pass also asks about a character shown twice, as a backstop for
+  identities the storyboard did not declare.
 - **Optional visual critique** (`--critique N`; the `make` command defaults to 1): the contact sheet image is shown to
   Claude, which returns a revised storyboard. A revision is kept only if it still validates.
 - Backends: `claude-cli` (the `claude` CLI in print mode) is picked when installed; otherwise the Anthropic API.
