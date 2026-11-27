@@ -1,0 +1,455 @@
+{
+ "kind": "audio",
+ "language": "en",
+ "speech": {
+  "model": "gemini-3.8-flash-lite-tts",
+  "voice": "Kore",
+  "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+ },
+ "total_cost_usd": 0.0644,
+ "assets": [
+  {
+   "id": "n00",
+   "type": "speech",
+   "key": "f6a5e67749108cd6",
+   "file": "n00.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 142108,
+   "cost_usd": 0.00042,
+   "seconds": 1.9,
+   "created": "2026-11-27T15:56:07Z",
+   "usage": {
+    "promptTokenCount": 7,
+    "candidatesTokenCount": 70,
+    "totalTokenCount": 77,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 7
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 70
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "The Tortoise and the Hare",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n01",
+   "type": "speech",
+   "key": "fae118daaab4f258",
+   "file": "n01.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 641788,
+   "cost_usd": 0.002,
+   "seconds": 2.7,
+   "created": "2026-11-27T15:56:10Z",
+   "usage": {
+    "promptTokenCount": 33,
+    "candidatesTokenCount": 331,
+    "totalTokenCount": 364,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 33
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 331
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "In a green meadow at the edge of the woods, there lived a hare. He was quick, he was clever, and he was very, very proud.",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n02",
+   "type": "speech",
+   "key": "d07cb2bcb7e5c0bc",
+   "file": "n02.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 569788,
+   "cost_usd": 0.00177,
+   "seconds": 2.7,
+   "created": "2026-11-27T15:56:12Z",
+   "usage": {
+    "promptTokenCount": 29,
+    "candidatesTokenCount": 293,
+    "totalTokenCount": 322,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 29
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 293
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "Every morning he raced the wind across the grass. \"Nobody in the whole wide world,\" he boasted, \"is as fast as me!\"",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n03",
+   "type": "speech",
+   "key": "182453f9fc8ed7b8",
+   "file": "n03.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 730588,
+   "cost_usd": 0.00228,
+   "seconds": 3.0,
+   "created": "2026-11-27T15:56:15Z",
+   "usage": {
+    "promptTokenCount": 36,
+    "candidatesTokenCount": 377,
+    "totalTokenCount": 413,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 36
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 377
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "One day, the hare met a tortoise plodding slowly along the path. \"Ha!\" he laughed. \"You are so slow, you will never get anywhere at all!\"",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n04",
+   "type": "speech",
+   "key": "e19972028dde1a2a",
+   "file": "n04.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 566908,
+   "cost_usd": 0.00177,
+   "seconds": 2.8,
+   "created": "2026-11-27T15:56:18Z",
+   "usage": {
+    "promptTokenCount": 30,
+    "candidatesTokenCount": 292,
+    "totalTokenCount": 322,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 30
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 292
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "The tortoise blinked her old, wise eyes. \"Slow I may be,\" she said, \"but I will race you, if you like.\"",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n05",
+   "type": "speech",
+   "key": "a750f9d227e32519",
+   "file": "n05.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 627388,
+   "cost_usd": 0.00195,
+   "seconds": 2.6,
+   "created": "2026-11-27T15:56:21Z",
+   "usage": {
+    "promptTokenCount": 30,
+    "candidatesTokenCount": 323,
+    "totalTokenCount": 353,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 30
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 323
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "News of the race spread through the woods. All the animals came to watch, and the fox waved the flag: ready, steady, go!",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n06",
+   "type": "speech",
+   "key": "1c6cfa195e8e5a03",
+   "file": "n06.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 709468,
+   "cost_usd": 0.00221,
+   "seconds": 2.7,
+   "created": "2026-11-27T15:56:23Z",
+   "usage": {
+    "promptTokenCount": 33,
+    "candidatesTokenCount": 366,
+    "totalTokenCount": 399,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 33
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 366
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "Whoosh! Off shot the hare, so fast that the flowers bent over in the wind. And off went the tortoise too: step, step, step.",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n07",
+   "type": "speech",
+   "key": "fe46265272503a18",
+   "file": "n07.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 812188,
+   "cost_usd": 0.00254,
+   "seconds": 3.3,
+   "created": "2026-11-27T15:56:27Z",
+   "usage": {
+    "promptTokenCount": 45,
+    "candidatesTokenCount": 420,
+    "totalTokenCount": 465,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 45
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 420
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "Soon the hare was far, far ahead. He looked back, and he could not even see the tortoise. \"I have plenty of time,\" he yawned. \"I think I'll take a little nap.\"",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n08",
+   "type": "speech",
+   "key": "1b5563ae8e570f5c",
+   "file": "n08.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 766588,
+   "cost_usd": 0.00239,
+   "seconds": 4.1,
+   "created": "2026-11-27T15:56:31Z",
+   "usage": {
+    "promptTokenCount": 32,
+    "candidatesTokenCount": 396,
+    "totalTokenCount": 428,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 32
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 396
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "The sun climbed high into the sky. The hare snored, and dreamed of winning. But the tortoise kept on walking: step, step, step.",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n09",
+   "type": "speech",
+   "key": "7b989f3fa01e947c",
+   "file": "n09.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 641788,
+   "cost_usd": 0.002,
+   "seconds": 2.8,
+   "created": "2026-11-27T15:56:34Z",
+   "usage": {
+    "promptTokenCount": 24,
+    "candidatesTokenCount": 331,
+    "totalTokenCount": 355,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 24
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 331
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "Past the pond, up the hill, and right past the sleeping hare she went. Step, step, step.",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n10",
+   "type": "speech",
+   "key": "33712593f54c116b",
+   "file": "n10.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 493468,
+   "cost_usd": 0.00153,
+   "seconds": 2.5,
+   "created": "2026-11-27T15:56:36Z",
+   "usage": {
+    "promptTokenCount": 28,
+    "candidatesTokenCount": 253,
+    "totalTokenCount": 281,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 28
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 253
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "When at last the hare woke up, the sun was going down. He leapt to his feet and ran as fast as he could!",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n11",
+   "type": "speech",
+   "key": "ea12ab81a67bbb56",
+   "file": "n11.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 503068,
+   "cost_usd": 0.00156,
+   "seconds": 2.7,
+   "created": "2026-11-27T15:56:39Z",
+   "usage": {
+    "promptTokenCount": 24,
+    "candidatesTokenCount": 258,
+    "totalTokenCount": 282,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 24
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 258
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "But it was too late. The tortoise was already crossing the finish line, and all the animals cheered and cheered.",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n12",
+   "type": "speech",
+   "key": "ef52373c5bf6ad29",
+   "file": "n12.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 643228,
+   "cost_usd": 0.002,
+   "seconds": 2.8,
+   "created": "2026-11-27T15:56:42Z",
+   "usage": {
+    "promptTokenCount": 30,
+    "candidatesTokenCount": 331,
+    "totalTokenCount": 361,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 30
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 331
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "The hare hung his head. And the tortoise smiled a slow, kind smile. \"Slow and steady,\" she said, \"wins the race.\"",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "music",
+   "type": "music",
+   "key": "641a3b3c15840313",
+   "file": "music.mp3",
+   "mime": "audio/mpeg",
+   "model": "lyria-3-clip-preview",
+   "bytes": 746250,
+   "cost_usd": 0.04,
+   "seconds": 14.0,
+   "created": "2026-11-27T15:56:56Z",
+   "prompt": "Playful pastoral acoustic chamber piece for an old Greek fable, a slow steady oboe theme over plucked lyre-like harp, quick fluttering flute runs, and soft hand-drum taps, warm humorous storybook mood, no vocals, 30 seconds loopable. Strictly instrumental acoustic chamber arrangement, soft storybook dynamics suitable beneath voice narration, no singing or vocals.",
+   "model_text": "<instrumental>"
+  }
+ ]
+}
