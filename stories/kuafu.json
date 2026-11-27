@@ -132,6 +132,7 @@
  },
  "actors": {
   "kuafu": {
+   "character": "kuafu",
    "template": "person",
    "params": {
     "height": 600,
@@ -236,6 +237,7 @@
    ]
   },
   "traveler": {
+   "character": "traveler",
    "template": "person",
    "params": {
     "height": 380,
@@ -248,6 +250,7 @@
    }
   },
   "child": {
+   "character": "child",
    "template": "person",
    "params": {
     "height": 280,
@@ -259,6 +262,7 @@
    }
   },
   "staff_ground": {
+   "character": false,
    "parts": [
     {
      "id": "staff",
@@ -297,6 +301,7 @@
    ]
   },
   "peach_tree_fruit": {
+   "character": false,
    "parts": [
     {
      "id": "trunk",
@@ -492,6 +497,7 @@
    }
   },
   "sweat": {
+   "character": false,
    "parts": [
     {
      "id": "drop",
@@ -524,6 +530,7 @@
    ]
   },
   "dust": {
+   "character": false,
    "parts": [
     {
      "id": "d1",
@@ -557,6 +564,7 @@
    ]
   },
   "lake": {
+   "character": false,
    "parts": [
     {
      "id": "lake",

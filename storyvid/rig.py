@@ -309,6 +309,8 @@ def hybridize(story: dict, cast: dict, assets_root: str, out_dir: str, log=print
         actor = adopt_rigs(name, actor, originals.get(name), spec.get("alias", {}), log)
         if spec.get("rigs"):  # tuned motion for painted pieces replaces the procedural values rig by rig
             actor.setdefault("rigs", {}).update(spec["rigs"])
+        # who it depicts carries over to the generated actor; library scenery (sea, sun, ...) is never a character
+        actor["character"] = story.get("actors", {}).get(name, {}).get("character", False)
         new["actors"][name] = actor
         have_parts[name] = {p["id"] for p in actor["parts"]}
 

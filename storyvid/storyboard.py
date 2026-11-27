@@ -134,26 +134,42 @@ def character_of(name: str, spec: dict) -> str | None:
 
 
 def _coverage(fm, sc: dict, item: dict, u: float) -> int:
-    """Pixels of the frame (at fm's size) that `item` alone covers at least 60% at moment u, as rendered: camera,
-    animation, opacity, show windows and hidden parts included. Rendered on black and on white; alpha is the
-    difference."""
+    """Pixels of the frame (at fm's size) where `item` alone shows at moment u, counted only while the item is at
+    least 60% opaque. Opacity comes from the item's own animation state (fades, show windows), because overlapping
+    paper parts of a half-faded figure stack above 60% in places. The pixels come from rendering the item on black
+    and on white (alpha is the difference), so the camera, paths and hidden parts are exact."""
+    from .anim import apply_anims, new_state
+    st = new_state(*item.get("at", (0, 0)), scale=item.get("scale", 1.0), rot=item.get("rot", 0.0),
+                   flip=item.get("flip", False), opacity=item.get("opacity", 1.0))
+    st = apply_anims(st, item.get("anims", []), u, sc["_dur"], int(item.get("seed", 0)))
+    if not st["vis"] or st["op"] < 0.6:
+        return 0
     one = dict(sc)
     one["_items"] = [item]
     black = np.zeros((fm.H, fm.W, 3), np.float32)
     white = np.ones((fm.H, fm.W, 3), np.float32)
     fm.renderer.render(one, u, black)
     fm.renderer.render(one, u, white)
-    return int(((1.0 - (white - black).mean(2)) > 0.6).sum())
+    return int(((1.0 - (white - black).mean(2)) > 0.3).sum())
 
 
-def check_characters(story: dict, scenes: list[dict] | None = None, fm=None, samples: int = 24,
+def undeclared_actors(story: dict) -> list[str]:
+    """Every story actor must say who it depicts, so two actors drawing one character can be told apart from two
+    characters (and a flock from a character drawn twice)."""
+    return [f"actors.{a}: say who it depicts with \"character\": a character id (pose or costume variants of one "
+            f"character share it, e.g. \"wolf_in_bed\": {{\"character\": \"wolf\", ...}}), or false for scenery, "
+            f"props and groups such as a flock" for a, spec in story.get("actors", {}).items()
+            if "character" not in spec]
+
+
+def check_characters(story: dict, scenes: list[dict] | None = None, fm=None, samples: int = 48,
                      min_px: int = 20) -> list[str]:
     """Moments when one character is on screen twice (two Jingwei birds, say).
 
     Each item that depicts a character is rendered on its own at `samples` moments of the scene; a copy counts when it
-    covers at least `min_px` pixels of the 384x216 check frame at 60% opacity or more. A problem is two or more copies
-    visible together at two moments in a row, so a quick dissolve between two poses passes. Copies that take turns
-    pass, and an item marked `"duplicate": "<why>"` (a reflection, a memory) is left out."""
+    is at least 60% opaque and shows on at least `min_px` pixels of the 384x216 check frame. Any moment with two or more
+    copies is a problem. A dissolve between two poses passes, because during a crossfade the two never both reach
+    60%; copies that take turns pass; an item marked `"duplicate": "<why>"` (a reflection, a memory) is left out."""
     from . import pipeline as P
     if scenes is None:
         scenes = P.build_scenes(story)
@@ -172,12 +188,10 @@ def check_characters(story: dict, scenes: list[dict] | None = None, fm=None, sam
         for cid, its in groups.items():
             if len(its) < 2:
                 continue
-            run = 0
             for k in range(samples):
                 u = (k + 0.5) / samples
                 on = sum(_coverage(fm, sc, it, u) >= min_px for it in its)
-                run = run + 1 if on > 1 else 0
-                if run >= 2:
+                if on > 1:
                     where = "title scene" if i == 0 else ("end scene" if i == len(scenes) - 1 else f"scenes[{i - 1}]")
                     actors = sorted({it["actor"] for it in its})
                     errs.append(f"{where}: the character {cid!r} ({', '.join(actors)}) is on screen {on} times at once "
@@ -197,6 +211,7 @@ def validate(story: dict, sheet_path: str | None = None) -> list[str]:
             errs.append(f"missing top-level key {key!r}")
     if errs:
         return errs
+    errs += undeclared_actors(story)
     try:
         scenes = P.build_scenes(story)
     except Exception as e:  # noqa: BLE001

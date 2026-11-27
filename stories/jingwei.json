@@ -114,6 +114,7 @@
  },
  "actors": {
   "nuwa": {
+   "character": "nuwa",
    "template": "person",
    "params": {
     "height": 320,
@@ -127,6 +128,7 @@
    }
   },
   "jingwei": {
+   "character": "jingwei",
    "parts": [
     {
      "id": "tail",
@@ -585,6 +587,7 @@
    }
   },
   "boat": {
+   "character": false,
    "parts": [
     {
      "id": "hull",
@@ -658,6 +661,7 @@
    ]
   },
   "oar": {
+   "character": false,
    "parts": [
     {
      "id": "pole",
@@ -692,6 +696,7 @@
    ]
   },
   "big_wave": {
+   "character": false,
    "parts": [
     {
      "id": "wave",
@@ -835,6 +840,7 @@
    ]
   },
   "lightning": {
+   "character": false,
    "parts": [
     {
      "id": "bolt",
@@ -875,6 +881,7 @@
    ]
   },
   "zhe_tree": {
+   "character": false,
    "parts": [
     {
      "id": "trunk",
@@ -951,6 +958,7 @@
    }
   },
   "pebble_pile": {
+   "character": false,
    "parts": [
     {
      "id": "pile",

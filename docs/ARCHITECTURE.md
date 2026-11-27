@@ -106,13 +106,16 @@ rendering an existing storyboard does not.
   unknown paint, a missing rig or part, bad geometry), narration/subtitle sentence-count mismatches and a character
   on screen twice at once go back to
   Claude for up to 3 repair rounds.
-- **One character, once at a time.** Each item that depicts a character (a person, an actor with a motion rig, or one
-  that names its `character`, which lets pose variants share an identity) is rendered on its own at 24 moments, on
-  black and on white; the difference is its coverage, with camera, animation, opacity and hidden parts included. Two
-  copies covering at least 20 pixels of the 384×216 frame at 60% opacity, at two moments in a row, are a problem.
-  Turn-taking copies and quick dissolves pass; an item marked `"duplicate"` (a reflection) is left out. Cases are in
-  `tests/test_duplicate_characters.py`. The critique pass also asks about a character shown twice, as a backstop for
-  identities the storyboard did not declare.
+- **One character, once at a time.** Every story actor declares who it depicts (`"character"`: an id shared by pose
+  variants, or `false` for scenery, props and groups); an undeclared actor is a validation error, so identity is
+  decided when the storyboard is written rather than guessed. Each item that depicts a character is then rendered on
+  its own at 48 moments, on black and on white; the difference is its coverage, with camera, paths and hidden parts
+  included. A copy counts while its own animation state has it at least 60% opaque and it shows on at least 20 pixels
+  of the 384×216 frame; any moment with two copies is a problem. A dissolve passes (the two never both reach 60%),
+  copies that take turns pass, and an item marked `"duplicate"` (a reflection) is left out. Cases are in
+  `tests/test_duplicate_characters.py`. Left as is, because they fail safe (a repair round, never a doubled
+  character): a copy completely hidden behind scenery still counts, and a group drawn from one actor must be
+  declared `false`. A double shorter than one sample (about 2% of a scene) can slip through.
 - **Optional visual critique** (`--critique N`; the `make` command defaults to 1): the contact sheet image is shown to
   Claude, which returns a revised storyboard. A revision is kept only if it still validates.
 - Backends: `claude-cli` (the `claude` CLI in print mode) is picked when installed; otherwise the Anthropic API.

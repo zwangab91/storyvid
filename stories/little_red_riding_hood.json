@@ -20,12 +20,12 @@
     "dusk_sky": {"colors": ["#f7c07e", "#f9d79b", "#f2a07a", "#fbe6b8"], "style": "streaks", "angle": 0, "contrast": 0.5}
   },
   "actors": {
-    "girl": {"template": "person", "params": {"height": 330, "child": true, "hood": "red_cloth", "top": "blue_cloth", "apron": "white", "hair": "hair_brown", "hair_style": "bob", "holding": "basket"}},
-    "mother": {"template": "person", "params": {"height": 420, "top": "green_cloth", "apron": "cream", "hair": "hair_brown", "hair_style": "bun", "facing": 0.5}},
-    "grandma": {"template": "person", "params": {"height": 390, "top": "flower_purple", "shawl": "red_cloth", "hair": "hair_white", "hair_style": "bun", "glasses": true, "skin": "skin_light"}},
-    "grandma_peek": {"template": "person", "params": {"height": 390, "top": "flower_purple", "hair": "hair_white", "hat": "nightcap", "hat_paint": "lace", "glasses": true, "facing": 0.8}},
-    "woodcutter": {"template": "person", "params": {"height": 450, "dress": false, "top": "plaid", "bottom": "blue_cloth", "beard": "hair_brown", "hair": "hair_brown", "hat": "cap", "hat_paint": "green_cloth", "holding": "axe", "skin": "skin_tan"}},
-    "wolf": {
+    "girl": {"character": "girl", "template": "person", "params": {"height": 330, "child": true, "hood": "red_cloth", "top": "blue_cloth", "apron": "white", "hair": "hair_brown", "hair_style": "bob", "holding": "basket"}},
+    "mother": {"character": "mother", "template": "person", "params": {"height": 420, "top": "green_cloth", "apron": "cream", "hair": "hair_brown", "hair_style": "bun", "facing": 0.5}},
+    "grandma": {"character": "grandma", "template": "person", "params": {"height": 390, "top": "flower_purple", "shawl": "red_cloth", "hair": "hair_white", "hair_style": "bun", "glasses": true, "skin": "skin_light"}},
+    "grandma_peek": {"character": "grandma", "template": "person", "params": {"height": 390, "top": "flower_purple", "hair": "hair_white", "hat": "nightcap", "hat_paint": "lace", "glasses": true, "facing": 0.8}},
+    "woodcutter": {"character": "woodcutter", "template": "person", "params": {"height": 450, "dress": false, "top": "plaid", "bottom": "blue_cloth", "beard": "hair_brown", "hair": "hair_brown", "hat": "cap", "hat_paint": "green_cloth", "holding": "axe", "skin": "skin_tan"}},
+    "wolf": {"character": "wolf",
       "parts": [
         {"id": "tail", "shape": "poly", "smooth": true, "points": [[-140, -170], [-200, -172], [-262, -132], [-284, -88], [-250, -100], [-200, -130], [-150, -140]], "paint": "wolf_fur", "pivot": [-145, -155]},
         {"id": "tail_tip", "shape": "blob", "c": [-270, -98], "r": [22, 16], "paint": "fur_white", "parent": "tail", "shape_seed": 2},
@@ -81,7 +81,7 @@
           {"part": "eye", "type": "blink", "period": 2.8}]
       }
     },
-    "bed": {
+    "bed": {"character": false,
       "parts": [
         {"id": "headboard", "shape": "rect", "c": [-150, -250], "size": [120, 330], "radius": 40, "paint": "wood"},
         {"id": "footboard", "shape": "rect", "c": [200, -160], "size": [60, 200], "radius": 26, "paint": "wood"},
@@ -91,20 +91,20 @@
         {"id": "pillow", "shape": "ellipse", "c": [-90, -158], "r": [70, 34], "paint": "white"}
       ]
     },
-    "quilt": {
+    "quilt": {"character": false,
       "parts": [
         {"id": "quilt", "shape": "rect", "c": [40, -112], "size": [350, 122], "radius": 18, "paint": "patchwork", "tex_scale": 0.8},
         {"id": "sheet", "shape": "rect", "c": [40, -168], "size": [352, 24], "radius": 10, "paint": "white"}
       ]
     },
-    "wardrobe": {
+    "wardrobe": {"character": false,
       "parts": [
         {"id": "top", "shape": "rect", "c": [0, -560], "size": [340, 34], "radius": 6, "paint": "wood"},
         {"id": "body", "shape": "rect", "c": [0, -280], "size": [300, 540], "radius": 8, "paint": {"preset": "wood", "colors": ["#8a5530", "#a36a3c", "#6a3e20"]}},
         {"id": "inside", "shape": "rect", "c": [0, -282], "size": [262, 490], "paint": {"colors": ["#3b2a1a", "#4a3522", "#2a1d10"], "style": "flat"}, "shadow": 0}
       ]
     },
-    "wardrobe_doors": {
+    "wardrobe_doors": {"character": false,
       "parts": [
         {"id": "door_l", "shape": "rect", "c": [-64, -282], "size": [134, 490], "radius": 6, "paint": "wood"},
         {"id": "panel_l", "shape": "rect", "c": [-64, -282], "size": [90, 400], "radius": 12, "paint": {"preset": "wood", "colors": ["#b67a42", "#cf955a", "#8d5a2c"]}, "shadow": 0.5},
@@ -113,7 +113,7 @@
         {"id": "knob_r", "shape": "circle", "c": [62, -280], "r": 9, "paint": "gold"}
       ]
     },
-    "window": {
+    "window": {"character": false,
       "parts": [
         {"id": "frame", "shape": "rect", "c": [0, 0], "size": [290, 240], "radius": 8, "paint": "wood"},
         {"id": "glass", "shape": "rect", "c": [0, 0], "size": [246, 196], "paint": "sky", "shadow": 0.3},
@@ -124,13 +124,13 @@
         {"id": "curtain_r", "shape": "poly", "smooth": true, "corners": [0, 1], "points": [[170, -140], [90, -140], [120, -20], [110, 130], [175, 130]], "paint": "red_cloth"}
       ]
     },
-    "window_bars": {
+    "window_bars": {"character": false,
       "parts": [
         {"id": "bar_v", "shape": "rect", "c": [0, 0], "size": [12, 92], "paint": "wood"},
         {"id": "bar_h", "shape": "rect", "c": [0, 0], "size": [112, 12], "paint": "wood"}
       ]
     },
-    "table": {
+    "table": {"character": false,
       "parts": [
         {"id": "leg_l", "shape": "rect", "c": [-180, -95], "size": [26, 190], "paint": "wood"},
         {"id": "leg_r", "shape": "rect", "c": [180, -95], "size": [26, 190], "paint": "wood"},

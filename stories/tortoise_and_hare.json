@@ -14,7 +14,7 @@
     "path": {"colors": ["#d9b47a", "#e8cb95", "#c09460", "#f0dcae"], "style": "dabs"}
   },
   "actors": {
-    "hare": {
+    "hare": {"character": "hare",
       "parts": [
         {"id": "tail", "shape": "blob", "c": [-128, -100], "r": 30, "paint": "fur_white", "shape_seed": 2},
         {"id": "leg_b", "shape": "ellipse", "c": [-70, -62], "r": [72, 56], "rot": -10, "paint": "hare_fur", "pivot": [-60, -80]},
@@ -59,7 +59,7 @@
           {"part": "eye", "type": "blink", "period": 2.4}]
       }
     },
-    "tortoise": {
+    "tortoise": {"character": "tortoise",
       "parts": [
         {"id": "leg_bb", "shape": "ellipse", "c": [-58, -22], "r": [24, 30], "paint": "tort_skin", "pivot": [-58, -45]},
         {"id": "leg_fb", "shape": "ellipse", "c": [78, -22], "r": [24, 30], "paint": "tort_skin", "pivot": [78, -45]},
@@ -91,7 +91,7 @@
           {"part": "eye", "type": "blink"}]
       }
     },
-    "fox": {
+    "fox": {"character": "fox",
       "parts": [
         {"id": "tail", "shape": "poly", "smooth": true, "points": [[-40, -10], [-120, -30], [-185, -80], [-200, -150], [-160, -120], [-110, -70], [-40, -50]], "paint": "fox_fur", "pivot": [-40, -30]},
         {"id": "tail_tip", "shape": "blob", "c": [-192, -138], "r": [26, 22], "paint": "fur_white", "parent": "tail", "shape_seed": 3},
@@ -123,7 +123,7 @@
           {"part": "eye", "type": "blink"}]
       }
     },
-    "finish": {
+    "finish": {"character": false,
       "parts": [
         {"id": "post_l", "shape": "stroke", "points": [[-170, 0], [-170, -260]], "width": 18, "paint": "wood"},
         {"id": "post_r", "shape": "stroke", "points": [[170, 0], [170, -260]], "width": 18, "paint": "wood"},
@@ -132,7 +132,7 @@
         {"id": "ribbon", "shape": "stroke", "points": [[-170, -95], [0, -84], [170, -95]], "width": 9, "paint": "red_cloth"}
       ]
     },
-    "pond": {
+    "pond": {"character": false,
       "parts": [
         {"id": "water", "shape": "blob", "c": [0, 0], "r": [230, 60], "paint": "water", "jag": 0.08, "shape_seed": 4},
         {"id": "pad1", "shape": "ellipse", "c": [-80, -6], "r": [36, 14], "paint": "leaf", "cut": [{"shape": "ellipse", "c": [-50, -10], "r": [10, 10], "arc": [-20, 20]}]},

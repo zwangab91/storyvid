@@ -50,6 +50,11 @@ CASES = [
     ("a flock of library gulls", story_with([{"actor": "bird_small", "at": [300 + 250 * k, 200 + 40 * k]} for k in range(5)]), False),
     ("character with only a swim rig, declared", story_with([{"actor": "fish", "at": [600, 600]}, {"actor": "fish", "at": [1200, 600]}],
                                                            actors={"fish": dict(fish, character=True)}), True),
+    ("brief double: show windows overlap 4%",
+     story_with([bird(anims=[{"type": "show", "t": [0, 0.52], "fade": 0.05}]),
+                 bird(at=[1300, 300], anims=[{"type": "show", "t": [0.48, 1], "fade": 0.05}])]), True),
+    ("a flock declared as a group actor", story_with([{"actor": "gulls", "at": [300 + 300 * k, 300]} for k in range(4)],
+                                                    actors={"gulls": dict(copy.deepcopy(BASE["actors"]["jingwei"]), character=False)}), False),
 ]
 
 
@@ -65,6 +70,11 @@ def run(check):
         got = check(s)
         bad += bool(got)
         print(f"{'stories/' + p + '.json':<46} {'pass':<10} {'flag' if got else 'pass':<10} {'' if not got else '  <-- wrong: ' + got[0][:60]}")
+    undeclared = copy.deepcopy(BASE)
+    undeclared["actors"]["jingwei_carry"] = {k: v for k, v in BASE["actors"]["jingwei"].items() if k != "character"}
+    got = SB.undeclared_actors(undeclared)
+    bad += len(got) != 1
+    print(f"{'actor without a character declaration':<46} {'error':<10} {'error' if got else 'none':<10}")
     print(f"{bad} wrong")
     return bad
 
