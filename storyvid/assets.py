@@ -247,12 +247,19 @@ def contact_sheet(out_dir: str, ids: list[str], path: str, tw: int = 420):
 def run(manifest_path: str, out_dir: str, max_images: int = 12, dry_run: bool = False,
         api_key: str | None = None, post=None, log=print) -> dict:
     with open(manifest_path, encoding="utf-8") as f:
-        if json.load(f).get("kind") == "audio":  # narration and music: same workflow, own module
-            from . import soundtrack
-            try:
-                return soundtrack.run(manifest_path, out_dir, max_images, dry_run, api_key, post, log=log)
-            except soundtrack.SoundtrackError as e:
-                raise AssetError(str(e)) from e
+        kind = json.load(f).get("kind")
+    if kind == "audio":  # narration and music: same workflow, own module
+        from . import soundtrack
+        try:
+            return soundtrack.run(manifest_path, out_dir, max_images, dry_run, api_key, post, log=log)
+        except soundtrack.SoundtrackError as e:
+            raise AssetError(str(e)) from e
+    if kind == "video":  # Omni clips for moments a rig can't act: same workflow, own module
+        from . import videoclip
+        try:
+            return videoclip.run(manifest_path, out_dir, max_images, dry_run, api_key, post, log=log)
+        except videoclip.VideoError as e:
+            raise AssetError(str(e)) from e
     m = load_manifest(manifest_path)
     steps = plan(m, out_dir)
     new = [s for s in steps if not s["cached"]]

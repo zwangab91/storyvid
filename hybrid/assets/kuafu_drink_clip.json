@@ -1,0 +1,15 @@
+{
+ "kind": "video",
+ "_about": "Motion test for 夸父 scene 8: Omni acts out the drinking from our own rendered first frame of the scene, for 15 s (the scene runs 15.5 s), with the motion timed to the narration's phrases.",
+ "model": "gemini-omni-1.2-flash",
+ "resolution": "720p",
+ "aspect_ratio": "16:9",
+ "assets": [
+  {
+   "id": "kuafu_drink",
+   "image": "frames/kuafu_s8_start.jpg",
+   "duration": 15,
+   "prompt": "Animate this hand-made tissue-paper collage illustration as gentle 2D cut-out stop-motion, like a picture book come to life. Motion direction, timed to the narration: 0 to 5 seconds: under the blazing sun the giant Kuafu stands panting in the heat, shoulders heaving, wiping sweat from his brow. 5 to 11 seconds: desperately thirsty, he hurries forward to the rivers, lays his wooden staff down on the ground and drops to his knees on the bank of the blue river. 11 to 15 seconds: he bends down, scoops river water with both cupped hands and gulps it down, again and again, faster and faster, while the blue river and the tan-yellow river shrink and thin into narrow dry ribbons. The sun stays where it is and the camera stays still."
+  }
+ ]
+}
