@@ -1,6 +1,11 @@
 {
  "title": "精卫填海",
  "subtitle": "Jingwei Fills the Sea",
+ "title_style": {
+  "paints": "feather",
+  "text_color": "#2b2a3a",
+  "plate": "cream"
+ },
  "language": "zh",
  "voice": "melo",
  "speed": 0.86,
@@ -1050,8 +1055,8 @@
    {
     "actor": "jingwei",
     "at": [
-     700,
-     640
+     560,
+     800
     ],
     "scale": 0.9,
     "rig": "glide",

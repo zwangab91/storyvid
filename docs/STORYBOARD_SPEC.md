@@ -21,6 +21,9 @@ shadows, mostly white page backgrounds, simple paper-puppet animation.
   "voice": "af_heart",            // en: af_heart, af_bella, af_nicole, af_sarah, bf_emma, bf_isabella, bm_fable, bm_george, am_michael ...; zh: melo
   "speed": 0.92,                  // narration speed
   "credit": "Adapted from Aesop's Fables",   // small line on the end card
+  "title_style": {"paints": "feather", "text_color": "#2b2a3a", "plate": "cream"},  // optional: letters in one
+                                             // paint (or a list, cycled), small text colour, a torn paper strip
+                                             // behind the text; default: bright multicolour letters, no strip
   "music": {"style": "musicbox" | "pluck", "seed": 4, "tempo": 84},   // or false for no music
   "paints": { "name": PAINT, ... },          // story-specific paints
   "actors": { "name": ACTOR, ... },          // story-specific characters and props

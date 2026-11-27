@@ -115,8 +115,11 @@ def normalise_scene(scene: dict, index: int = 0) -> dict:
     return sc
 
 
-def _title_items(text: str, lang: str, y: float, size: float, seed: int, delay: float = 0.04, span: float = 0.4):
-    """Painted cut-paper letters, one part per glyph, popping in one by one."""
+def _title_items(text: str, lang: str, y: float, size: float, seed: int, delay: float = 0.04, span: float = 0.4,
+                 paints=None):
+    """Painted cut-paper letters, one part per glyph, popping in one by one. `paints` (a paint, or a list cycled
+    letter by letter) defaults to the bright TITLE_PALETTE, made for a title on plain paper."""
+    paints = TITLE_PALETTE if paints is None else (paints if isinstance(paints, list) else [paints])
     font_key = "title_zh" if lang.startswith("zh") else "title"
     font = ImageFont.truetype(FONTS[font_key], int(size))
     # wrap
@@ -151,7 +154,7 @@ def _title_items(text: str, lang: str, y: float, size: float, seed: int, delay: 
                 t0 = 0.05 + delay * gi
                 items.append({
                     "part": {"shape": "text", "text": ch, "font": font_key, "size": size, "c": [0, 0],
-                             "paint": TITLE_PALETTE[(gi + seed) % len(TITLE_PALETTE)], "stroke": 2},
+                             "paint": paints[(gi + seed) % len(paints)], "stroke": 2},
                     "at": [cx, y0 + li * lh], "rot": float(rng.uniform(-6, 6)), "z": 50,
                     "anims": [{"type": "pop", "t": [t0, t0 + 0.12]},
                               {"type": "sway", "deg": 3, "period": 2.5 + rng.uniform(0, 1), "phase": rng.uniform(0, 1)}]})
@@ -165,17 +168,37 @@ def _small_text(text, lang, y, size=40, color="#3a3a3a", t0=0.3):
             "at": [960, y], "z": 60, "anims": [{"type": "fade", "to": 1.0, "t": [t0, t0 + 0.15]}], "opacity": 0.0}
 
 
+def _plate(y0: float, y1: float, width: float, paint, seed: int) -> dict:
+    """A torn strip of paper behind title text, so it reads on a busy painted backdrop."""
+    return {"part": {"shape": "rect", "c": [960, (y0 + y1) / 2], "size": [width, y1 - y0], "paint": paint, "edge": "torn"},
+            "z": 40, "seed": seed, "anims": [{"type": "fade", "to": 1.0, "t": [0.0, 0.08]}], "opacity": 0.0}
+
+
 def build_scenes(story: dict) -> list[dict]:
+    """Title card, story scenes, end card. `title_style` styles the title and end-card text:
+    {"paints": paint or [paints] for the letters (default: the bright title palette), "text_color": "#hex" for the
+    subtitle and credit lines, "plate": a paint for a torn paper strip behind the text, or omitted for none}."""
     lang = story.get("language", "en")
     zh = lang.startswith("zh")
+    ts_style = story.get("title_style") or {}
+    letter_paints = ts_style.get("paints")
+    text_color = ts_style.get("text_color")
+    plate = ts_style.get("plate")
     scenes = []
     # ---- title card (optional)
     ts = story.get("title_scene") or {}
     if story.get("title_card", True) is not False:
         has_art = bool(ts.get("items"))
-        title_items = _title_items(story["title"], lang, 330 if has_art else 470, 150 if not zh else 170, seed=3)
+        ty = 330 if has_art else 470
+        tsize = 150 if not zh else 170
+        title_items = _title_items(story["title"], lang, ty, tsize, seed=3, paints=letter_paints)
         if story.get("subtitle"):
-            title_items.append(_small_text(story["subtitle"], "en" if zh else lang, 330 + 140 if has_art else 640, 44, t0=0.35))
+            title_items.append(_small_text(story["subtitle"], "en" if zh else lang, ty + 140, 44, t0=0.35,
+                                           **({"color": text_color} if text_color else {})))
+        if plate:
+            width = ImageFont.truetype(FONTS["title_zh" if zh else "title"], tsize).getlength(story["title"]) + 220
+            title_items.append(_plate(ty - tsize * 0.75, ty + (180 if story.get("subtitle") else tsize * 0.75),
+                                      max(width, 760), plate, seed=5))
         scenes.append({"kind": "title", "narration": story.get("title_narration", story["title"]),
                        "background": ts.get("background", "paper"), "camera": ts.get("camera", {"zoom": [1.0, 1.03]}),
                        "items": title_items + ts.get("items", []), "min_duration": 4.5, "captions": False})
@@ -186,10 +209,14 @@ def build_scenes(story: dict) -> list[dict]:
     if story.get("end_card", True) is not False:
         es = story.get("end_scene") or {}
         end_text = story.get("end_text", "完" if zh else "The End")
-        end_items = _title_items(end_text, lang, 420 if es.get("items") else 500, 220 if zh else 160, seed=0, delay=0.05)
+        ey = 420 if es.get("items") else 500
+        end_items = _title_items(end_text, lang, ey, 220 if zh else 160, seed=0, delay=0.05, paints=letter_paints)
         if story.get("credit"):
-            end_items.append(_small_text(story["credit"], lang, (420 if es.get("items") else 500) + 130, 36,
-                                         color="#6a6a6a", t0=0.25))
+            end_items.append(_small_text(story["credit"], lang, ey + 130, 36, color=text_color or "#6a6a6a", t0=0.25))
+        if plate:
+            cw = ImageFont.truetype(FONTS["caption_zh" if zh else "caption_bold"], 36).getlength(story.get("credit", ""))
+            end_items.append(_plate(ey - 150, ey + (175 if story.get("credit") else 120), max(cw + 160, 600), plate,
+                                    seed=6))
         scenes.append({"kind": "end", "narration": es.get("narration", ""), "background": es.get("background", "paper"),
                        "camera": es.get("camera", {"zoom": [1.0, 1.02]}), "items": end_items + es.get("items", []),
                        "min_duration": 4.0, "captions": False})
