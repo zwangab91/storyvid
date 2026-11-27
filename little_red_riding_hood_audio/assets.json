@@ -1,0 +1,554 @@
+{
+ "kind": "audio",
+ "language": "en",
+ "speech": {
+  "model": "gemini-3.8-flash-lite-tts",
+  "voice": "Kore",
+  "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+ },
+ "total_cost_usd": 0.0699,
+ "assets": [
+  {
+   "id": "n00",
+   "type": "speech",
+   "key": "9f31a48eb6ef9f92",
+   "file": "n00.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 137788,
+   "cost_usd": 0.00041,
+   "seconds": 1.9,
+   "created": "2026-11-27T16:11:40Z",
+   "usage": {
+    "promptTokenCount": 5,
+    "candidatesTokenCount": 68,
+    "totalTokenCount": 73,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 5
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 68
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "Little Red Riding Hood",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n01",
+   "type": "speech",
+   "key": "b0374e04428618cb",
+   "file": "n01.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 1099708,
+   "cost_usd": 0.00344,
+   "seconds": 3.9,
+   "created": "2026-11-27T16:11:43Z",
+   "usage": {
+    "promptTokenCount": 55,
+    "candidatesTokenCount": 569,
+    "totalTokenCount": 624,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 55
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 569
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "Once upon a time, at the edge of a great forest, there lived a little girl. Her grandmother had sewn her a bright red riding hood, and she loved it so much that she wore it every single day. And so everyone called her Little Red Riding Hood.",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n02",
+   "type": "speech",
+   "key": "314e2fccc177337c",
+   "file": "n02.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 827548,
+   "cost_usd": 0.00259,
+   "seconds": 3.0,
+   "created": "2026-11-27T16:11:46Z",
+   "usage": {
+    "promptTokenCount": 46,
+    "candidatesTokenCount": 427,
+    "totalTokenCount": 473,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 46
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 427
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "One morning, her mother packed a basket with fresh bread and sweet honey cake. \"Take this to Grandmother, who is feeling poorly,\" she said. \"Stay on the path, and do not stop to talk to strangers.\"",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n03",
+   "type": "speech",
+   "key": "6ba93558ed5f11d4",
+   "file": "n03.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 510268,
+   "cost_usd": 0.00158,
+   "seconds": 2.5,
+   "created": "2026-11-27T16:11:49Z",
+   "usage": {
+    "promptTokenCount": 24,
+    "candidatesTokenCount": 262,
+    "totalTokenCount": 286,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 24
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 262
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "So off she went, down the winding path into the woods, swinging her basket and humming a happy little song.",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n04",
+   "type": "speech",
+   "key": "1e7e74c3ebc23892",
+   "file": "n04.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 681148,
+   "cost_usd": 0.00213,
+   "seconds": 2.6,
+   "created": "2026-11-27T16:11:52Z",
+   "usage": {
+    "promptTokenCount": 38,
+    "candidatesTokenCount": 351,
+    "totalTokenCount": 389,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 38
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 351
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "Deep in the woods, a wolf slipped out from behind a tree. \"Good morning, little one,\" he said, with a sly smile. \"And where are you going today?\"",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n05",
+   "type": "speech",
+   "key": "d37203638157a230",
+   "file": "n05.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 710908,
+   "cost_usd": 0.00222,
+   "seconds": 2.7,
+   "created": "2026-11-27T16:11:54Z",
+   "usage": {
+    "promptTokenCount": 43,
+    "candidatesTokenCount": 367,
+    "totalTokenCount": 410,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 43
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 367
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "\"To my grandmother's house, at the very end of the path,\" said Little Red Riding Hood. \"Then why not pick her some flowers?\" said the wolf. \"See how pretty they are!\"",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n06",
+   "type": "speech",
+   "key": "e320bb7b9e7567ff",
+   "file": "n06.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 537628,
+   "cost_usd": 0.00167,
+   "seconds": 2.7,
+   "created": "2026-11-27T16:11:57Z",
+   "usage": {
+    "promptTokenCount": 26,
+    "candidatesTokenCount": 276,
+    "totalTokenCount": 302,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 26
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 276
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "And while she gathered flowers, the wolf raced ahead to Grandmother's house, as fast as his legs could carry him.",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n07",
+   "type": "speech",
+   "key": "e6a6f19775b8539f",
+   "file": "n07.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 664828,
+   "cost_usd": 0.00208,
+   "seconds": 2.7,
+   "created": "2026-11-27T16:12:00Z",
+   "usage": {
+    "promptTokenCount": 36,
+    "candidatesTokenCount": 343,
+    "totalTokenCount": 379,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 36
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 343
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "He knocked on the door: knock, knock, knock. But when Grandmother peeked out of the window and saw his long, sharp teeth, she hid inside the wardrobe!",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n08",
+   "type": "speech",
+   "key": "8adbf3881921c961",
+   "file": "n08.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 520348,
+   "cost_usd": 0.00162,
+   "seconds": 2.7,
+   "created": "2026-11-27T16:12:02Z",
+   "usage": {
+    "promptTokenCount": 27,
+    "candidatesTokenCount": 267,
+    "totalTokenCount": 294,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 27
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 267
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "Then the wolf put on Grandmother's nightcap, climbed into her bed, and pulled the blanket right up to his nose.",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n09",
+   "type": "speech",
+   "key": "cb7003ce9ec7ddbc",
+   "file": "n09.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 639868,
+   "cost_usd": 0.002,
+   "seconds": 2.8,
+   "created": "2026-11-27T16:12:05Z",
+   "usage": {
+    "promptTokenCount": 39,
+    "candidatesTokenCount": 330,
+    "totalTokenCount": 369,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 39
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 330
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "Soon Little Red Riding Hood knocked, and came inside. \"Oh, Grandmother,\" she said, \"what big ears you have!\" \"All the better to hear you with, my dear.\"",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n10",
+   "type": "speech",
+   "key": "688e03ed481967f3",
+   "file": "n10.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 408988,
+   "cost_usd": 0.00127,
+   "seconds": 2.4,
+   "created": "2026-11-27T16:12:08Z",
+   "usage": {
+    "promptTokenCount": 23,
+    "candidatesTokenCount": 209,
+    "totalTokenCount": 232,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 23
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 209
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "\"Grandmother, what big eyes you have!\" \"All the better to see you with, my dear.\"",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n11",
+   "type": "speech",
+   "key": "1fa0191aac40b986",
+   "file": "n11.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 559228,
+   "cost_usd": 0.00174,
+   "seconds": 2.7,
+   "created": "2026-11-27T16:12:10Z",
+   "usage": {
+    "promptTokenCount": 30,
+    "candidatesTokenCount": 288,
+    "totalTokenCount": 318,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 30
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 288
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "\"And Grandmother, what big teeth you have!\" \"All the better to EAT you with!\" And out of the bed leapt the wolf!",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n12",
+   "type": "speech",
+   "key": "1ee6480cc3daf976",
+   "file": "n12.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 539068,
+   "cost_usd": 0.00168,
+   "seconds": 2.8,
+   "created": "2026-11-27T16:12:13Z",
+   "usage": {
+    "promptTokenCount": 26,
+    "candidatesTokenCount": 277,
+    "totalTokenCount": 303,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 26
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 277
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "Little Red Riding Hood screamed so loudly that a woodcutter, chopping wood nearby, came running through the door with his axe!",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n13",
+   "type": "speech",
+   "key": "39283e70ad7dae7e",
+   "file": "n13.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 600988,
+   "cost_usd": 0.00187,
+   "seconds": 2.7,
+   "created": "2026-11-27T16:12:16Z",
+   "usage": {
+    "promptTokenCount": 33,
+    "candidatesTokenCount": 309,
+    "totalTokenCount": 342,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 33
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 309
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "The wolf took one look at the woodcutter, leapt out of the window, and ran deep, deep into the forest. And he was never seen again.",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n14",
+   "type": "speech",
+   "key": "2b1670c747cd2307",
+   "file": "n14.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 647068,
+   "cost_usd": 0.00201,
+   "seconds": 2.7,
+   "created": "2026-11-27T16:12:18Z",
+   "usage": {
+    "promptTokenCount": 28,
+    "candidatesTokenCount": 333,
+    "totalTokenCount": 361,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 28
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 333
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "Then out of the wardrobe stepped Grandmother, safe and sound. And they all sat down together to share the bread and the honey cake.",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "n15",
+   "type": "speech",
+   "key": "c9ce3280b4893702",
+   "file": "n15.wav",
+   "mime": "audio/wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "bytes": 516508,
+   "cost_usd": 0.0016,
+   "seconds": 2.5,
+   "created": "2026-11-27T16:12:21Z",
+   "usage": {
+    "promptTokenCount": 25,
+    "candidatesTokenCount": 265,
+    "totalTokenCount": 290,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 25
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "AUDIO",
+      "tokenCount": 265
+     }
+    ],
+    "serviceTier": "standard"
+   },
+   "text": "And Little Red Riding Hood made a promise: from that day on, she would always, always stay on the path.",
+   "voice": "Kore",
+   "style": "Warm, gentle, expressive children’s picture-book narrator in the classic bedtime film style, unhurried and clear"
+  },
+  {
+   "id": "music",
+   "type": "music",
+   "key": "39709a7f09928d34",
+   "file": "music.mp3",
+   "mime": "audio/mpeg",
+   "model": "lyria-3-clip-preview",
+   "bytes": 746250,
+   "cost_usd": 0.04,
+   "seconds": 12.5,
+   "created": "2026-11-27T16:12:34Z",
+   "prompt": "Charming European fairytale acoustic chamber music, gentle flute melody with light harp arpeggios, soft pizzicato cello footsteps, warm whimsical storybook mood, no vocals, 30 seconds loopable. Strictly instrumental acoustic chamber arrangement, soft storybook dynamics suitable beneath voice narration, no singing or vocals.",
+   "model_text": "<instrumental>"
+  }
+ ]
+}
