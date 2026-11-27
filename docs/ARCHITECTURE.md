@@ -70,27 +70,46 @@ rendering an existing storyboard does not.
 
 ## 3. System diagram
 
+Solid boxes are the core, all-code path; the two generation steps on the right are optional (section 7) and run in
+GitHub Actions, the only place with access to Google's APIs.
+
 ```text
-                       ┌───────────────────────────── Stage 1: plan (LLM) ─────────────────────────────┐
- story text ─────────► │ prompt = spec + example storyboard + story ──► Claude ──► storyboard draft    │
-                       │        ▲                                                         │            │
-                       │        └── errors / contact sheet ◄── validate: build + render ◄─┘            │
-                       └───────────────────────────────────────────────────────────────┬───────────────┘
-                                                                                       │ storyboard.json
-                       ┌──────────────── Stage 2: timeline + audio (local) ────────────▼───────────────┐
-                       │ sentences ─► Kokoro / MeloTTS ─► scene durations, caption timings             │
-                       │ procedural music bed ─► ducked under narration ─► mix.wav                     │
-                       └───────────────────────────────────────────────────────────────┬───────────────┘
-                                                                                       │ timed scenes
-                       ┌──────────────── Stage 3: render (local, CPU, N processes) ────▼───────────────┐
-                       │ paints ─► textures   parts ─► roughened polygons ─► textured, shadowed sprites│
-                       │ per frame: camera ─► items ─► rigs / parents ─► blit onto paper ─► captions   │
-                       │ worker k renders frames [f_k, f_k+1) straight into its own x264 segment       │
-                       └───────────────────────────────────────────────────────────────┬───────────────┘
-                                                                                       │ segments + mix.wav
-                       ┌──────────────── Stage 4: assemble (ffmpeg) ───────────────────▼───────────────┐
-                       │ concat segments ─► mux audio + loudnorm ─► story.mp4, story.srt, contact sheet│
-                       └───────────────────────────────────────────────────────────────────────────────┘
+ story text
+     │
+ ┌───▼──────────── Stage 1: plan (Claude) ──────────────────────────────┐
+ │ prompt = spec + example storyboard + story ──► Claude ──► storyboard  │
+ │      ▲                                                     │          │
+ │      └── errors / contact sheet ◄── validate: build, render,◄┘        │
+ │                                     count characters, critique         │
+ └───────────────────────────────┬──────────────────────────────────────┘
+                                 │ storyboard.json
+                                 │                      ┌── GitHub Actions: "Generate assets" ───────┐
+ ┌───────────────────────────────▼───────────────────┐  │ asset manifest ─► Nano Banana 2.1 images    │
+ │ Optional: swap in generated art (rig.py)          │◄─┤   (characters, parts sheets, props, strips,  │
+ │ cut pieces off the board, find joints, rig,       │  │    backdrops) ─► cut-out report             │
+ │ fit to the storyboard's actors, swap backgrounds  │  │                                             │
+ └───────────────────────────────┬───────────────────┘  │ audio manifest ─► Gemini TTS (Kore), one    │
+                                 │ (hybrid) storyboard  │   clip per scene + Lyria 3 Clip music       │
+ ┌───────────────────────────────▼───────────────────┐  │ outputs ─► generated-assets branch          │
+ │ Stage 2: timeline + audio (local)                 │◄─┤                                             │
+ │ narration: generated clips, or Kokoro / MeloTTS   │  └─────────────────────────────────────────────┘
+ │ ─► scene durations; captions on sentence and      │
+ │ comma pauses; music: generated loop or procedural │
+ │ bed, ducked under the voice ─► stereo mix         │
+ └───────────────────────────────┬───────────────────┘
+                                 │ timed scenes
+ ┌───────────────────────────────▼───────────────────┐
+ │ Stage 3: render (local, CPU, N processes)         │
+ │ paints ─► textures; parts or image pieces ─►      │
+ │ shadowed sprites; per frame: camera ─► items ─►   │
+ │ rigs ─► blit onto paper ─► captions; worker k     │
+ │ streams its frames into its own x264 segment      │
+ └───────────────────────────────┬───────────────────┘
+                                 │ segments + mix
+ ┌───────────────────────────────▼───────────────────┐
+ │ Stage 4: assemble (ffmpeg)                        │
+ │ concat ─► mux audio + loudnorm ─► .mp4, .srt      │
+ └───────────────────────────────────────────────────┘
 ```
 
 ---
