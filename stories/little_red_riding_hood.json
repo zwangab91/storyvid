@@ -4,7 +4,8 @@
   "voice": "af_heart",
   "speed": 0.92,
   "credit": "Retold from the Brothers Grimm",
-  "music": {"style": "musicbox", "seed": 11, "tempo": 80},
+  "music": {"style": "musicbox", "seed": 11, "tempo": 80,
+            "prompt": "Charming European fairytale acoustic chamber music, gentle flute melody with light harp arpeggios, soft pizzicato cello footsteps, warm whimsical storybook mood, no vocals, 30 seconds loopable."},
   "paints": {
     "wolf_fur": {"colors": ["#6d7a8f", "#8e9bb0", "#4a5468", "#a9b5c8", "#5c6e8c"], "style": "streaks"},
     "wolf_dark": {"colors": ["#4d5769", "#646f84", "#363e4d", "#7a8699"], "style": "streaks"},

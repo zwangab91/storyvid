@@ -241,6 +241,10 @@ def validate(story: dict, sheet_path: str | None = None) -> list[str]:
     if errs:
         return errs
     errs += undeclared_actors(story) + bad_counts(story)
+    music = story.get("music")
+    prompt = music.get("prompt") if isinstance(music, dict) else None
+    if music is not False and not (isinstance(prompt, str) and prompt.strip()):
+        errs.append("music.prompt is missing or empty: write a Lyria prompt with instruments chosen for this story")
     try:
         scenes = P.build_scenes(story)
     except Exception as e:  # noqa: BLE001

@@ -24,7 +24,12 @@ shadows, mostly white page backgrounds, simple paper-puppet animation.
   "title_style": {"paints": "feather", "text_color": "#2b2a3a", "plate": "cream"},  // optional: letters in one
                                              // paint (or a list, cycled), small text colour, a torn paper strip
                                              // behind the text; default: bright multicolour letters, no strip
-  "music": {"style": "musicbox" | "pluck", "seed": 4, "tempo": 84},   // or false for no music
+  "music": {"style": "musicbox" | "pluck", "seed": 4, "tempo": 84,    // procedural bed; or false for no music
+            "prompt": "..."},  // Lyria prompt, used when the story gets generated audio: one or two sentences naming
+                               // 2-4 acoustic instruments that suit this story's culture and setting, the mood, and
+                               // "no vocals". Choose for this story, as a film composer would: a Chinese myth might
+                               // use guzheng, dizi or pipa; a European fairy tale flute, harp or pizzicato strings;
+                               // a Greek fable lyre-like harp and oboe. Don't copy another story's instruments.
   "paints": { "name": PAINT, ... },          // story-specific paints
   "actors": { "name": ACTOR, ... },          // story-specific characters and props
   "title_scene": {"background": BG, "items": [ITEM, ...]},   // art under the title letters (title sits at y~330)

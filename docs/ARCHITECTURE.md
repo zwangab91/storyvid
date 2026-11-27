@@ -305,7 +305,9 @@ cut, draw order and tuned rig values.
 **Soundtrack.** `python -m storyvid.soundtrack plan <storyboard>` writes an audio manifest: one narration request per
 voiced scene (title included) with the model, voice and direction Paperwing Studio uses (Gemini 3.8 Flash-Lite TTS,
 Kore, "Warm, gentle, expressive ... storyteller with unhurried pacing and poetic wonder"), and one Lyria 3 Clip request
-from the storyboard's `music.prompt` plus an instrumental-only suffix. The "Generate assets" workflow runs it like an
+from the storyboard's `music.prompt` plus an instrumental-only suffix. Claude writes that prompt with the storyboard,
+choosing instruments for the story's culture and mood as Paperwing's planner does, and validation rejects a storyboard
+without one. Lyria 3 Clip has no length setting: every clip is about 30 s whatever the prompt says. The "Generate assets" workflow runs it like an
 image manifest (cached by request, capped, cost-logged; narration is billed at about 25 audio tokens a second, $6 per
 million through 2026 and $12 from January 2027; Lyria 3 Clip is $0.04 a clip). A cast file's `soundtrack` names the run
 folder, and `rig.py` copies it next to the hybrid storyboard. Gemini's WAVs carry a C2PA provenance record in their own

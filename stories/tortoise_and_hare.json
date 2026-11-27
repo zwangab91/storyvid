@@ -4,7 +4,8 @@
   "voice": "bf_emma",
   "speed": 0.9,
   "credit": "Adapted from Aesop's Fables",
-  "music": {"style": "musicbox", "seed": 4, "tempo": 88},
+  "music": {"style": "musicbox", "seed": 4, "tempo": 88,
+            "prompt": "Playful pastoral acoustic chamber piece for an old Greek fable, a slow steady oboe theme over plucked lyre-like harp, quick fluttering flute runs, and soft hand-drum taps, warm humorous storybook mood, no vocals, 30 seconds loopable."},
   "paints": {
     "hare_fur": {"colors": ["#a86d3c", "#cc9156", "#6f4425", "#e6b47c", "#8d7c9c"], "style": "streaks"},
     "tort_skin": {"colors": ["#8fa24a", "#b2c463", "#6a7b30", "#d0d77c", "#5f8a6a"], "style": "dabs"},

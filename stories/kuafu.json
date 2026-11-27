@@ -8,7 +8,8 @@
  "music": {
   "style": "pluck",
   "seed": 23,
-  "tempo": 72
+  "tempo": 72,
+  "prompt": "Uplifting cinematic storybook acoustic chamber score with light frame drum pulse, resonant Chinese guzheng, warm woodwinds, and bright glockenspiel finale, adventurous yet gentle picture-book tone, no vocals, 30 seconds loopable."
  },
  "paints": {
   "sky_soft": {
