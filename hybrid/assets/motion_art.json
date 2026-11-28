@@ -1,0 +1,104 @@
+{
+ "_about": "Motion art for all four films: side-view figures in parts with knees and elbows (夸父, the girl, the woodcutter) so they can walk and run with a real stride, and poses for actions a puppet can't reach. Each references its character's original painting so it looks the same.",
+ "model": "gemini-nano-banana-2.1",
+ "image_size": "2K",
+ "style": "Style: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+ "assets": [
+  {
+   "id": "kuafu_side",
+   "aspect": "3:4",
+   "refs": [
+    "@kuafu_film/kuafu.png"
+   ],
+   "prompt": "The attached image is a cut-paper giant. Show the very same giant, with an identical face, long loose black hair, small yellow snake earrings, ochre-brown belted tunic, brown leggings and bark shoes, in exactly the same colours, paints and paper textures, in a new pose: side view facing right, standing upright, arms hanging straight down at his sides, legs straight, holding his tall wooden staff upright in his near hand (the hand nearest the viewer). The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "kuafu_side_parts",
+   "aspect": "4:3",
+   "refs": [
+    "kuafu_side"
+   ],
+   "prompt": "The attached image is a cut-paper giant in side view. Make the puppet parts sheet: the same giant taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair, neck and snake earrings; the torso with the tunic (without arms or legs); the near upper arm; the near forearm with its hand gripping the whole staff (the staff is part of this piece); the far upper arm; the far forearm with its hand; the near thigh; the near lower leg with its bark shoe; the far thigh; the far lower leg with its bark shoe. The joint end of every limb piece (shoulder, elbow, hip, knee, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached figure. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "kuafu_lift",
+   "aspect": "3:4",
+   "refs": [
+    "@kuafu_film/kuafu.png"
+   ],
+   "prompt": "The attached image is a cut-paper giant. Show the very same giant, with an identical face, long loose black hair, small yellow snake earrings, ochre-brown belted tunic, brown leggings and bark shoes, in exactly the same colours, paints and paper textures, in a new pose: front view, legs planted wide, lifting a huge grey boulder high above his head with both arms, showing his great strength; his staff is not in the picture. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "kuafu_reach",
+   "aspect": "4:3",
+   "refs": [
+    "@kuafu_film/kuafu.png"
+   ],
+   "prompt": "The attached image is a cut-paper giant. Show the very same giant, with an identical face, long loose black hair, small yellow snake earrings, ochre-brown belted tunic, brown leggings and bark shoes, in exactly the same colours, paints and paper textures, in a new pose: three-quarter view turned to the right, leaning forward, both arms spread wide and reaching forward and up as if to embrace something enormous; his staff is not in his hands and not in the picture. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "kuafu_fallen",
+   "aspect": "16:9",
+   "refs": [
+    "@kuafu_film/kuafu.png"
+   ],
+   "prompt": "The attached image is a cut-paper giant. Show the very same giant, with an identical face, long loose black hair, small yellow snake earrings, ochre-brown belted tunic, brown leggings and bark shoes, in exactly the same colours, paints and paper textures, in a new pose: lying full length on his side on the ground, worn out, eyes peacefully closed, head on the left and feet on the right, one hand open where his staff has fallen away; the staff is not in the picture. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "girl_side",
+   "aspect": "3:4",
+   "refs": [
+    "@red_film/girl.png"
+   ],
+   "prompt": "The attached image is a cut-paper girl. Show the very same girl, with an identical face, red hood and cape, brown bob hair, blue dress, white apron and dark shoes, in exactly the same colours, paints and paper textures, in a new pose: side view facing right, standing upright, arms hanging down at her sides, the small wicker basket with its checked cloth hanging from her near hand. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "girl_side_parts",
+   "aspect": "4:3",
+   "refs": [
+    "girl_side"
+   ],
+   "prompt": "The attached image is a cut-paper girl in side view. Make the puppet parts sheet: the same girl taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with the hood and hair; the body with the cape, dress and apron (without arms or legs); the near upper arm; the near forearm with its hand; the far upper arm; the far forearm with its hand; the near thigh; the near lower leg with its shoe; the far thigh; the far lower leg with its shoe; the basket on its own. The joint end of every limb piece (shoulder, elbow, hip, knee, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached figure. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "girl_pick",
+   "aspect": "4:3",
+   "refs": [
+    "@red_film/girl.png"
+   ],
+   "prompt": "The attached image is a cut-paper girl. Show the very same girl, with an identical face, red hood and cape, brown bob hair, blue dress, white apron and dark shoes, in exactly the same colours, paints and paper textures, in a new pose: side view facing right, crouching down to pick a flower from the ground with her near hand, holding a small bunch of red, yellow and purple flowers in her far hand, the basket on the ground beside her. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "woodcutter_side",
+   "aspect": "3:4",
+   "refs": [
+    "@red_film/woodcutter.png"
+   ],
+   "prompt": "The attached image is a cut-paper woodcutter. Show the very same woodcutter, with an identical face, bushy brown beard, green cap, red and black plaid shirt, blue trousers and brown boots, in exactly the same colours, paints and paper textures, in a new pose: side view facing right, standing upright, arms hanging down at his sides, holding his wood axe upright in his near hand. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "woodcutter_side_parts",
+   "aspect": "4:3",
+   "refs": [
+    "woodcutter_side"
+   ],
+   "prompt": "The attached image is a cut-paper woodcutter in side view. Make the puppet parts sheet: the same woodcutter taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with the cap and beard; the torso with the plaid shirt (without arms or legs); the near upper arm; the near forearm with its hand gripping the whole axe (the axe is part of this piece); the far upper arm; the far forearm with its hand; the near thigh; the near lower leg with its boot; the far thigh; the far lower leg with its boot. The joint end of every limb piece (shoulder, elbow, hip, knee, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached figure. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges."
+  },
+  {
+   "id": "wolf_leap",
+   "aspect": "16:9",
+   "refs": [
+    "@red_film/wolf.png"
+   ],
+   "prompt": "The attached image is a cut-paper wolf. Show the very same wolf, in exactly the same colours, paints and paper textures, wearing a white frilly lace nightcap with a little red pom-pom, in a new pose: side view facing right, leaping through the air, forelegs stretched forward and hind legs stretched back, mouth open showing his white pointed teeth, tail streaming behind. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side."
+  },
+  {
+   "id": "hare_sleep",
+   "aspect": "16:9",
+   "refs": [
+    "@tortoise_film/hare.png"
+   ],
+   "prompt": "The attached image is a cut-paper hare. Show the very same hare, in exactly the same colours, paints and paper textures, in a new pose: side view, curled up fast asleep on a small tuft of grass, eyes closed, long ears folded down along his back, a peaceful smile. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side."
+  }
+ ]
+}
