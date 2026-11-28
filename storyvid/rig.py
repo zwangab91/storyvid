@@ -109,6 +109,98 @@ def joint_edge(rgba: np.ndarray, near=None):
     return a, b, mid + nrm * 0.08 * L
 
 
+def _largest(rgba: np.ndarray) -> np.ndarray:
+    n, lab, stats, _ = cv2.connectedComponentsWithStats((rgba[..., 3] > 127).astype(np.uint8), 8)
+    if n <= 2:
+        return rgba
+    keep = 1 + int(np.argmax(stats[1:, cv2.CC_STAT_AREA]))
+    out = rgba.copy()
+    out[..., 3][lab != keep] = 0
+    return out
+
+
+def _trim(rgba: np.ndarray) -> np.ndarray:
+    ys, xs = np.nonzero(rgba[..., 3] > 8)
+    return rgba[ys.min():ys.max() + 1, xs.min():xs.max() + 1] if len(ys) else rgba
+
+
+def _cap_top(rgba: np.ndarray, extend: float = 0.0):
+    """Round the top end of a limb into a half disc whose centre is the joint, so it turns without a corner or a gap
+    showing. `extend` (a fraction of the width) first mirrors the top rows upward, for a piece cut straight at the
+    joint; a piece split out of a whole limb already has the cap's paper above the joint. -> (image, pivot)."""
+    a = rgba[..., 3] > 127
+    rows = np.where(a.any(1))[0]
+    y0 = rows[0]
+    def span(y):
+        xs = np.where(a[min(max(y, 0), a.shape[0] - 1)])[0]
+        return (xs[0], xs[-1]) if len(xs) else (0, a.shape[1] - 1)
+    x0, x1 = span(y0 + 4)
+    r = (x1 - x0) / 2
+    if extend > 0:
+        e = int(round(extend * (x1 - x0)))
+        band = rgba[y0:y0 + e][::-1]
+        rgba = np.concatenate([np.zeros((e - band.shape[0] + 1, rgba.shape[1], 4), rgba.dtype), band, rgba[y0:]], 0)
+        rgba[0] = 0
+        a = rgba[..., 3] > 127
+        y0 = np.where(a.any(1))[0][0]
+        cy = y0 + e
+    else:
+        cy = y0 + r
+    x0, x1 = span(int(cy))
+    cx, r = (x0 + x1) / 2, (x1 - x0) / 2
+    yy, xx = np.mgrid[0:rgba.shape[0], 0:rgba.shape[1]]
+    out = rgba.copy()
+    out[..., 3][(yy < cy) & ((xx - cx) ** 2 + (yy - cy) ** 2 > r * r)] = 0
+    return out, np.array([cx, cy], float)
+
+
+SIDE = {"top": 0, "bottom": 2, "left": 3, "right": 1}  # quarter turns (counter-clockwise) that bring that end to the top
+
+
+def prepare_piece(img: np.ndarray, ps: dict):
+    """Reshape a cut piece before it is placed: "clip" (a polygon in fractions of the piece box; keeps the largest
+    blob), "crop" ([u0, v0, u1, v1]), "turn" (degrees counter-clockwise, before the joint is found), "cap" (round
+    the joint end: "top", "bottom", "left" or "right"; "cap_extend" mirrors that end outward first, as a fraction of
+    the width), "shade" (darken a far-side limb) and "clear_light" (a box in which plain board-coloured paper is
+    made transparent). -> (image, pivot from the cap or None)."""
+    pivot = None
+    h, w = img.shape[:2]
+    if "clear_light" in ps:  # board showing through a hole the cutter could not reach (between raised arms)
+        u0, v0, u1, v1 = ps["clear_light"]
+        img = img.copy()
+        box = img[int(v0 * h):int(v1 * h), int(u0 * w):int(u1 * w)]
+        rgb = box[..., :3].astype(np.int16)
+        light = (rgb.min(-1) > 215) & (rgb.max(-1) - rgb.min(-1) < 30)
+        light = cv2.morphologyEx(light.astype(np.uint8), cv2.MORPH_OPEN, np.ones((5, 5), np.uint8)) > 0
+        box[..., 3][cv2.dilate(light.astype(np.uint8), np.ones((3, 3), np.uint8)) > 0] = 0
+    if "clip" in ps:
+        m = np.zeros((h, w), np.uint8)
+        cv2.fillPoly(m, [np.array([[u * w, v * h] for u, v in ps["clip"]], np.int32)], 1)
+        img = img.copy()
+        img[..., 3] = img[..., 3] * m
+        img = _trim(_largest(img))
+    if "crop" in ps:
+        u0, v0, u1, v1 = ps["crop"]
+        h, w = img.shape[:2]
+        img = _trim(img[int(v0 * h):int(v1 * h), int(u0 * w):int(u1 * w)])
+    if ps.get("turn"):
+        img = _trim(transform_piece(img, False, ps["turn"])[0])
+    if "cap" in ps:
+        k = SIDE[ps["cap"]]
+        t = np.rot90(img, k)
+        t, pv = _cap_top(np.ascontiguousarray(t), float(ps.get("cap_extend", 0.0)))
+        img = np.ascontiguousarray(np.rot90(t, -k))
+        H, W = t.shape[:2]  # map the pivot back through the inverse rotation
+        x, y = pv
+        for _ in range(k % 4):  # undo one 90-degree counter-clockwise turn: (x, y) in rotated -> original
+            x, y, H, W = H - 1 - y, x, W, H
+        pivot = np.array([x, y], float)
+    if "shade" in ps:
+        img = img.copy()
+        img[..., :3] = np.clip(img[..., :3].astype(np.float32) * float(ps["shade"]), 0, 255).astype(np.uint8)
+    return img, pivot
+
+
 def transform_piece(rgba: np.ndarray, flip: bool = False, rot: float = 0.0):
     """Mirror and/or rotate a piece (degrees, counter-clockwise on screen). -> (image, 2x3 matrix old px -> new px)."""
     h, w = rgba.shape[:2]
@@ -169,7 +261,10 @@ def build_figure(name: str, spec: dict, assets_root: str, out_dir: str, log=prin
             pc = sheet["pieces"][ps["piece"]]
             src_dir = sheet["dir"]
         img = read_rgba(os.path.join(src_dir, pc["file"]))
-        if "pivot_at" in ps:  # the planner's pivot, as a fraction of the piece box (e.g. a rounded shoulder)
+        img, cap_pivot = prepare_piece(img, ps)
+        if cap_pivot is not None and "pivot_at" not in ps:
+            piv = cap_pivot
+        elif "pivot_at" in ps:  # the planner's pivot, as a fraction of the piece box (e.g. a rounded shoulder)
             piv = np.array([ps["pivot_at"][0] * img.shape[1], ps["pivot_at"][1] * img.shape[0]])
         else:
             j = joint_edge(img, ps.get("joint_near")) if ps.get("joint", True) else None
@@ -181,10 +276,22 @@ def build_figure(name: str, spec: dict, assets_root: str, out_dir: str, log=prin
             piv = piv * ps["scale"]
         img2, M = transform_piece(img, ps.get("flip", False), ps.get("rot", 0.0))
         piv2 = _apply(M, piv)
-        ax, ay = ps["attach"]
-        target = np.array([ox + ax * rw, oy + ay * rh]) + np.array(ps.get("offset", [0, 0]), float)
+        if "on" in ps:  # hung from another part (a shin from its thigh): attach is a fraction of that part's box,
+            host = next(q for q in placed if q["id"] == ps["on"])  # or "at_joint" finds its cut end near a point
+            hh, hw = host["img"].shape[:2]
+            if "at_joint" in ps:
+                j = joint_edge(host["img"], ps["at_joint"])
+                local = j[2] if j is not None else np.array([ps["at_joint"][0] * hw, ps["at_joint"][1] * hh])
+            else:
+                local = np.array([ps["attach"][0] * hw, ps["attach"][1] * hh])
+            target = host["pos"] + local + np.array(ps.get("offset", [0, 0]), float)
+            parent = ps.get("parent", ps["on"])
+        else:
+            ax, ay = ps["attach"]
+            target = np.array([ox + ax * rw, oy + ay * rh]) + np.array(ps.get("offset", [0, 0]), float)
+            parent = ps.get("parent", placed[0]["id"])
         placed.append({"id": pid, "img": img2, "pos": target - piv2, "pivot": target, "z": ps.get("z", 1),
-                       "hidden": ps.get("hidden", False), "parent": ps.get("parent", placed[0]["id"])})
+                       "hidden": ps.get("hidden", False), "parent": parent})
     boxes = [(p["pos"][0], p["pos"][1], p["img"].shape[1], p["img"].shape[0]) for p in placed if not p["hidden"]]
     k, org = _fit_and_anchor(boxes, spec["fit"], spec.get("anchor", [0.5, 1.0]))
     os.makedirs(os.path.join(out_dir, "parts"), exist_ok=True)
@@ -202,7 +309,38 @@ def build_figure(name: str, spec: dict, assets_root: str, out_dir: str, log=prin
         if p["hidden"]:
             part["hidden"] = True
         parts.append(part)
-    return {"parts": parts}
+    actor = {"parts": parts}
+    if spec.get("gaits"):
+        actor["rigs"] = figure_gaits(spec, placed, k)
+    return actor
+
+
+LEG_TOP = ("thigh_n", "thigh_f", "hind_n", "hind_f", "fore_n", "fore_f")
+LEG_BOTTOM = ("shin_n", "shin_f", "hind_n", "hind_f", "fore_n", "fore_f")
+
+
+def figure_gaits(spec: dict, placed: list, k: float) -> dict:
+    """Keyed gait rigs (gait.py) for a figure: "gaits": {"run": "biped_run"}, "roles": {"hind_n": "leg_bf", ...}.
+    Parts named like the roles (thigh_n, shin_n, uarm_n, ...) need no mapping; "body" is the root."""
+    from . import gait
+    by_id = {p["id"]: p for p in placed}
+    roles = {r: r for r in by_id}
+    roles["body"] = placed[0]["id"]
+    roles.update(spec.get("roles", {}))
+    def ids(r):
+        v = roles.get(r)
+        v = v if isinstance(v, list) else ([v] if v else [])
+        return [x for x in v if x in by_id]
+    tops = [by_id[i]["pivot"][1] for r in LEG_TOP for i in ids(r) if by_id[i]["pivot"] is not None]
+    bottoms = [by_id[i]["pos"][1] + by_id[i]["img"].shape[0] for r in LEG_BOTTOM for i in ids(r)]
+    if tops and bottoms:
+        leg = (max(bottoms) - min(tops)) * k
+    else:  # a bird: bob in units of the body's height
+        leg = placed[0]["img"].shape[0] * k
+    parts = {r: (v[0] if len(v) == 1 else v) for r in roles if (v := ids(r))}
+    return {name: gait.build(tpl, parts, leg, spec.get("gait_scale", {}).get(name), spec.get("gait_extra", {}).get(name))
+            + list(spec.get("gait_add", {}).get(name, []))  # plain anims that go with the gait (a bird tucks its legs)
+            for name, tpl in spec["gaits"].items()}
 
 
 def build_prop(name: str, spec: dict, assets_root: str, out_dir: str) -> dict:
@@ -222,6 +360,7 @@ def build_prop(name: str, spec: dict, assets_root: str, out_dir: str) -> dict:
         sheet = load_sheet(assets_root, spec["sheet"])
         pc = sheet["pieces"][spec["piece"]]
         img = read_rgba(os.path.join(sheet["dir"], pc["file"]))
+    img, _ = prepare_piece(img, {k: v for k, v in spec.items() if k in ("clear_light", "clip", "turn", "shade")})
     if "crop" in spec:  # part of a cut piece, as fractions of its box (e.g. one door of a pair)
         u0, v0, u1, v1 = spec["crop"]
         h, w = img.shape[:2]
@@ -315,7 +454,10 @@ def hybridize(story: dict, cast: dict, assets_root: str, out_dir: str, log=print
             actor = build_layers(name, spec, assets_root, out_dir)
         else:
             actor = build_prop(name, spec, assets_root, out_dir)
+        gaits = actor.pop("rigs", {})
         actor = adopt_rigs(name, actor, originals.get(name), spec.get("alias", {}), log)
+        if gaits:  # keyed walk/run cycles replace the procedural swings of the same name
+            actor.setdefault("rigs", {}).update(gaits)
         if spec.get("rigs"):  # tuned motion for painted pieces replaces the procedural values rig by rig
             actor.setdefault("rigs", {}).update(spec["rigs"])
         # who it depicts carries over to the generated actor; library scenery (sea, sun, ...) is never a character
@@ -363,6 +505,11 @@ def hybridize(story: dict, cast: dict, assets_root: str, out_dir: str, log=print
             zmax = max(z) if not np.isscalar(z) else z
             sc.setdefault("items", []).insert(0, {"part": {"shape": "image", "src": backdrops[bg], "xywh": [-160, -120, 2240, 1320],
                                                            "shadow": 0}, "z": -1000, "detail": 1.0 / zmax})
+    for c in cast.get("clips", []):  # a generated video for a moment puppets can't play: {"scene": 11 (1-based),
+        c = dict(c)                    # "src": path under the assets root, "on"/"until" words, "fade", "start"}
+        n = c.pop("scene")
+        c["src"] = os.path.join(os.path.abspath(assets_root), c["src"])
+        new["scenes"][n - 1]["clip"] = c
     for k, v in cast.get("story", {}).items():
         new[k] = v
     return new

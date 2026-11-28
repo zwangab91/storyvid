@@ -1,339 +1,3789 @@
 {
-  "title": "The Tortoise and the Hare",
-  "language": "en",
-  "voice": "bf_emma",
-  "speed": 0.9,
-  "credit": "Adapted from Aesop's Fables",
-  "title_style": {"paints": "ink", "text_color": "#2b2a3a", "plate": "cream"},
-  "music": {"style": "musicbox", "seed": 4, "tempo": 88,
-            "prompt": "Playful pastoral acoustic chamber piece for an old Greek fable, a slow steady oboe theme over plucked lyre-like harp, quick fluttering flute runs, and soft hand-drum taps, warm humorous storybook mood, no vocals, 30 seconds loopable."},
-  "paints": {
-    "ink": {"colors": ["#2b2d3a", "#3f4356", "#15161e", "#3d5a8a", "#2d4a5e"], "style": "streaks"},
-    "sunset_sky": {"colors": ["#f6b26b", "#f9cf8a", "#f08a5d", "#fbe2ae"], "style": "streaks", "angle": 0, "contrast": 0.75},
-    "hare_fur": {"colors": ["#a86d3c", "#cc9156", "#6f4425", "#e6b47c", "#8d7c9c"], "style": "streaks"},
-    "tort_skin": {"colors": ["#8fa24a", "#b2c463", "#6a7b30", "#d0d77c", "#5f8a6a"], "style": "dabs"},
-    "tort_shell": {"colors": ["#6f8f3a", "#94b347", "#b38a3c", "#5a7f9a", "#7da34a", "#3b4a1c"], "style": "cells", "cells": 110},
-    "shell_rim": {"colors": ["#7a5a28", "#9a7434", "#553c18"], "style": "streaks"},
-    "fox_fur": {"colors": ["#e8701f", "#f39a3c", "#b9481a", "#ffb75e", "#c45a2a"], "style": "streaks"},
-    "path": {"colors": ["#d9b47a", "#e8cb95", "#c09460", "#f0dcae"], "style": "dabs"}
+ "title": "The Tortoise and the Hare",
+ "language": "en",
+ "voice": "bf_emma",
+ "speed": 0.9,
+ "credit": "Adapted from Aesop's Fables",
+ "title_style": {
+  "paints": "ink",
+  "text_color": "#2b2a3a",
+  "plate": "cream"
+ },
+ "music": {
+  "style": "musicbox",
+  "seed": 4,
+  "tempo": 88,
+  "prompt": "Playful pastoral acoustic chamber piece for an old Greek fable, a slow steady oboe theme over plucked lyre-like harp, quick fluttering flute runs, and soft hand-drum taps, warm humorous storybook mood, no vocals, 30 seconds loopable."
+ },
+ "paints": {
+  "ink": {
+   "colors": [
+    "#2b2d3a",
+    "#3f4356",
+    "#15161e",
+    "#3d5a8a",
+    "#2d4a5e"
+   ],
+   "style": "streaks"
   },
-  "actors": {
-    "hare": {"character": "hare",
-      "parts": [
-        {"id": "tail", "shape": "blob", "c": [-128, -100], "r": 30, "paint": "fur_white", "shape_seed": 2},
-        {"id": "leg_b", "shape": "ellipse", "c": [-70, -62], "r": [72, 56], "rot": -10, "paint": "hare_fur", "pivot": [-60, -80]},
-        {"id": "foot_b", "shape": "ellipse", "c": [-35, -10], "r": [60, 14], "rot": -4, "paint": "hare_fur", "parent": "leg_b"},
-        {"id": "body", "shape": "ellipse", "c": [0, -100], "r": [118, 64], "rot": -14, "paint": "hare_fur", "pivot": [0, -60]},
-        {"id": "belly", "shape": "ellipse", "c": [20, -78], "r": [70, 28], "rot": -14, "paint": "cream", "shadow": 0.4, "parent": "body"},
-        {"id": "leg_f", "shape": "stroke", "points": [[72, -88], [88, -40], [98, -8]], "width": [30, 20], "paint": "hare_fur", "pivot": [72, -88]},
-        {"id": "foot_f", "shape": "ellipse", "c": [110, -8], "r": [28, 11], "paint": "hare_fur", "parent": "leg_f"},
-        {"id": "head", "shape": "ellipse", "c": [122, -178], "r": [58, 46], "rot": 18, "paint": "hare_fur", "pivot": [95, -140]},
-        {"id": "ear_b", "shape": "poly", "smooth": true, "points": [[92, -206], [60, -300], [50, -350], [70, -345], [102, -290], [118, -212]], "paint": "hare_fur", "parent": "head", "pivot": [105, -210]},
-        {"id": "ear_f", "shape": "poly", "smooth": true, "points": [[112, -212], [105, -310], [110, -362], [128, -352], [134, -300], [136, -214]], "paint": "hare_fur", "parent": "head", "pivot": [122, -214]},
-        {"id": "ear_in", "shape": "poly", "smooth": true, "points": [[118, -225], [114, -305], [119, -342], [126, -335], [128, -300], [129, -226]], "paint": "pink", "parent": "ear_f", "shadow": 0.3},
-        {"id": "cheek", "shape": "blob", "c": [160, -160], "r": [26, 20], "paint": "fur_white", "parent": "head", "shape_seed": 5},
-        {"id": "mouth", "shape": "ellipse", "c": [168, -142], "r": [13, 10], "paint": "#7a1f2b", "parent": "head", "hidden": true, "shadow": 0.3},
-        {"id": "eye", "shape": "circle", "c": [142, -190], "r": 9, "paint": "black", "parent": "head"},
-        {"id": "glint", "shape": "circle", "c": [145, -193], "r": 3, "paint": "white", "parent": "eye", "shadow": 0},
-        {"id": "eye_shut", "shape": "stroke", "points": [[132, -188], [142, -183], [152, -188]], "width": 4, "paint": "black", "parent": "head", "hidden": true, "shadow": 0},
-        {"id": "nose", "shape": "circle", "c": [178, -168], "r": 8, "paint": "pink", "parent": "head"},
-        {"id": "whisk", "shape": "stroke", "points": [[170, -160], [205, -150], [228, -152]], "width": [3, 1.5], "paint": "black", "parent": "head", "shadow": 0}
-      ],
-      "rigs": {
-        "run": [
-          {"part": "leg_b", "type": "swing", "deg": 24, "period": 0.34},
-          {"part": "leg_f", "type": "swing", "deg": 36, "period": 0.34, "phase": 0.5},
-          {"part": ["ear_b", "ear_f"], "type": "swing", "deg": 8, "period": 0.34, "phase": 0.25},
-          {"part": "eye", "type": "blink"}],
-        "idle": [
-          {"part": ["ear_b", "ear_f"], "type": "swing", "deg": 4, "period": 2.2},
-          {"part": "head", "type": "swing", "deg": 2, "period": 3.1},
-          {"part": "eye", "type": "blink"}],
-        "laugh": [
-          {"part": "head", "type": "swing", "deg": 7, "period": 0.45},
-          {"part": "body", "type": "squash", "amp": 0.05, "period": 0.45},
-          {"part": ["ear_b", "ear_f"], "type": "swing", "deg": 10, "period": 0.45, "phase": 0.3}],
-        "sleep": [
-          {"part": "body", "type": "pulse", "amp": 0.03, "period": 2.6},
-          {"part": "head", "type": "rotate", "to": 14, "t": [0, 0.2]},
-          {"part": ["ear_b", "ear_f"], "type": "rotate", "to": -48, "t": [0, 0.25]}],
-        "droop": [
-          {"part": ["ear_b", "ear_f"], "type": "rotate", "to": -55, "t": [0.15, 0.5]},
-          {"part": "head", "type": "rotate", "to": 16, "t": [0.1, 0.45]},
-          {"part": "eye", "type": "blink", "period": 2.4}]
-      }
-    },
-    "tortoise": {"character": "tortoise",
-      "parts": [
-        {"id": "leg_bb", "shape": "ellipse", "c": [-58, -22], "r": [24, 30], "paint": "tort_skin", "pivot": [-58, -45]},
-        {"id": "leg_fb", "shape": "ellipse", "c": [78, -22], "r": [24, 30], "paint": "tort_skin", "pivot": [78, -45]},
-        {"id": "tail", "shape": "poly", "points": [[-118, -50], [-152, -34], [-112, -32]], "smooth": true, "corners": [1], "paint": "tort_skin"},
-        {"id": "neck", "shape": "stroke", "points": [[95, -62], [132, -78], [150, -86]], "width": [44, 36], "paint": "tort_skin", "pivot": [100, -62]},
-        {"id": "head", "shape": "ellipse", "c": [172, -94], "r": [44, 34], "rot": -8, "paint": "tort_skin", "parent": "neck", "pivot": [150, -86]},
-        {"id": "eye", "shape": "circle", "c": [186, -106], "r": 7.5, "paint": "black", "parent": "head"},
-        {"id": "glint", "shape": "circle", "c": [188, -109], "r": 2.5, "paint": "white", "parent": "eye", "shadow": 0},
-        {"id": "smile", "shape": "stroke", "points": [[186, -80], [198, -78], [208, -84]], "width": 3.5, "paint": "black", "parent": "head", "shadow": 0},
-        {"id": "cheek", "shape": "circle", "c": [176, -86], "r": 7, "paint": "pink", "parent": "head", "shadow": 0, "opacity": 0.8},
-        {"id": "shell", "shape": "poly", "smooth": true, "corners": [0, 6], "points": [[-128, -42], [-118, -105], [-70, -158], [0, -172], [70, -158], [118, -105], [128, -42]], "paint": "tort_shell", "pivot": [0, -42], "tex_scale": 0.9},
-        {"id": "rim", "shape": "stroke", "points": [[-134, -40], [0, -30], [134, -40]], "width": 22, "paint": "shell_rim", "parent": "shell"},
-        {"id": "leg_bf", "shape": "ellipse", "c": [-82, -18], "r": [27, 32], "paint": "tort_skin", "pivot": [-82, -42]},
-        {"id": "leg_ff", "shape": "ellipse", "c": [58, -18], "r": [27, 32], "paint": "tort_skin", "pivot": [58, -42]}
-      ],
-      "rigs": {
-        "walk": [
-          {"part": ["leg_bf", "leg_fb"], "type": "swing", "deg": 16, "period": 1.0},
-          {"part": ["leg_ff", "leg_bb"], "type": "swing", "deg": 16, "period": 1.0, "phase": 0.5},
-          {"part": "neck", "type": "swing", "deg": 4, "period": 1.0},
-          {"part": "shell", "type": "bob", "amp": 2.5, "period": 0.5},
-          {"part": "eye", "type": "blink"}],
-        "idle": [
-          {"part": "neck", "type": "swing", "deg": 3, "period": 2.8},
-          {"part": "eye", "type": "blink"}],
-        "proud": [
-          {"part": "neck", "type": "rotate", "to": -10, "t": [0.1, 0.4]},
-          {"part": "head", "type": "swing", "deg": 3, "period": 1.4},
-          {"part": "eye", "type": "blink"}]
-      }
-    },
-    "fox": {"character": "fox",
-      "parts": [
-        {"id": "tail", "shape": "poly", "smooth": true, "points": [[-40, -10], [-120, -30], [-185, -80], [-200, -150], [-160, -120], [-110, -70], [-40, -50]], "paint": "fox_fur", "pivot": [-40, -30]},
-        {"id": "tail_tip", "shape": "blob", "c": [-192, -138], "r": [26, 22], "paint": "fur_white", "parent": "tail", "shape_seed": 3},
-        {"id": "body", "shape": "poly", "smooth": true, "corners": [0, 5], "points": [[-62, 0], [-72, -90], [-34, -168], [22, -176], [58, -100], [62, 0]], "paint": "fox_fur"},
-        {"id": "chest", "shape": "ellipse", "c": [24, -108], "r": [28, 52], "rot": -8, "paint": "fur_white", "shadow": 0.5},
-        {"id": "leg", "shape": "stroke", "points": [[32, -80], [40, -40], [44, -4]], "width": [24, 18], "paint": "fox_fur"},
-        {"id": "paw", "shape": "ellipse", "c": [52, -6], "r": [20, 9], "paint": "black"},
-        {"id": "ear_b", "shape": "poly", "points": [[-8, -238], [-22, -300], [24, -250]], "smooth": true, "corners": [0, 1, 2], "paint": "fox_fur", "parent": "head"},
-        {"id": "head", "shape": "poly", "smooth": true, "corners": [4], "points": [[-28, -212], [-10, -250], [30, -262], [72, -244], [122, -210], [72, -188], [20, -178], [-18, -190]], "paint": "fox_fur", "pivot": [10, -185]},
-        {"id": "ear_f", "shape": "poly", "points": [[28, -255], [46, -316], [66, -246]], "smooth": true, "corners": [0, 1, 2], "paint": "fox_fur", "parent": "head"},
-        {"id": "ear_in", "shape": "poly", "points": [[38, -258], [47, -296], [58, -252]], "paint": "black", "parent": "ear_f", "shadow": 0},
-        {"id": "jaw", "shape": "blob", "c": [64, -196], "r": [40, 13], "paint": "fur_white", "parent": "head", "shape_seed": 1},
-        {"id": "eye", "shape": "circle", "c": [58, -226], "r": 7, "paint": "black", "parent": "head"},
-        {"id": "glint", "shape": "circle", "c": [60, -229], "r": 2.5, "paint": "white", "parent": "eye", "shadow": 0},
-        {"id": "nose", "shape": "circle", "c": [120, -211], "r": 8, "paint": "black", "parent": "head"},
-        {"id": "stick", "shape": "stroke", "points": [[86, -120], [92, -300]], "width": 8, "paint": "wood", "pivot": [60, -140]},
-        {"id": "flag", "shape": "rect", "c": [128, -278], "size": [72, 46], "paint": "red_cloth", "parent": "stick", "pivot": [92, -280]},
-        {"id": "arm", "shape": "stroke", "points": [[30, -140], [62, -132], [88, -138]], "width": [22, 16], "paint": "fox_fur", "parent": "stick"}
-      ],
-      "rigs": {
-        "idle": [
-          {"part": "tail", "type": "swing", "deg": 6, "period": 2.0},
-          {"part": "head", "type": "swing", "deg": 2, "period": 2.6},
-          {"part": "eye", "type": "blink"}],
-        "wave": [
-          {"part": "stick", "type": "swing", "deg": 16, "period": 0.6},
-          {"part": "flag", "type": "swing", "deg": 8, "period": 0.3},
-          {"part": "tail", "type": "swing", "deg": 10, "period": 0.6},
-          {"part": "eye", "type": "blink"}]
-      }
-    },
-    "finish": {"character": false,
-      "parts": [
-        {"id": "post_l", "shape": "stroke", "points": [[-170, 0], [-170, -260]], "width": 18, "paint": "wood"},
-        {"id": "post_r", "shape": "stroke", "points": [[170, 0], [170, -260]], "width": 18, "paint": "wood"},
-        {"id": "banner", "shape": "rect", "c": [0, -255], "size": [380, 62], "radius": 6, "paint": "yellow_cloth"},
-        {"id": "dots", "shape": "rect", "c": [0, -255], "size": [330, 18], "paint": {"colors": ["#e23a2e", "#2f5fb3", "#ffffff"], "style": "stripes", "period": 18, "angle": 0}, "shadow": 0.3},
-        {"id": "ribbon", "shape": "stroke", "points": [[-170, -95], [0, -84], [170, -95]], "width": 9, "paint": "red_cloth"}
-      ]
-    },
-    "pond": {"character": false,
-      "parts": [
-        {"id": "water", "shape": "blob", "c": [0, 0], "r": [230, 60], "paint": "water", "jag": 0.08, "shape_seed": 4},
-        {"id": "pad1", "shape": "ellipse", "c": [-80, -6], "r": [36, 14], "paint": "leaf", "cut": [{"shape": "ellipse", "c": [-50, -10], "r": [10, 10], "arc": [-20, 20]}]},
-        {"id": "pad2", "shape": "ellipse", "c": [90, 12], "r": [30, 12], "paint": "leaf"}
-      ]
-    }
+  "sunset_sky": {
+   "colors": [
+    "#f6b26b",
+    "#f9cf8a",
+    "#f08a5d",
+    "#fbe2ae"
+   ],
+   "style": "streaks",
+   "angle": 0,
+   "contrast": 0.75
   },
-  "title_scene": {
-    "items": [
-      {"actor": "ground", "at": [0, 840]},
-      {"actor": "flower_red", "at": [300, 860], "scale": 0.9, "rig": "sway"},
-      {"actor": "flower_yellow", "at": [1640, 870], "rig": "sway"},
-      {"actor": "hare", "at": [690, 850], "scale": 0.8, "rig": "idle"},
-      {"actor": "tortoise", "at": [1230, 850], "scale": 0.95, "flip": true, "rig": "idle"}
-    ]
+  "hare_fur": {
+   "colors": [
+    "#a86d3c",
+    "#cc9156",
+    "#6f4425",
+    "#e6b47c",
+    "#8d7c9c"
+   ],
+   "style": "streaks"
   },
-  "scenes": [
-    {
-      "narration": "In a green meadow at the edge of the woods, there lived a hare. He was quick, he was clever, and he was very, very proud.",
-      "camera": {"zoom": [1.0, 1.05], "center": [[960, 540], [900, 560]]},
-      "items": [
-        {"actor": "sun", "at": [1640, 210], "scale": 0.85, "rig": "glow"},
-        {"actor": "cloud", "at": [520, 200], "anims": [{"type": "drift", "amp": 40, "period": 9}]},
-        {"actor": "cloud_long", "at": [1120, 120], "scale": 0.7, "anims": [{"type": "drift", "amp": 30, "period": 11, "phase": 0.4}]},
-        {"actor": "tree_dark", "at": [140, 790], "scale": 1.3, "rig": "sway"},
-        {"actor": "tree", "at": [1790, 800], "scale": 1.1, "rig": "sway"},
-        {"actor": "ground", "at": [0, 790]},
-        {"actor": "grass_tuft", "rig": "sway", "scatter": {"n": 9, "area": [80, 830, 1840, 900], "scale": [0.7, 1.1], "seed": 2}},
-        {"actor": "flower_red", "at": [430, 880], "rig": "sway"},
-        {"actor": "flower_purple", "at": [1450, 885], "scale": 0.9, "rig": "sway"},
-        {"actor": "hare", "at": [560, 830], "scale": 0.95, "rig": "run",
-         "anims": [{"type": "move", "to": [1180, 830], "t": [0.0, 0.55], "ease": "inout"}, {"type": "hop", "height": 55, "period": 0.34, "t": [0.0, 0.55]}]}
-      ]
-    },
-    {
-      "narration": "Every morning he raced the wind across the grass. \"Nobody in the whole wide world,\" he boasted, \"is as fast as me!\"",
-      "camera": {"zoom": [1.04, 1.0]},
-      "items": [
-        {"actor": "cloud", "at": [1500, 180], "anims": [{"type": "move", "to": [300, 180], "t": [0, 1], "ease": "linear"}]},
-        {"actor": "cloud", "at": [2100, 300], "scale": 0.7, "seed": 3, "anims": [{"type": "move", "to": [900, 300], "t": [0, 1], "ease": "linear"}]},
-        {"actor": "bird_small", "at": [700, 260], "rig": "flap", "anims": [{"type": "move", "to": [1300, 220], "t": [0, 1], "ease": "linear"}]},
-        {"actor": "bird_small", "at": [620, 320], "scale": 0.8, "rig": "flap", "seed": 2, "anims": [{"type": "move", "to": [1220, 290], "t": [0, 1], "ease": "linear"}]},
-        {"actor": "hill", "at": [1350, 860], "scale": [1.2, 0.9], "z": -2},
-        {"actor": "ground", "at": [0, 820]},
-        {"actor": "grass_tuft", "rig": "sway", "scatter": {"n": 10, "area": [60, 860, 1860, 905], "scale": [0.7, 1.0], "seed": 5}},
-        {"actor": "hare", "at": [-300, 840], "rig": "run",
-         "anims": [{"type": "move", "to": [2300, 840], "t": [0.02, 0.45], "ease": "linear"}, {"type": "hop", "height": 70, "period": 0.34}]},
-        {"actor": "hare", "at": [-300, 840], "rig": ["run"],
-         "anims": [{"type": "move", "to": [900, 840], "t": [0.5, 0.75], "ease": "out"}, {"type": "hop", "height": 60, "period": 0.34, "t": [0.5, 0.75]}],
-         "part_anims": [{"part": "mouth", "type": "pulse", "amp": 0.3, "period": 0.3, "t": [0.75, 1.0]}], "reveal": ["mouth"]}
-      ]
-    },
-    {
-      "narration": "One day, the hare met a tortoise plodding slowly along the path. \"Ha!\" he laughed. \"You are so slow, you will never get anywhere at all!\"",
-      "items": [
-        {"actor": "sun", "at": [1700, 170], "scale": 0.7, "rig": "glow"},
-        {"actor": "pine", "at": [1500, 760], "scale": 1.0, "rig": "sway"},
-        {"actor": "tree", "at": [250, 770], "scale": 1.15, "rig": "sway"},
-        {"actor": "ground", "at": [0, 760]},
-        {"part": {"shape": "stroke", "points": [[-200, 900], [500, 860], [1100, 890], [2200, 850]], "width": 90, "paint": "path", "cap": "flat"}, "detail": 0.9},
-        {"actor": "flower_yellow", "at": [180, 905], "rig": "sway"},
-        {"actor": "tortoise", "at": [560, 880], "scale": 0.95, "rig": "walk",
-         "anims": [{"type": "move", "to": [760, 880], "t": [0, 1], "ease": "linear"}]},
-        {"actor": "hare", "at": [1350, 875], "flip": true, "scale": 0.95, "rig": "laugh", "reveal": ["mouth"],
-         "anims": [{"type": "hop", "height": 25, "period": 0.45, "t": [0.45, 1.0]}]}
-      ]
-    },
-    {
-      "narration": "The tortoise blinked her old, wise eyes. \"Slow I may be,\" she said, \"but I will race you, if you like.\"",
-      "camera": {"zoom": [1.32, 1.42], "center": [[960, 640], [980, 650]]},
-      "items": [
-        {"actor": "tree", "at": [180, 780], "scale": 1.15},
-        {"actor": "ground", "at": [0, 760]},
-        {"part": {"shape": "stroke", "points": [[-200, 900], [500, 860], [1100, 890], [2200, 850]], "width": 90, "paint": "path", "cap": "flat"}, "detail": 0.9},
-        {"actor": "tortoise", "at": [770, 880], "scale": 0.95, "rig": "proud"},
-        {"actor": "hare", "at": [1240, 875], "flip": true, "scale": 0.95, "rig": "idle",
-         "anims": [{"type": "rotate", "to": -6, "t": [0.55, 0.75]}]}
-      ]
-    },
-    {
-      "narration": "News of the race spread through the woods. All the animals came to watch, and the fox waved the flag: ready, steady, go!",
-      "camera": {"zoom": [1.0, 1.06], "center": [[960, 540], [960, 580]]},
-      "items": [
-        {"actor": "tree_dark", "at": [1720, 780], "scale": 1.3, "rig": "sway"},
-        {"actor": "bird_small", "at": [1640, 420], "rig": "flap", "anims": [{"type": "bob", "amp": 10, "period": 1.3}]},
-        {"actor": "bird_small", "at": [1790, 380], "rig": "flap", "seed": 4, "anims": [{"type": "bob", "amp": 12, "period": 1.1}]},
-        {"actor": "ground", "at": [0, 760]},
-        {"actor": "fox", "at": [300, 860], "scale": 1.0, "rig": "wave", "anims": [{"type": "hop", "height": 18, "period": 0.6, "t": [0.75, 1.0]}]},
-        {"actor": "tortoise", "at": [770, 900], "scale": 0.85, "rig": "idle"},
-        {"actor": "hare", "at": [1100, 880], "scale": 0.85, "rig": "idle", "anims": [{"type": "squash", "amp": 0.05, "period": 0.5}]},
-        {"actor": "grass_tuft", "rig": "sway", "scatter": {"n": 6, "area": [900, 860, 1600, 900], "scale": [0.7, 0.9], "seed": 9}}
-      ]
-    },
-    {
-      "narration": "Whoosh! Off shot the hare, so fast that the flowers bent over in the wind. And off went the tortoise too: step, step, step.",
-      "items": [
-        {"actor": "cloud", "at": [700, 210], "anims": [{"type": "drift", "amp": 30, "period": 8}]},
-        {"actor": "ground", "at": [0, 780]},
-        {"actor": "flower_yellow", "at": [960, 880], "rig": "sway", "part_anims": [{"part": "stem", "type": "swing", "deg": 28, "period": 0.5, "t": [0.08, 0.34]}]},
-        {"actor": "flower_red", "at": [1260, 870], "rig": "sway", "part_anims": [{"part": "stem", "type": "swing", "deg": 24, "period": 0.45, "t": [0.12, 0.38]}]},
-        {"actor": "grass_tuft", "rig": "sway", "scatter": {"n": 8, "area": [100, 840, 1800, 900], "scale": [0.7, 1.0], "seed": 12}},
-        {"actor": "hare", "at": [500, 860], "rig": "run",
-         "anims": [{"type": "move", "to": [2400, 820], "t": [0.05, 0.3], "ease": "in"}, {"type": "hop", "height": 60, "period": 0.3}]},
-        {"actor": "tortoise", "at": [200, 880], "rig": "walk",
-         "anims": [{"type": "move", "to": [560, 880], "t": [0.4, 1.0], "ease": "linear"}]}
-      ]
-    },
-    {
-      "narration": "Soon the hare was far, far ahead. He looked back, and he could not even see the tortoise. \"I have plenty of time,\" he yawned. \"I think I'll take a little nap.\"",
-      "camera": {"zoom": [1.0, 1.12], "center": [[960, 540], [820, 600]]},
-      "items": [
-        {"actor": "sun", "at": [1600, 200], "scale": 0.75, "rig": "glow"},
-        {"actor": "hill", "at": [1500, 820], "scale": [1.0, 0.7], "z": -2},
-        {"actor": "ground", "at": [0, 790]},
-        {"actor": "tree", "at": [620, 830], "scale": 1.6, "rig": "sway"},
-        {"actor": "hare", "at": [880, 860], "flip": true, "scale": 0.9, "rig": "idle", "reveal": ["mouth"],
-         "anims": [{"type": "rotate", "to": -8, "t": [0.6, 0.9]}],
-         "part_anims": [{"part": "mouth", "type": "show", "t": [0.62, 0.86]}, {"part": "mouth", "type": "pulse", "amp": 0.4, "period": 0.8, "t": [0.62, 0.86]}]},
-        {"actor": "flower_purple", "at": [1100, 890], "scale": 0.85, "rig": "sway"}
-      ]
-    },
-    {
-      "narration": "The sun climbed high into the sky. The hare snored, and dreamed of winning. But the tortoise kept on walking: step, step, step.",
-      "camera": {"zoom": [1.0, 1.04]},
-      "items": [
-        {"actor": "sun", "at": [300, 520], "scale": 0.8, "rig": "glow", "anims": [{"type": "path", "points": [[960, 150], [1640, 420]], "t": [0, 1], "ease": "linear"}]},
-        {"actor": "ground", "at": [0, 780]},
-        {"actor": "tree", "at": [520, 820], "scale": 1.6, "rig": "sway"},
-        {"actor": "hare", "at": [760, 860], "flip": true, "scale": 0.9, "rig": "sleep", "hide": ["eye", "glint"], "reveal": ["eye_shut"]},
-        {"part": {"shape": "text", "text": "z", "font": "title", "size": 56, "paint": "sky"}, "at": [700, 640], "anims": [{"type": "float_up", "dist": 170, "period": 2.4, "dir": [-0.4, -1]}]},
-        {"part": {"shape": "text", "text": "z", "font": "title", "size": 72, "paint": "flower_purple"}, "at": [700, 640], "anims": [{"type": "float_up", "dist": 170, "period": 2.4, "phase": 0.5, "dir": [-0.4, -1]}]},
-        {"actor": "tortoise", "at": [1500, 890], "scale": 0.75, "rig": "walk", "flip": false,
-         "anims": [{"type": "move", "to": [1700, 890], "t": [0, 1], "ease": "linear"}]},
-        {"actor": "grass_tuft", "rig": "sway", "scatter": {"n": 6, "area": [900, 850, 1880, 900], "scale": [0.6, 0.9], "seed": 21}}
-      ]
-    },
-    {
-      "narration": "Past the pond, up the hill, and right past the sleeping hare she went. Step, step, step.",
-      "camera": {"zoom": [1.02, 1.08], "center": [[900, 560], [1000, 560]]},
-      "items": [
-        {"actor": "cloud_long", "at": [1300, 180], "scale": 0.8, "anims": [{"type": "drift", "amp": 25, "period": 10}]},
-        {"actor": "hill", "at": [1400, 880], "scale": [1.1, 1.0], "z": -2},
-        {"actor": "ground", "at": [0, 800]},
-        {"actor": "pond", "at": [470, 850], "scale": 0.8},
-        {"actor": "tree", "at": [1180, 820], "scale": 1.2, "rig": "sway"},
-        {"actor": "hare", "at": [1330, 835], "flip": true, "scale": 0.68, "rig": "sleep", "hide": ["eye", "glint"], "reveal": ["eye_shut"]},
-        {"part": {"shape": "text", "text": "z", "font": "title", "size": 50, "paint": "sky"}, "at": [1300, 680], "anims": [{"type": "float_up", "dist": 140, "period": 2.4, "dir": [-0.4, -1]}]},
-        {"actor": "tortoise", "at": [150, 860], "scale": 0.72, "rig": "walk",
-         "anims": [{"type": "path", "points": [[650, 900], [1100, 905], [1500, 905], [1800, 895]], "t": [0, 1], "ease": "linear"}]}
-      ]
-    },
-    {
-      "narration": "When at last the hare woke up, the sun was going down. He leapt to his feet and ran as fast as he could!",
-      "background": "sunset_sky",
-      "camera": {"zoom": [1.0, 1.05], "shake": {"amp": 5, "t": [0.55, 1.0]}},
-      "items": [
-        {"actor": "sun", "at": [1500, 760], "scale": 1.1, "rig": "glow", "anims": [{"type": "move", "to": [1500, 820], "t": [0, 1], "ease": "linear"}]},
-        {"actor": "hill", "at": [400, 880], "scale": [1.2, 0.8], "z": -1, "seed": 2},
-        {"actor": "ground", "at": [0, 790]},
-        {"actor": "tree_dark", "at": [260, 830], "scale": 1.3},
-        {"actor": "hare", "at": [480, 870], "scale": 0.9, "rig": "idle",
-         "anims": [{"type": "hop", "height": 70, "period": 0.6, "t": [0.35, 0.5]}, {"type": "move", "to": [2400, 860], "t": [0.55, 0.95], "ease": "in"}, {"type": "hop", "height": 60, "period": 0.3, "t": [0.55, 1.0]}]}
-      ]
-    },
-    {
-      "narration": "But it was too late. The tortoise was already crossing the finish line, and all the animals cheered and cheered.",
-      "camera": {"zoom": [1.0, 1.1], "center": [[960, 560], [1060, 600]]},
-      "items": [
-        {"actor": "sun", "at": [1650, 330], "scale": 0.9, "rig": "glow", "z": -5},
-        {"actor": "ground", "at": [0, 780]},
-        {"actor": "finish", "at": [1150, 890], "scale": 1.0},
-        {"actor": "fox", "at": [1650, 880], "flip": true, "scale": 0.9, "rig": "wave", "anims": [{"type": "hop", "height": 30, "period": 0.6, "t": [0.4, 1.0]}]},
-        {"actor": "bird_small", "at": [900, 300], "rig": "flap", "anims": [{"type": "bob", "amp": 20, "period": 0.9}]},
-        {"actor": "bird_small", "at": [1350, 260], "rig": "flap", "seed": 3, "anims": [{"type": "bob", "amp": 16, "period": 1.1}]},
-        {"actor": "tortoise", "at": [820, 890], "scale": 0.85, "rig": "walk", "anims": [{"type": "move", "to": [1240, 890], "t": [0, 0.5], "ease": "linear"}]},
-        {"part": {"shape": "star", "c": [0, 0], "r": [9, 20], "n": 5, "paint": "red_cloth", "shadow": 0.4}, "scatter": {"n": 9, "area": [800, 330, 1500, 640], "seed": 3}, "anims": [{"type": "pop", "t": [0.5, 0.6]}, {"type": "spin", "speed": 90}, {"type": "bob", "amp": 14, "period": 1.6}]},
-        {"part": {"shape": "star", "c": [0, 0], "r": [9, 20], "n": 5, "paint": "sky", "shadow": 0.4}, "scatter": {"n": 9, "area": [780, 300, 1520, 640], "seed": 8}, "anims": [{"type": "pop", "t": [0.55, 0.65]}, {"type": "spin", "speed": -80}, {"type": "bob", "amp": 14, "period": 1.4}]},
-        {"part": {"shape": "star", "c": [0, 0], "r": [9, 20], "n": 5, "paint": "sun", "shadow": 0.4}, "scatter": {"n": 9, "area": [760, 320, 1540, 660], "seed": 13}, "anims": [{"type": "pop", "t": [0.6, 0.7]}, {"type": "spin", "speed": 70}, {"type": "bob", "amp": 14, "period": 1.8}]},
-        {"actor": "hare", "at": [-250, 870], "scale": 0.85, "rig": "run", "anims": [{"type": "move", "to": [420, 870], "t": [0.6, 0.9], "ease": "out"}, {"type": "hop", "height": 50, "period": 0.32, "t": [0.6, 0.9]}]}
-      ]
-    },
-    {
-      "narration": "The hare hung his head. And the tortoise smiled a slow, kind smile. \"Slow and steady,\" she said, \"wins the race.\"",
-      "camera": {"zoom": [1.18, 1.3], "center": [[960, 620], [960, 640]]},
-      "items": [
-        {"actor": "ground", "at": [0, 790]},
-        {"actor": "finish", "at": [1400, 890], "scale": 1.0},
-        {"actor": "flower_purple", "at": [520, 900], "rig": "sway"},
-        {"actor": "hare", "at": [760, 870], "scale": 0.9, "rig": "droop"},
-        {"actor": "tortoise", "at": [1160, 890], "scale": 0.95, "flip": true, "rig": "proud"}
-      ]
-    }
-  ],
-  "end_scene": {
-    "items": [
-      {"actor": "ground", "at": [0, 860]},
-      {"actor": "tortoise", "at": [960, 870], "scale": 0.8, "rig": "walk", "anims": [{"type": "move", "to": [1100, 870], "t": [0, 1], "ease": "linear"}]}
-    ]
+  "tort_skin": {
+   "colors": [
+    "#8fa24a",
+    "#b2c463",
+    "#6a7b30",
+    "#d0d77c",
+    "#5f8a6a"
+   ],
+   "style": "dabs"
+  },
+  "tort_shell": {
+   "colors": [
+    "#6f8f3a",
+    "#94b347",
+    "#b38a3c",
+    "#5a7f9a",
+    "#7da34a",
+    "#3b4a1c"
+   ],
+   "style": "cells",
+   "cells": 110
+  },
+  "shell_rim": {
+   "colors": [
+    "#7a5a28",
+    "#9a7434",
+    "#553c18"
+   ],
+   "style": "streaks"
+  },
+  "fox_fur": {
+   "colors": [
+    "#e8701f",
+    "#f39a3c",
+    "#b9481a",
+    "#ffb75e",
+    "#c45a2a"
+   ],
+   "style": "streaks"
+  },
+  "path": {
+   "colors": [
+    "#d9b47a",
+    "#e8cb95",
+    "#c09460",
+    "#f0dcae"
+   ],
+   "style": "dabs"
   }
+ },
+ "actors": {
+  "hare": {
+   "character": "hare",
+   "parts": [
+    {
+     "id": "tail",
+     "shape": "blob",
+     "c": [
+      -128,
+      -100
+     ],
+     "r": 30,
+     "paint": "fur_white",
+     "shape_seed": 2
+    },
+    {
+     "id": "leg_b",
+     "shape": "ellipse",
+     "c": [
+      -70,
+      -62
+     ],
+     "r": [
+      72,
+      56
+     ],
+     "rot": -10,
+     "paint": "hare_fur",
+     "pivot": [
+      -60,
+      -80
+     ]
+    },
+    {
+     "id": "foot_b",
+     "shape": "ellipse",
+     "c": [
+      -35,
+      -10
+     ],
+     "r": [
+      60,
+      14
+     ],
+     "rot": -4,
+     "paint": "hare_fur",
+     "parent": "leg_b"
+    },
+    {
+     "id": "body",
+     "shape": "ellipse",
+     "c": [
+      0,
+      -100
+     ],
+     "r": [
+      118,
+      64
+     ],
+     "rot": -14,
+     "paint": "hare_fur",
+     "pivot": [
+      0,
+      -60
+     ]
+    },
+    {
+     "id": "belly",
+     "shape": "ellipse",
+     "c": [
+      20,
+      -78
+     ],
+     "r": [
+      70,
+      28
+     ],
+     "rot": -14,
+     "paint": "cream",
+     "shadow": 0.4,
+     "parent": "body"
+    },
+    {
+     "id": "leg_f",
+     "shape": "stroke",
+     "points": [
+      [
+       72,
+       -88
+      ],
+      [
+       88,
+       -40
+      ],
+      [
+       98,
+       -8
+      ]
+     ],
+     "width": [
+      30,
+      20
+     ],
+     "paint": "hare_fur",
+     "pivot": [
+      72,
+      -88
+     ]
+    },
+    {
+     "id": "foot_f",
+     "shape": "ellipse",
+     "c": [
+      110,
+      -8
+     ],
+     "r": [
+      28,
+      11
+     ],
+     "paint": "hare_fur",
+     "parent": "leg_f"
+    },
+    {
+     "id": "head",
+     "shape": "ellipse",
+     "c": [
+      122,
+      -178
+     ],
+     "r": [
+      58,
+      46
+     ],
+     "rot": 18,
+     "paint": "hare_fur",
+     "pivot": [
+      95,
+      -140
+     ]
+    },
+    {
+     "id": "ear_b",
+     "shape": "poly",
+     "smooth": true,
+     "points": [
+      [
+       92,
+       -206
+      ],
+      [
+       60,
+       -300
+      ],
+      [
+       50,
+       -350
+      ],
+      [
+       70,
+       -345
+      ],
+      [
+       102,
+       -290
+      ],
+      [
+       118,
+       -212
+      ]
+     ],
+     "paint": "hare_fur",
+     "parent": "head",
+     "pivot": [
+      105,
+      -210
+     ]
+    },
+    {
+     "id": "ear_f",
+     "shape": "poly",
+     "smooth": true,
+     "points": [
+      [
+       112,
+       -212
+      ],
+      [
+       105,
+       -310
+      ],
+      [
+       110,
+       -362
+      ],
+      [
+       128,
+       -352
+      ],
+      [
+       134,
+       -300
+      ],
+      [
+       136,
+       -214
+      ]
+     ],
+     "paint": "hare_fur",
+     "parent": "head",
+     "pivot": [
+      122,
+      -214
+     ]
+    },
+    {
+     "id": "ear_in",
+     "shape": "poly",
+     "smooth": true,
+     "points": [
+      [
+       118,
+       -225
+      ],
+      [
+       114,
+       -305
+      ],
+      [
+       119,
+       -342
+      ],
+      [
+       126,
+       -335
+      ],
+      [
+       128,
+       -300
+      ],
+      [
+       129,
+       -226
+      ]
+     ],
+     "paint": "pink",
+     "parent": "ear_f",
+     "shadow": 0.3
+    },
+    {
+     "id": "cheek",
+     "shape": "blob",
+     "c": [
+      160,
+      -160
+     ],
+     "r": [
+      26,
+      20
+     ],
+     "paint": "fur_white",
+     "parent": "head",
+     "shape_seed": 5
+    },
+    {
+     "id": "mouth",
+     "shape": "ellipse",
+     "c": [
+      168,
+      -142
+     ],
+     "r": [
+      13,
+      10
+     ],
+     "paint": "#7a1f2b",
+     "parent": "head",
+     "hidden": true,
+     "shadow": 0.3
+    },
+    {
+     "id": "eye",
+     "shape": "circle",
+     "c": [
+      142,
+      -190
+     ],
+     "r": 9,
+     "paint": "black",
+     "parent": "head"
+    },
+    {
+     "id": "glint",
+     "shape": "circle",
+     "c": [
+      145,
+      -193
+     ],
+     "r": 3,
+     "paint": "white",
+     "parent": "eye",
+     "shadow": 0
+    },
+    {
+     "id": "eye_shut",
+     "shape": "stroke",
+     "points": [
+      [
+       132,
+       -188
+      ],
+      [
+       142,
+       -183
+      ],
+      [
+       152,
+       -188
+      ]
+     ],
+     "width": 4,
+     "paint": "black",
+     "parent": "head",
+     "hidden": true,
+     "shadow": 0
+    },
+    {
+     "id": "nose",
+     "shape": "circle",
+     "c": [
+      178,
+      -168
+     ],
+     "r": 8,
+     "paint": "pink",
+     "parent": "head"
+    },
+    {
+     "id": "whisk",
+     "shape": "stroke",
+     "points": [
+      [
+       170,
+       -160
+      ],
+      [
+       205,
+       -150
+      ],
+      [
+       228,
+       -152
+      ]
+     ],
+     "width": [
+      3,
+      1.5
+     ],
+     "paint": "black",
+     "parent": "head",
+     "shadow": 0
+    }
+   ],
+   "rigs": {
+    "run": [
+     {
+      "part": "leg_b",
+      "type": "swing",
+      "deg": 24,
+      "period": 0.34
+     },
+     {
+      "part": "leg_f",
+      "type": "swing",
+      "deg": 36,
+      "period": 0.34,
+      "phase": 0.5
+     },
+     {
+      "part": [
+       "ear_b",
+       "ear_f"
+      ],
+      "type": "swing",
+      "deg": 8,
+      "period": 0.34,
+      "phase": 0.25
+     },
+     {
+      "part": "eye",
+      "type": "blink"
+     }
+    ],
+    "idle": [
+     {
+      "part": [
+       "ear_b",
+       "ear_f"
+      ],
+      "type": "swing",
+      "deg": 4,
+      "period": 2.2
+     },
+     {
+      "part": "head",
+      "type": "swing",
+      "deg": 2,
+      "period": 3.1
+     },
+     {
+      "part": "eye",
+      "type": "blink"
+     }
+    ],
+    "laugh": [
+     {
+      "part": "head",
+      "type": "swing",
+      "deg": 7,
+      "period": 0.45
+     },
+     {
+      "part": "body",
+      "type": "squash",
+      "amp": 0.05,
+      "period": 0.45
+     },
+     {
+      "part": [
+       "ear_b",
+       "ear_f"
+      ],
+      "type": "swing",
+      "deg": 10,
+      "period": 0.45,
+      "phase": 0.3
+     }
+    ],
+    "sleep": [
+     {
+      "part": "body",
+      "type": "pulse",
+      "amp": 0.03,
+      "period": 2.6
+     },
+     {
+      "part": "head",
+      "type": "rotate",
+      "to": 14,
+      "t": [
+       0,
+       0.2
+      ]
+     },
+     {
+      "part": [
+       "ear_b",
+       "ear_f"
+      ],
+      "type": "rotate",
+      "to": -48,
+      "t": [
+       0,
+       0.25
+      ]
+     }
+    ],
+    "droop": [
+     {
+      "part": [
+       "ear_b",
+       "ear_f"
+      ],
+      "type": "rotate",
+      "to": -55,
+      "t": [
+       0.15,
+       0.5
+      ]
+     },
+     {
+      "part": "head",
+      "type": "rotate",
+      "to": 16,
+      "t": [
+       0.1,
+       0.45
+      ]
+     },
+     {
+      "part": "eye",
+      "type": "blink",
+      "period": 2.4
+     }
+    ]
+   }
+  },
+  "tortoise": {
+   "character": "tortoise",
+   "parts": [
+    {
+     "id": "leg_bb",
+     "shape": "ellipse",
+     "c": [
+      -58,
+      -22
+     ],
+     "r": [
+      24,
+      30
+     ],
+     "paint": "tort_skin",
+     "pivot": [
+      -58,
+      -45
+     ]
+    },
+    {
+     "id": "leg_fb",
+     "shape": "ellipse",
+     "c": [
+      78,
+      -22
+     ],
+     "r": [
+      24,
+      30
+     ],
+     "paint": "tort_skin",
+     "pivot": [
+      78,
+      -45
+     ]
+    },
+    {
+     "id": "tail",
+     "shape": "poly",
+     "points": [
+      [
+       -118,
+       -50
+      ],
+      [
+       -152,
+       -34
+      ],
+      [
+       -112,
+       -32
+      ]
+     ],
+     "smooth": true,
+     "corners": [
+      1
+     ],
+     "paint": "tort_skin"
+    },
+    {
+     "id": "neck",
+     "shape": "stroke",
+     "points": [
+      [
+       95,
+       -62
+      ],
+      [
+       132,
+       -78
+      ],
+      [
+       150,
+       -86
+      ]
+     ],
+     "width": [
+      44,
+      36
+     ],
+     "paint": "tort_skin",
+     "pivot": [
+      100,
+      -62
+     ]
+    },
+    {
+     "id": "head",
+     "shape": "ellipse",
+     "c": [
+      172,
+      -94
+     ],
+     "r": [
+      44,
+      34
+     ],
+     "rot": -8,
+     "paint": "tort_skin",
+     "parent": "neck",
+     "pivot": [
+      150,
+      -86
+     ]
+    },
+    {
+     "id": "eye",
+     "shape": "circle",
+     "c": [
+      186,
+      -106
+     ],
+     "r": 7.5,
+     "paint": "black",
+     "parent": "head"
+    },
+    {
+     "id": "glint",
+     "shape": "circle",
+     "c": [
+      188,
+      -109
+     ],
+     "r": 2.5,
+     "paint": "white",
+     "parent": "eye",
+     "shadow": 0
+    },
+    {
+     "id": "smile",
+     "shape": "stroke",
+     "points": [
+      [
+       186,
+       -80
+      ],
+      [
+       198,
+       -78
+      ],
+      [
+       208,
+       -84
+      ]
+     ],
+     "width": 3.5,
+     "paint": "black",
+     "parent": "head",
+     "shadow": 0
+    },
+    {
+     "id": "cheek",
+     "shape": "circle",
+     "c": [
+      176,
+      -86
+     ],
+     "r": 7,
+     "paint": "pink",
+     "parent": "head",
+     "shadow": 0,
+     "opacity": 0.8
+    },
+    {
+     "id": "shell",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      0,
+      6
+     ],
+     "points": [
+      [
+       -128,
+       -42
+      ],
+      [
+       -118,
+       -105
+      ],
+      [
+       -70,
+       -158
+      ],
+      [
+       0,
+       -172
+      ],
+      [
+       70,
+       -158
+      ],
+      [
+       118,
+       -105
+      ],
+      [
+       128,
+       -42
+      ]
+     ],
+     "paint": "tort_shell",
+     "pivot": [
+      0,
+      -42
+     ],
+     "tex_scale": 0.9
+    },
+    {
+     "id": "rim",
+     "shape": "stroke",
+     "points": [
+      [
+       -134,
+       -40
+      ],
+      [
+       0,
+       -30
+      ],
+      [
+       134,
+       -40
+      ]
+     ],
+     "width": 22,
+     "paint": "shell_rim",
+     "parent": "shell"
+    },
+    {
+     "id": "leg_bf",
+     "shape": "ellipse",
+     "c": [
+      -82,
+      -18
+     ],
+     "r": [
+      27,
+      32
+     ],
+     "paint": "tort_skin",
+     "pivot": [
+      -82,
+      -42
+     ]
+    },
+    {
+     "id": "leg_ff",
+     "shape": "ellipse",
+     "c": [
+      58,
+      -18
+     ],
+     "r": [
+      27,
+      32
+     ],
+     "paint": "tort_skin",
+     "pivot": [
+      58,
+      -42
+     ]
+    }
+   ],
+   "rigs": {
+    "walk": [
+     {
+      "part": [
+       "leg_bf",
+       "leg_fb"
+      ],
+      "type": "swing",
+      "deg": 16,
+      "period": 1.0
+     },
+     {
+      "part": [
+       "leg_ff",
+       "leg_bb"
+      ],
+      "type": "swing",
+      "deg": 16,
+      "period": 1.0,
+      "phase": 0.5
+     },
+     {
+      "part": "neck",
+      "type": "swing",
+      "deg": 4,
+      "period": 1.0
+     },
+     {
+      "part": "shell",
+      "type": "bob",
+      "amp": 2.5,
+      "period": 0.5
+     },
+     {
+      "part": "eye",
+      "type": "blink"
+     }
+    ],
+    "idle": [
+     {
+      "part": "neck",
+      "type": "swing",
+      "deg": 3,
+      "period": 2.8
+     },
+     {
+      "part": "eye",
+      "type": "blink"
+     }
+    ],
+    "proud": [
+     {
+      "part": "neck",
+      "type": "rotate",
+      "to": -10,
+      "t": [
+       0.1,
+       0.4
+      ]
+     },
+     {
+      "part": "head",
+      "type": "swing",
+      "deg": 3,
+      "period": 1.4
+     },
+     {
+      "part": "eye",
+      "type": "blink"
+     }
+    ]
+   }
+  },
+  "fox": {
+   "character": "fox",
+   "parts": [
+    {
+     "id": "tail",
+     "shape": "poly",
+     "smooth": true,
+     "points": [
+      [
+       -40,
+       -10
+      ],
+      [
+       -120,
+       -30
+      ],
+      [
+       -185,
+       -80
+      ],
+      [
+       -200,
+       -150
+      ],
+      [
+       -160,
+       -120
+      ],
+      [
+       -110,
+       -70
+      ],
+      [
+       -40,
+       -50
+      ]
+     ],
+     "paint": "fox_fur",
+     "pivot": [
+      -40,
+      -30
+     ]
+    },
+    {
+     "id": "tail_tip",
+     "shape": "blob",
+     "c": [
+      -192,
+      -138
+     ],
+     "r": [
+      26,
+      22
+     ],
+     "paint": "fur_white",
+     "parent": "tail",
+     "shape_seed": 3
+    },
+    {
+     "id": "body",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      0,
+      5
+     ],
+     "points": [
+      [
+       -62,
+       0
+      ],
+      [
+       -72,
+       -90
+      ],
+      [
+       -34,
+       -168
+      ],
+      [
+       22,
+       -176
+      ],
+      [
+       58,
+       -100
+      ],
+      [
+       62,
+       0
+      ]
+     ],
+     "paint": "fox_fur"
+    },
+    {
+     "id": "chest",
+     "shape": "ellipse",
+     "c": [
+      24,
+      -108
+     ],
+     "r": [
+      28,
+      52
+     ],
+     "rot": -8,
+     "paint": "fur_white",
+     "shadow": 0.5
+    },
+    {
+     "id": "leg",
+     "shape": "stroke",
+     "points": [
+      [
+       32,
+       -80
+      ],
+      [
+       40,
+       -40
+      ],
+      [
+       44,
+       -4
+      ]
+     ],
+     "width": [
+      24,
+      18
+     ],
+     "paint": "fox_fur"
+    },
+    {
+     "id": "paw",
+     "shape": "ellipse",
+     "c": [
+      52,
+      -6
+     ],
+     "r": [
+      20,
+      9
+     ],
+     "paint": "black"
+    },
+    {
+     "id": "ear_b",
+     "shape": "poly",
+     "points": [
+      [
+       -8,
+       -238
+      ],
+      [
+       -22,
+       -300
+      ],
+      [
+       24,
+       -250
+      ]
+     ],
+     "smooth": true,
+     "corners": [
+      0,
+      1,
+      2
+     ],
+     "paint": "fox_fur",
+     "parent": "head"
+    },
+    {
+     "id": "head",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      4
+     ],
+     "points": [
+      [
+       -28,
+       -212
+      ],
+      [
+       -10,
+       -250
+      ],
+      [
+       30,
+       -262
+      ],
+      [
+       72,
+       -244
+      ],
+      [
+       122,
+       -210
+      ],
+      [
+       72,
+       -188
+      ],
+      [
+       20,
+       -178
+      ],
+      [
+       -18,
+       -190
+      ]
+     ],
+     "paint": "fox_fur",
+     "pivot": [
+      10,
+      -185
+     ]
+    },
+    {
+     "id": "ear_f",
+     "shape": "poly",
+     "points": [
+      [
+       28,
+       -255
+      ],
+      [
+       46,
+       -316
+      ],
+      [
+       66,
+       -246
+      ]
+     ],
+     "smooth": true,
+     "corners": [
+      0,
+      1,
+      2
+     ],
+     "paint": "fox_fur",
+     "parent": "head"
+    },
+    {
+     "id": "ear_in",
+     "shape": "poly",
+     "points": [
+      [
+       38,
+       -258
+      ],
+      [
+       47,
+       -296
+      ],
+      [
+       58,
+       -252
+      ]
+     ],
+     "paint": "black",
+     "parent": "ear_f",
+     "shadow": 0
+    },
+    {
+     "id": "jaw",
+     "shape": "blob",
+     "c": [
+      64,
+      -196
+     ],
+     "r": [
+      40,
+      13
+     ],
+     "paint": "fur_white",
+     "parent": "head",
+     "shape_seed": 1
+    },
+    {
+     "id": "eye",
+     "shape": "circle",
+     "c": [
+      58,
+      -226
+     ],
+     "r": 7,
+     "paint": "black",
+     "parent": "head"
+    },
+    {
+     "id": "glint",
+     "shape": "circle",
+     "c": [
+      60,
+      -229
+     ],
+     "r": 2.5,
+     "paint": "white",
+     "parent": "eye",
+     "shadow": 0
+    },
+    {
+     "id": "nose",
+     "shape": "circle",
+     "c": [
+      120,
+      -211
+     ],
+     "r": 8,
+     "paint": "black",
+     "parent": "head"
+    },
+    {
+     "id": "stick",
+     "shape": "stroke",
+     "points": [
+      [
+       86,
+       -120
+      ],
+      [
+       92,
+       -300
+      ]
+     ],
+     "width": 8,
+     "paint": "wood",
+     "pivot": [
+      60,
+      -140
+     ]
+    },
+    {
+     "id": "flag",
+     "shape": "rect",
+     "c": [
+      128,
+      -278
+     ],
+     "size": [
+      72,
+      46
+     ],
+     "paint": "red_cloth",
+     "parent": "stick",
+     "pivot": [
+      92,
+      -280
+     ]
+    },
+    {
+     "id": "arm",
+     "shape": "stroke",
+     "points": [
+      [
+       30,
+       -140
+      ],
+      [
+       62,
+       -132
+      ],
+      [
+       88,
+       -138
+      ]
+     ],
+     "width": [
+      22,
+      16
+     ],
+     "paint": "fox_fur",
+     "parent": "stick"
+    }
+   ],
+   "rigs": {
+    "idle": [
+     {
+      "part": "tail",
+      "type": "swing",
+      "deg": 6,
+      "period": 2.0
+     },
+     {
+      "part": "head",
+      "type": "swing",
+      "deg": 2,
+      "period": 2.6
+     },
+     {
+      "part": "eye",
+      "type": "blink"
+     }
+    ],
+    "wave": [
+     {
+      "part": "stick",
+      "type": "swing",
+      "deg": 16,
+      "period": 0.6
+     },
+     {
+      "part": "flag",
+      "type": "swing",
+      "deg": 8,
+      "period": 0.3
+     },
+     {
+      "part": "tail",
+      "type": "swing",
+      "deg": 10,
+      "period": 0.6
+     },
+     {
+      "part": "eye",
+      "type": "blink"
+     }
+    ]
+   }
+  },
+  "finish": {
+   "character": false,
+   "parts": [
+    {
+     "id": "post_l",
+     "shape": "stroke",
+     "points": [
+      [
+       -170,
+       0
+      ],
+      [
+       -170,
+       -260
+      ]
+     ],
+     "width": 18,
+     "paint": "wood"
+    },
+    {
+     "id": "post_r",
+     "shape": "stroke",
+     "points": [
+      [
+       170,
+       0
+      ],
+      [
+       170,
+       -260
+      ]
+     ],
+     "width": 18,
+     "paint": "wood"
+    },
+    {
+     "id": "banner",
+     "shape": "rect",
+     "c": [
+      0,
+      -255
+     ],
+     "size": [
+      380,
+      62
+     ],
+     "radius": 6,
+     "paint": "yellow_cloth"
+    },
+    {
+     "id": "dots",
+     "shape": "rect",
+     "c": [
+      0,
+      -255
+     ],
+     "size": [
+      330,
+      18
+     ],
+     "paint": {
+      "colors": [
+       "#e23a2e",
+       "#2f5fb3",
+       "#ffffff"
+      ],
+      "style": "stripes",
+      "period": 18,
+      "angle": 0
+     },
+     "shadow": 0.3
+    },
+    {
+     "id": "ribbon",
+     "shape": "stroke",
+     "points": [
+      [
+       -170,
+       -95
+      ],
+      [
+       0,
+       -84
+      ],
+      [
+       170,
+       -95
+      ]
+     ],
+     "width": 9,
+     "paint": "red_cloth"
+    }
+   ]
+  },
+  "pond": {
+   "character": false,
+   "parts": [
+    {
+     "id": "water",
+     "shape": "blob",
+     "c": [
+      0,
+      0
+     ],
+     "r": [
+      230,
+      60
+     ],
+     "paint": "water",
+     "jag": 0.08,
+     "shape_seed": 4
+    },
+    {
+     "id": "pad1",
+     "shape": "ellipse",
+     "c": [
+      -80,
+      -6
+     ],
+     "r": [
+      36,
+      14
+     ],
+     "paint": "leaf",
+     "cut": [
+      {
+       "shape": "ellipse",
+       "c": [
+        -50,
+        -10
+       ],
+       "r": [
+        10,
+        10
+       ],
+       "arc": [
+        -20,
+        20
+       ]
+      }
+     ]
+    },
+    {
+     "id": "pad2",
+     "shape": "ellipse",
+     "c": [
+      90,
+      12
+     ],
+     "r": [
+      30,
+      12
+     ],
+     "paint": "leaf"
+    }
+   ]
+  },
+  "hare_sleep": {
+   "pose_of": "hare",
+   "character": "hare"
+  }
+ },
+ "title_scene": {
+  "items": [
+   {
+    "actor": "ground",
+    "at": [
+     0,
+     840
+    ]
+   },
+   {
+    "actor": "flower_red",
+    "at": [
+     300,
+     860
+    ],
+    "scale": 0.9,
+    "rig": "sway"
+   },
+   {
+    "actor": "flower_yellow",
+    "at": [
+     1640,
+     870
+    ],
+    "rig": "sway"
+   },
+   {
+    "actor": "hare",
+    "at": [
+     690,
+     850
+    ],
+    "scale": 0.8,
+    "rig": "idle"
+   },
+   {
+    "actor": "tortoise",
+    "at": [
+     1230,
+     850
+    ],
+    "scale": 0.95,
+    "flip": true,
+    "rig": "idle"
+   }
+  ]
+ },
+ "scenes": [
+  {
+   "narration": "In a green meadow at the edge of the woods, there lived a hare. He was quick, he was clever, and he was very, very proud.",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "center": [
+     [
+      960,
+      540
+     ],
+     [
+      900,
+      560
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1640,
+      210
+     ],
+     "scale": 0.85,
+     "rig": "glow"
+    },
+    {
+     "actor": "cloud",
+     "at": [
+      520,
+      200
+     ],
+     "anims": [
+      {
+       "type": "drift",
+       "amp": 40,
+       "period": 9
+      }
+     ]
+    },
+    {
+     "actor": "cloud_long",
+     "at": [
+      1120,
+      120
+     ],
+     "scale": 0.7,
+     "anims": [
+      {
+       "type": "drift",
+       "amp": 30,
+       "period": 11,
+       "phase": 0.4
+      }
+     ]
+    },
+    {
+     "actor": "tree_dark",
+     "at": [
+      140,
+      790
+     ],
+     "scale": 1.3,
+     "rig": "sway"
+    },
+    {
+     "actor": "tree",
+     "at": [
+      1790,
+      800
+     ],
+     "scale": 1.1,
+     "rig": "sway"
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      790
+     ]
+    },
+    {
+     "actor": "grass_tuft",
+     "rig": "sway",
+     "scatter": {
+      "n": 9,
+      "area": [
+       80,
+       830,
+       1840,
+       900
+      ],
+      "scale": [
+       0.7,
+       1.1
+      ],
+      "seed": 2
+     }
+    },
+    {
+     "actor": "flower_red",
+     "at": [
+      430,
+      880
+     ],
+     "rig": "sway"
+    },
+    {
+     "actor": "flower_purple",
+     "at": [
+      1450,
+      885
+     ],
+     "scale": 0.9,
+     "rig": "sway"
+    },
+    {
+     "actor": "hare",
+     "at": [
+      -320,
+      830
+     ],
+     "scale": 0.95,
+     "rig": [
+      {
+       "name": "run",
+       "on": "In a green meadow",
+       "until": "there lived a hare",
+       "end_offset": 0.6
+      },
+      {
+       "name": "idle",
+       "on": "there lived a hare",
+       "until": "@end",
+       "offset": 0.6
+      }
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "on": "In a green meadow",
+       "until": "there lived a hare",
+       "to": [
+        1120,
+        830
+       ],
+       "end_offset": 0.6,
+       "ease": "out"
+      },
+      {
+       "type": "nudge",
+       "on": "He was quick",
+       "d": [
+        0,
+        -50
+       ],
+       "for": 0.45
+      },
+      {
+       "type": "rotate",
+       "on": "very, very proud",
+       "to": -9,
+       "ease": "back",
+       "for": 0.6
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "head",
+       "type": "nudge",
+       "on": "he was clever",
+       "deg": -10,
+       "for": 0.8
+      },
+      {
+       "part": [
+        "ear_b",
+        "ear_f"
+       ],
+       "type": "rotate",
+       "on": "very, very proud",
+       "to": -10,
+       "for": 0.6
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "Every morning he raced the wind across the grass. \"Nobody in the whole wide world,\" he boasted, \"is as fast as me!\"",
+   "camera": {
+    "zoom": [
+     1.04,
+     1.0
+    ]
+   },
+   "items": [
+    {
+     "actor": "cloud",
+     "at": [
+      1500,
+      180
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        300,
+        180
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "cloud",
+     "at": [
+      2100,
+      300
+     ],
+     "scale": 0.7,
+     "seed": 3,
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        900,
+        300
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "bird_small",
+     "at": [
+      700,
+      260
+     ],
+     "rig": "flap",
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1300,
+        220
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "bird_small",
+     "at": [
+      620,
+      320
+     ],
+     "scale": 0.8,
+     "rig": "flap",
+     "seed": 2,
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1220,
+        290
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "hill",
+     "at": [
+      1350,
+      860
+     ],
+     "scale": [
+      1.2,
+      0.9
+     ],
+     "z": -2
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      820
+     ]
+    },
+    {
+     "actor": "grass_tuft",
+     "rig": "sway",
+     "scatter": {
+      "n": 10,
+      "area": [
+       60,
+       860,
+       1860,
+       905
+      ],
+      "scale": [
+       0.7,
+       1.0
+      ],
+      "seed": 5
+     }
+    },
+    {
+     "actor": "hare",
+     "at": [
+      -300,
+      840
+     ],
+     "rig": [
+      {
+       "name": "run",
+       "on": "raced the wind",
+       "until": "across the grass",
+       "end_offset": 0.6
+      }
+     ],
+     "anims": [
+      {
+       "type": "show",
+       "on": "@start",
+       "until": "Nobody in the whole",
+       "end_offset": -0.5,
+       "fade": 0.001
+      },
+      {
+       "type": "move",
+       "on": "raced the wind",
+       "until": "across the grass",
+       "to": [
+        2350,
+        840
+       ],
+       "ease": "linear",
+       "end_offset": 0.6
+      }
+     ]
+    },
+    {
+     "actor": "hare",
+     "at": [
+      -300,
+      840
+     ],
+     "rig": [
+      {
+       "name": "run",
+       "on": "Nobody in the whole",
+       "offset": -0.4,
+       "for": 1.3
+      },
+      {
+       "name": "idle",
+       "on": "Nobody in the whole",
+       "until": "@end",
+       "offset": 0.9
+      }
+     ],
+     "anims": [
+      {
+       "type": "show",
+       "on": "Nobody in the whole",
+       "until": "@end",
+       "offset": -0.4,
+       "fade": 0.001
+      },
+      {
+       "type": "move",
+       "on": "Nobody in the whole",
+       "to": [
+        900,
+        840
+       ],
+       "offset": -0.4,
+       "ease": "out",
+       "for": 1.3
+      },
+      {
+       "type": "rotate",
+       "on": "he boasted",
+       "to": -8,
+       "ease": "back",
+       "for": 0.5
+      },
+      {
+       "type": "nudge",
+       "on": "as fast as me",
+       "d": [
+        0,
+        -40
+       ],
+       "for": 0.4
+      },
+      {
+       "type": "nudge",
+       "on": "as fast as me",
+       "d": [
+        0,
+        -40
+       ],
+       "offset": 0.45,
+       "for": 0.4
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "mouth",
+       "type": "pulse",
+       "on": "Nobody in the whole",
+       "until": "@end",
+       "amp": 0.3,
+       "period": 0.3
+      }
+     ],
+     "reveal": [
+      "mouth"
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "One day, the hare met a tortoise plodding slowly along the path. \"Ha!\" he laughed. \"You are so slow, you will never get anywhere at all!\"",
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1700,
+      170
+     ],
+     "scale": 0.7,
+     "rig": "glow"
+    },
+    {
+     "actor": "pine",
+     "at": [
+      1500,
+      760
+     ],
+     "scale": 1.0,
+     "rig": "sway"
+    },
+    {
+     "actor": "tree",
+     "at": [
+      250,
+      770
+     ],
+     "scale": 1.15,
+     "rig": "sway"
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      760
+     ]
+    },
+    {
+     "part": {
+      "shape": "stroke",
+      "points": [
+       [
+        -200,
+        900
+       ],
+       [
+        500,
+        860
+       ],
+       [
+        1100,
+        890
+       ],
+       [
+        2200,
+        850
+       ]
+      ],
+      "width": 90,
+      "paint": "path",
+      "cap": "flat"
+     },
+     "detail": 0.9
+    },
+    {
+     "actor": "flower_yellow",
+     "at": [
+      180,
+      905
+     ],
+     "rig": "sway"
+    },
+    {
+     "actor": "tortoise",
+     "at": [
+      560,
+      880
+     ],
+     "scale": 0.95,
+     "rig": [
+      {
+       "name": "walk",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "on": "@start",
+       "until": "@end",
+       "to": [
+        790,
+        880
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "hare",
+     "at": [
+      1350,
+      875
+     ],
+     "flip": true,
+     "scale": 0.95,
+     "rig": [
+      {
+       "name": "idle",
+       "on": "@start",
+       "until": "Ha!"
+      },
+      {
+       "name": "laugh",
+       "on": "Ha!",
+       "until": "at all",
+       "end_offset": 0.5
+      }
+     ],
+     "anims": [
+      {
+       "type": "hop",
+       "on": "never get anywhere",
+       "height": 25,
+       "period": 0.45,
+       "for": 1.4
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "mouth",
+       "type": "show",
+       "on": "Ha!",
+       "until": "at all"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "The tortoise blinked her old, wise eyes. \"Slow I may be,\" she said, \"but I will race you, if you like.\"",
+   "camera": {
+    "zoom": [
+     1.32,
+     1.42
+    ],
+    "center": [
+     [
+      960,
+      640
+     ],
+     [
+      980,
+      650
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "tree",
+     "at": [
+      180,
+      780
+     ],
+     "scale": 1.15
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      760
+     ]
+    },
+    {
+     "part": {
+      "shape": "stroke",
+      "points": [
+       [
+        -200,
+        900
+       ],
+       [
+        500,
+        860
+       ],
+       [
+        1100,
+        890
+       ],
+       [
+        2200,
+        850
+       ]
+      ],
+      "width": 90,
+      "paint": "path",
+      "cap": "flat"
+     },
+     "detail": 0.9
+    },
+    {
+     "actor": "tortoise",
+     "at": [
+      770,
+      880
+     ],
+     "scale": 0.95,
+     "rig": [
+      {
+       "name": "idle",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "neck",
+       "type": "nudge",
+       "on": "blinked",
+       "deg": 8,
+       "for": 0.6
+      },
+      {
+       "part": "neck",
+       "type": "swing",
+       "on": "Slow I may be",
+       "deg": 4,
+       "period": 0.6,
+       "for": 1.2
+      },
+      {
+       "part": "neck",
+       "type": "rotate",
+       "on": "race you",
+       "to": -10,
+       "ease": "back",
+       "for": 0.5
+      }
+     ]
+    },
+    {
+     "actor": "hare",
+     "at": [
+      1240,
+      875
+     ],
+     "flip": true,
+     "scale": 0.95,
+     "rig": "idle",
+     "anims": [
+      {
+       "type": "rotate",
+       "on": "race you",
+       "to": -7,
+       "ease": "back",
+       "for": 0.4
+      },
+      {
+       "type": "hop",
+       "on": "if you like",
+       "height": 18,
+       "period": 0.45,
+       "offset": 0.4,
+       "for": 0.9
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "News of the race spread through the woods. All the animals came to watch, and the fox waved the flag: ready, steady, go!",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "center": [
+     [
+      960,
+      540
+     ],
+     [
+      960,
+      580
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "tree_dark",
+     "at": [
+      1720,
+      780
+     ],
+     "scale": 1.3,
+     "rig": "sway"
+    },
+    {
+     "actor": "bird_small",
+     "at": [
+      1640,
+      420
+     ],
+     "rig": "flap",
+     "anims": [
+      {
+       "type": "enter",
+       "on": "came to watch",
+       "from": [
+        2150,
+        300
+       ],
+       "offset": 0.0,
+       "ease": "out",
+       "for": 1.4
+      },
+      {
+       "type": "bob",
+       "amp": 10,
+       "period": 1.2
+      }
+     ]
+    },
+    {
+     "actor": "bird_small",
+     "at": [
+      1790,
+      380
+     ],
+     "rig": "flap",
+     "seed": 4,
+     "anims": [
+      {
+       "type": "enter",
+       "on": "came to watch",
+       "from": [
+        2150,
+        340
+       ],
+       "offset": 0.3,
+       "ease": "out",
+       "for": 1.4
+      },
+      {
+       "type": "bob",
+       "amp": 10,
+       "period": 1.4
+      }
+     ]
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      760
+     ]
+    },
+    {
+     "actor": "fox",
+     "at": [
+      300,
+      860
+     ],
+     "scale": 1.0,
+     "rig": [
+      {
+       "name": "idle",
+       "on": "@start",
+       "until": "waved the flag"
+      },
+      {
+       "name": "wave",
+       "on": "go!",
+       "until": "@end"
+      }
+     ],
+     "anims": [
+      {
+       "type": "hop",
+       "on": "go!",
+       "until": "@end",
+       "height": 18,
+       "period": 0.6
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "arm",
+       "type": "rotate",
+       "on": "ready",
+       "to": -25,
+       "ease": "out",
+       "for": 0.35
+      },
+      {
+       "part": "arm",
+       "type": "rotate",
+       "on": "steady",
+       "to": -45,
+       "ease": "out",
+       "for": 0.35
+      },
+      {
+       "part": "arm",
+       "type": "rotate",
+       "on": "go!",
+       "to": 30,
+       "ease": "back",
+       "for": 0.3
+      }
+     ]
+    },
+    {
+     "actor": "tortoise",
+     "at": [
+      770,
+      900
+     ],
+     "scale": 0.85,
+     "rig": "idle",
+     "part_anims": [
+      {
+       "part": "neck",
+       "type": "nudge",
+       "on": "steady",
+       "deg": -10,
+       "for": 0.8
+      }
+     ]
+    },
+    {
+     "actor": "hare",
+     "at": [
+      1100,
+      880
+     ],
+     "scale": 0.85,
+     "rig": "idle",
+     "anims": [
+      {
+       "type": "squash",
+       "on": "ready",
+       "until": "go!",
+       "amp": 0.06,
+       "period": 0.5
+      },
+      {
+       "type": "nudge",
+       "on": "steady",
+       "d": [
+        0,
+        12
+       ],
+       "for": 0.6
+      }
+     ]
+    },
+    {
+     "actor": "grass_tuft",
+     "rig": "sway",
+     "scatter": {
+      "n": 6,
+      "area": [
+       900,
+       860,
+       1600,
+       900
+      ],
+      "scale": [
+       0.7,
+       0.9
+      ],
+      "seed": 9
+     }
+    }
+   ]
+  },
+  {
+   "narration": "Whoosh! Off shot the hare, so fast that the flowers bent over in the wind. And off went the tortoise too: step, step, step.",
+   "items": [
+    {
+     "actor": "cloud",
+     "at": [
+      700,
+      210
+     ],
+     "anims": [
+      {
+       "type": "drift",
+       "amp": 30,
+       "period": 8
+      }
+     ]
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      780
+     ]
+    },
+    {
+     "actor": "flower_yellow",
+     "at": [
+      960,
+      880
+     ],
+     "rig": "sway",
+     "part_anims": [
+      {
+       "part": "stem",
+       "type": "swing",
+       "on": "flowers bent over",
+       "deg": 26,
+       "period": 0.5,
+       "offset": 0.0,
+       "for": 1.4
+      }
+     ]
+    },
+    {
+     "actor": "flower_red",
+     "at": [
+      1260,
+      870
+     ],
+     "rig": "sway",
+     "part_anims": [
+      {
+       "part": "stem",
+       "type": "swing",
+       "on": "flowers bent over",
+       "deg": 26,
+       "period": 0.5,
+       "offset": 0.15,
+       "for": 1.4
+      }
+     ]
+    },
+    {
+     "actor": "grass_tuft",
+     "rig": "sway",
+     "scatter": {
+      "n": 8,
+      "area": [
+       100,
+       840,
+       1800,
+       900
+      ],
+      "scale": [
+       0.7,
+       1.0
+      ],
+      "seed": 12
+     }
+    },
+    {
+     "actor": "hare",
+     "at": [
+      500,
+      860
+     ],
+     "rig": [
+      {
+       "name": "run",
+       "on": "Whoosh",
+       "for": 1.5
+      }
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "on": "Whoosh",
+       "to": [
+        2450,
+        820
+       ],
+       "ease": "in",
+       "for": 1.5
+      }
+     ]
+    },
+    {
+     "actor": "tortoise",
+     "at": [
+      260,
+      880
+     ],
+     "rig": [
+      {
+       "name": "walk",
+       "on": "off went the tortoise",
+       "until": "@end"
+      }
+     ],
+     "anims": [
+      {
+       "type": "by",
+       "on": "step",
+       "d": [
+        110,
+        0
+       ],
+       "for": 0.45
+      },
+      {
+       "type": "by",
+       "on": "step#2",
+       "d": [
+        110,
+        0
+       ],
+       "for": 0.45
+      },
+      {
+       "type": "by",
+       "on": "step#3",
+       "d": [
+        110,
+        0
+       ],
+       "for": 0.45
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "Soon the hare was far, far ahead. He looked back, and he could not even see the tortoise. \"I have plenty of time,\" he yawned. \"I think I'll take a little nap.\"",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.12
+    ],
+    "center": [
+     [
+      960,
+      540
+     ],
+     [
+      820,
+      600
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1600,
+      200
+     ],
+     "scale": 0.75,
+     "rig": "glow"
+    },
+    {
+     "actor": "hill",
+     "at": [
+      1500,
+      820
+     ],
+     "scale": [
+      1.0,
+      0.7
+     ],
+     "z": -2
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      790
+     ]
+    },
+    {
+     "actor": "tree",
+     "at": [
+      620,
+      830
+     ],
+     "scale": 1.6,
+     "rig": "sway"
+    },
+    {
+     "actor": "hare",
+     "at": [
+      -300,
+      860
+     ],
+     "scale": 0.9,
+     "reveal": [
+      "mouth"
+     ],
+     "rig": [
+      {
+       "name": "run",
+       "on": "@start",
+       "until": "far, far ahead",
+       "end_offset": 0.4
+      },
+      {
+       "name": "idle",
+       "on": "far, far ahead",
+       "until": "@end",
+       "offset": 0.4
+      }
+     ],
+     "anims": [
+      {
+       "type": "show",
+       "on": "@start",
+       "until": "little nap",
+       "offset": 0.2,
+       "fade": 0.001
+      },
+      {
+       "type": "move",
+       "on": "@start",
+       "until": "far, far ahead",
+       "to": [
+        880,
+        860
+       ],
+       "ease": "out",
+       "end_offset": 0.4
+      },
+      {
+       "type": "flip",
+       "on": "He looked back",
+       "for": 0.1
+      },
+      {
+       "type": "rotate",
+       "on": "he yawned",
+       "to": -8,
+       "for": 0.6
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "head",
+       "type": "nudge",
+       "on": "could not even see",
+       "deg": -8,
+       "for": 1.0
+      },
+      {
+       "part": "mouth",
+       "type": "show",
+       "on": "he yawned",
+       "for": 1.2
+      },
+      {
+       "part": "mouth",
+       "type": "pulse",
+       "on": "he yawned",
+       "amp": 0.4,
+       "period": 0.8,
+       "for": 1.2
+      }
+     ]
+    },
+    {
+     "actor": "hare_sleep",
+     "at": [
+      880,
+      870
+     ],
+     "scale": 0.9,
+     "flip": true,
+     "anims": [
+      {
+       "type": "show",
+       "on": "little nap",
+       "until": "@end",
+       "offset": 0.2,
+       "fade": 0.001
+      },
+      {
+       "type": "by",
+       "on": "little nap",
+       "d": [
+        0,
+        6
+       ],
+       "offset": 0.2,
+       "for": 0.5
+      },
+      {
+       "type": "pulse",
+       "on": "little nap",
+       "until": "@end",
+       "amp": 0.025,
+       "period": 2.6,
+       "offset": 0.7
+      }
+     ]
+    },
+    {
+     "actor": "flower_purple",
+     "at": [
+      1100,
+      890
+     ],
+     "scale": 0.85,
+     "rig": "sway"
+    }
+   ]
+  },
+  {
+   "narration": "The sun climbed high into the sky. The hare snored, and dreamed of winning. But the tortoise kept on walking: step, step, step.",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.04
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      300,
+      520
+     ],
+     "scale": 0.8,
+     "rig": "glow",
+     "anims": [
+      {
+       "type": "path",
+       "on": "The sun climbed",
+       "until": "into the sky",
+       "points": [
+        [
+         960,
+         150
+        ],
+        [
+         1640,
+         420
+        ]
+       ],
+       "ease": "linear",
+       "end_offset": 2.0
+      }
+     ]
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      780
+     ]
+    },
+    {
+     "actor": "tree",
+     "at": [
+      520,
+      820
+     ],
+     "scale": 1.6,
+     "rig": "sway"
+    },
+    {
+     "actor": "hare_sleep",
+     "at": [
+      760,
+      870
+     ],
+     "scale": 0.9,
+     "flip": true,
+     "anims": [
+      {
+       "type": "pulse",
+       "on": "@start",
+       "until": "@end",
+       "amp": 0.025,
+       "period": 2.6
+      },
+      {
+       "type": "pulse",
+       "on": "snored",
+       "amp": 0.05,
+       "period": 1.0,
+       "for": 2.0
+      }
+     ]
+    },
+    {
+     "part": {
+      "shape": "text",
+      "text": "z",
+      "font": "title",
+      "size": 56,
+      "paint": "sky"
+     },
+     "at": [
+      700,
+      640
+     ],
+     "anims": [
+      {
+       "type": "float_up",
+       "dist": 170,
+       "period": 2.4,
+       "dir": [
+        -0.4,
+        -1
+       ]
+      }
+     ]
+    },
+    {
+     "part": {
+      "shape": "text",
+      "text": "z",
+      "font": "title",
+      "size": 72,
+      "paint": "flower_purple"
+     },
+     "at": [
+      700,
+      640
+     ],
+     "anims": [
+      {
+       "type": "float_up",
+       "dist": 170,
+       "period": 2.4,
+       "phase": 0.5,
+       "dir": [
+        -0.4,
+        -1
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "tortoise",
+     "at": [
+      1380,
+      890
+     ],
+     "scale": 0.75,
+     "rig": [
+      {
+       "name": "walk",
+       "on": "kept on walking",
+       "until": "@end"
+      }
+     ],
+     "flip": false,
+     "anims": [
+      {
+       "type": "move",
+       "on": "kept on walking",
+       "to": [
+        1480,
+        890
+       ],
+       "ease": "linear",
+       "for": 1.2
+      },
+      {
+       "type": "by",
+       "on": "step",
+       "d": [
+        70,
+        0
+       ],
+       "for": 0.45
+      },
+      {
+       "type": "by",
+       "on": "step#2",
+       "d": [
+        70,
+        0
+       ],
+       "for": 0.45
+      },
+      {
+       "type": "by",
+       "on": "step#3",
+       "d": [
+        70,
+        0
+       ],
+       "for": 0.45
+      }
+     ]
+    },
+    {
+     "actor": "grass_tuft",
+     "rig": "sway",
+     "scatter": {
+      "n": 6,
+      "area": [
+       900,
+       850,
+       1880,
+       900
+      ],
+      "scale": [
+       0.6,
+       0.9
+      ],
+      "seed": 21
+     }
+    }
+   ]
+  },
+  {
+   "narration": "Past the pond, up the hill, and right past the sleeping hare she went. Step, step, step.",
+   "camera": {
+    "zoom": [
+     1.02,
+     1.08
+    ],
+    "center": [
+     [
+      900,
+      560
+     ],
+     [
+      1000,
+      560
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "cloud_long",
+     "at": [
+      1300,
+      180
+     ],
+     "scale": 0.8,
+     "anims": [
+      {
+       "type": "drift",
+       "amp": 25,
+       "period": 10
+      }
+     ]
+    },
+    {
+     "actor": "hill",
+     "at": [
+      1400,
+      880
+     ],
+     "scale": [
+      1.1,
+      1.0
+     ],
+     "z": -2
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      800
+     ]
+    },
+    {
+     "actor": "pond",
+     "at": [
+      470,
+      850
+     ],
+     "scale": 0.8
+    },
+    {
+     "actor": "tree",
+     "at": [
+      1180,
+      820
+     ],
+     "scale": 1.2,
+     "rig": "sway"
+    },
+    {
+     "actor": "hare_sleep",
+     "at": [
+      1330,
+      840
+     ],
+     "scale": 0.68,
+     "flip": true,
+     "anims": [
+      {
+       "type": "pulse",
+       "on": "@start",
+       "until": "@end",
+       "amp": 0.025,
+       "period": 2.6
+      }
+     ]
+    },
+    {
+     "part": {
+      "shape": "text",
+      "text": "z",
+      "font": "title",
+      "size": 50,
+      "paint": "sky"
+     },
+     "at": [
+      1300,
+      680
+     ],
+     "anims": [
+      {
+       "type": "float_up",
+       "dist": 140,
+       "period": 2.4,
+       "dir": [
+        -0.4,
+        -1
+       ]
+      }
+     ]
+    },
+    {
+     "actor": "tortoise",
+     "at": [
+      150,
+      860
+     ],
+     "scale": 0.72,
+     "rig": [
+      {
+       "name": "walk",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "on": "Past the pond",
+       "to": [
+        650,
+        900
+       ],
+       "ease": "inout",
+       "for": 1.6
+      },
+      {
+       "type": "move",
+       "on": "up the hill",
+       "to": [
+        1100,
+        905
+       ],
+       "ease": "inout",
+       "for": 1.6
+      },
+      {
+       "type": "move",
+       "on": "right past",
+       "until": "she went",
+       "to": [
+        1500,
+        905
+       ],
+       "ease": "inout",
+       "end_offset": 0.4
+      },
+      {
+       "type": "by",
+       "on": "Step",
+       "d": [
+        70,
+        -3
+       ],
+       "for": 0.45
+      },
+      {
+       "type": "by",
+       "on": "step",
+       "d": [
+        70,
+        -3
+       ],
+       "for": 0.45
+      },
+      {
+       "type": "by",
+       "on": "step#2",
+       "d": [
+        70,
+        -3
+       ],
+       "for": 0.45
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "When at last the hare woke up, the sun was going down. He leapt to his feet and ran as fast as he could!",
+   "background": "sunset_sky",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.05
+    ],
+    "shake": {
+     "amp": 5,
+     "on": "ran as fast",
+     "until": "@end"
+    }
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1500,
+      760
+     ],
+     "scale": 1.1,
+     "rig": "glow",
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1500,
+        820
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "hill",
+     "at": [
+      400,
+      880
+     ],
+     "scale": [
+      1.2,
+      0.8
+     ],
+     "z": -1,
+     "seed": 2
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      790
+     ]
+    },
+    {
+     "actor": "tree_dark",
+     "at": [
+      260,
+      830
+     ],
+     "scale": 1.3
+    },
+    {
+     "actor": "hare_sleep",
+     "at": [
+      480,
+      880
+     ],
+     "scale": 0.9,
+     "flip": true,
+     "anims": [
+      {
+       "type": "show",
+       "on": "@start",
+       "until": "woke up",
+       "fade": 0.001
+      },
+      {
+       "type": "pulse",
+       "on": "@start",
+       "until": "woke up",
+       "amp": 0.025,
+       "period": 2.6
+      }
+     ]
+    },
+    {
+     "actor": "hare",
+     "at": [
+      480,
+      870
+     ],
+     "scale": 0.9,
+     "rig": [
+      {
+       "name": "idle",
+       "on": "woke up",
+       "until": "ran as fast"
+      },
+      {
+       "name": "run",
+       "on": "ran as fast",
+       "until": "@end"
+      }
+     ],
+     "anims": [
+      {
+       "type": "show",
+       "on": "woke up",
+       "until": "@end",
+       "fade": 0.001
+      },
+      {
+       "type": "shake",
+       "on": "woke up",
+       "amp": 5,
+       "for": 0.5
+      },
+      {
+       "type": "hop",
+       "on": "leapt to his feet",
+       "height": 75,
+       "period": 0.8,
+       "for": 0.8
+      },
+      {
+       "type": "move",
+       "on": "ran as fast",
+       "until": "@end",
+       "to": [
+        2450,
+        860
+       ],
+       "ease": "in"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "But it was too late. The tortoise was already crossing the finish line, and all the animals cheered and cheered.",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "center": [
+     [
+      960,
+      560
+     ],
+     [
+      1060,
+      600
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1650,
+      330
+     ],
+     "scale": 0.9,
+     "rig": "glow",
+     "z": -5
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      780
+     ]
+    },
+    {
+     "actor": "finish",
+     "at": [
+      1150,
+      890
+     ],
+     "scale": 1.0
+    },
+    {
+     "actor": "fox",
+     "at": [
+      1650,
+      880
+     ],
+     "flip": true,
+     "scale": 0.9,
+     "rig": [
+      {
+       "name": "wave",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
+     "anims": [
+      {
+       "type": "hop",
+       "on": "cheered",
+       "until": "@end",
+       "height": 30,
+       "period": 0.6
+      }
+     ]
+    },
+    {
+     "actor": "bird_small",
+     "at": [
+      900,
+      300
+     ],
+     "rig": "flap",
+     "anims": [
+      {
+       "type": "bob",
+       "amp": 20,
+       "period": 0.9
+      }
+     ]
+    },
+    {
+     "actor": "bird_small",
+     "at": [
+      1350,
+      260
+     ],
+     "rig": "flap",
+     "seed": 3,
+     "anims": [
+      {
+       "type": "bob",
+       "amp": 16,
+       "period": 1.1
+      }
+     ]
+    },
+    {
+     "actor": "tortoise",
+     "at": [
+      820,
+      890
+     ],
+     "scale": 0.85,
+     "rig": [
+      {
+       "name": "walk",
+       "on": "@start",
+       "until": "finish line",
+       "end_offset": 0.5
+      }
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "on": "@start",
+       "until": "finish line",
+       "to": [
+        1260,
+        890
+       ],
+       "ease": "linear",
+       "end_offset": 0.5
+      }
+     ]
+    },
+    {
+     "part": {
+      "shape": "star",
+      "c": [
+       0,
+       0
+      ],
+      "r": [
+       9,
+       20
+      ],
+      "n": 5,
+      "paint": "red_cloth",
+      "shadow": 0.4
+     },
+     "scatter": {
+      "n": 9,
+      "area": [
+       800,
+       330,
+       1500,
+       640
+      ],
+      "seed": 3
+     },
+     "anims": [
+      {
+       "type": "pop",
+       "on": "cheered",
+       "for": 0.5
+      },
+      {
+       "type": "bob",
+       "amp": 12,
+       "period": 1.3
+      }
+     ]
+    },
+    {
+     "part": {
+      "shape": "star",
+      "c": [
+       0,
+       0
+      ],
+      "r": [
+       9,
+       20
+      ],
+      "n": 5,
+      "paint": "sky",
+      "shadow": 0.4
+     },
+     "scatter": {
+      "n": 9,
+      "area": [
+       780,
+       300,
+       1520,
+       640
+      ],
+      "seed": 8
+     },
+     "anims": [
+      {
+       "type": "pop",
+       "on": "cheered",
+       "for": 0.5
+      },
+      {
+       "type": "bob",
+       "amp": 12,
+       "period": 1.3
+      }
+     ]
+    },
+    {
+     "part": {
+      "shape": "star",
+      "c": [
+       0,
+       0
+      ],
+      "r": [
+       9,
+       20
+      ],
+      "n": 5,
+      "paint": "sun",
+      "shadow": 0.4
+     },
+     "scatter": {
+      "n": 9,
+      "area": [
+       760,
+       320,
+       1540,
+       660
+      ],
+      "seed": 13
+     },
+     "anims": [
+      {
+       "type": "pop",
+       "on": "cheered",
+       "for": 0.5
+      },
+      {
+       "type": "bob",
+       "amp": 12,
+       "period": 1.3
+      }
+     ]
+    },
+    {
+     "actor": "hare",
+     "at": [
+      -250,
+      870
+     ],
+     "scale": 0.85,
+     "rig": [
+      {
+       "name": "run",
+       "on": "too late",
+       "offset": -0.6,
+       "for": 1.8
+      },
+      {
+       "name": "idle",
+       "on": "too late",
+       "until": "@end",
+       "offset": 1.2
+      }
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "on": "too late",
+       "to": [
+        420,
+        870
+       ],
+       "offset": -0.6,
+       "ease": "out",
+       "for": 1.8
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "The hare hung his head. And the tortoise smiled a slow, kind smile. \"Slow and steady,\" she said, \"wins the race.\"",
+   "camera": {
+    "zoom": [
+     1.18,
+     1.3
+    ],
+    "center": [
+     [
+      960,
+      620
+     ],
+     [
+      960,
+      640
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      790
+     ]
+    },
+    {
+     "actor": "finish",
+     "at": [
+      1400,
+      890
+     ],
+     "scale": 1.0
+    },
+    {
+     "actor": "flower_purple",
+     "at": [
+      520,
+      900
+     ],
+     "rig": "sway"
+    },
+    {
+     "actor": "hare",
+     "at": [
+      760,
+      870
+     ],
+     "scale": 0.9,
+     "rig": [
+      {
+       "name": "idle",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
+     "part_anims": [
+      {
+       "part": [
+        "ear_b",
+        "ear_f"
+       ],
+       "type": "rotate",
+       "on": "hung his head",
+       "to": -55,
+       "ease": "inout",
+       "for": 0.9
+      },
+      {
+       "part": "head",
+       "type": "rotate",
+       "on": "hung his head",
+       "to": 16,
+       "ease": "inout",
+       "for": 0.9
+      }
+     ]
+    },
+    {
+     "actor": "tortoise",
+     "at": [
+      1160,
+      890
+     ],
+     "scale": 0.95,
+     "flip": true,
+     "rig": [
+      {
+       "name": "idle",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "neck",
+       "type": "nudge",
+       "on": "kind smile",
+       "deg": -8,
+       "for": 1.0
+      },
+      {
+       "part": "neck",
+       "type": "nudge",
+       "on": "Slow and steady",
+       "deg": 10,
+       "for": 0.6
+      },
+      {
+       "part": "neck",
+       "type": "nudge",
+       "on": "wins the race",
+       "deg": 10,
+       "for": 0.6
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "end_scene": {
+  "items": [
+   {
+    "actor": "ground",
+    "at": [
+     0,
+     860
+    ]
+   },
+   {
+    "actor": "tortoise",
+    "at": [
+     960,
+     870
+    ],
+    "scale": 0.8,
+    "rig": "walk",
+    "anims": [
+     {
+      "type": "move",
+      "to": [
+       1100,
+       870
+      ],
+      "t": [
+       0,
+       1
+      ],
+      "ease": "linear"
+     }
+    ]
+   }
+  ]
+ }
 }

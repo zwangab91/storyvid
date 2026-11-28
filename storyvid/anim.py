@@ -10,6 +10,7 @@ import math
 import numpy as np
 
 from .geometry import spline
+from .gait import curve_value
 
 
 def _back(p, k=1.70158):
@@ -146,8 +147,16 @@ def apply_anims(state: dict, anims: list, u: float, dur: float, seed: int = 0) -
             else:
                 fd = a.get("fade", 0.25) / max(dur, 1e-3)
                 st["op"] *= min(1.0, (u - t0) / fd if t0 > 0 else 1.0, (t1 - u) / fd if t1 < 1 else 1.0)
-        elif typ == "flip":
-            if u >= a.get("at", 0.5):
+        elif typ == "nudge":  # a gesture that goes and comes back, added on top of whatever else moves the part
+            p = _prog(a, u)    # (a staff lifted while walking): "deg" and/or "d" at its peak, mid-window
+            if 0.0 < p < 1.0:
+                k = math.sin(math.pi * p) ** float(a.get("sharp", 1.0))
+                st["rot"] += float(a.get("deg", 0.0)) * k
+                d = a.get("d", (0, 0))
+                st["x"] += d[0] * k
+                st["y"] += d[1] * k
+        elif typ == "flip":  # turn round at "at" (a scene fraction), or on the words (its "t" from a beat)
+            if u >= a.get("at", a["t"][0] if "t" in a else 0.5):
                 st["flip"] = not st["flip"]
         elif typ == "float_up":  # looping rise-and-fade (Zzz, bubbles, sparks)
             e, s0 = _env(a, u, dur)
@@ -197,6 +206,26 @@ def apply_anims(state: dict, anims: list, u: float, dur: float, seed: int = 0) -
                 n = _det_noise(s, seed + 17)
                 st["x"] += a.get("amp", 8) * n[0] * e
                 st["y"] += a.get("amp", 8) * n[1] * e
+        elif typ == "gait":  # keyed cycle (see gait.py), paced by how fast the item travels
+            e, s0 = _env(a, u, dur)
+            if e <= 0:
+                continue
+            ph0 = float(a.get("phase", 0.0))
+            cyc = a.get("_cyc")
+            if cyc is not None and not a.get("in_place"):
+                us, cs, ks = cyc
+                ph = float(np.interp(u, us, cs)) + ph0
+                e *= float(np.interp(u, us, ks))
+            else:
+                ph = (s - s0) / float(a.get("period", 1.0)) + ph0
+            val = curve_value(a["keys"], ph) * e * float(a.get("amp", 1.0))
+            ch = a.get("channel", "rot")
+            if ch == "rot":
+                st["rot"] += val
+            elif ch == "y":
+                st["y"] += val
+            elif ch == "x":
+                st["x"] += val
         elif typ in (None, "none"):
             pass
         else:

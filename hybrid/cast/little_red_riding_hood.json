@@ -516,6 +516,20 @@
     "cap_tail": "cap",
     "cap_pom": "cap",
     "cap_band": "cap"
+   },
+   "gaits": {
+    "walk": "quad_walk",
+    "run": "quad_run"
+   },
+   "roles": {
+    "hind_n": "leg_bf",
+    "hind_f": "leg_bb",
+    "fore_n": "leg_ff",
+    "fore_f": "leg_fb",
+    "ears": [
+     "ear_b",
+     "ear_f"
+    ]
    }
   },
   "pine": {
@@ -955,6 +969,399 @@
     "neck": "body",
     "apron": "body"
    }
+  },
+  "girl_side": {
+   "kind": "figure",
+   "sheet": "motion_art/cut/girl_side_parts",
+   "root": 1,
+   "fit": {
+    "height": 317
+   },
+   "anchor": [
+    0.5,
+    1.0
+   ],
+   "parts": {
+    "head": {
+     "piece": 0,
+     "pivot_at": [
+      0.62,
+      0.92
+     ],
+     "attach": [
+      0.5,
+      0.05
+     ],
+     "z": 2
+    },
+    "thigh_f": {
+     "piece": 7,
+     "pivot_at": [
+      0.45,
+      0.15
+     ],
+     "attach": [
+      0.47,
+      0.82
+     ],
+     "z": -4,
+     "shade": 0.8
+    },
+    "shin_f": {
+     "piece": 10,
+     "cap": "top",
+     "cap_extend": 0.45,
+     "on": "thigh_f",
+     "at_joint": [
+      0.5,
+      1.0
+     ],
+     "z": -5,
+     "shade": 0.8
+    },
+    "uarm_f": {
+     "piece": 3,
+     "turn": -20,
+     "pivot_at": [
+      0.45,
+      0.12
+     ],
+     "attach": [
+      0.47,
+      0.2
+     ],
+     "z": -2,
+     "shade": 0.8
+    },
+    "farm_f": {
+     "piece": 5,
+     "cap": "top",
+     "cap_extend": 0.45,
+     "on": "uarm_f",
+     "at_joint": [
+      0.5,
+      1.0
+     ],
+     "z": -3,
+     "shade": 0.8
+    },
+    "thigh_n": {
+     "piece": 6,
+     "pivot_at": [
+      0.45,
+      0.15
+     ],
+     "attach": [
+      0.52,
+      0.82
+     ],
+     "z": -1
+    },
+    "shin_n": {
+     "piece": 9,
+     "cap": "top",
+     "cap_extend": 0.45,
+     "on": "thigh_n",
+     "at_joint": [
+      0.5,
+      1.0
+     ],
+     "z": -1.5
+    },
+    "uarm_n": {
+     "piece": 2,
+     "turn": -23,
+     "pivot_at": [
+      0.45,
+      0.12
+     ],
+     "attach": [
+      0.52,
+      0.2
+     ],
+     "z": 3
+    },
+    "farm_n": {
+     "piece": 4,
+     "cap": "top",
+     "cap_extend": 0.45,
+     "on": "uarm_n",
+     "at_joint": [
+      0.5,
+      1.0
+     ],
+     "z": 4
+    },
+    "basket": {
+     "piece": 8,
+     "joint": false,
+     "pivot_at": [
+      0.5,
+      0.06
+     ],
+     "on": "farm_n",
+     "attach": [
+      0.5,
+      0.9
+     ],
+     "z": 5,
+     "scale": 0.8
+    }
+   },
+   "gaits": {
+    "walk": "biped_walk",
+    "run": "biped_run"
+   },
+   "gait_extra": {
+    "walk": [
+     [
+      "basket",
+      "shoulder",
+      "rot",
+      0.0,
+      -0.8
+     ]
+    ]
+   }
+  },
+  "woodcutter_side": {
+   "kind": "figure",
+   "sheet": "motion_art/cut/woodcutter_side_parts",
+   "root": 4,
+   "fit": {
+    "height": 402
+   },
+   "anchor": [
+    0.5,
+    1.0
+   ],
+   "parts": {
+    "head": {
+     "piece": 0,
+     "pivot_at": [
+      0.3,
+      0.96
+     ],
+     "attach": [
+      0.5,
+      0.06
+     ],
+     "z": 2
+    },
+    "thigh_f": {
+     "piece": 6,
+     "crop": [
+      0,
+      0,
+      1,
+      0.5
+     ],
+     "pivot_at": [
+      0.5,
+      0.08
+     ],
+     "attach": [
+      0.45,
+      0.9
+     ],
+     "z": -4,
+     "shade": 0.8
+    },
+    "shin_f": {
+     "piece": 6,
+     "crop": [
+      0,
+      0.33,
+      1,
+      1
+     ],
+     "cap": "top",
+     "on": "thigh_f",
+     "attach": [
+      0.47,
+      0.914
+     ],
+     "z": -5,
+     "shade": 0.8
+    },
+    "uarm_f": {
+     "piece": 3,
+     "clip": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       0.39
+      ],
+      [
+       0,
+       0.445
+      ]
+     ],
+     "pivot_at": [
+      0.5,
+      0.15
+     ],
+     "attach": [
+      0.45,
+      0.15
+     ],
+     "z": -2,
+     "shade": 0.8
+    },
+    "farm_f": {
+     "piece": 3,
+     "clip": [
+      [
+       0,
+       0.445
+      ],
+      [
+       1,
+       0.39
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "cap": "top",
+     "cap_extend": 0.45,
+     "on": "uarm_f",
+     "at_joint": [
+      0.5,
+      1.0
+     ],
+     "z": -3,
+     "shade": 0.8
+    },
+    "thigh_n": {
+     "piece": 5,
+     "crop": [
+      0,
+      0,
+      1,
+      0.5
+     ],
+     "pivot_at": [
+      0.5,
+      0.08
+     ],
+     "attach": [
+      0.55,
+      0.9
+     ],
+     "z": -1
+    },
+    "shin_n": {
+     "piece": 5,
+     "crop": [
+      0,
+      0.33,
+      1,
+      1
+     ],
+     "cap": "top",
+     "on": "thigh_n",
+     "attach": [
+      0.47,
+      0.914
+     ],
+     "z": -1.5
+    },
+    "uarm_n": {
+     "piece": 1,
+     "pivot_at": [
+      0.5,
+      0.15
+     ],
+     "attach": [
+      0.55,
+      0.15
+     ],
+     "z": 3
+    },
+    "farm_n": {
+     "piece": 2,
+     "cap": "left",
+     "on": "uarm_n",
+     "attach": [
+      0.5,
+      0.92
+     ],
+     "z": 4
+    }
+   },
+   "gaits": {
+    "walk": "biped_walk",
+    "run": "biped_run"
+   },
+   "gait_scale": {
+    "walk": {
+     "farm_n": [
+      "shoulder",
+      -0.7
+     ],
+     "uarm_n": 0.6
+    },
+    "run": {
+     "farm_n": [
+      "shoulder",
+      -0.85
+     ],
+     "uarm_n": 0.4
+    }
+   }
+  },
+  "girl_pick": {
+   "kind": "figure",
+   "sheet": "motion_art/cut/girl_pick",
+   "root": 0,
+   "root_id": "girl",
+   "fit": {
+    "height": 262
+   },
+   "anchor": [
+    0.4,
+    1.0
+   ],
+   "parts": {
+    "flowers": {
+     "piece": 1,
+     "joint": false,
+     "pivot_at": [
+      0.5,
+      1.0
+     ],
+     "attach": [
+      0.93,
+      0.951
+     ],
+     "z": 1
+    }
+   }
+  },
+  "wolf_leap": {
+   "kind": "prop",
+   "sheet": "motion_art/cut/wolf_leap",
+   "piece": 0,
+   "fit": {
+    "width": 680
+   },
+   "anchor": [
+    0.5,
+    0.85
+   ]
   }
  }
 }

@@ -1,396 +1,4599 @@
 {
-  "title": "Little Red Riding Hood",
-  "language": "en",
-  "voice": "af_heart",
-  "speed": 0.92,
-  "credit": "Retold from the Brothers Grimm",
-  "title_style": {"paints": "ink", "text_color": "#2b2a3a", "plate": "cream"},
-  "music": {"style": "musicbox", "seed": 11, "tempo": 80,
-            "prompt": "Charming European fairytale acoustic chamber music, gentle flute melody with light harp arpeggios, soft pizzicato cello footsteps, warm whimsical storybook mood, no vocals, 30 seconds loopable."},
-  "paints": {
-    "ink": {"colors": ["#2b2d3a", "#3f4356", "#15161e", "#3d5a8a", "#2d4a5e"], "style": "streaks"},
-    "wolf_fur": {"colors": ["#6d7a8f", "#8e9bb0", "#4a5468", "#a9b5c8", "#5c6e8c"], "style": "streaks"},
-    "wolf_dark": {"colors": ["#4d5769", "#646f84", "#363e4d", "#7a8699"], "style": "streaks"},
-    "wolf_belly": {"colors": ["#d9dde4", "#eef0f3", "#bfc5cf"], "style": "streaks"},
-    "wall": {"colors": ["#f6dc9c", "#f9e7b8", "#efcd85", "#fbefcf"], "style": "streaks", "angle": 90, "contrast": 0.3},
-    "floor": {"colors": ["#a66b38", "#b97b44", "#8f5a2e"], "style": "stripes", "period": 46, "angle": 90},
-    "patchwork": {"colors": ["#e8392f", "#f2c230", "#3f8fd4", "#4caf3b", "#f48fb1", "#8e5bd1", "#3a2a2a"], "style": "cells", "cells": 120},
-    "lace": {"colors": ["#ffffff", "#7aa6ee"], "style": "dots", "period": 26, "dot": 0.18},
-    "path": {"colors": ["#d9b47a", "#e8cb95", "#c09460", "#f0dcae"], "style": "dabs"},
-    "forest_floor": {"colors": ["#3f8a3a", "#5aa648", "#2a6a30", "#7fbf4f"], "style": "streaks", "angle": 70},
-    "bread": {"colors": ["#c98a3e", "#e0a85a", "#9c6224", "#f0c27a"], "style": "dabs"},
-    "honey_cake": {"colors": ["#f2b636", "#ffd56b", "#d98e1a"], "style": "stripes", "period": 22, "angle": 0},
-    "dusk_sky": {"colors": ["#f7c07e", "#f9d79b", "#f2a07a", "#fbe6b8"], "style": "streaks", "angle": 0, "contrast": 0.5}
+ "title": "Little Red Riding Hood",
+ "language": "en",
+ "voice": "af_heart",
+ "speed": 0.92,
+ "credit": "Retold from the Brothers Grimm",
+ "title_style": {
+  "paints": "ink",
+  "text_color": "#2b2a3a",
+  "plate": "cream"
+ },
+ "music": {
+  "style": "musicbox",
+  "seed": 11,
+  "tempo": 80,
+  "prompt": "Charming European fairytale acoustic chamber music, gentle flute melody with light harp arpeggios, soft pizzicato cello footsteps, warm whimsical storybook mood, no vocals, 30 seconds loopable."
+ },
+ "paints": {
+  "ink": {
+   "colors": [
+    "#2b2d3a",
+    "#3f4356",
+    "#15161e",
+    "#3d5a8a",
+    "#2d4a5e"
+   ],
+   "style": "streaks"
   },
-  "actors": {
-    "girl": {"character": "girl", "template": "person", "params": {"height": 330, "child": true, "hood": "red_cloth", "top": "blue_cloth", "apron": "white", "hair": "hair_brown", "hair_style": "bob", "holding": "basket"}},
-    "mother": {"character": "mother", "template": "person", "params": {"height": 420, "top": "green_cloth", "apron": "cream", "hair": "hair_brown", "hair_style": "bun", "facing": 0.5}},
-    "grandma": {"character": "grandma", "template": "person", "params": {"height": 390, "top": "flower_purple", "shawl": "red_cloth", "hair": "hair_white", "hair_style": "bun", "glasses": true, "skin": "skin_light"}},
-    "grandma_peek": {"character": "grandma", "template": "person", "params": {"height": 390, "top": "flower_purple", "hair": "hair_white", "hat": "nightcap", "hat_paint": "lace", "glasses": true, "facing": 0.8}},
-    "woodcutter": {"character": "woodcutter", "template": "person", "params": {"height": 450, "dress": false, "top": "plaid", "bottom": "blue_cloth", "beard": "hair_brown", "hair": "hair_brown", "hat": "cap", "hat_paint": "green_cloth", "holding": "axe", "skin": "skin_tan"}},
-    "wolf": {"character": "wolf",
-      "parts": [
-        {"id": "tail", "shape": "poly", "smooth": true, "points": [[-140, -170], [-200, -172], [-262, -132], [-284, -88], [-250, -100], [-200, -130], [-150, -140]], "paint": "wolf_fur", "pivot": [-145, -155]},
-        {"id": "tail_tip", "shape": "blob", "c": [-270, -98], "r": [22, 16], "paint": "fur_white", "parent": "tail", "shape_seed": 2},
-        {"id": "leg_bb", "shape": "stroke", "points": [[-115, -140], [-128, -70], [-112, -8]], "width": [34, 20], "paint": "wolf_dark", "pivot": [-115, -140]},
-        {"id": "leg_fb", "shape": "stroke", "points": [[95, -140], [100, -70], [108, -8]], "width": [30, 18], "paint": "wolf_dark", "pivot": [95, -140]},
-        {"id": "body", "shape": "ellipse", "c": [-15, -160], "r": [145, 68], "rot": -6, "paint": "wolf_fur", "pivot": [0, -150]},
-        {"id": "belly", "shape": "ellipse", "c": [-5, -118], "r": [105, 24], "rot": -4, "paint": "wolf_belly", "shadow": 0.4, "parent": "body"},
-        {"id": "leg_bf", "shape": "stroke", "points": [[-95, -150], [-85, -70], [-98, -8]], "width": [38, 22], "paint": "wolf_fur", "pivot": [-95, -150]},
-        {"id": "paw_b", "shape": "ellipse", "c": [-90, -8], "r": [22, 9], "paint": "wolf_dark", "parent": "leg_bf"},
-        {"id": "leg_ff", "shape": "stroke", "points": [[115, -150], [122, -70], [118, -8]], "width": [32, 20], "paint": "wolf_fur", "pivot": [115, -150]},
-        {"id": "paw_f", "shape": "ellipse", "c": [128, -8], "r": [22, 9], "paint": "wolf_dark", "parent": "leg_ff"},
-        {"id": "neck", "shape": "stroke", "points": [[90, -185], [140, -225], [160, -245]], "width": [84, 62], "paint": "wolf_fur", "pivot": [100, -190]},
-        {"id": "ear_b", "shape": "poly", "points": [[150, -282], [146, -345], [182, -292]], "paint": "wolf_dark", "parent": "head"},
-        {"id": "head", "shape": "poly", "smooth": true, "corners": [5], "points": [[120, -255], [140, -292], [190, -305], [232, -282], [300, -252], [314, -236], [300, -222], [240, -206], [175, -205], [130, -222]], "paint": "wolf_fur", "parent": "neck", "pivot": [150, -230]},
-        {"id": "ear_f", "shape": "poly", "points": [[172, -292], [186, -360], [216, -296]], "paint": "wolf_fur", "parent": "head", "pivot": [194, -296]},
-        {"id": "ear_in", "shape": "poly", "points": [[182, -298], [187, -340], [205, -300]], "paint": "pink", "parent": "ear_f", "shadow": 0.2},
-        {"id": "muzzle", "shape": "blob", "c": [252, -222], "r": [48, 17], "paint": "wolf_belly", "parent": "head", "shape_seed": 1},
-        {"id": "jaw_open", "shape": "poly", "smooth": true, "corners": [0], "points": [[304, -226], [240, -216], [222, -206], [252, -176], [298, -194]], "paint": "#7a1f2b", "parent": "head", "hidden": true},
-        {"id": "teeth", "shape": "poly", "points": [[304, -228], [242, -218], [246, -205], [254, -216], [262, -203], [270, -215], [278, -202], [286, -213], [294, -201], [300, -213]], "paint": "white", "parent": "head", "hidden": true, "shadow": 0.3},
-        {"id": "mouth_line", "shape": "stroke", "points": [[304, -227], [266, -215], [240, -219]], "width": 4, "paint": "#2a2a33", "parent": "head", "shadow": 0},
-        {"id": "eye", "shape": "circle", "c": [212, -266], "r": 11, "paint": "gold", "parent": "head", "pivot": [212, -266]},
-        {"id": "pupil", "shape": "circle", "c": [216, -266], "r": 5.5, "paint": "black", "parent": "eye", "shadow": 0},
-        {"id": "brow", "shape": "stroke", "points": [[194, -284], [214, -279], [232, -290]], "width": 5, "paint": "#2a2a33", "parent": "head", "shadow": 0},
-        {"id": "nose", "shape": "ellipse", "c": [309, -241], "r": [12, 9], "paint": "black", "parent": "head"},
-        {"id": "cap", "shape": "poly", "smooth": true, "corners": [0, 3], "points": [[126, -262], [148, -318], [215, -334], [252, -286]], "paint": "lace", "parent": "head", "hidden": true},
-        {"id": "cap_tail", "shape": "stroke", "points": [[150, -318], [108, -332], [78, -302]], "width": [30, 12], "paint": "lace", "parent": "head", "hidden": true},
-        {"id": "cap_pom", "shape": "circle", "c": [74, -297], "r": 12, "paint": "red_cloth", "parent": "head", "hidden": true},
-        {"id": "cap_band", "shape": "stroke", "points": [[122, -262], [190, -287], [254, -284]], "width": 14, "paint": "cream", "parent": "head", "hidden": true}
-      ],
-      "rigs": {
-        "idle": [
-          {"part": "tail", "type": "swing", "deg": 6, "period": 2.2},
-          {"part": "neck", "type": "swing", "deg": 2, "period": 2.6},
-          {"part": "eye", "type": "blink"}],
-        "sly": [
-          {"part": "tail", "type": "swing", "deg": 9, "period": 1.6},
-          {"part": "neck", "type": "swing", "deg": 4, "period": 1.6},
-          {"part": "brow", "type": "bob", "amp": 2, "period": 0.8},
-          {"part": "eye", "type": "blink", "period": 2.5}],
-        "walk": [
-          {"part": ["leg_bf", "leg_fb"], "type": "swing", "deg": 16, "period": 0.7},
-          {"part": ["leg_ff", "leg_bb"], "type": "swing", "deg": 16, "period": 0.7, "phase": 0.5},
-          {"part": "tail", "type": "swing", "deg": 8, "period": 0.7},
-          {"part": "eye", "type": "blink"}],
-        "run": [
-          {"part": ["leg_bf", "leg_bb"], "type": "swing", "deg": 34, "period": 0.36},
-          {"part": ["leg_ff", "leg_fb"], "type": "swing", "deg": 34, "period": 0.36, "phase": 0.5},
-          {"part": "tail", "type": "swing", "deg": 12, "period": 0.36},
-          {"part": "body", "type": "squash", "amp": 0.04, "period": 0.36},
-          {"part": ["ear_f", "ear_b"], "type": "swing", "deg": 6, "period": 0.36}],
-        "bed": [
-          {"part": "neck", "type": "swing", "deg": 2, "period": 3.0},
-          {"part": "eye", "type": "blink", "period": 2.8}]
-      }
-    },
-    "bed": {"character": false,
-      "parts": [
-        {"id": "headboard", "shape": "rect", "c": [-150, -250], "size": [120, 330], "radius": 40, "paint": "wood"},
-        {"id": "footboard", "shape": "rect", "c": [200, -160], "size": [60, 200], "radius": 26, "paint": "wood"},
-        {"id": "mattress", "shape": "rect", "c": [20, -110], "size": [400, 70], "radius": 14, "paint": "cream"},
-        {"id": "leg_l", "shape": "rect", "c": [-160, -30], "size": [26, 60], "paint": "wood"},
-        {"id": "leg_r", "shape": "rect", "c": [200, -30], "size": [26, 60], "paint": "wood"},
-        {"id": "pillow", "shape": "ellipse", "c": [-90, -158], "r": [70, 34], "paint": "white"}
-      ]
-    },
-    "quilt": {"character": false,
-      "parts": [
-        {"id": "quilt", "shape": "rect", "c": [40, -112], "size": [350, 122], "radius": 18, "paint": "patchwork", "tex_scale": 0.8},
-        {"id": "sheet", "shape": "rect", "c": [40, -168], "size": [352, 24], "radius": 10, "paint": "white"}
-      ]
-    },
-    "wardrobe": {"character": false,
-      "parts": [
-        {"id": "top", "shape": "rect", "c": [0, -560], "size": [340, 34], "radius": 6, "paint": "wood"},
-        {"id": "body", "shape": "rect", "c": [0, -280], "size": [300, 540], "radius": 8, "paint": {"preset": "wood", "colors": ["#8a5530", "#a36a3c", "#6a3e20"]}},
-        {"id": "inside", "shape": "rect", "c": [0, -282], "size": [262, 490], "paint": {"colors": ["#3b2a1a", "#4a3522", "#2a1d10"], "style": "flat"}, "shadow": 0}
-      ]
-    },
-    "wardrobe_doors": {"character": false,
-      "parts": [
-        {"id": "door_l", "shape": "rect", "c": [-64, -282], "size": [134, 490], "radius": 6, "paint": "wood"},
-        {"id": "panel_l", "shape": "rect", "c": [-64, -282], "size": [90, 400], "radius": 12, "paint": {"preset": "wood", "colors": ["#b67a42", "#cf955a", "#8d5a2c"]}, "shadow": 0.5},
-        {"id": "door_r", "shape": "rect", "c": [92, -282], "size": [80, 490], "radius": 6, "paint": "wood"},
-        {"id": "knob_l", "shape": "circle", "c": [-10, -280], "r": 9, "paint": "gold"},
-        {"id": "knob_r", "shape": "circle", "c": [62, -280], "r": 9, "paint": "gold"}
-      ]
-    },
-    "window": {"character": false,
-      "parts": [
-        {"id": "frame", "shape": "rect", "c": [0, 0], "size": [290, 240], "radius": 8, "paint": "wood"},
-        {"id": "glass", "shape": "rect", "c": [0, 0], "size": [246, 196], "paint": "sky", "shadow": 0.3},
-        {"id": "tree_far", "shape": "blob", "c": [60, 50], "r": [80, 60], "paint": "leaf", "shadow": 0, "shape_seed": 4},
-        {"id": "bar_v", "shape": "rect", "c": [0, 0], "size": [12, 196], "paint": "wood"},
-        {"id": "bar_h", "shape": "rect", "c": [0, 0], "size": [246, 12], "paint": "wood"},
-        {"id": "curtain_l", "shape": "poly", "smooth": true, "corners": [0, 1], "points": [[-170, -140], [-90, -140], [-120, -20], [-110, 130], [-175, 130]], "paint": "red_cloth"},
-        {"id": "curtain_r", "shape": "poly", "smooth": true, "corners": [0, 1], "points": [[170, -140], [90, -140], [120, -20], [110, 130], [175, 130]], "paint": "red_cloth"}
-      ]
-    },
-    "window_bars": {"character": false,
-      "parts": [
-        {"id": "bar_v", "shape": "rect", "c": [0, 0], "size": [12, 92], "paint": "wood"},
-        {"id": "bar_h", "shape": "rect", "c": [0, 0], "size": [112, 12], "paint": "wood"}
-      ]
-    },
-    "table": {"character": false,
-      "parts": [
-        {"id": "leg_l", "shape": "rect", "c": [-180, -95], "size": [26, 190], "paint": "wood"},
-        {"id": "leg_r", "shape": "rect", "c": [180, -95], "size": [26, 190], "paint": "wood"},
-        {"id": "cloth", "shape": "poly", "smooth": true, "corners": [0, 1], "points": [[-240, -210], [240, -210], [255, -150], [0, -165], [-255, -150]], "paint": {"colors": ["#ffffff", "#d7262e"], "style": "stripes", "period": 22, "angle": 45}},
-        {"id": "plate", "shape": "ellipse", "c": [60, -214], "r": [80, 14], "paint": "white"},
-        {"id": "cake", "shape": "rect", "c": [60, -250], "size": [110, 64], "radius": 10, "paint": "honey_cake"},
-        {"id": "icing", "shape": "ellipse", "c": [60, -282], "r": [58, 12], "paint": "cream"},
-        {"id": "cherry", "shape": "circle", "c": [60, -296], "r": 11, "paint": "red_cloth"},
-        {"id": "bread", "shape": "ellipse", "c": [-120, -236], "r": [72, 34], "paint": "bread"},
-        {"id": "crust", "shape": "stroke", "points": [[-160, -250], [-140, -240]], "width": 5, "paint": "#8a5524", "shadow": 0},
-        {"id": "crust2", "shape": "stroke", "points": [[-128, -258], [-108, -246]], "width": 5, "paint": "#8a5524", "shadow": 0},
-        {"id": "crust3", "shape": "stroke", "points": [[-96, -258], [-76, -246]], "width": 5, "paint": "#8a5524", "shadow": 0}
-      ]
-    }
+  "wolf_fur": {
+   "colors": [
+    "#6d7a8f",
+    "#8e9bb0",
+    "#4a5468",
+    "#a9b5c8",
+    "#5c6e8c"
+   ],
+   "style": "streaks"
   },
-  "title_scene": {
-    "items": [
-      {"actor": "ground", "at": [0, 860], "seed": 3},
-      {"actor": "pine", "at": [220, 880], "scale": 0.9, "rig": "sway"},
-      {"actor": "pine", "at": [1720, 880], "scale": 1.0, "rig": "sway", "seed": 2},
-      {"actor": "flower_red", "at": [1450, 900], "scale": 0.8, "rig": "sway"},
-      {"actor": "girl", "at": [960, 900], "scale": 1.05, "rig": "idle"}
-    ]
+  "wolf_dark": {
+   "colors": [
+    "#4d5769",
+    "#646f84",
+    "#363e4d",
+    "#7a8699"
+   ],
+   "style": "streaks"
   },
-  "scenes": [
-    {
-      "narration": "Once upon a time, at the edge of a great forest, there lived a little girl. Her grandmother had sewn her a bright red riding hood, and she loved it so much that she wore it every single day. And so everyone called her Little Red Riding Hood.",
-      "camera": {"zoom": [1.0, 1.06], "center": [[960, 540], [1000, 560]]},
-      "items": [
-        {"actor": "sun", "at": [1660, 190], "scale": 0.75, "rig": "glow"},
-        {"actor": "cloud", "at": [800, 170], "anims": [{"type": "drift", "amp": 30, "period": 10}]},
-        {"actor": "pine", "at": [1780, 830], "scale": 1.2, "rig": "sway"},
-        {"actor": "ground", "at": [0, 820]},
-        {"actor": "cottage", "at": [520, 860], "scale": 1.05},
-        {"actor": "tree", "at": [150, 850], "scale": 1.1, "rig": "sway"},
-        {"actor": "flower_red", "at": [820, 890], "scale": 0.8, "rig": "sway"},
-        {"actor": "flower_yellow", "at": [1420, 895], "scale": 0.8, "rig": "sway"},
-        {"actor": "girl", "at": [1130, 905], "scale": 1.1, "rig": ["idle"], "hide": ["basket", "basket_handle", "basket_cloth"],
-         "anims": [{"type": "hop", "height": 16, "period": 0.5, "t": [0.55, 0.75]}]}
-      ]
-    },
-    {
-      "narration": "One morning, her mother packed a basket with fresh bread and sweet honey cake. \"Take this to Grandmother, who is feeling poorly,\" she said. \"Stay on the path, and do not stop to talk to strangers.\"",
-      "camera": {"zoom": [1.12, 1.2], "center": [[900, 600], [920, 620]]},
-      "items": [
-        {"actor": "ground", "at": [0, 820]},
-        {"actor": "cottage", "at": [420, 860], "scale": 1.15},
-        {"actor": "mother", "at": [800, 905], "rig": "talk", "reveal": ["mouth_open"], "hide": ["mouth"]},
-        {"actor": "girl", "at": [1120, 905], "scale": 1.1, "rig": "idle",
-         "anims": [{"type": "hop", "height": 10, "period": 0.8, "t": [0.8, 1.0]}]},
-        {"actor": "flower_purple", "at": [1400, 890], "scale": 0.8, "rig": "sway"}
-      ]
-    },
-    {
-      "narration": "So off she went, down the winding path into the woods, swinging her basket and humming a happy little song.",
-      "camera": {"zoom": [1.0, 1.04]},
-      "items": [
-        {"actor": "bird_small", "at": [500, 240], "rig": "flap", "anims": [{"type": "move", "to": [1400, 200], "t": [0, 1], "ease": "linear"}]},
-        {"actor": "pine", "at": [180, 760], "scale": 1.1, "rig": "sway"},
-        {"actor": "pine", "at": [720, 720], "scale": 0.8, "rig": "sway"},
-        {"actor": "pine", "at": [1280, 730], "scale": 0.9, "rig": "sway"},
-        {"actor": "tree_dark", "at": [1700, 760], "scale": 1.1, "rig": "sway"},
-        {"actor": "ground", "at": [0, 740], "seed": 7},
-        {"part": {"shape": "stroke", "points": [[-200, 930], [400, 880], [900, 905], [1400, 860], [2200, 880]], "width": 100, "paint": "path", "cap": "flat"}, "detail": 0.9},
-        {"actor": "flower_red", "at": [600, 830], "scale": 0.7, "rig": "sway"},
-        {"actor": "flower_yellow", "at": [1150, 820], "scale": 0.7, "rig": "sway"},
-        {"actor": "girl", "at": [150, 900], "scale": 0.95, "rig": "walk",
-         "anims": [{"type": "move", "to": [1500, 880], "t": [0, 1], "ease": "linear"}, {"type": "bob", "amp": 5, "period": 0.31}],
-         "part_anims": [{"part": "arm_r", "type": "swing", "deg": 14, "period": 0.62}]}
-      ]
-    },
-    {
-      "narration": "Deep in the woods, a wolf slipped out from behind a tree. \"Good morning, little one,\" he said, with a sly smile. \"And where are you going today?\"",
-      "camera": {"zoom": [1.0, 1.08], "center": [[960, 560], [1000, 600]]},
-      "items": [
-        {"actor": "pine", "at": [100, 730], "scale": 1.2, "seed": 5},
-        {"actor": "pine", "at": [560, 700], "scale": 0.9, "seed": 6},
-        {"actor": "tree_dark", "at": [1800, 760], "scale": 1.3, "rig": "sway"},
-        {"actor": "ground", "at": [0, 720], "seed": 9},
-        {"part": {"shape": "stroke", "points": [[-200, 920], [600, 890], [1300, 900], [2200, 880]], "width": 100, "paint": "path", "cap": "flat"}, "detail": 0.9},
-        {"actor": "wolf", "at": [1550, 880], "flip": true, "scale": 0.95, "rig": "sly",
-         "anims": [{"type": "move", "to": [1230, 880], "t": [0.05, 0.35], "ease": "out"}]},
-        {"actor": "tree_dark", "at": [1560, 900], "scale": 1.5, "rig": "sway", "seed": 11},
-        {"actor": "girl", "at": [640, 905], "rig": "idle", "anims": [{"type": "rotate", "to": -4, "t": [0.4, 0.6]}]}
-      ]
-    },
-    {
-      "narration": "\"To my grandmother's house, at the very end of the path,\" said Little Red Riding Hood. \"Then why not pick her some flowers?\" said the wolf. \"See how pretty they are!\"",
-      "camera": {"zoom": [1.05, 1.12], "center": [[960, 600], [940, 620]]},
-      "items": [
-        {"actor": "tree_dark", "at": [1750, 760], "scale": 1.2, "rig": "sway"},
-        {"actor": "ground", "at": [0, 760], "seed": 13},
-        {"actor": "flower_red", "rig": "sway", "scatter": {"n": 5, "area": [150, 860, 600, 930], "scale": [0.7, 0.95], "seed": 4, "min_dist": 80}},
-        {"actor": "flower_purple", "rig": "sway", "scatter": {"n": 4, "area": [160, 850, 620, 930], "scale": [0.6, 0.9], "seed": 7, "min_dist": 80}},
-        {"actor": "flower_yellow", "rig": "sway", "scatter": {"n": 4, "area": [140, 860, 600, 930], "scale": [0.7, 0.9], "seed": 9, "min_dist": 80}},
-        {"actor": "girl", "at": [860, 905], "rig": "talk", "reveal": ["mouth_open"], "hide": ["mouth"],
-         "part_anims": [{"part": "mouth_open", "type": "show", "t": [0.0, 0.4]}]},
-        {"actor": "wolf", "at": [1350, 890], "flip": true, "rig": "sly",
-         "part_anims": [{"part": "neck", "type": "rotate", "to": 10, "t": [0.5, 0.65]}]}
-      ]
-    },
-    {
-      "narration": "And while she gathered flowers, the wolf raced ahead to Grandmother's house, as fast as his legs could carry him.",
-      "items": [
-        {"actor": "pine", "at": [1100, 720], "scale": 0.9, "rig": "sway"},
-        {"actor": "pine", "at": [1550, 740], "scale": 1.1, "rig": "sway"},
-        {"actor": "ground", "at": [0, 760], "seed": 17},
-        {"part": {"shape": "stroke", "points": [[700, 960], [1100, 890], [1500, 870], [2200, 860]], "width": 90, "paint": "path", "cap": "flat"}, "detail": 0.9},
-        {"actor": "flower_red", "rig": "sway", "scatter": {"n": 5, "area": [80, 850, 620, 930], "scale": [0.7, 0.95], "seed": 14, "min_dist": 80}},
-        {"actor": "flower_yellow", "rig": "sway", "scatter": {"n": 4, "area": [80, 850, 620, 930], "scale": [0.7, 0.9], "seed": 19, "min_dist": 80}},
-        {"actor": "girl", "at": [400, 905], "scale": 0.9, "rig": "idle", "anims": [{"type": "rotate", "to": 8, "t": [0.1, 0.3]}]},
-        {"actor": "wolf", "at": [900, 900], "scale": 0.8, "rig": "run",
-         "anims": [{"type": "move", "to": [2300, 840], "t": [0.1, 0.65], "ease": "in"}, {"type": "hop", "height": 30, "period": 0.36}]}
-      ]
-    },
-    {
-      "narration": "He knocked on the door: knock, knock, knock. But when Grandmother peeked out of the window and saw his long, sharp teeth, she hid inside the wardrobe!",
-      "camera": {"zoom": [1.15, 1.22], "center": [[1000, 600], [1000, 610]]},
-      "items": [
-        {"actor": "pine", "at": [1650, 800], "scale": 1.1, "rig": "sway"},
-        {"actor": "ground", "at": [0, 820], "seed": 21},
-        {"actor": "cottage", "at": [900, 870], "scale": 1.25},
-        {"actor": "grandma_peek", "at": [1004, 872], "scale": 0.62, "z": 1,
-         "hide": ["leg_l", "leg_r", "shoe_l", "shoe_r", "body", "arm_l", "arm_r", "hand_l", "hand_r", "neck"],
-         "anims": [{"type": "show", "t": [0.3, 0.72]}, {"type": "move", "to": [1030, 900], "t": [0.6, 0.72]}],
-         "part_anims": [{"part": "mouth_open", "type": "show", "t": [0.5, 1.0]}], "reveal": ["mouth_open"]},
-        {"actor": "window_bars", "at": [1012, 682], "z": 2},
-        {"actor": "wolf", "at": [600, 905], "scale": 0.85, "rig": "idle", "z": 3,
-         "part_anims": [{"part": "neck", "type": "swing", "deg": 6, "period": 0.35, "t": [0.0, 0.3]}]}
-      ]
-    },
-    {
-      "narration": "Then the wolf put on Grandmother's nightcap, climbed into her bed, and pulled the blanket right up to his nose.",
-      "background": "wall",
-      "camera": {"zoom": [1.0, 1.06], "center": [[960, 560], [1040, 580]]},
-      "items": [
-        {"part": {"shape": "rect", "xywh": [-200, 860, 2320, 400], "paint": "floor", "edge": "clean", "shadow": 0, "tex_rot": 0}},
-        {"actor": "window", "at": [1600, 380]},
-        {"actor": "wardrobe", "at": [330, 880]},
-        {"actor": "grandma_peek", "at": [360, 796], "scale": 0.8, "rig": "idle"},
-        {"actor": "wardrobe_doors", "at": [330, 880]},
-        {"actor": "bed", "at": [1160, 880], "scale": 1.15},
-        {"actor": "wolf", "at": [760, 900], "scale": 0.82, "rot": -8, "rig": "bed", "reveal": ["cap", "cap_tail", "cap_pom", "cap_band"],
-         "hide": ["tail", "tail_tip", "leg_bb", "leg_fb", "leg_bf", "leg_ff", "paw_b", "paw_f", "body", "belly"],
-         "anims": [{"type": "move", "to": [900, 845], "t": [0.0, 0.5], "ease": "inout"}]},
-        {"actor": "quilt", "at": [1160, 880], "scale": 1.15, "anims": [{"type": "move", "to": [1160, 868], "t": [0.5, 0.8]}]}
-      ]
-    },
-    {
-      "narration": "Soon Little Red Riding Hood knocked, and came inside. \"Oh, Grandmother,\" she said, \"what big ears you have!\" \"All the better to hear you with, my dear.\"",
-      "background": "wall",
-      "camera": {"zoom": [1.05, 1.12], "center": [[1000, 580], [1020, 600]]},
-      "items": [
-        {"part": {"shape": "rect", "xywh": [-200, 860, 2320, 400], "paint": "floor", "edge": "clean", "shadow": 0, "tex_rot": 0}},
-        {"actor": "window", "at": [1600, 380]},
-        {"actor": "bed", "at": [1160, 880], "scale": 1.15},
-        {"actor": "wolf", "at": [900, 845], "scale": 0.82, "rot": -8, "rig": "bed", "reveal": ["cap", "cap_tail", "cap_pom", "cap_band"],
-         "hide": ["tail", "tail_tip", "leg_bb", "leg_fb", "leg_bf", "leg_ff", "paw_b", "paw_f", "body", "belly"],
-         "part_anims": [{"part": ["ear_f", "ear_b"], "type": "scale", "to": 1.45, "t": [0.55, 0.7], "ease": "back"}]},
-        {"actor": "quilt", "at": [1160, 868], "scale": 1.15},
-        {"actor": "girl", "at": [560, 905], "rig": "idle", "anims": [{"type": "move", "to": [680, 905], "t": [0, 0.25]}]}
-      ]
-    },
-    {
-      "narration": "\"Grandmother, what big eyes you have!\" \"All the better to see you with, my dear.\"",
-      "background": "wall",
-      "camera": {"zoom": [1.9, 2.05], "center": [[1040, 650], [1050, 645]]},
-      "items": [
-        {"actor": "window", "at": [1600, 380]},
-        {"actor": "bed", "at": [1160, 880], "scale": 1.15},
-        {"actor": "wolf", "at": [900, 845], "scale": 0.82, "rot": -8, "rig": "bed", "reveal": ["cap", "cap_tail", "cap_pom", "cap_band"],
-         "hide": ["tail", "tail_tip", "leg_bb", "leg_fb", "leg_bf", "leg_ff", "paw_b", "paw_f", "body", "belly"],
-         "part_anims": [{"part": ["ear_f", "ear_b"], "type": "scale", "to": 1.45, "t": [0, 0.01]}, {"part": "eye", "type": "scale", "to": 1.7, "t": [0.45, 0.6], "ease": "back"}]},
-        {"actor": "quilt", "at": [1160, 868], "scale": 1.15}
-      ]
-    },
-    {
-      "narration": "\"And Grandmother, what big teeth you have!\" \"All the better to EAT you with!\" And out of the bed leapt the wolf!",
-      "background": "wall",
-      "camera": {"zoom": [1.05, 1.0], "shake": {"amp": 9, "t": [0.62, 0.9]}},
-      "items": [
-        {"part": {"shape": "rect", "xywh": [-200, 860, 2320, 400], "paint": "floor", "edge": "clean", "shadow": 0, "tex_rot": 0}},
-        {"actor": "window", "at": [1600, 380]},
-        {"actor": "bed", "at": [1160, 880], "scale": 1.15},
-        {"actor": "wolf", "at": [900, 845], "scale": 0.82, "rot": -8, "rig": "bed",
-         "reveal": ["cap", "cap_tail", "cap_pom", "cap_band", "jaw_open", "teeth"], "hide": ["mouth_line", "tail", "tail_tip", "leg_bb", "leg_fb", "leg_bf", "leg_ff", "paw_b", "paw_f", "body", "belly"],
-         "anims": [{"type": "show", "t": [0, 0.6], "fade": 0.05}],
-         "part_anims": [{"part": ["jaw_open", "teeth"], "type": "show", "t": [0.35, 1.0]}]},
-        {"actor": "quilt", "at": [1160, 868], "scale": 1.15, "anims": [{"type": "rotate", "to": 12, "t": [0.6, 0.7]}, {"type": "move", "to": [1260, 900], "t": [0.6, 0.7]}]},
-        {"actor": "wolf", "at": [1000, 900], "flip": true, "scale": 0.9, "rig": "run", "reveal": ["cap", "cap_tail", "cap_pom", "cap_band", "jaw_open", "teeth"], "hide": ["mouth_line"],
-         "anims": [{"type": "show", "t": [0.6, 1.0], "fade": 0.05}, {"type": "hop", "height": 90, "period": 0.8, "t": [0.6, 0.8]}, {"type": "move", "to": [880, 900], "t": [0.6, 0.85]}]},
-        {"actor": "girl", "at": [560, 905], "rig": "idle", "anims": [{"type": "move", "to": [430, 905], "t": [0.62, 0.75]}],
-         "part_anims": [{"part": "arm_l", "type": "rotate", "to": 125, "t": [0.62, 0.7]}, {"part": "head", "type": "swing", "deg": 5, "period": 0.2, "t": [0.62, 1.0]}]}
-      ]
-    },
-    {
-      "narration": "Little Red Riding Hood screamed so loudly that a woodcutter, chopping wood nearby, came running through the door with his axe!",
-      "background": "wall",
-      "camera": {"zoom": [1.0, 1.04], "shake": {"amp": 4, "t": [0.0, 0.25]}},
-      "items": [
-        {"part": {"shape": "rect", "xywh": [-200, 860, 2320, 400], "paint": "floor", "edge": "clean", "shadow": 0, "tex_rot": 0}},
-        {"part": {"shape": "rect", "c": [140, 560], "size": [240, 640], "paint": {"colors": ["#9fd3f2", "#6fb7e9"], "style": "streaks"}, "edge": "clean", "shadow": 0.6}},
-        {"actor": "window", "at": [1600, 380]},
-        {"actor": "bed", "at": [1660, 880], "scale": 1.0},
-        {"actor": "woodcutter", "at": [-200, 905], "rig": "run",
-         "anims": [{"type": "move", "to": [480, 905], "t": [0.25, 0.55], "ease": "out"}, {"type": "hop", "height": 22, "period": 0.36, "t": [0.25, 0.55]}]},
-        {"actor": "wolf", "at": [1150, 900], "flip": true, "scale": 0.9, "rig": "idle", "reveal": ["cap", "cap_tail", "cap_pom", "cap_band"],
-         "anims": [{"type": "flip", "at": 0.55}, {"type": "hop", "height": 40, "period": 0.5, "t": [0.55, 0.7]}]},
-        {"actor": "girl", "at": [820, 905], "rig": "scared", "reveal": ["mouth_open"], "hide": ["mouth"]}
-      ]
-    },
-    {
-      "narration": "The wolf took one look at the woodcutter, leapt out of the window, and ran deep, deep into the forest. And he was never seen again.",
-      "items": [
-        {"actor": "pine", "at": [1700, 720], "scale": 0.7, "rig": "sway"},
-        {"actor": "pine", "at": [1400, 700], "scale": 0.6, "rig": "sway"},
-        {"actor": "tree_dark", "at": [1900, 760], "scale": 0.8},
-        {"actor": "ground", "at": [0, 720], "seed": 23},
-        {"actor": "cottage", "at": [330, 880], "scale": 1.1},
-        {"actor": "wolf", "at": [620, 870], "scale": 0.9, "rig": "run", "reveal": ["cap", "cap_tail", "cap_pom", "cap_band"],
-         "anims": [{"type": "move", "to": [1600, 740], "t": [0.05, 0.75], "ease": "linear"}, {"type": "scale", "to": 0.25, "t": [0.05, 0.75], "ease": "linear"}, {"type": "hop", "height": 30, "period": 0.36}, {"type": "fade", "to": 0, "t": [0.7, 0.8]}]},
-        {"actor": "pine", "at": [1150, 900], "scale": 1.2, "rig": "sway", "seed": 3}
-      ]
-    },
-    {
-      "narration": "Then out of the wardrobe stepped Grandmother, safe and sound. And they all sat down together to share the bread and the honey cake.",
-      "background": "wall",
-      "camera": {"zoom": [1.0, 1.08], "center": [[960, 560], [960, 600]]},
-      "items": [
-        {"part": {"shape": "rect", "xywh": [-200, 860, 2320, 400], "paint": "floor", "edge": "clean", "shadow": 0, "tex_rot": 0}},
-        {"actor": "window", "at": [1620, 360]},
-        {"actor": "wardrobe", "at": [230, 880]},
-        {"actor": "wardrobe_doors", "at": [230, 880]},
-        {"actor": "grandma", "at": [560, 905], "rig": "talk", "reveal": ["mouth_open"], "hide": ["mouth"]},
-        {"actor": "table", "at": [990, 905]},
-        {"actor": "girl", "at": [1310, 905], "rig": "idle", "hide": ["basket", "basket_handle", "basket_cloth"], "anims": [{"type": "hop", "height": 12, "period": 0.6, "t": [0.6, 0.9]}]},
-        {"actor": "woodcutter", "at": [1600, 905], "rig": "idle"}
-      ]
-    },
-    {
-      "narration": "And Little Red Riding Hood made a promise: from that day on, she would always, always stay on the path.",
-      "background": "dusk_sky",
-      "camera": {"zoom": [1.0, 1.05]},
-      "items": [
-        {"actor": "sun", "at": [1500, 720], "scale": 1.0, "rig": "glow", "anims": [{"type": "move", "to": [1500, 780], "t": [0, 1], "ease": "linear"}]},
-        {"actor": "ground", "at": [0, 780], "seed": 29},
-        {"actor": "cottage", "at": [1660, 860], "scale": 0.7},
-        {"part": {"shape": "stroke", "points": [[-200, 960], [500, 910], [1100, 900], [1560, 870]], "width": 80, "paint": "path", "cap": "flat"}, "detail": 0.9},
-        {"actor": "pine", "at": [200, 840], "scale": 1.0, "rig": "sway"},
-        {"actor": "girl", "at": [500, 920], "rig": "walk", "anims": [{"type": "move", "to": [1250, 895], "t": [0, 0.9], "ease": "linear"}, {"type": "bob", "amp": 5, "period": 0.31}]}
-      ]
-    }
-  ],
-  "end_scene": {
-    "items": [
-      {"actor": "ground", "at": [0, 860], "seed": 31},
-      {"actor": "girl", "at": [960, 905], "scale": 0.9, "rig": "wave", "hide": ["basket", "basket_handle", "basket_cloth"]}
-    ]
+  "wolf_belly": {
+   "colors": [
+    "#d9dde4",
+    "#eef0f3",
+    "#bfc5cf"
+   ],
+   "style": "streaks"
+  },
+  "wall": {
+   "colors": [
+    "#f6dc9c",
+    "#f9e7b8",
+    "#efcd85",
+    "#fbefcf"
+   ],
+   "style": "streaks",
+   "angle": 90,
+   "contrast": 0.3
+  },
+  "floor": {
+   "colors": [
+    "#a66b38",
+    "#b97b44",
+    "#8f5a2e"
+   ],
+   "style": "stripes",
+   "period": 46,
+   "angle": 90
+  },
+  "patchwork": {
+   "colors": [
+    "#e8392f",
+    "#f2c230",
+    "#3f8fd4",
+    "#4caf3b",
+    "#f48fb1",
+    "#8e5bd1",
+    "#3a2a2a"
+   ],
+   "style": "cells",
+   "cells": 120
+  },
+  "lace": {
+   "colors": [
+    "#ffffff",
+    "#7aa6ee"
+   ],
+   "style": "dots",
+   "period": 26,
+   "dot": 0.18
+  },
+  "path": {
+   "colors": [
+    "#d9b47a",
+    "#e8cb95",
+    "#c09460",
+    "#f0dcae"
+   ],
+   "style": "dabs"
+  },
+  "forest_floor": {
+   "colors": [
+    "#3f8a3a",
+    "#5aa648",
+    "#2a6a30",
+    "#7fbf4f"
+   ],
+   "style": "streaks",
+   "angle": 70
+  },
+  "bread": {
+   "colors": [
+    "#c98a3e",
+    "#e0a85a",
+    "#9c6224",
+    "#f0c27a"
+   ],
+   "style": "dabs"
+  },
+  "honey_cake": {
+   "colors": [
+    "#f2b636",
+    "#ffd56b",
+    "#d98e1a"
+   ],
+   "style": "stripes",
+   "period": 22,
+   "angle": 0
+  },
+  "dusk_sky": {
+   "colors": [
+    "#f7c07e",
+    "#f9d79b",
+    "#f2a07a",
+    "#fbe6b8"
+   ],
+   "style": "streaks",
+   "angle": 0,
+   "contrast": 0.5
   }
+ },
+ "actors": {
+  "girl": {
+   "character": "girl",
+   "template": "person",
+   "params": {
+    "height": 330,
+    "child": true,
+    "hood": "red_cloth",
+    "top": "blue_cloth",
+    "apron": "white",
+    "hair": "hair_brown",
+    "hair_style": "bob",
+    "holding": "basket"
+   }
+  },
+  "mother": {
+   "character": "mother",
+   "template": "person",
+   "params": {
+    "height": 420,
+    "top": "green_cloth",
+    "apron": "cream",
+    "hair": "hair_brown",
+    "hair_style": "bun",
+    "facing": 0.5
+   }
+  },
+  "grandma": {
+   "character": "grandma",
+   "template": "person",
+   "params": {
+    "height": 390,
+    "top": "flower_purple",
+    "shawl": "red_cloth",
+    "hair": "hair_white",
+    "hair_style": "bun",
+    "glasses": true,
+    "skin": "skin_light"
+   }
+  },
+  "grandma_peek": {
+   "character": "grandma",
+   "template": "person",
+   "params": {
+    "height": 390,
+    "top": "flower_purple",
+    "hair": "hair_white",
+    "hat": "nightcap",
+    "hat_paint": "lace",
+    "glasses": true,
+    "facing": 0.8
+   }
+  },
+  "woodcutter": {
+   "character": "woodcutter",
+   "template": "person",
+   "params": {
+    "height": 450,
+    "dress": false,
+    "top": "plaid",
+    "bottom": "blue_cloth",
+    "beard": "hair_brown",
+    "hair": "hair_brown",
+    "hat": "cap",
+    "hat_paint": "green_cloth",
+    "holding": "axe",
+    "skin": "skin_tan"
+   }
+  },
+  "wolf": {
+   "character": "wolf",
+   "parts": [
+    {
+     "id": "tail",
+     "shape": "poly",
+     "smooth": true,
+     "points": [
+      [
+       -140,
+       -170
+      ],
+      [
+       -200,
+       -172
+      ],
+      [
+       -262,
+       -132
+      ],
+      [
+       -284,
+       -88
+      ],
+      [
+       -250,
+       -100
+      ],
+      [
+       -200,
+       -130
+      ],
+      [
+       -150,
+       -140
+      ]
+     ],
+     "paint": "wolf_fur",
+     "pivot": [
+      -145,
+      -155
+     ]
+    },
+    {
+     "id": "tail_tip",
+     "shape": "blob",
+     "c": [
+      -270,
+      -98
+     ],
+     "r": [
+      22,
+      16
+     ],
+     "paint": "fur_white",
+     "parent": "tail",
+     "shape_seed": 2
+    },
+    {
+     "id": "leg_bb",
+     "shape": "stroke",
+     "points": [
+      [
+       -115,
+       -140
+      ],
+      [
+       -128,
+       -70
+      ],
+      [
+       -112,
+       -8
+      ]
+     ],
+     "width": [
+      34,
+      20
+     ],
+     "paint": "wolf_dark",
+     "pivot": [
+      -115,
+      -140
+     ]
+    },
+    {
+     "id": "leg_fb",
+     "shape": "stroke",
+     "points": [
+      [
+       95,
+       -140
+      ],
+      [
+       100,
+       -70
+      ],
+      [
+       108,
+       -8
+      ]
+     ],
+     "width": [
+      30,
+      18
+     ],
+     "paint": "wolf_dark",
+     "pivot": [
+      95,
+      -140
+     ]
+    },
+    {
+     "id": "body",
+     "shape": "ellipse",
+     "c": [
+      -15,
+      -160
+     ],
+     "r": [
+      145,
+      68
+     ],
+     "rot": -6,
+     "paint": "wolf_fur",
+     "pivot": [
+      0,
+      -150
+     ]
+    },
+    {
+     "id": "belly",
+     "shape": "ellipse",
+     "c": [
+      -5,
+      -118
+     ],
+     "r": [
+      105,
+      24
+     ],
+     "rot": -4,
+     "paint": "wolf_belly",
+     "shadow": 0.4,
+     "parent": "body"
+    },
+    {
+     "id": "leg_bf",
+     "shape": "stroke",
+     "points": [
+      [
+       -95,
+       -150
+      ],
+      [
+       -85,
+       -70
+      ],
+      [
+       -98,
+       -8
+      ]
+     ],
+     "width": [
+      38,
+      22
+     ],
+     "paint": "wolf_fur",
+     "pivot": [
+      -95,
+      -150
+     ]
+    },
+    {
+     "id": "paw_b",
+     "shape": "ellipse",
+     "c": [
+      -90,
+      -8
+     ],
+     "r": [
+      22,
+      9
+     ],
+     "paint": "wolf_dark",
+     "parent": "leg_bf"
+    },
+    {
+     "id": "leg_ff",
+     "shape": "stroke",
+     "points": [
+      [
+       115,
+       -150
+      ],
+      [
+       122,
+       -70
+      ],
+      [
+       118,
+       -8
+      ]
+     ],
+     "width": [
+      32,
+      20
+     ],
+     "paint": "wolf_fur",
+     "pivot": [
+      115,
+      -150
+     ]
+    },
+    {
+     "id": "paw_f",
+     "shape": "ellipse",
+     "c": [
+      128,
+      -8
+     ],
+     "r": [
+      22,
+      9
+     ],
+     "paint": "wolf_dark",
+     "parent": "leg_ff"
+    },
+    {
+     "id": "neck",
+     "shape": "stroke",
+     "points": [
+      [
+       90,
+       -185
+      ],
+      [
+       140,
+       -225
+      ],
+      [
+       160,
+       -245
+      ]
+     ],
+     "width": [
+      84,
+      62
+     ],
+     "paint": "wolf_fur",
+     "pivot": [
+      100,
+      -190
+     ]
+    },
+    {
+     "id": "ear_b",
+     "shape": "poly",
+     "points": [
+      [
+       150,
+       -282
+      ],
+      [
+       146,
+       -345
+      ],
+      [
+       182,
+       -292
+      ]
+     ],
+     "paint": "wolf_dark",
+     "parent": "head"
+    },
+    {
+     "id": "head",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      5
+     ],
+     "points": [
+      [
+       120,
+       -255
+      ],
+      [
+       140,
+       -292
+      ],
+      [
+       190,
+       -305
+      ],
+      [
+       232,
+       -282
+      ],
+      [
+       300,
+       -252
+      ],
+      [
+       314,
+       -236
+      ],
+      [
+       300,
+       -222
+      ],
+      [
+       240,
+       -206
+      ],
+      [
+       175,
+       -205
+      ],
+      [
+       130,
+       -222
+      ]
+     ],
+     "paint": "wolf_fur",
+     "parent": "neck",
+     "pivot": [
+      150,
+      -230
+     ]
+    },
+    {
+     "id": "ear_f",
+     "shape": "poly",
+     "points": [
+      [
+       172,
+       -292
+      ],
+      [
+       186,
+       -360
+      ],
+      [
+       216,
+       -296
+      ]
+     ],
+     "paint": "wolf_fur",
+     "parent": "head",
+     "pivot": [
+      194,
+      -296
+     ]
+    },
+    {
+     "id": "ear_in",
+     "shape": "poly",
+     "points": [
+      [
+       182,
+       -298
+      ],
+      [
+       187,
+       -340
+      ],
+      [
+       205,
+       -300
+      ]
+     ],
+     "paint": "pink",
+     "parent": "ear_f",
+     "shadow": 0.2
+    },
+    {
+     "id": "muzzle",
+     "shape": "blob",
+     "c": [
+      252,
+      -222
+     ],
+     "r": [
+      48,
+      17
+     ],
+     "paint": "wolf_belly",
+     "parent": "head",
+     "shape_seed": 1
+    },
+    {
+     "id": "jaw_open",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      0
+     ],
+     "points": [
+      [
+       304,
+       -226
+      ],
+      [
+       240,
+       -216
+      ],
+      [
+       222,
+       -206
+      ],
+      [
+       252,
+       -176
+      ],
+      [
+       298,
+       -194
+      ]
+     ],
+     "paint": "#7a1f2b",
+     "parent": "head",
+     "hidden": true
+    },
+    {
+     "id": "teeth",
+     "shape": "poly",
+     "points": [
+      [
+       304,
+       -228
+      ],
+      [
+       242,
+       -218
+      ],
+      [
+       246,
+       -205
+      ],
+      [
+       254,
+       -216
+      ],
+      [
+       262,
+       -203
+      ],
+      [
+       270,
+       -215
+      ],
+      [
+       278,
+       -202
+      ],
+      [
+       286,
+       -213
+      ],
+      [
+       294,
+       -201
+      ],
+      [
+       300,
+       -213
+      ]
+     ],
+     "paint": "white",
+     "parent": "head",
+     "hidden": true,
+     "shadow": 0.3
+    },
+    {
+     "id": "mouth_line",
+     "shape": "stroke",
+     "points": [
+      [
+       304,
+       -227
+      ],
+      [
+       266,
+       -215
+      ],
+      [
+       240,
+       -219
+      ]
+     ],
+     "width": 4,
+     "paint": "#2a2a33",
+     "parent": "head",
+     "shadow": 0
+    },
+    {
+     "id": "eye",
+     "shape": "circle",
+     "c": [
+      212,
+      -266
+     ],
+     "r": 11,
+     "paint": "gold",
+     "parent": "head",
+     "pivot": [
+      212,
+      -266
+     ]
+    },
+    {
+     "id": "pupil",
+     "shape": "circle",
+     "c": [
+      216,
+      -266
+     ],
+     "r": 5.5,
+     "paint": "black",
+     "parent": "eye",
+     "shadow": 0
+    },
+    {
+     "id": "brow",
+     "shape": "stroke",
+     "points": [
+      [
+       194,
+       -284
+      ],
+      [
+       214,
+       -279
+      ],
+      [
+       232,
+       -290
+      ]
+     ],
+     "width": 5,
+     "paint": "#2a2a33",
+     "parent": "head",
+     "shadow": 0
+    },
+    {
+     "id": "nose",
+     "shape": "ellipse",
+     "c": [
+      309,
+      -241
+     ],
+     "r": [
+      12,
+      9
+     ],
+     "paint": "black",
+     "parent": "head"
+    },
+    {
+     "id": "cap",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      0,
+      3
+     ],
+     "points": [
+      [
+       126,
+       -262
+      ],
+      [
+       148,
+       -318
+      ],
+      [
+       215,
+       -334
+      ],
+      [
+       252,
+       -286
+      ]
+     ],
+     "paint": "lace",
+     "parent": "head",
+     "hidden": true
+    },
+    {
+     "id": "cap_tail",
+     "shape": "stroke",
+     "points": [
+      [
+       150,
+       -318
+      ],
+      [
+       108,
+       -332
+      ],
+      [
+       78,
+       -302
+      ]
+     ],
+     "width": [
+      30,
+      12
+     ],
+     "paint": "lace",
+     "parent": "head",
+     "hidden": true
+    },
+    {
+     "id": "cap_pom",
+     "shape": "circle",
+     "c": [
+      74,
+      -297
+     ],
+     "r": 12,
+     "paint": "red_cloth",
+     "parent": "head",
+     "hidden": true
+    },
+    {
+     "id": "cap_band",
+     "shape": "stroke",
+     "points": [
+      [
+       122,
+       -262
+      ],
+      [
+       190,
+       -287
+      ],
+      [
+       254,
+       -284
+      ]
+     ],
+     "width": 14,
+     "paint": "cream",
+     "parent": "head",
+     "hidden": true
+    }
+   ],
+   "rigs": {
+    "idle": [
+     {
+      "part": "tail",
+      "type": "swing",
+      "deg": 6,
+      "period": 2.2
+     },
+     {
+      "part": "neck",
+      "type": "swing",
+      "deg": 2,
+      "period": 2.6
+     },
+     {
+      "part": "eye",
+      "type": "blink"
+     }
+    ],
+    "sly": [
+     {
+      "part": "tail",
+      "type": "swing",
+      "deg": 9,
+      "period": 1.6
+     },
+     {
+      "part": "neck",
+      "type": "swing",
+      "deg": 4,
+      "period": 1.6
+     },
+     {
+      "part": "brow",
+      "type": "bob",
+      "amp": 2,
+      "period": 0.8
+     },
+     {
+      "part": "eye",
+      "type": "blink",
+      "period": 2.5
+     }
+    ],
+    "walk": [
+     {
+      "part": [
+       "leg_bf",
+       "leg_fb"
+      ],
+      "type": "swing",
+      "deg": 16,
+      "period": 0.7
+     },
+     {
+      "part": [
+       "leg_ff",
+       "leg_bb"
+      ],
+      "type": "swing",
+      "deg": 16,
+      "period": 0.7,
+      "phase": 0.5
+     },
+     {
+      "part": "tail",
+      "type": "swing",
+      "deg": 8,
+      "period": 0.7
+     },
+     {
+      "part": "eye",
+      "type": "blink"
+     }
+    ],
+    "run": [
+     {
+      "part": [
+       "leg_bf",
+       "leg_bb"
+      ],
+      "type": "swing",
+      "deg": 34,
+      "period": 0.36
+     },
+     {
+      "part": [
+       "leg_ff",
+       "leg_fb"
+      ],
+      "type": "swing",
+      "deg": 34,
+      "period": 0.36,
+      "phase": 0.5
+     },
+     {
+      "part": "tail",
+      "type": "swing",
+      "deg": 12,
+      "period": 0.36
+     },
+     {
+      "part": "body",
+      "type": "squash",
+      "amp": 0.04,
+      "period": 0.36
+     },
+     {
+      "part": [
+       "ear_f",
+       "ear_b"
+      ],
+      "type": "swing",
+      "deg": 6,
+      "period": 0.36
+     }
+    ],
+    "bed": [
+     {
+      "part": "neck",
+      "type": "swing",
+      "deg": 2,
+      "period": 3.0
+     },
+     {
+      "part": "eye",
+      "type": "blink",
+      "period": 2.8
+     }
+    ]
+   }
+  },
+  "bed": {
+   "character": false,
+   "parts": [
+    {
+     "id": "headboard",
+     "shape": "rect",
+     "c": [
+      -150,
+      -250
+     ],
+     "size": [
+      120,
+      330
+     ],
+     "radius": 40,
+     "paint": "wood"
+    },
+    {
+     "id": "footboard",
+     "shape": "rect",
+     "c": [
+      200,
+      -160
+     ],
+     "size": [
+      60,
+      200
+     ],
+     "radius": 26,
+     "paint": "wood"
+    },
+    {
+     "id": "mattress",
+     "shape": "rect",
+     "c": [
+      20,
+      -110
+     ],
+     "size": [
+      400,
+      70
+     ],
+     "radius": 14,
+     "paint": "cream"
+    },
+    {
+     "id": "leg_l",
+     "shape": "rect",
+     "c": [
+      -160,
+      -30
+     ],
+     "size": [
+      26,
+      60
+     ],
+     "paint": "wood"
+    },
+    {
+     "id": "leg_r",
+     "shape": "rect",
+     "c": [
+      200,
+      -30
+     ],
+     "size": [
+      26,
+      60
+     ],
+     "paint": "wood"
+    },
+    {
+     "id": "pillow",
+     "shape": "ellipse",
+     "c": [
+      -90,
+      -158
+     ],
+     "r": [
+      70,
+      34
+     ],
+     "paint": "white"
+    }
+   ]
+  },
+  "quilt": {
+   "character": false,
+   "parts": [
+    {
+     "id": "quilt",
+     "shape": "rect",
+     "c": [
+      40,
+      -112
+     ],
+     "size": [
+      350,
+      122
+     ],
+     "radius": 18,
+     "paint": "patchwork",
+     "tex_scale": 0.8
+    },
+    {
+     "id": "sheet",
+     "shape": "rect",
+     "c": [
+      40,
+      -168
+     ],
+     "size": [
+      352,
+      24
+     ],
+     "radius": 10,
+     "paint": "white"
+    }
+   ]
+  },
+  "wardrobe": {
+   "character": false,
+   "parts": [
+    {
+     "id": "top",
+     "shape": "rect",
+     "c": [
+      0,
+      -560
+     ],
+     "size": [
+      340,
+      34
+     ],
+     "radius": 6,
+     "paint": "wood"
+    },
+    {
+     "id": "body",
+     "shape": "rect",
+     "c": [
+      0,
+      -280
+     ],
+     "size": [
+      300,
+      540
+     ],
+     "radius": 8,
+     "paint": {
+      "preset": "wood",
+      "colors": [
+       "#8a5530",
+       "#a36a3c",
+       "#6a3e20"
+      ]
+     }
+    },
+    {
+     "id": "inside",
+     "shape": "rect",
+     "c": [
+      0,
+      -282
+     ],
+     "size": [
+      262,
+      490
+     ],
+     "paint": {
+      "colors": [
+       "#3b2a1a",
+       "#4a3522",
+       "#2a1d10"
+      ],
+      "style": "flat"
+     },
+     "shadow": 0
+    }
+   ]
+  },
+  "wardrobe_doors": {
+   "character": false,
+   "parts": [
+    {
+     "id": "door_l",
+     "shape": "rect",
+     "c": [
+      -64,
+      -282
+     ],
+     "size": [
+      134,
+      490
+     ],
+     "radius": 6,
+     "paint": "wood"
+    },
+    {
+     "id": "panel_l",
+     "shape": "rect",
+     "c": [
+      -64,
+      -282
+     ],
+     "size": [
+      90,
+      400
+     ],
+     "radius": 12,
+     "paint": {
+      "preset": "wood",
+      "colors": [
+       "#b67a42",
+       "#cf955a",
+       "#8d5a2c"
+      ]
+     },
+     "shadow": 0.5
+    },
+    {
+     "id": "door_r",
+     "shape": "rect",
+     "c": [
+      92,
+      -282
+     ],
+     "size": [
+      80,
+      490
+     ],
+     "radius": 6,
+     "paint": "wood"
+    },
+    {
+     "id": "knob_l",
+     "shape": "circle",
+     "c": [
+      -10,
+      -280
+     ],
+     "r": 9,
+     "paint": "gold"
+    },
+    {
+     "id": "knob_r",
+     "shape": "circle",
+     "c": [
+      62,
+      -280
+     ],
+     "r": 9,
+     "paint": "gold"
+    }
+   ]
+  },
+  "window": {
+   "character": false,
+   "parts": [
+    {
+     "id": "frame",
+     "shape": "rect",
+     "c": [
+      0,
+      0
+     ],
+     "size": [
+      290,
+      240
+     ],
+     "radius": 8,
+     "paint": "wood"
+    },
+    {
+     "id": "glass",
+     "shape": "rect",
+     "c": [
+      0,
+      0
+     ],
+     "size": [
+      246,
+      196
+     ],
+     "paint": "sky",
+     "shadow": 0.3
+    },
+    {
+     "id": "tree_far",
+     "shape": "blob",
+     "c": [
+      60,
+      50
+     ],
+     "r": [
+      80,
+      60
+     ],
+     "paint": "leaf",
+     "shadow": 0,
+     "shape_seed": 4
+    },
+    {
+     "id": "bar_v",
+     "shape": "rect",
+     "c": [
+      0,
+      0
+     ],
+     "size": [
+      12,
+      196
+     ],
+     "paint": "wood"
+    },
+    {
+     "id": "bar_h",
+     "shape": "rect",
+     "c": [
+      0,
+      0
+     ],
+     "size": [
+      246,
+      12
+     ],
+     "paint": "wood"
+    },
+    {
+     "id": "curtain_l",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      0,
+      1
+     ],
+     "points": [
+      [
+       -170,
+       -140
+      ],
+      [
+       -90,
+       -140
+      ],
+      [
+       -120,
+       -20
+      ],
+      [
+       -110,
+       130
+      ],
+      [
+       -175,
+       130
+      ]
+     ],
+     "paint": "red_cloth"
+    },
+    {
+     "id": "curtain_r",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      0,
+      1
+     ],
+     "points": [
+      [
+       170,
+       -140
+      ],
+      [
+       90,
+       -140
+      ],
+      [
+       120,
+       -20
+      ],
+      [
+       110,
+       130
+      ],
+      [
+       175,
+       130
+      ]
+     ],
+     "paint": "red_cloth"
+    }
+   ]
+  },
+  "window_bars": {
+   "character": false,
+   "parts": [
+    {
+     "id": "bar_v",
+     "shape": "rect",
+     "c": [
+      0,
+      0
+     ],
+     "size": [
+      12,
+      92
+     ],
+     "paint": "wood"
+    },
+    {
+     "id": "bar_h",
+     "shape": "rect",
+     "c": [
+      0,
+      0
+     ],
+     "size": [
+      112,
+      12
+     ],
+     "paint": "wood"
+    }
+   ]
+  },
+  "table": {
+   "character": false,
+   "parts": [
+    {
+     "id": "leg_l",
+     "shape": "rect",
+     "c": [
+      -180,
+      -95
+     ],
+     "size": [
+      26,
+      190
+     ],
+     "paint": "wood"
+    },
+    {
+     "id": "leg_r",
+     "shape": "rect",
+     "c": [
+      180,
+      -95
+     ],
+     "size": [
+      26,
+      190
+     ],
+     "paint": "wood"
+    },
+    {
+     "id": "cloth",
+     "shape": "poly",
+     "smooth": true,
+     "corners": [
+      0,
+      1
+     ],
+     "points": [
+      [
+       -240,
+       -210
+      ],
+      [
+       240,
+       -210
+      ],
+      [
+       255,
+       -150
+      ],
+      [
+       0,
+       -165
+      ],
+      [
+       -255,
+       -150
+      ]
+     ],
+     "paint": {
+      "colors": [
+       "#ffffff",
+       "#d7262e"
+      ],
+      "style": "stripes",
+      "period": 22,
+      "angle": 45
+     }
+    },
+    {
+     "id": "plate",
+     "shape": "ellipse",
+     "c": [
+      60,
+      -214
+     ],
+     "r": [
+      80,
+      14
+     ],
+     "paint": "white"
+    },
+    {
+     "id": "cake",
+     "shape": "rect",
+     "c": [
+      60,
+      -250
+     ],
+     "size": [
+      110,
+      64
+     ],
+     "radius": 10,
+     "paint": "honey_cake"
+    },
+    {
+     "id": "icing",
+     "shape": "ellipse",
+     "c": [
+      60,
+      -282
+     ],
+     "r": [
+      58,
+      12
+     ],
+     "paint": "cream"
+    },
+    {
+     "id": "cherry",
+     "shape": "circle",
+     "c": [
+      60,
+      -296
+     ],
+     "r": 11,
+     "paint": "red_cloth"
+    },
+    {
+     "id": "bread",
+     "shape": "ellipse",
+     "c": [
+      -120,
+      -236
+     ],
+     "r": [
+      72,
+      34
+     ],
+     "paint": "bread"
+    },
+    {
+     "id": "crust",
+     "shape": "stroke",
+     "points": [
+      [
+       -160,
+       -250
+      ],
+      [
+       -140,
+       -240
+      ]
+     ],
+     "width": 5,
+     "paint": "#8a5524",
+     "shadow": 0
+    },
+    {
+     "id": "crust2",
+     "shape": "stroke",
+     "points": [
+      [
+       -128,
+       -258
+      ],
+      [
+       -108,
+       -246
+      ]
+     ],
+     "width": 5,
+     "paint": "#8a5524",
+     "shadow": 0
+    },
+    {
+     "id": "crust3",
+     "shape": "stroke",
+     "points": [
+      [
+       -96,
+       -258
+      ],
+      [
+       -76,
+       -246
+      ]
+     ],
+     "width": 5,
+     "paint": "#8a5524",
+     "shadow": 0
+    }
+   ]
+  },
+  "girl_side": {
+   "pose_of": "girl",
+   "character": "girl"
+  },
+  "girl_pick": {
+   "pose_of": "girl",
+   "character": "girl"
+  },
+  "woodcutter_side": {
+   "pose_of": "woodcutter",
+   "character": "woodcutter"
+  },
+  "wolf_leap": {
+   "pose_of": "wolf",
+   "character": "wolf"
+  }
+ },
+ "title_scene": {
+  "items": [
+   {
+    "actor": "ground",
+    "at": [
+     0,
+     860
+    ],
+    "seed": 3
+   },
+   {
+    "actor": "pine",
+    "at": [
+     220,
+     880
+    ],
+    "scale": 0.9,
+    "rig": "sway"
+   },
+   {
+    "actor": "pine",
+    "at": [
+     1720,
+     880
+    ],
+    "scale": 1.0,
+    "rig": "sway",
+    "seed": 2
+   },
+   {
+    "actor": "flower_red",
+    "at": [
+     1450,
+     900
+    ],
+    "scale": 0.8,
+    "rig": "sway"
+   },
+   {
+    "actor": "girl",
+    "at": [
+     960,
+     900
+    ],
+    "scale": 1.05,
+    "rig": "idle"
+   }
+  ]
+ },
+ "scenes": [
+  {
+   "narration": "Once upon a time, at the edge of a great forest, there lived a little girl. Her grandmother had sewn her a bright red riding hood, and she loved it so much that she wore it every single day. And so everyone called her Little Red Riding Hood.",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "center": [
+     [
+      960,
+      540
+     ],
+     [
+      1000,
+      560
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1660,
+      190
+     ],
+     "scale": 0.75,
+     "rig": "glow"
+    },
+    {
+     "actor": "cloud",
+     "at": [
+      800,
+      170
+     ],
+     "anims": [
+      {
+       "type": "drift",
+       "amp": 30,
+       "period": 10
+      }
+     ]
+    },
+    {
+     "actor": "pine",
+     "at": [
+      1780,
+      830
+     ],
+     "scale": 1.2,
+     "rig": "sway"
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      820
+     ]
+    },
+    {
+     "actor": "cottage",
+     "at": [
+      520,
+      860
+     ],
+     "scale": 1.05
+    },
+    {
+     "actor": "tree",
+     "at": [
+      150,
+      850
+     ],
+     "scale": 1.1,
+     "rig": "sway"
+    },
+    {
+     "actor": "flower_red",
+     "at": [
+      820,
+      890
+     ],
+     "scale": 0.8,
+     "rig": "sway"
+    },
+    {
+     "actor": "flower_yellow",
+     "at": [
+      1420,
+      895
+     ],
+     "scale": 0.8,
+     "rig": "sway"
+    },
+    {
+     "actor": "girl",
+     "at": [
+      1130,
+      905
+     ],
+     "scale": 1.1,
+     "rig": [
+      {
+       "name": "idle",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
+     "hide": [
+      "basket",
+      "basket_handle",
+      "basket_cloth"
+     ],
+     "anims": [
+      {
+       "type": "hop",
+       "on": "loved it so much",
+       "height": 16,
+       "period": 0.5,
+       "for": 1.0
+      },
+      {
+       "type": "flip",
+       "on": "wore it every",
+       "for": 0.1
+      },
+      {
+       "type": "flip",
+       "on": "single day",
+       "for": 0.1
+      },
+      {
+       "type": "nudge",
+       "on": "everyone called her",
+       "d": [
+        0,
+        10
+       ],
+       "for": 0.7
+      },
+      {
+       "type": "nudge",
+       "on": "Little Red Riding Hood",
+       "d": [
+        0,
+        12
+       ],
+       "sharp": 2,
+       "for": 0.8
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "head",
+       "type": "nudge",
+       "on": "bright red riding hood",
+       "deg": 8,
+       "for": 1.0
+      },
+      {
+       "part": "arm_l",
+       "type": "nudge",
+       "on": "loved it so much",
+       "deg": 35,
+       "for": 1.0
+      },
+      {
+       "part": "arm_r",
+       "type": "nudge",
+       "on": "loved it so much",
+       "deg": -35,
+       "for": 1.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "One morning, her mother packed a basket with fresh bread and sweet honey cake. \"Take this to Grandmother, who is feeling poorly,\" she said. \"Stay on the path, and do not stop to talk to strangers.\"",
+   "camera": {
+    "zoom": [
+     1.12,
+     1.2
+    ],
+    "center": [
+     [
+      900,
+      600
+     ],
+     [
+      920,
+      620
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      820
+     ]
+    },
+    {
+     "actor": "cottage",
+     "at": [
+      420,
+      860
+     ],
+     "scale": 1.15
+    },
+    {
+     "actor": "mother",
+     "at": [
+      800,
+      905
+     ],
+     "rig": [
+      {
+       "name": "talk",
+       "on": "Take this",
+       "until": "strangers",
+       "end_offset": 0.4
+      }
+     ],
+     "reveal": [
+      "mouth_open"
+     ],
+     "hide": [
+      "mouth"
+     ],
+     "part_anims": [
+      {
+       "part": "arm_r",
+       "type": "nudge",
+       "on": "packed a basket",
+       "deg": -45,
+       "for": 1.4
+      },
+      {
+       "part": "arm_r",
+       "type": "rotate",
+       "on": "Stay on the path",
+       "to": -115,
+       "ease": "out",
+       "for": 0.4
+      },
+      {
+       "part": "arm_r",
+       "type": "swing",
+       "on": "Stay on the path",
+       "until": "strangers",
+       "deg": 10,
+       "period": 0.36
+      },
+      {
+       "part": "arm_r",
+       "type": "rotate",
+       "on": "strangers",
+       "to": 0,
+       "offset": 0.5,
+       "for": 0.5
+      },
+      {
+       "part": "mouth_open",
+       "type": "show",
+       "on": "Take this",
+       "until": "strangers"
+      }
+     ]
+    },
+    {
+     "actor": "girl",
+     "at": [
+      1120,
+      905
+     ],
+     "scale": 1.1,
+     "rig": [
+      {
+       "name": "idle",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
+     "anims": [
+      {
+       "type": "hop",
+       "on": "strangers",
+       "height": 10,
+       "period": 0.8,
+       "offset": 0.5,
+       "for": 1.4
+      }
+     ],
+     "part_anims": [
+      {
+       "part": [
+        "basket",
+        "basket_handle",
+        "basket_cloth"
+       ],
+       "type": "show",
+       "on": "Take this",
+       "until": "@end",
+       "fade": 0.2
+      },
+      {
+       "part": "head",
+       "type": "nudge",
+       "on": "do not stop",
+       "deg": 9,
+       "for": 0.5
+      },
+      {
+       "part": "head",
+       "type": "nudge",
+       "on": "talk to strangers",
+       "deg": 9,
+       "for": 0.5
+      }
+     ]
+    },
+    {
+     "actor": "flower_purple",
+     "at": [
+      1400,
+      890
+     ],
+     "scale": 0.8,
+     "rig": "sway"
+    }
+   ]
+  },
+  {
+   "narration": "So off she went, down the winding path into the woods, swinging her basket and humming a happy little song.",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.04
+    ]
+   },
+   "items": [
+    {
+     "actor": "bird_small",
+     "at": [
+      500,
+      240
+     ],
+     "rig": "flap",
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1400,
+        200
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "pine",
+     "at": [
+      180,
+      760
+     ],
+     "scale": 1.1,
+     "rig": "sway"
+    },
+    {
+     "actor": "pine",
+     "at": [
+      720,
+      720
+     ],
+     "scale": 0.8,
+     "rig": "sway"
+    },
+    {
+     "actor": "pine",
+     "at": [
+      1280,
+      730
+     ],
+     "scale": 0.9,
+     "rig": "sway"
+    },
+    {
+     "actor": "tree_dark",
+     "at": [
+      1700,
+      760
+     ],
+     "scale": 1.1,
+     "rig": "sway"
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      740
+     ],
+     "seed": 7
+    },
+    {
+     "part": {
+      "shape": "stroke",
+      "points": [
+       [
+        -200,
+        930
+       ],
+       [
+        400,
+        880
+       ],
+       [
+        900,
+        905
+       ],
+       [
+        1400,
+        860
+       ],
+       [
+        2200,
+        880
+       ]
+      ],
+      "width": 100,
+      "paint": "path",
+      "cap": "flat"
+     },
+     "detail": 0.9
+    },
+    {
+     "actor": "flower_red",
+     "at": [
+      600,
+      830
+     ],
+     "scale": 0.7,
+     "rig": "sway"
+    },
+    {
+     "actor": "flower_yellow",
+     "at": [
+      1150,
+      820
+     ],
+     "scale": 0.7,
+     "rig": "sway"
+    },
+    {
+     "actor": "girl_side",
+     "at": [
+      130,
+      905
+     ],
+     "scale": 0.95,
+     "rig": [
+      {
+       "name": "walk",
+       "on": "So off she went",
+       "until": "@end"
+      }
+     ],
+     "anims": [
+      {
+       "type": "path",
+       "on": "So off she went",
+       "until": "@end",
+       "points": [
+        [
+         400,
+         892
+        ],
+        [
+         900,
+         915
+        ],
+        [
+         1400,
+         872
+        ],
+        [
+         1620,
+         878
+        ]
+       ],
+       "ease": "linear",
+       "end_offset": -0.3
+      }
+     ]
+    },
+    {
+     "parts": [
+      {
+       "id": "head",
+       "shape": "ellipse",
+       "c": [
+        0,
+        0
+       ],
+       "r": [
+        13,
+        9.5
+       ],
+       "rot": -25,
+       "paint": "flower_red",
+       "shadow": 0.4
+      },
+      {
+       "id": "stem",
+       "shape": "stroke",
+       "points": [
+        [
+         11,
+         -3
+        ],
+        [
+         11,
+         -58
+        ]
+       ],
+       "width": 5,
+       "paint": "flower_red",
+       "shadow": 0.4
+      },
+      {
+       "id": "flag",
+       "shape": "stroke",
+       "points": [
+        [
+         11,
+         -58
+        ],
+        [
+         27,
+         -46
+        ],
+        [
+         30,
+         -28
+        ]
+       ],
+       "width": 5,
+       "paint": "flower_red",
+       "shadow": 0.4
+      }
+     ],
+     "scale": 1.0,
+     "at": [
+      150,
+      560
+     ],
+     "anims": [
+      {
+       "type": "path",
+       "on": "So off she went",
+       "until": "@end",
+       "points": [
+        [
+         420,
+         547
+        ],
+        [
+         920,
+         570
+        ],
+        [
+         1420,
+         527
+        ],
+        [
+         1640,
+         533
+        ]
+       ],
+       "ease": "linear",
+       "end_offset": -0.3
+      },
+      {
+       "type": "show",
+       "on": "humming",
+       "until": "@end",
+       "fade": 0.3
+      },
+      {
+       "type": "float_up",
+       "dist": 120,
+       "period": 1.6,
+       "phase": 0.0,
+       "dir": [
+        0.4,
+        -1
+       ]
+      }
+     ]
+    },
+    {
+     "parts": [
+      {
+       "id": "head",
+       "shape": "ellipse",
+       "c": [
+        0,
+        0
+       ],
+       "r": [
+        13,
+        9.5
+       ],
+       "rot": -25,
+       "paint": "sky",
+       "shadow": 0.4
+      },
+      {
+       "id": "stem",
+       "shape": "stroke",
+       "points": [
+        [
+         11,
+         -3
+        ],
+        [
+         11,
+         -58
+        ]
+       ],
+       "width": 5,
+       "paint": "sky",
+       "shadow": 0.4
+      },
+      {
+       "id": "flag",
+       "shape": "stroke",
+       "points": [
+        [
+         11,
+         -58
+        ],
+        [
+         27,
+         -46
+        ],
+        [
+         30,
+         -28
+        ]
+       ],
+       "width": 5,
+       "paint": "sky",
+       "shadow": 0.4
+      }
+     ],
+     "scale": 0.85,
+     "at": [
+      180,
+      560
+     ],
+     "anims": [
+      {
+       "type": "path",
+       "on": "So off she went",
+       "until": "@end",
+       "points": [
+        [
+         420,
+         547
+        ],
+        [
+         920,
+         570
+        ],
+        [
+         1420,
+         527
+        ],
+        [
+         1640,
+         533
+        ]
+       ],
+       "ease": "linear",
+       "end_offset": -0.3
+      },
+      {
+       "type": "show",
+       "on": "humming",
+       "until": "@end",
+       "fade": 0.3
+      },
+      {
+       "type": "float_up",
+       "dist": 120,
+       "period": 1.6,
+       "phase": 0.33,
+       "dir": [
+        0.4,
+        -1
+       ]
+      }
+     ]
+    },
+    {
+     "parts": [
+      {
+       "id": "head",
+       "shape": "ellipse",
+       "c": [
+        0,
+        0
+       ],
+       "r": [
+        13,
+        9.5
+       ],
+       "rot": -25,
+       "paint": "flower_purple",
+       "shadow": 0.4
+      },
+      {
+       "id": "stem",
+       "shape": "stroke",
+       "points": [
+        [
+         11,
+         -3
+        ],
+        [
+         11,
+         -58
+        ]
+       ],
+       "width": 5,
+       "paint": "flower_purple",
+       "shadow": 0.4
+      },
+      {
+       "id": "flag",
+       "shape": "stroke",
+       "points": [
+        [
+         11,
+         -58
+        ],
+        [
+         27,
+         -46
+        ],
+        [
+         30,
+         -28
+        ]
+       ],
+       "width": 5,
+       "paint": "flower_purple",
+       "shadow": 0.4
+      }
+     ],
+     "scale": 0.7,
+     "at": [
+      130,
+      560
+     ],
+     "anims": [
+      {
+       "type": "path",
+       "on": "So off she went",
+       "until": "@end",
+       "points": [
+        [
+         420,
+         547
+        ],
+        [
+         920,
+         570
+        ],
+        [
+         1420,
+         527
+        ],
+        [
+         1640,
+         533
+        ]
+       ],
+       "ease": "linear",
+       "end_offset": -0.3
+      },
+      {
+       "type": "show",
+       "on": "humming",
+       "until": "@end",
+       "fade": 0.3
+      },
+      {
+       "type": "float_up",
+       "dist": 120,
+       "period": 1.6,
+       "phase": 0.66,
+       "dir": [
+        0.4,
+        -1
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "Deep in the woods, a wolf slipped out from behind a tree. \"Good morning, little one,\" he said, with a sly smile. \"And where are you going today?\"",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "center": [
+     [
+      960,
+      560
+     ],
+     [
+      1000,
+      600
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "pine",
+     "at": [
+      100,
+      730
+     ],
+     "scale": 1.2,
+     "seed": 5
+    },
+    {
+     "actor": "pine",
+     "at": [
+      560,
+      700
+     ],
+     "scale": 0.9,
+     "seed": 6
+    },
+    {
+     "actor": "tree_dark",
+     "at": [
+      1800,
+      760
+     ],
+     "scale": 1.3,
+     "rig": "sway"
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      720
+     ],
+     "seed": 9
+    },
+    {
+     "part": {
+      "shape": "stroke",
+      "points": [
+       [
+        -200,
+        920
+       ],
+       [
+        600,
+        890
+       ],
+       [
+        1300,
+        900
+       ],
+       [
+        2200,
+        880
+       ]
+      ],
+      "width": 100,
+      "paint": "path",
+      "cap": "flat"
+     },
+     "detail": 0.9
+    },
+    {
+     "actor": "wolf",
+     "at": [
+      1550,
+      880
+     ],
+     "flip": true,
+     "scale": 0.95,
+     "rig": [
+      {
+       "name": "walk",
+       "on": "slipped out",
+       "until": "behind a tree",
+       "end_offset": 0.8
+      },
+      {
+       "name": "sly",
+       "on": "Good morning",
+       "until": "@end"
+      }
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "on": "slipped out",
+       "until": "behind a tree",
+       "to": [
+        1230,
+        880
+       ],
+       "end_offset": 0.8,
+       "ease": "out"
+      },
+      {
+       "type": "nudge",
+       "on": "where are you going",
+       "d": [
+        -30,
+        4
+       ],
+       "deg": -4,
+       "for": 1.6
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "neck",
+       "type": "nudge",
+       "on": "sly smile",
+       "deg": -9,
+       "for": 1.1
+      }
+     ]
+    },
+    {
+     "actor": "tree_dark",
+     "at": [
+      1560,
+      900
+     ],
+     "scale": 1.5,
+     "rig": "sway",
+     "seed": 11
+    },
+    {
+     "actor": "girl_side",
+     "at": [
+      250,
+      905
+     ],
+     "scale": 1.0,
+     "rig": [
+      {
+       "name": "walk",
+       "on": "@start",
+       "until": "slipped out",
+       "end_offset": 0.6
+      }
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "on": "@start",
+       "until": "slipped out",
+       "to": [
+        640,
+        905
+       ],
+       "end_offset": 0.6,
+       "ease": "out"
+      },
+      {
+       "type": "nudge",
+       "on": "Good morning",
+       "d": [
+        -12,
+        -16
+       ],
+       "for": 0.5
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "head",
+       "type": "nudge",
+       "on": "little one",
+       "deg": -6,
+       "for": 0.9
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "\"To my grandmother's house, at the very end of the path,\" said Little Red Riding Hood. \"Then why not pick her some flowers?\" said the wolf. \"See how pretty they are!\"",
+   "camera": {
+    "zoom": [
+     1.05,
+     1.12
+    ],
+    "center": [
+     [
+      960,
+      600
+     ],
+     [
+      940,
+      620
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "tree_dark",
+     "at": [
+      1750,
+      760
+     ],
+     "scale": 1.2,
+     "rig": "sway"
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      760
+     ],
+     "seed": 13
+    },
+    {
+     "actor": "flower_red",
+     "rig": "sway",
+     "scatter": {
+      "n": 5,
+      "area": [
+       150,
+       860,
+       600,
+       930
+      ],
+      "scale": [
+       0.7,
+       0.95
+      ],
+      "seed": 4,
+      "min_dist": 80
+     }
+    },
+    {
+     "actor": "flower_purple",
+     "rig": "sway",
+     "scatter": {
+      "n": 4,
+      "area": [
+       160,
+       850,
+       620,
+       930
+      ],
+      "scale": [
+       0.6,
+       0.9
+      ],
+      "seed": 7,
+      "min_dist": 80
+     }
+    },
+    {
+     "actor": "flower_yellow",
+     "rig": "sway",
+     "scatter": {
+      "n": 4,
+      "area": [
+       140,
+       860,
+       600,
+       930
+      ],
+      "scale": [
+       0.7,
+       0.9
+      ],
+      "seed": 9,
+      "min_dist": 80
+     }
+    },
+    {
+     "actor": "girl",
+     "at": [
+      860,
+      905
+     ],
+     "rig": "talk",
+     "reveal": [
+      "mouth_open"
+     ],
+     "hide": [
+      "mouth"
+     ],
+     "part_anims": [
+      {
+       "part": "mouth_open",
+       "type": "show",
+       "on": "To my",
+       "until": "end of the path"
+      },
+      {
+       "part": "arm_r",
+       "type": "rotate",
+       "on": "very end of the path",
+       "to": -80,
+       "ease": "out",
+       "for": 0.5
+      },
+      {
+       "part": "arm_r",
+       "type": "rotate",
+       "on": "said Little Red",
+       "to": 0,
+       "for": 0.5
+      },
+      {
+       "part": "head",
+       "type": "rotate",
+       "on": "pick her some",
+       "to": 12,
+       "for": 0.6
+      }
+     ],
+     "anims": [
+      {
+       "type": "hop",
+       "on": "pretty",
+       "height": 12,
+       "period": 0.5,
+       "for": 1.0
+      }
+     ]
+    },
+    {
+     "actor": "wolf",
+     "at": [
+      1350,
+      890
+     ],
+     "flip": true,
+     "rig": [
+      {
+       "name": "sly",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "neck",
+       "type": "rotate",
+       "on": "pick her some",
+       "to": 12,
+       "for": 0.6
+      },
+      {
+       "part": "neck",
+       "type": "rotate",
+       "on": "See how pretty",
+       "to": 0,
+       "for": 0.5
+      },
+      {
+       "part": "tail",
+       "type": "swing",
+       "on": "See how pretty",
+       "until": "@end",
+       "deg": 12,
+       "period": 0.6
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "And while she gathered flowers, the wolf raced ahead to Grandmother's house, as fast as his legs could carry him.",
+   "items": [
+    {
+     "actor": "pine",
+     "at": [
+      1100,
+      720
+     ],
+     "scale": 0.9,
+     "rig": "sway"
+    },
+    {
+     "actor": "pine",
+     "at": [
+      1550,
+      740
+     ],
+     "scale": 1.1,
+     "rig": "sway"
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      760
+     ],
+     "seed": 17
+    },
+    {
+     "part": {
+      "shape": "stroke",
+      "points": [
+       [
+        700,
+        960
+       ],
+       [
+        1100,
+        890
+       ],
+       [
+        1500,
+        870
+       ],
+       [
+        2200,
+        860
+       ]
+      ],
+      "width": 90,
+      "paint": "path",
+      "cap": "flat"
+     },
+     "detail": 0.9
+    },
+    {
+     "actor": "flower_red",
+     "rig": "sway",
+     "scatter": {
+      "n": 5,
+      "area": [
+       80,
+       850,
+       620,
+       930
+      ],
+      "scale": [
+       0.7,
+       0.95
+      ],
+      "seed": 14,
+      "min_dist": 80
+     }
+    },
+    {
+     "actor": "flower_yellow",
+     "rig": "sway",
+     "scatter": {
+      "n": 4,
+      "area": [
+       80,
+       850,
+       620,
+       930
+      ],
+      "scale": [
+       0.7,
+       0.9
+      ],
+      "seed": 19,
+      "min_dist": 80
+     }
+    },
+    {
+     "actor": "girl_pick",
+     "at": [
+      380,
+      915
+     ],
+     "scale": 1.05,
+     "z": 3,
+     "anims": [
+      {
+       "type": "nudge",
+       "on": "gathered flowers",
+       "deg": -5,
+       "d": [
+        6,
+        6
+       ],
+       "for": 0.8
+      },
+      {
+       "type": "nudge",
+       "on": "raced ahead",
+       "deg": -5,
+       "d": [
+        6,
+        6
+       ],
+       "for": 0.8
+      },
+      {
+       "type": "nudge",
+       "on": "his legs could",
+       "deg": -5,
+       "d": [
+        6,
+        6
+       ],
+       "for": 0.8
+      }
+     ]
+    },
+    {
+     "actor": "wolf",
+     "at": [
+      880,
+      900
+     ],
+     "scale": 0.8,
+     "rig": [
+      {
+       "name": "idle",
+       "on": "@start",
+       "until": "raced ahead"
+      },
+      {
+       "name": "run",
+       "on": "raced ahead",
+       "until": "@end"
+      }
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "on": "raced ahead",
+       "until": "carry him",
+       "to": [
+        2350,
+        840
+       ],
+       "ease": "in",
+       "end_offset": 0.3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "He knocked on the door: knock, knock, knock. But when Grandmother peeked out of the window and saw his long, sharp teeth, she hid inside the wardrobe!",
+   "camera": {
+    "zoom": [
+     1.15,
+     1.22
+    ],
+    "center": [
+     [
+      1000,
+      600
+     ],
+     [
+      1000,
+      610
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "pine",
+     "at": [
+      1650,
+      800
+     ],
+     "scale": 1.1,
+     "rig": "sway"
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      820
+     ],
+     "seed": 21
+    },
+    {
+     "actor": "cottage",
+     "at": [
+      900,
+      870
+     ],
+     "scale": 1.25
+    },
+    {
+     "actor": "grandma_peek",
+     "at": [
+      1004,
+      872
+     ],
+     "scale": 0.62,
+     "z": 1,
+     "hide": [
+      "leg_l",
+      "leg_r",
+      "shoe_l",
+      "shoe_r",
+      "body",
+      "arm_l",
+      "arm_r",
+      "hand_l",
+      "hand_r",
+      "neck"
+     ],
+     "anims": [
+      {
+       "type": "show",
+       "on": "peeked out",
+       "until": "hid inside",
+       "end_offset": 0.5,
+       "fade": 0.2
+      },
+      {
+       "type": "move",
+       "on": "hid inside",
+       "to": [
+        1030,
+        905
+       ],
+       "for": 0.45,
+       "ease": "in"
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "mouth_open",
+       "type": "show",
+       "on": "sharp teeth",
+       "until": "@end"
+      }
+     ],
+     "reveal": [
+      "mouth_open"
+     ]
+    },
+    {
+     "actor": "window_bars",
+     "at": [
+      1012,
+      682
+     ],
+     "z": 2
+    },
+    {
+     "actor": "wolf",
+     "at": [
+      600,
+      905
+     ],
+     "scale": 0.85,
+     "rig": "idle",
+     "z": 3,
+     "part_anims": [
+      {
+       "part": "leg_ff",
+       "type": "rotate",
+       "on": "He knocked",
+       "to": -70,
+       "for": 0.3
+      },
+      {
+       "part": "leg_ff",
+       "type": "swing",
+       "on": "knock, knock",
+       "deg": 15,
+       "period": 0.42,
+       "for": 1.3
+      },
+      {
+       "part": "leg_ff",
+       "type": "rotate",
+       "on": "But when",
+       "to": 0,
+       "for": 0.3
+      },
+      {
+       "part": "neck",
+       "type": "nudge",
+       "on": "sharp teeth",
+       "deg": -10,
+       "for": 1.2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "Then the wolf put on Grandmother's nightcap, climbed into her bed, and pulled the blanket right up to his nose.",
+   "background": "wall",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.06
+    ],
+    "center": [
+     [
+      960,
+      560
+     ],
+     [
+      1040,
+      580
+     ]
+    ]
+   },
+   "items": [
+    {
+     "part": {
+      "shape": "rect",
+      "xywh": [
+       -200,
+       860,
+       2320,
+       400
+      ],
+      "paint": "floor",
+      "edge": "clean",
+      "shadow": 0,
+      "tex_rot": 0
+     }
+    },
+    {
+     "actor": "window",
+     "at": [
+      1600,
+      380
+     ]
+    },
+    {
+     "actor": "wardrobe",
+     "at": [
+      330,
+      880
+     ]
+    },
+    {
+     "actor": "grandma_peek",
+     "at": [
+      360,
+      796
+     ],
+     "scale": 0.8,
+     "rig": "idle"
+    },
+    {
+     "actor": "wardrobe_doors",
+     "at": [
+      330,
+      880
+     ]
+    },
+    {
+     "actor": "bed",
+     "at": [
+      1160,
+      880
+     ],
+     "scale": 1.15
+    },
+    {
+     "actor": "wolf",
+     "at": [
+      260,
+      900
+     ],
+     "scale": 0.82,
+     "reveal": [
+      "cap",
+      "cap_tail",
+      "cap_pom",
+      "cap_band"
+     ],
+     "rig": [
+      {
+       "name": "walk",
+       "on": "@start",
+       "until": "climbed into"
+      }
+     ],
+     "anims": [
+      {
+       "type": "show",
+       "on": "@start",
+       "until": "climbed into",
+       "end_offset": 0.6,
+       "fade": 0.001
+      },
+      {
+       "type": "move",
+       "on": "@start",
+       "until": "climbed into",
+       "to": [
+        700,
+        900
+       ],
+       "ease": "inout"
+      },
+      {
+       "type": "hop",
+       "on": "climbed into",
+       "height": 70,
+       "period": 1.2,
+       "for": 0.6
+      }
+     ],
+     "part_anims": [
+      {
+       "part": [
+        "cap",
+        "cap_tail",
+        "cap_pom",
+        "cap_band"
+       ],
+       "type": "pop",
+       "on": "nightcap",
+       "for": 0.4
+      }
+     ]
+    },
+    {
+     "actor": "wolf",
+     "at": [
+      900,
+      845
+     ],
+     "scale": 0.82,
+     "rig": "bed",
+     "hide": [
+      "tail",
+      "tail_tip",
+      "leg_bb",
+      "leg_fb",
+      "leg_bf",
+      "leg_ff",
+      "paw_b",
+      "paw_f",
+      "body",
+      "belly"
+     ],
+     "reveal": [
+      "cap",
+      "cap_tail",
+      "cap_pom",
+      "cap_band"
+     ],
+     "anims": [
+      {
+       "type": "show",
+       "on": "climbed into",
+       "until": "@end",
+       "offset": 0.6,
+       "fade": 0.001
+      }
+     ]
+    },
+    {
+     "actor": "quilt",
+     "at": [
+      1160,
+      880
+     ],
+     "scale": 1.15,
+     "anims": [
+      {
+       "type": "move",
+       "on": "pulled the blanket",
+       "until": "his nose",
+       "to": [
+        1160,
+        868
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "Soon Little Red Riding Hood knocked, and came inside. \"Oh, Grandmother,\" she said, \"what big ears you have!\" \"All the better to hear you with, my dear.\"",
+   "background": "wall",
+   "camera": {
+    "zoom": [
+     1.05,
+     1.12
+    ],
+    "center": [
+     [
+      1000,
+      580
+     ],
+     [
+      1020,
+      600
+     ]
+    ]
+   },
+   "items": [
+    {
+     "part": {
+      "shape": "rect",
+      "xywh": [
+       -200,
+       860,
+       2320,
+       400
+      ],
+      "paint": "floor",
+      "edge": "clean",
+      "shadow": 0,
+      "tex_rot": 0
+     }
+    },
+    {
+     "actor": "window",
+     "at": [
+      1600,
+      380
+     ]
+    },
+    {
+     "actor": "bed",
+     "at": [
+      1160,
+      880
+     ],
+     "scale": 1.15
+    },
+    {
+     "actor": "wolf",
+     "at": [
+      900,
+      845
+     ],
+     "scale": 0.82,
+     "rot": -8,
+     "rig": "bed",
+     "reveal": [
+      "cap",
+      "cap_tail",
+      "cap_pom",
+      "cap_band"
+     ],
+     "hide": [
+      "tail",
+      "tail_tip",
+      "leg_bb",
+      "leg_fb",
+      "leg_bf",
+      "leg_ff",
+      "paw_b",
+      "paw_f",
+      "body",
+      "belly"
+     ],
+     "part_anims": [
+      {
+       "part": [
+        "ear_f",
+        "ear_b"
+       ],
+       "type": "scale",
+       "on": "big ears",
+       "to": 1.45,
+       "ease": "back",
+       "for": 0.5
+      },
+      {
+       "part": [
+        "ear_f",
+        "ear_b"
+       ],
+       "type": "swing",
+       "on": "hear you with",
+       "deg": 8,
+       "period": 0.35,
+       "for": 1.2
+      }
+     ]
+    },
+    {
+     "actor": "quilt",
+     "at": [
+      1160,
+      868
+     ],
+     "scale": 1.15
+    },
+    {
+     "actor": "girl_side",
+     "at": [
+      -120,
+      905
+     ],
+     "scale": 1.0,
+     "rig": [
+      {
+       "name": "walk",
+       "on": "came inside",
+       "offset": -1.2,
+       "for": 2.2
+      }
+     ],
+     "anims": [
+      {
+       "type": "show",
+       "on": "@start",
+       "until": "Oh, Grandmother",
+       "end_offset": -0.2,
+       "fade": 0.001
+      },
+      {
+       "type": "move",
+       "on": "came inside",
+       "to": [
+        680,
+        905
+       ],
+       "offset": -1.2,
+       "ease": "out",
+       "for": 2.2
+      }
+     ]
+    },
+    {
+     "actor": "girl",
+     "at": [
+      680,
+      905
+     ],
+     "rig": [
+      {
+       "name": "idle",
+       "on": "Oh, Grandmother",
+       "until": "@end",
+       "offset": -0.2
+      }
+     ],
+     "anims": [
+      {
+       "type": "show",
+       "on": "Oh, Grandmother",
+       "until": "@end",
+       "offset": -0.2,
+       "fade": 0.001
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "head",
+       "type": "rotate",
+       "on": "big ears",
+       "to": -8,
+       "for": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "\"Grandmother, what big eyes you have!\" \"All the better to see you with, my dear.\"",
+   "background": "wall",
+   "camera": {
+    "zoom": [
+     1.9,
+     2.05
+    ],
+    "center": [
+     [
+      1040,
+      650
+     ],
+     [
+      1050,
+      645
+     ]
+    ]
+   },
+   "items": [
+    {
+     "actor": "window",
+     "at": [
+      1600,
+      380
+     ]
+    },
+    {
+     "actor": "bed",
+     "at": [
+      1160,
+      880
+     ],
+     "scale": 1.15
+    },
+    {
+     "actor": "wolf",
+     "at": [
+      900,
+      845
+     ],
+     "scale": 0.82,
+     "rot": -8,
+     "rig": "bed",
+     "reveal": [
+      "cap",
+      "cap_tail",
+      "cap_pom",
+      "cap_band"
+     ],
+     "hide": [
+      "tail",
+      "tail_tip",
+      "leg_bb",
+      "leg_fb",
+      "leg_bf",
+      "leg_ff",
+      "paw_b",
+      "paw_f",
+      "body",
+      "belly"
+     ],
+     "part_anims": [
+      {
+       "part": [
+        "ear_f",
+        "ear_b"
+       ],
+       "type": "scale",
+       "on": "@start",
+       "to": 1.45,
+       "for": 0.05
+      },
+      {
+       "part": "eye",
+       "type": "scale",
+       "on": "big eyes",
+       "to": 1.7,
+       "ease": "back",
+       "for": 0.5
+      },
+      {
+       "part": "head",
+       "type": "scale",
+       "on": "big eyes",
+       "to": 1.1,
+       "ease": "back",
+       "for": 0.5
+      },
+      {
+       "part": "neck",
+       "type": "nudge",
+       "on": "see you with",
+       "deg": -7,
+       "for": 1.2
+      }
+     ]
+    },
+    {
+     "actor": "quilt",
+     "at": [
+      1160,
+      868
+     ],
+     "scale": 1.15
+    }
+   ]
+  },
+  {
+   "narration": "\"And Grandmother, what big teeth you have!\" \"All the better to EAT you with!\" And out of the bed leapt the wolf!",
+   "background": "wall",
+   "camera": {
+    "zoom": [
+     1.05,
+     1.0
+    ],
+    "shake": {
+     "amp": 9,
+     "on": "leapt the wolf",
+     "for": 1.2
+    }
+   },
+   "items": [
+    {
+     "part": {
+      "shape": "rect",
+      "xywh": [
+       -200,
+       860,
+       2320,
+       400
+      ],
+      "paint": "floor",
+      "edge": "clean",
+      "shadow": 0,
+      "tex_rot": 0
+     }
+    },
+    {
+     "actor": "window",
+     "at": [
+      1600,
+      380
+     ]
+    },
+    {
+     "actor": "bed",
+     "at": [
+      1160,
+      880
+     ],
+     "scale": 1.15
+    },
+    {
+     "actor": "wolf",
+     "at": [
+      900,
+      845
+     ],
+     "scale": 0.82,
+     "rig": "bed",
+     "hide": [
+      "mouth_line",
+      "tail",
+      "tail_tip",
+      "leg_bb",
+      "leg_fb",
+      "leg_bf",
+      "leg_ff",
+      "paw_b",
+      "paw_f",
+      "body",
+      "belly"
+     ],
+     "reveal": [
+      "cap",
+      "cap_tail",
+      "cap_pom",
+      "cap_band",
+      "jaw_open",
+      "teeth"
+     ],
+     "anims": [
+      {
+       "type": "show",
+       "on": "@start",
+       "until": "leapt the wolf",
+       "fade": 0.001
+      }
+     ],
+     "part_anims": [
+      {
+       "part": [
+        "jaw_open",
+        "teeth"
+       ],
+       "type": "show",
+       "on": "big teeth",
+       "until": "@end"
+      },
+      {
+       "part": "head",
+       "type": "scale",
+       "on": "EAT you",
+       "to": 1.12,
+       "ease": "back",
+       "for": 0.35
+      },
+      {
+       "part": "neck",
+       "type": "nudge",
+       "on": "EAT you",
+       "deg": -10,
+       "for": 0.6
+      }
+     ]
+    },
+    {
+     "actor": "wolf_leap",
+     "at": [
+      1000,
+      800
+     ],
+     "scale": 0.82,
+     "flip": true,
+     "anims": [
+      {
+       "type": "show",
+       "on": "leapt the wolf",
+       "for": 0.9,
+       "fade": 0.001
+      },
+      {
+       "type": "path",
+       "on": "leapt the wolf",
+       "points": [
+        [
+         860,
+         620
+        ],
+        [
+         720,
+         880
+        ]
+       ],
+       "ease": "linear",
+       "for": 0.9
+      }
+     ]
+    },
+    {
+     "actor": "wolf",
+     "at": [
+      720,
+      900
+     ],
+     "scale": 0.9,
+     "flip": true,
+     "rig": "idle",
+     "reveal": [
+      "cap",
+      "cap_tail",
+      "cap_pom",
+      "cap_band",
+      "jaw_open",
+      "teeth"
+     ],
+     "hide": [
+      "mouth_line"
+     ],
+     "anims": [
+      {
+       "type": "show",
+       "on": "leapt the wolf",
+       "until": "@end",
+       "offset": 0.9,
+       "fade": 0.001
+      }
+     ]
+    },
+    {
+     "actor": "girl",
+     "at": [
+      520,
+      905
+     ],
+     "rig": [
+      {
+       "name": "idle",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "on": "leapt the wolf",
+       "to": [
+        380,
+        905
+       ],
+       "for": 0.45,
+       "ease": "out"
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "arm_l",
+       "type": "rotate",
+       "on": "leapt the wolf",
+       "to": 125,
+       "for": 0.25
+      },
+      {
+       "part": "head",
+       "type": "swing",
+       "on": "leapt the wolf",
+       "until": "@end",
+       "deg": 5,
+       "period": 0.2
+      }
+     ]
+    },
+    {
+     "actor": "quilt",
+     "at": [
+      1160,
+      868
+     ],
+     "scale": 1.15,
+     "anims": [
+      {
+       "type": "rotate",
+       "on": "leapt the wolf",
+       "to": 12,
+       "for": 0.3
+      },
+      {
+       "type": "move",
+       "on": "leapt the wolf",
+       "to": [
+        1260,
+        900
+       ],
+       "for": 0.3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "Little Red Riding Hood screamed so loudly that a woodcutter, chopping wood nearby, came running through the door with his axe!",
+   "background": "wall",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "shake": {
+     "amp": 4,
+     "t": [
+      0.0,
+      0.25
+     ]
+    }
+   },
+   "items": [
+    {
+     "part": {
+      "shape": "rect",
+      "xywh": [
+       -200,
+       860,
+       2320,
+       400
+      ],
+      "paint": "floor",
+      "edge": "clean",
+      "shadow": 0,
+      "tex_rot": 0
+     }
+    },
+    {
+     "part": {
+      "shape": "rect",
+      "c": [
+       140,
+       560
+      ],
+      "size": [
+       240,
+       640
+      ],
+      "paint": {
+       "colors": [
+        "#9fd3f2",
+        "#6fb7e9"
+       ],
+       "style": "streaks"
+      },
+      "edge": "clean",
+      "shadow": 0.6
+     }
+    },
+    {
+     "actor": "window",
+     "at": [
+      1600,
+      380
+     ]
+    },
+    {
+     "actor": "bed",
+     "at": [
+      1660,
+      880
+     ],
+     "scale": 1.0
+    },
+    {
+     "actor": "woodcutter_side",
+     "at": [
+      -260,
+      905
+     ],
+     "scale": 1.0,
+     "rig": [
+      {
+       "name": "run",
+       "on": "came running",
+       "until": "with his axe",
+       "end_offset": 0.3
+      }
+     ],
+     "anims": [
+      {
+       "type": "move",
+       "on": "came running",
+       "until": "with his axe",
+       "to": [
+        470,
+        905
+       ],
+       "ease": "out",
+       "end_offset": 0.3
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "uarm_n",
+       "type": "rotate",
+       "on": "with his axe",
+       "to": -80,
+       "ease": "back",
+       "offset": 0.3,
+       "for": 0.5
+      },
+      {
+       "part": "farm_n",
+       "type": "rotate",
+       "on": "with his axe",
+       "to": 70,
+       "ease": "back",
+       "offset": 0.3,
+       "for": 0.5
+      }
+     ]
+    },
+    {
+     "actor": "wolf",
+     "at": [
+      1150,
+      900
+     ],
+     "flip": true,
+     "scale": 0.9,
+     "rig": [
+      {
+       "name": "idle",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
+     "reveal": [
+      "cap",
+      "cap_tail",
+      "cap_pom",
+      "cap_band"
+     ],
+     "anims": [
+      {
+       "type": "hop",
+       "on": "came running",
+       "height": 45,
+       "period": 0.5,
+       "for": 0.5,
+       "offset": 0.6
+      },
+      {
+       "type": "flip",
+       "on": "with his axe",
+       "for": 0.1
+      }
+     ]
+    },
+    {
+     "actor": "girl",
+     "at": [
+      820,
+      905
+     ],
+     "rig": [
+      {
+       "name": "scared",
+       "on": "screamed",
+       "until": "@end"
+      }
+     ],
+     "reveal": [
+      "mouth_open"
+     ],
+     "hide": [
+      "mouth"
+     ],
+     "anims": [
+      {
+       "type": "shake",
+       "on": "screamed",
+       "amp": 5,
+       "for": 1.4
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "The wolf took one look at the woodcutter, leapt out of the window, and ran deep, deep into the forest. And he was never seen again.",
+   "items": [
+    {
+     "actor": "pine",
+     "at": [
+      1700,
+      720
+     ],
+     "scale": 0.7,
+     "rig": "sway"
+    },
+    {
+     "actor": "pine",
+     "at": [
+      1400,
+      700
+     ],
+     "scale": 0.6,
+     "rig": "sway"
+    },
+    {
+     "actor": "tree_dark",
+     "at": [
+      1900,
+      760
+     ],
+     "scale": 0.8
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      720
+     ],
+     "seed": 23
+    },
+    {
+     "actor": "cottage",
+     "at": [
+      330,
+      880
+     ],
+     "scale": 1.1
+    },
+    {
+     "actor": "wolf_leap",
+     "at": [
+      440,
+      700
+     ],
+     "scale": 0.62,
+     "reveal": [
+      "cap",
+      "cap_tail",
+      "cap_pom",
+      "cap_band"
+     ],
+     "anims": [
+      {
+       "type": "show",
+       "on": "leapt out of the window",
+       "for": 0.8,
+       "fade": 0.001
+      },
+      {
+       "type": "path",
+       "on": "leapt out of the window",
+       "points": [
+        [
+         620,
+         640
+        ],
+        [
+         780,
+         860
+        ]
+       ],
+       "ease": "linear",
+       "for": 0.8
+      }
+     ]
+    },
+    {
+     "actor": "wolf",
+     "at": [
+      780,
+      870
+     ],
+     "scale": 0.8,
+     "reveal": [
+      "cap",
+      "cap_tail",
+      "cap_pom",
+      "cap_band"
+     ],
+     "rig": [
+      {
+       "name": "run",
+       "on": "leapt out of the window",
+       "until": "@end",
+       "offset": 0.8
+      }
+     ],
+     "anims": [
+      {
+       "type": "show",
+       "on": "leapt out of the window",
+       "until": "@end",
+       "offset": 0.8,
+       "fade": 0.001
+      },
+      {
+       "type": "move",
+       "on": "ran deep",
+       "until": "never seen again",
+       "to": [
+        1620,
+        740
+       ],
+       "ease": "in"
+      },
+      {
+       "type": "scale",
+       "on": "ran deep",
+       "until": "never seen again",
+       "to": 0.25,
+       "ease": "in"
+      },
+      {
+       "type": "fade",
+       "on": "never seen again",
+       "to": 0,
+       "for": 0.6
+      }
+     ]
+    },
+    {
+     "actor": "pine",
+     "at": [
+      1150,
+      900
+     ],
+     "scale": 1.2,
+     "rig": "sway",
+     "seed": 3
+    }
+   ]
+  },
+  {
+   "narration": "Then out of the wardrobe stepped Grandmother, safe and sound. And they all sat down together to share the bread and the honey cake.",
+   "background": "wall",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.08
+    ],
+    "center": [
+     [
+      960,
+      560
+     ],
+     [
+      960,
+      600
+     ]
+    ]
+   },
+   "items": [
+    {
+     "part": {
+      "shape": "rect",
+      "xywh": [
+       -200,
+       860,
+       2320,
+       400
+      ],
+      "paint": "floor",
+      "edge": "clean",
+      "shadow": 0,
+      "tex_rot": 0
+     }
+    },
+    {
+     "actor": "window",
+     "at": [
+      1620,
+      360
+     ]
+    },
+    {
+     "actor": "wardrobe",
+     "at": [
+      230,
+      880
+     ]
+    },
+    {
+     "actor": "wardrobe_doors",
+     "at": [
+      230,
+      880
+     ],
+     "anims": [
+      {
+       "type": "fade",
+       "on": "out of the wardrobe",
+       "to": 0,
+       "for": 0.5
+      }
+     ]
+    },
+    {
+     "actor": "grandma",
+     "at": [
+      240,
+      905
+     ],
+     "rig": [
+      {
+       "name": "talk",
+       "on": "safe and sound",
+       "until": "@end"
+      }
+     ],
+     "reveal": [
+      "mouth_open"
+     ],
+     "hide": [
+      "mouth"
+     ],
+     "anims": [
+      {
+       "type": "show",
+       "on": "out of the wardrobe",
+       "until": "@end",
+       "fade": 0.3
+      },
+      {
+       "type": "move",
+       "on": "stepped Grandmother",
+       "until": "safe and sound",
+       "to": [
+        560,
+        905
+       ],
+       "ease": "out"
+      },
+      {
+       "type": "bob",
+       "on": "stepped Grandmother",
+       "until": "safe and sound",
+       "amp": 6,
+       "period": 0.5
+      },
+      {
+       "type": "hop",
+       "on": "safe and sound",
+       "height": 12,
+       "period": 0.6,
+       "for": 0.6
+      }
+     ]
+    },
+    {
+     "actor": "table",
+     "at": [
+      990,
+      905
+     ]
+    },
+    {
+     "actor": "girl",
+     "at": [
+      1310,
+      905
+     ],
+     "rig": [
+      {
+       "name": "idle",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
+     "hide": [
+      "basket",
+      "basket_handle",
+      "basket_cloth"
+     ],
+     "anims": [
+      {
+       "type": "hop",
+       "on": "share the bread",
+       "until": "honey cake",
+       "height": 12,
+       "period": 0.6,
+       "end_offset": 0.6
+      }
+     ]
+    },
+    {
+     "actor": "woodcutter",
+     "at": [
+      1600,
+      905
+     ],
+     "rig": "idle",
+     "part_anims": [
+      {
+       "part": "head",
+       "type": "nudge",
+       "on": "safe and sound",
+       "deg": 8,
+       "for": 0.6
+      },
+      {
+       "part": "head",
+       "type": "nudge",
+       "on": "all sat down",
+       "deg": 8,
+       "for": 0.6
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "narration": "And Little Red Riding Hood made a promise: from that day on, she would always, always stay on the path.",
+   "background": "dusk_sky",
+   "camera": {
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   },
+   "items": [
+    {
+     "actor": "sun",
+     "at": [
+      1500,
+      720
+     ],
+     "scale": 1.0,
+     "rig": "glow",
+     "anims": [
+      {
+       "type": "move",
+       "to": [
+        1500,
+        780
+       ],
+       "t": [
+        0,
+        1
+       ],
+       "ease": "linear"
+      }
+     ]
+    },
+    {
+     "actor": "ground",
+     "at": [
+      0,
+      780
+     ],
+     "seed": 29
+    },
+    {
+     "actor": "cottage",
+     "at": [
+      1660,
+      860
+     ],
+     "scale": 0.7
+    },
+    {
+     "part": {
+      "shape": "stroke",
+      "points": [
+       [
+        -200,
+        960
+       ],
+       [
+        500,
+        910
+       ],
+       [
+        1100,
+        900
+       ],
+       [
+        1560,
+        870
+       ]
+      ],
+      "width": 80,
+      "paint": "path",
+      "cap": "flat"
+     },
+     "detail": 0.9
+    },
+    {
+     "actor": "pine",
+     "at": [
+      200,
+      840
+     ],
+     "scale": 1.0,
+     "rig": "sway"
+    },
+    {
+     "actor": "girl_side",
+     "at": [
+      380,
+      925
+     ],
+     "scale": 1.0,
+     "rig": [
+      {
+       "name": "walk",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
+     "anims": [
+      {
+       "type": "path",
+       "on": "@start",
+       "until": "@end",
+       "points": [
+        [
+         800,
+         910
+        ],
+        [
+         1180,
+         900
+        ]
+       ],
+       "ease": "inout",
+       "end_offset": -0.4
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "head",
+       "type": "nudge",
+       "on": "made a promise",
+       "deg": 8,
+       "for": 0.6
+      },
+      {
+       "part": "body",
+       "type": "nudge",
+       "on": "always, always",
+       "d": [
+        0,
+        -14
+       ],
+       "for": 0.5
+      },
+      {
+       "part": "body",
+       "type": "nudge",
+       "on": "stay on the path",
+       "d": [
+        0,
+        -14
+       ],
+       "for": 0.5
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "end_scene": {
+  "items": [
+   {
+    "actor": "ground",
+    "at": [
+     0,
+     860
+    ],
+    "seed": 31
+   },
+   {
+    "actor": "girl",
+    "at": [
+     960,
+     905
+    ],
+    "scale": 0.9,
+    "rig": "wave",
+    "hide": [
+     "basket",
+     "basket_handle",
+     "basket_cloth"
+    ]
+   }
+  ]
+ }
 }

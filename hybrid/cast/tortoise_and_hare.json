@@ -231,6 +231,17 @@
       ]
      }
     ]
+   },
+   "gaits": {
+    "run": "hare_bound"
+   },
+   "roles": {
+    "hind_n": "leg_b",
+    "fore_n": "leg_f",
+    "ears": [
+     "ear_b",
+     "ear_f"
+    ]
    }
   },
   "tortoise": {
@@ -324,6 +335,15 @@
     "rim": "shell",
     "smile": "head",
     "cheek": "head"
+   },
+   "gaits": {
+    "walk": "plod"
+   },
+   "roles": {
+    "hind_n": "leg_bf",
+    "hind_f": "leg_bb",
+    "fore_n": "leg_ff",
+    "fore_f": "leg_fb"
    }
   },
   "fox": {
@@ -718,6 +738,18 @@
      "top": 0
     }
    }
+  },
+  "hare_sleep": {
+   "kind": "prop",
+   "sheet": "motion_art/cut/hare_sleep",
+   "piece": 0,
+   "fit": {
+    "width": 430
+   },
+   "anchor": [
+    0.5,
+    0.95
+   ]
   }
  }
 }

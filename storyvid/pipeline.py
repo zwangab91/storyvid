@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import hashlib
 import json
 import math
 import multiprocessing as mp
@@ -29,6 +30,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.environ.get("STORYVID_CACHE", os.path.join(ROOT, ".cache"))
 
 XFADE = 0.6       # cross-dissolve between scenes (s)
+CLIP_FPS = 24     # generated video clips are resampled to this rate before playing
 LEAD = 0.75       # silence before a scene's narration (s)
 TAIL = 0.95       # silence after it (s)
 TITLE_PALETTE = ["red_cloth", "sun", "grass", "sky", "flower_purple", "fire", "sea", "peach_fruit", "leaf", "gold"]
@@ -52,6 +54,9 @@ def load_story(path: str) -> dict:
             fix(it.get("parts"))
             if it.get("part"):
                 fix([it["part"]])
+    for sc in story.get("scenes", []):  # a generated video clip played over part of a scene (hybrid stories)
+        if sc.get("clip") and not os.path.isabs(sc["clip"]["src"]):
+            sc["clip"]["src"] = os.path.join(base, sc["clip"]["src"])
     if story.get("soundtrack") and not os.path.isabs(story["soundtrack"]):  # folder made by storyvid.soundtrack
         story["soundtrack"] = os.path.join(base, story["soundtrack"])
     return story
@@ -59,8 +64,16 @@ def load_story(path: str) -> dict:
 
 def build_actors(story: dict) -> dict[str, Actor]:
     actors = {k: Actor(k, v) for k, v in LIBRARY.items()}
-    for k, v in (story.get("actors") or {}).items():
+    specs = story.get("actors") or {}
+    for k, v in specs.items():
+        if "pose_of" in v:  # a painted pose (hybrid casts replace it); drawn here as the base puppet
+            continue
         actors[k] = Actor(k, expand_template(copy.deepcopy(v)))
+    for k, v in specs.items():
+        if "pose_of" in v:
+            base = actors[v["pose_of"]].spec
+            actors[k] = Actor(k, {**copy.deepcopy(base), **{a: b for a, b in v.items() if a not in ("pose_of", "parts")},
+                                  "lenient": True})
     return actors
 
 
@@ -322,7 +335,8 @@ def resolve_beats(scenes: list[dict]):
 
     Any item anim, part anim or rig window may say `"on": "<words>"` instead of `"t"`: it starts when those words are
     spoken and lasts `"for"` seconds (default 0.5), or until `"until": "<later words>"` are spoken. `"offset"` moves the
-    start and `"end_offset"` the end, in seconds; "@start" and "@end" stand for the scene's first and last moment.
+    start and `"end_offset"` the end, in seconds; "@start" and "@end" stand for the scene's first and last moment;
+    "words#2" means the second time those words are spoken. The camera's shake and a scene's video clip take beats too.
     Times come from the captions, which are aligned to the narration's pauses; without captions (previews,
     validation) the words are placed proportionally through the narration. Words not in the narration raise
     BeatError."""
@@ -339,13 +353,26 @@ def resolve_beats(scenes: list[dict]):
                 return 0.0
             if words == "@end":
                 return dur
+            n = 1
+            if "#" in words[1:]:  # "step#3": the third time those words are spoken
+                words, n = words.rsplit("#", 1)
+                n = int(n)
+            seen = 0
             for a, b, chunk, _sub in sc.get("_captions", []):
-                k = chunk.find(words)
-                if k >= 0:
-                    return a + (b - a) * k / max(1, len(chunk))
-            k = text.find(words)
-            if k < 0:
-                raise BeatError(f"scene narration has no words {words!r} (for an \"on\"/\"until\" beat)")
+                k = -1
+                while True:
+                    k = chunk.find(words, k + 1)
+                    if k < 0:
+                        break
+                    seen += 1
+                    if seen == n:
+                        return a + (b - a) * k / max(1, len(chunk))
+            k = -1
+            for _ in range(n):
+                k = text.find(words, k + 1)
+                if k < 0:
+                    raise BeatError(f"scene narration has no words {words!r}" + (f" #{n}" if n > 1 else "")
+                                    + " (for an \"on\"/\"until\" beat)")
             return nar0 + (nar1 - nar0) * k / max(1, len(text))
 
         def fix(spec):
@@ -355,6 +382,8 @@ def resolve_beats(scenes: list[dict]):
                       else t0 + float(spec.get("for", 0.5)))
                 spec["t"] = [min(1.0, max(0.0, t0 / dur)), min(1.0, max(0.0, max(t1, t0) / dur))]
 
+        fix((sc.get("camera") or {}).get("shake"))
+        fix(sc.get("clip"))
         for it in sc.get("_items", []):
             for spec in list(it.get("anims", []) or []) + list(it.get("part_anims", []) or []):
                 fix(spec)
@@ -432,6 +461,7 @@ class FrameMaker:
         self.paper = paper_background(W, H, story.get("paper", "#fbf9f3"))
         self.cap_cache: dict = {}
         self._cache_scene = -1
+        self.cache_dir = cache_dir
 
     def scene_frame(self, i: int, t_local: float) -> np.ndarray:
         sc = self.scenes[i]
@@ -439,6 +469,9 @@ class FrameMaker:
         u = min(1.0, max(0.0, t_local / sc["_dur"]))
         f = self.paper.copy()
         self.renderer.render(sc, u, f)
+        clip = sc.get("clip")
+        if clip and "t" in clip:
+            f = self._clip_over(clip, sc["_dur"], t_local, f)
         caps = sc.get("_captions", [])
         for j, (a, b, txt, sub) in enumerate(caps):
             # fade only at the start/end of a run of captions; consecutive captions hard-cut
@@ -458,6 +491,42 @@ class FrameMaker:
                 M = np.array([[1, 0, self.W / 2 - w / 2], [0, 1, self.H - h - 26 * self.k], [0, 0, 1]], float)
                 blit(f, spr, M, max(0.0, min(1.0, op)))
         return f
+
+    def _clip_over(self, clip: dict, dur: float, t_local: float, f: np.ndarray) -> np.ndarray:
+        """A generated video clip over its window of the scene, cross-faded in and out (its first and last frames are
+        renders of this scene, so the fades are nearly invisible). Its own audio is never used: the narration and
+        score carry on underneath. Plays from `start` seconds at normal speed and holds its last frame."""
+        t0, t1 = clip["t"][0] * dur, clip["t"][1] * dur
+        fade = float(clip.get("fade", 0.3))
+        if not (t0 - 1e-6 <= t_local <= t1 + 1e-6):
+            return f
+        frames = self._clip_frames(clip["src"])
+        if not frames:
+            return f
+        k = min(len(frames) - 1, max(0, int((t_local - t0 + float(clip.get("start", 0.0))) * CLIP_FPS)))
+        img = cv2.imread(frames[k], cv2.IMREAD_COLOR)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB).astype(np.float32) / 255.0
+        a = min(1.0, (t_local - t0) / fade if fade > 0 and t0 > 0.01 else 1.0,
+                (t1 - t_local) / fade if fade > 0 and t1 < dur - 0.01 else 1.0)
+        a = max(0.0, a)
+        a = a * a * (3 - 2 * a)
+        return f * (1 - a) + img * a
+
+    def _clip_frames(self, src: str) -> list:
+        cache = getattr(self, "_clips", None)
+        if cache is None:
+            cache = self._clips = {}
+        if src not in cache:
+            h = hashlib.sha1(f"{os.path.abspath(src)}:{os.path.getmtime(src)}:{self.W}x{self.H}".encode()).hexdigest()[:16]
+            d = os.path.join(self.cache_dir, "clips", h)
+            if not os.path.isfile(os.path.join(d, "done")):
+                os.makedirs(d, exist_ok=True)
+                subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", src, "-an", "-vf",
+                                f"fps={CLIP_FPS},scale={self.W}:{self.H}:force_original_aspect_ratio=increase:flags=lanczos,"
+                                f"crop={self.W}:{self.H}", "-q:v", "2", os.path.join(d, "f%05d.jpg")], check=True)
+                open(os.path.join(d, "done"), "w").close()
+            cache[src] = sorted(os.path.join(d, x) for x in os.listdir(d) if x.endswith(".jpg"))
+        return cache[src]
 
     def _evict(self, first_active: int):
         """Free sprites last used by scenes before `first_active` (memory stays ~2 scenes)."""

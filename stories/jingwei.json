@@ -1103,15 +1103,14 @@
      "anims": [
       {
        "type": "move",
+       "on": "看太阳",
+       "until": "@end",
        "to": [
         1350,
         600
        ],
-       "t": [
-        0,
-        1
-       ],
-       "ease": "out"
+       "ease": "out",
+       "offset": -0.5
       }
      ]
     },
@@ -1182,16 +1181,54 @@
       800
      ],
      "scale": 1.0,
-     "rig": "idle",
+     "rig": [
+      {
+       "name": "idle",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
      "anims": [
       {
        "type": "hop",
-       "height": 14,
-       "period": 0.55,
-       "t": [
-        0.6,
-        0.8
-       ]
+       "on": "活泼又勇敢",
+       "height": 18,
+       "period": 0.5,
+       "for": 1.0
+      },
+      {
+       "type": "move",
+       "on": "跑到东海边",
+       "to": [
+        500,
+        832
+       ],
+       "ease": "inout",
+       "for": 1.3
+      },
+      {
+       "type": "bob",
+       "on": "跑到东海边",
+       "amp": 8,
+       "period": 0.34,
+       "for": 1.3
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "arm_r",
+       "type": "rotate",
+       "on": "看太阳",
+       "to": -125,
+       "ease": "out",
+       "for": 0.6
+      },
+      {
+       "part": "head",
+       "type": "rotate",
+       "on": "看太阳",
+       "to": -8,
+       "for": 0.6
       }
      ]
     }
@@ -1304,6 +1341,20 @@
        "type": "swing",
        "deg": 22,
        "period": 1.6
+      },
+      {
+       "part": "head",
+       "type": "rotate",
+       "on": "看一看",
+       "to": -9,
+       "for": 0.7
+      },
+      {
+       "part": "head",
+       "type": "nudge",
+       "on": "从哪里升起来",
+       "deg": -6,
+       "for": 1.0
       }
      ]
     },
@@ -1398,10 +1449,9 @@
     ],
     "shake": {
      "amp": 7,
-     "t": [
-      0.25,
-      0.7
-     ]
+     "on": "狂风",
+     "until": "打翻了小船",
+     "end_offset": 0.6
     }
    },
    "items": [
@@ -1415,11 +1465,9 @@
      "anims": [
       {
        "type": "show",
-       "t": [
-        0.2,
-        0.24
-       ],
-       "fade": 0.02
+       "on": "天空暗了下来",
+       "fade": 0.02,
+       "for": 0.18
       }
      ]
     },
@@ -1434,11 +1482,10 @@
      "anims": [
       {
        "type": "show",
-       "t": [
-        0.36,
-        0.39
-       ],
-       "fade": 0.02
+       "on": "狂风",
+       "fade": 0.02,
+       "offset": 0.4,
+       "for": 0.14
       }
      ]
     },
@@ -1471,30 +1518,25 @@
       },
       {
        "type": "rotate",
+       "on": "一下子打翻了",
        "to": 160,
-       "t": [
-        0.55,
-        0.68
-       ]
+       "for": 0.6
       },
       {
        "type": "move",
+       "on": "一下子打翻了",
        "to": [
         920,
         900
        ],
-       "t": [
-        0.55,
-        0.75
-       ]
+       "for": 0.9
       },
       {
        "type": "fade",
+       "on": "小船",
        "to": 0,
-       "t": [
-        0.68,
-        0.8
-       ]
+       "offset": 0.3,
+       "for": 0.6
       }
      ]
     },
@@ -1508,27 +1550,24 @@
      "anims": [
       {
        "type": "move",
+       "on": "卷起了",
+       "until": "比山还高的巨浪",
        "to": [
         900,
         1000
        ],
-       "t": [
-        0.3,
-        0.62
-       ],
-       "ease": "inout"
+       "ease": "inout",
+       "end_offset": 0.4
       },
       {
        "type": "move",
+       "on": "女娃再也没有回来",
        "to": [
         2500,
         1000
        ],
-       "t": [
-        0.65,
-        0.95
-       ],
-       "ease": "in"
+       "ease": "in",
+       "for": 2.2
       },
       {
        "type": "bob",
@@ -1621,17 +1660,14 @@
      "anims": [
       {
        "type": "pop",
-       "t": [
-        0.02,
-        0.1
-       ]
+       "on": "可是",
+       "for": 0.4
       },
       {
        "type": "vanish",
-       "t": [
-        0.2,
-        0.3
-       ]
+       "on": "变成了一只小鸟",
+       "offset": 0.5,
+       "for": 0.5
       }
      ]
     },
@@ -1642,43 +1678,90 @@
       820
      ],
      "scale": 1.3,
-     "rig": "fly",
+     "rig": [
+      {
+       "name": "fly",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
      "anims": [
       {
        "type": "pop",
-       "t": [
-        0.05,
-        0.15
-       ]
+       "on": "变成了一只小鸟",
+       "for": 0.6
       },
       {
        "type": "move",
+       "on": "变成了一只小鸟",
        "to": [
         960,
         520
        ],
-       "t": [
-        0.05,
-        0.35
-       ],
-       "ease": "out"
+       "ease": "out",
+       "for": 1.8
       },
       {
        "type": "bob",
        "amp": 18,
        "period": 1.0
+      },
+      {
+       "type": "nudge",
+       "on": "精卫、精卫",
+       "d": [
+        0,
+        -34
+       ],
+       "for": 0.4
+      },
+      {
+       "type": "nudge",
+       "on": "精卫、精卫",
+       "d": [
+        0,
+        -34
+       ],
+       "offset": 0.5,
+       "for": 0.4
       }
      ],
      "part_anims": [
       {
        "part": "head",
-       "type": "swing",
-       "deg": 8,
-       "period": 0.5,
-       "t": [
-        0.72,
-        1.0
-       ]
+       "type": "nudge",
+       "on": "头上有花纹",
+       "deg": -14,
+       "for": 0.9
+      },
+      {
+       "part": "beak",
+       "type": "scale",
+       "on": "嘴巴是白色的",
+       "to": 1.25,
+       "ease": "back",
+       "for": 0.4
+      },
+      {
+       "part": [
+        "leg_l",
+        "leg_r"
+       ],
+       "type": "rotate",
+       "on": "小脚是红色的",
+       "to": 0,
+       "ease": "out",
+       "for": 0.4
+      },
+      {
+       "part": [
+        "leg_l",
+        "leg_r"
+       ],
+       "type": "rotate",
+       "on": "她总是",
+       "to": 95,
+       "for": 0.4
       }
      ]
     }
@@ -1735,6 +1818,13 @@
        "type": "squash",
        "amp": 0.04,
        "period": 2.2
+      },
+      {
+       "type": "squash",
+       "on": "填平",
+       "amp": 0.08,
+       "period": 0.6,
+       "for": 1.2
       }
      ]
     },
@@ -1749,6 +1839,8 @@
      "anims": [
       {
        "type": "path",
+       "on": "@start",
+       "until": "下定决心",
        "points": [
         [
          800,
@@ -1767,15 +1859,38 @@
          420
         ]
        ],
-       "t": [
-        0,
-        1
-       ],
        "ease": "linear"
       },
       {
        "type": "flip",
-       "at": 0.62
+       "on": "夺走她生命",
+       "for": 0.1
+      },
+      {
+       "type": "flip",
+       "on": "下定决心",
+       "offset": -0.3,
+       "for": 0.1
+      },
+      {
+       "type": "nudge",
+       "on": "要把东海填平",
+       "d": [
+        240,
+        220
+       ],
+       "deg": 22,
+       "for": 1.4
+      },
+      {
+       "type": "by",
+       "on": "不让它",
+       "until": "@end",
+       "d": [
+        160,
+        -60
+       ],
+       "ease": "inout"
       }
      ]
     }
@@ -1877,11 +1992,10 @@
      "anims": [
       {
        "type": "show",
-       "t": [
-        0,
-        0.62
-       ],
-       "fade": 0.02
+       "on": "@start",
+       "until": "衔起",
+       "fade": 0.02,
+       "end_offset": 0.35
       }
      ]
     },
@@ -1892,51 +2006,53 @@
       300
      ],
      "scale": 0.8,
-     "rig": "fly",
+     "rig": [
+      {
+       "name": "fly",
+       "on": "@start",
+       "until": "山上长满了",
+       "end_offset": 0.3
+      },
+      {
+       "name": "idle",
+       "on": "山上长满了",
+       "until": "@end",
+       "offset": 0.3
+      }
+     ],
      "anims": [
       {
        "type": "move",
+       "on": "她飞到",
+       "until": "发鸠山",
        "to": [
         1000,
         900
        ],
-       "t": [
-        0.0,
-        0.3
+       "ease": "out",
+       "end_offset": 0.6
+      },
+      {
+       "type": "nudge",
+       "on": "衔起",
+       "deg": 30,
+       "d": [
+        20,
+        18
        ],
-       "ease": "out"
+       "for": 0.7
       }
      ],
      "part_anims": [
       {
        "part": [
-        "wing_f",
-        "wing_b"
+        "leg_l",
+        "leg_r"
        ],
        "type": "rotate",
+       "on": "山上长满了",
        "to": 0,
-       "t": [
-        0.3,
-        0.32
-       ]
-      },
-      {
-       "part": "head",
-       "type": "rotate",
-       "to": 40,
-       "t": [
-        0.4,
-        0.55
-       ]
-      },
-      {
-       "part": "head",
-       "type": "rotate",
-       "to": 0,
-       "t": [
-        0.62,
-        0.75
-       ]
+       "for": 0.3
       },
       {
        "part": [
@@ -1944,10 +2060,9 @@
         "twig_leaf"
        ],
        "type": "show",
-       "t": [
-        0.62,
-        1.0
-       ],
+       "on": "衔起",
+       "until": "@end",
+       "offset": 0.35,
        "fade": 0.02
       }
      ],
@@ -2004,13 +2119,11 @@
      "anims": [
       {
        "type": "move",
+       "on": "飞过高山",
+       "until": "一直飞到东海",
        "to": [
         -900,
         780
-       ],
-       "t": [
-        0,
-        0.55
        ],
        "ease": "linear"
       }
@@ -2029,23 +2142,19 @@
      "anims": [
       {
        "type": "move",
+       "on": "飞过高山",
+       "until": "一直飞到东海",
        "to": [
         200,
         870
-       ],
-       "t": [
-        0,
-        0.55
        ],
        "ease": "linear"
       },
       {
        "type": "fade",
+       "on": "一直飞到东海",
        "to": 0,
-       "t": [
-        0.45,
-        0.55
-       ]
+       "for": 0.6
       }
      ]
     },
@@ -2059,14 +2168,12 @@
      "anims": [
       {
        "type": "enter",
+       "on": "一直飞到东海",
        "from": [
         1900,
         720
        ],
-       "t": [
-        0.35,
-        0.6
-       ]
+       "for": 1.4
       }
      ]
     },
@@ -2077,7 +2184,13 @@
       380
      ],
      "scale": 0.75,
-     "rig": "fly",
+     "rig": [
+      {
+       "name": "fly",
+       "on": "@start",
+       "until": "@end"
+      }
+     ],
      "reveal": [
       "twig",
       "twig_leaf"
@@ -2085,27 +2198,23 @@
      "anims": [
       {
        "type": "move",
+       "on": "@start",
+       "until": "把树枝投进",
        "to": [
         1100,
         420
-       ],
-       "t": [
-        0,
-        0.6
        ],
        "ease": "linear"
       },
       {
        "type": "move",
+       "on": "树枝就不见了",
        "to": [
         1500,
         300
        ],
-       "t": [
-        0.7,
-        1.0
-       ],
-       "ease": "in"
+       "ease": "in",
+       "for": 1.6
       }
      ],
      "part_anims": [
@@ -2115,10 +2224,8 @@
         "twig_leaf"
        ],
        "type": "show",
-       "t": [
-        0.0,
-        0.62
-       ],
+       "on": "@start",
+       "until": "投进",
        "fade": 0.02
       }
      ]
@@ -2133,23 +2240,19 @@
      "anims": [
       {
        "type": "show",
-       "t": [
-        0.62,
-        0.8
-       ],
-       "fade": 0.02
+       "on": "投进",
+       "fade": 0.02,
+       "for": 1.2
       },
       {
        "type": "move",
+       "on": "投进",
        "to": [
         1230,
         790
        ],
-       "t": [
-        0.62,
-        0.76
-       ],
-       "ease": "in"
+       "ease": "in",
+       "for": 0.65
       },
       {
        "type": "spin",
@@ -2167,17 +2270,13 @@
      "anims": [
       {
        "type": "pop",
-       "t": [
-        0.76,
-        0.83
-       ]
+       "on": "扑通一声",
+       "for": 0.35
       },
       {
        "type": "vanish",
-       "t": [
-        0.86,
-        0.96
-       ]
+       "on": "树枝就不见了",
+       "for": 0.5
       }
      ]
     }
@@ -2227,6 +2326,20 @@
        "type": "bob",
        "amp": 20,
        "period": 0.9
+      },
+      {
+       "type": "squash",
+       "on": "哗哗地大笑",
+       "amp": 0.1,
+       "period": 0.45,
+       "for": 2.2
+      },
+      {
+       "type": "squash",
+       "on": "填不平我",
+       "amp": 0.1,
+       "period": 0.45,
+       "for": 1.6
       }
      ]
     },
@@ -2245,6 +2358,20 @@
        "amp": 0.06,
        "period": 1.1,
        "phase": 0.4
+      },
+      {
+       "type": "squash",
+       "on": "哗哗地大笑",
+       "amp": 0.1,
+       "period": 0.45,
+       "for": 2.2
+      },
+      {
+       "type": "squash",
+       "on": "填不平我",
+       "amp": 0.1,
+       "period": 0.45,
+       "for": 1.6
       }
      ]
     },
@@ -2264,7 +2391,24 @@
       },
       {
        "type": "shake",
-       "amp": 6
+       "on": "哗哗地大笑",
+       "amp": 9,
+       "for": 2.0
+      },
+      {
+       "type": "nudge",
+       "on": "算了吧",
+       "d": [
+        -60,
+        -30
+       ],
+       "for": 1.0
+      },
+      {
+       "type": "shake",
+       "on": "填不平我",
+       "amp": 7,
+       "for": 1.2
       }
      ]
     }
@@ -2306,12 +2450,51 @@
       600
      ],
      "scale": 1.4,
-     "rig": "cry",
+     "rig": [
+      {
+       "name": "cry",
+       "on": "@start",
+       "until": "一定要"
+      },
+      {
+       "name": "fly",
+       "on": "一定要",
+       "until": "@end"
+      }
+     ],
      "anims": [
       {
        "type": "bob",
        "amp": 10,
        "period": 1.2
+      },
+      {
+       "type": "nudge",
+       "on": "一千万年",
+       "d": [
+        0,
+        -30
+       ],
+       "for": 0.45
+      },
+      {
+       "type": "nudge",
+       "on": "一万万年",
+       "d": [
+        0,
+        -38
+       ],
+       "for": 0.45
+      },
+      {
+       "type": "by",
+       "on": "一定要",
+       "until": "@end",
+       "d": [
+        0,
+        -70
+       ],
+       "ease": "out"
       }
      ]
     }
@@ -2339,6 +2522,8 @@
      "anims": [
       {
        "type": "path",
+       "on": "从此",
+       "until": "从不停歇",
        "points": [
         [
          400,
@@ -2356,10 +2541,6 @@
          2050,
          500
         ]
-       ],
-       "t": [
-        0,
-        0.5
        ],
        "ease": "linear"
       }
@@ -2375,6 +2556,8 @@
      "anims": [
       {
        "type": "path",
+       "on": "春去秋来",
+       "until": "@end",
        "points": [
         [
          400,
@@ -2392,10 +2575,6 @@
          2050,
          500
         ]
-       ],
-       "t": [
-        0.5,
-        1.0
        ],
        "ease": "linear"
       }
@@ -2624,13 +2803,11 @@
      "anims": [
       {
        "type": "move",
+       "on": "@start",
+       "until": "@end",
        "to": [
         1250,
         420
-       ],
-       "t": [
-        0,
-        1
        ],
        "ease": "linear"
       },
@@ -2638,6 +2815,47 @@
        "type": "bob",
        "amp": 16,
        "period": 1.4
+      },
+      {
+       "type": "nudge",
+       "on": "一点一点地",
+       "d": [
+        0,
+        60
+       ],
+       "for": 1.0
+      }
+     ],
+     "part_anims": [
+      {
+       "part": "pebble",
+       "type": "show",
+       "on": "@start",
+       "until": "一点一点地",
+       "offset": 0.5,
+       "fade": 0.05
+      }
+     ]
+    },
+    {
+     "actor": "splash",
+     "at": [
+      1000,
+      770
+     ],
+     "scale": 0.5,
+     "anims": [
+      {
+       "type": "pop",
+       "on": "一点一点地",
+       "offset": 0.7,
+       "for": 0.3
+      },
+      {
+       "type": "vanish",
+       "on": "填着大海",
+       "offset": 0.4,
+       "for": 0.5
       }
      ]
     }
@@ -2692,9 +2910,54 @@
       790
      ],
      "scale": 0.9,
-     "rig": "idle",
+     "rig": [
+      {
+       "name": "idle",
+       "on": "@start",
+       "until": "再难的事情"
+      },
+      {
+       "name": "fly",
+       "on": "再难的事情",
+       "until": "@end"
+      }
+     ],
      "reveal": [
       "pebble"
+     ],
+     "anims": [
+      {
+       "type": "nudge",
+       "on": "坚持不放弃",
+       "d": [
+        0,
+        -30
+       ],
+       "for": 0.45
+      },
+      {
+       "type": "move",
+       "on": "再难的事情",
+       "until": "@end",
+       "to": [
+        1500,
+        280
+       ],
+       "ease": "in",
+       "end_offset": 0.3
+      }
+     ],
+     "part_anims": [
+      {
+       "part": [
+        "wing_f",
+        "wing_b"
+       ],
+       "type": "nudge",
+       "on": "只要有决心",
+       "deg": -35,
+       "for": 1.2
+      }
      ]
     }
    ]

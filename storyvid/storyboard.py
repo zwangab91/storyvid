@@ -254,8 +254,8 @@ def validate(story: dict, sheet_path: str | None = None) -> list[str]:
         sc["_dur"], sc["_captions"], sc["_start"] = 6.0, [], 0.0
     try:
         P.resolve_beats(scenes)
-    except P.BeatError as e:
-        errs.append(str(e))
+    except P.BeatError as e:  # the remaining checks need every beat placed
+        return errs + [str(e)]
     try:
         fm = P.FrameMaker(story, scenes, 384, 216, P.CACHE)
     except Exception as e:  # noqa: BLE001

@@ -21,11 +21,9 @@
     "pebble": {"piece_of": "jingwei_film/cut/props_land", "piece": 3, "joint": false, "scale": 0.4, "attach": [1.0, 0.37], "z": 3, "hidden": true}
    },
    "alias": {"twig_leaf": "twig", "foot_l": "leg_l", "foot_r": "leg_r"},
+   "gaits": {"fly": "flap"}, "roles": {"wing_near": "wing_f", "wing_far": "wing_b"},
+   "gait_add": {"fly": [{"part": ["leg_l", "leg_r"], "type": "rotate", "to": 95, "t": [0, 0.01]}]},
    "rigs": {
-    "fly":   [{"part": "wing_f", "type": "swing", "deg": 20, "period": 0.5},
-              {"part": "wing_b", "type": "swing", "deg": 16, "period": 0.5, "phase": 0.08},
-              {"part": ["leg_l", "leg_r"], "type": "rotate", "to": 95, "t": [0, 0.01]},
-              {"part": "tail", "type": "swing", "deg": 4, "period": 0.5}],
     "glide": [{"part": "wing_f", "type": "swing", "deg": 6, "period": 1.6},
               {"part": "wing_b", "type": "swing", "deg": 5, "period": 1.6},
               {"part": ["leg_l", "leg_r"], "type": "rotate", "to": 95, "t": [0, 0.01]}],

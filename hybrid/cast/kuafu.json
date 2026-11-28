@@ -592,6 +592,272 @@
      }
     ]
    }
+  },
+  "kuafu_side": {
+   "kind": "figure",
+   "sheet": "motion_art/cut/kuafu_side_parts",
+   "root": 1,
+   "root_id": "body",
+   "fit": {
+    "height": 560
+   },
+   "anchor": [
+    0.5,
+    1.0
+   ],
+   "parts": {
+    "head": {
+     "piece": 0,
+     "pivot_at": [
+      0.58,
+      0.6
+     ],
+     "attach": [
+      0.55,
+      0.05
+     ],
+     "z": 2
+    },
+    "thigh_f": {
+     "piece": 6,
+     "pivot_at": [
+      0.5,
+      0.1
+     ],
+     "attach": [
+      0.45,
+      0.84
+     ],
+     "z": -4,
+     "shade": 0.8,
+     "scale": 1.2
+    },
+    "shin_f": {
+     "piece": 7,
+     "flip": true,
+     "cap": "top",
+     "cap_extend": 0.45,
+     "on": "thigh_f",
+     "at_joint": [
+      0.5,
+      1.0
+     ],
+     "z": -5,
+     "shade": 0.8,
+     "scale": 1.2
+    },
+    "uarm_f": {
+     "piece": 3,
+     "clip": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       0.465
+      ],
+      [
+       0.35,
+       0.468
+      ],
+      [
+       0.06,
+       0.556
+      ],
+      [
+       0,
+       0.556
+      ]
+     ],
+     "pivot_at": [
+      0.5,
+      0.15
+     ],
+     "attach": [
+      0.45,
+      0.13
+     ],
+     "z": -2,
+     "shade": 0.82
+    },
+    "farm_f": {
+     "piece": 3,
+     "clip": [
+      [
+       0,
+       0.556
+      ],
+      [
+       0.06,
+       0.556
+      ],
+      [
+       0.35,
+       0.468
+      ],
+      [
+       1,
+       0.465
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "turn": -54,
+     "cap": "top",
+     "on": "uarm_f",
+     "attach": [
+      0.5,
+      0.9
+     ],
+     "z": -3,
+     "shade": 0.82
+    },
+    "thigh_n": {
+     "piece": 6,
+     "pivot_at": [
+      0.5,
+      0.1
+     ],
+     "attach": [
+      0.5,
+      0.84
+     ],
+     "z": -1,
+     "scale": 1.2
+    },
+    "shin_n": {
+     "piece": 7,
+     "flip": true,
+     "cap": "top",
+     "cap_extend": 0.45,
+     "on": "thigh_n",
+     "at_joint": [
+      0.5,
+      1.0
+     ],
+     "z": -1.5,
+     "scale": 1.2
+    },
+    "uarm_n": {
+     "piece": 4,
+     "pivot_at": [
+      0.5,
+      0.15
+     ],
+     "attach": [
+      0.5,
+      0.13
+     ],
+     "z": 3
+    },
+    "farm_n": {
+     "piece": 2,
+     "cap": "left",
+     "on": "uarm_n",
+     "attach": [
+      0.55,
+      0.9
+     ],
+     "z": 4
+    }
+   },
+   "gaits": {
+    "walk": "biped_walk",
+    "run": "biped_run"
+   },
+   "gait_scale": {
+    "walk": {
+     "farm_n": [
+      "shoulder",
+      -0.7
+     ],
+     "uarm_n": 0.6
+    },
+    "run": {
+     "farm_n": [
+      "shoulder",
+      -0.85
+     ],
+     "uarm_n": 0.4
+    }
+   }
+  },
+  "kuafu_lift": {
+   "kind": "prop",
+   "sheet": "motion_art/cut/kuafu_lift",
+   "piece": 0,
+   "clear_light": [
+    0.1,
+    0.2,
+    0.9,
+    0.42
+   ],
+   "fit": {
+    "height": 767
+   },
+   "anchor": [
+    0.5,
+    1.0
+   ]
+  },
+  "kuafu_reach": {
+   "kind": "prop",
+   "sheet": "motion_art/cut/kuafu_reach",
+   "piece": 0,
+   "fit": {
+    "height": 515
+   },
+   "anchor": [
+    0.47,
+    1.0
+   ]
+  },
+  "kuafu_fallen": {
+   "kind": "prop",
+   "sheet": "motion_art/cut/kuafu_fallen",
+   "piece": 0,
+   "fit": {
+    "width": 590
+   },
+   "anchor": [
+    0.5,
+    1.0
+   ]
+  },
+  "kuafu_scoop": {
+   "kind": "prop",
+   "sheet": "kuafu_poses/cut/kuafu_scoop",
+   "piece": 0,
+   "fit": {
+    "height": 377
+   },
+   "anchor": [
+    0.0,
+    1.0
+   ]
+  },
+  "kuafu_sip": {
+   "kind": "prop",
+   "sheet": "kuafu_poses/cut/kuafu_sip",
+   "piece": 0,
+   "fit": {
+    "height": 400
+   },
+   "anchor": [
+    0.0,
+    1.0
+   ]
   }
  }
 }

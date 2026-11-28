@@ -260,6 +260,11 @@ class Actor:
                     e = dict(e)
                     if "t" in n and "t" not in e:
                         e["t"] = n["t"]
+                    elif "t" in n:  # an entry timed within its rig (a bird tucks its legs as it starts flying)
+                        w0, w1 = n["t"]
+                        e["t"] = [w0 + e["t"][0] * (w1 - w0), w0 + e["t"][1] * (w1 - w0)]
+                    if "in_place" in n:  # running on the spot: the gait keeps its own clock
+                        e["in_place"] = n["in_place"]
                     entries.append(e)
             else:
                 if n not in self.rigs:
@@ -270,9 +275,63 @@ class Actor:
             targets = e["part"] if isinstance(e["part"], list) else [e["part"]]
             for t in targets:
                 if t not in self.ids:
+                    if self.spec.get("lenient"):  # a stand-in (a pose drawn as its base puppet) skips the pose's parts
+                        continue
                     raise KeyError(f"actor {self.name!r} has no part {t!r}")
                 out.setdefault(self.ids[t], []).append(e)
         return out
+
+
+TRAVEL = ("move", "by", "path", "enter", "exit")
+
+
+def travel_table(item: dict, dur: float):
+    """-> (u, distance, speed) of the item over the scene, in its own (actor) units, from its travel anims only."""
+    anims = [a for a in item.get("anims", []) if a.get("type") in TRAVEL]
+    n = max(48, int(dur * 24))
+    us = np.linspace(0.0, 1.0, n + 1)
+    pts, ks = [], []
+    for u in us:
+        st = new_state(*item.get("at", (0, 0)), scale=item.get("scale", 1.0))
+        st = apply_anims(st, anims, float(u), dur)
+        pts.append((st["x"], st["y"]))
+        ks.append(max(abs(st["sx"]), 1e-6))
+    P = np.array(pts)
+    step = np.linalg.norm(np.diff(P, axis=0), axis=1) / np.array(ks[1:])
+    ds = np.concatenate([[0.0], np.cumsum(step)])
+    v = np.concatenate([[step[0]], step]) / max(dur / n, 1e-6)
+    w = max(1, n // 40)  # smooth the speed over ~1/40 of the scene
+    vs = np.convolve(np.pad(v, w, mode="edge"), np.ones(2 * w + 1) / (2 * w + 1), mode="valid")
+    return us.tolist(), ds.tolist(), vs.tolist()
+
+
+def pace_gaits(rig: dict, item: dict, dur: float) -> dict:
+    """Pace an item's gait entries by how fast it travels (see gait.py): at the gait's natural speed (stride per
+    period) the feet keep pace with the ground; slower or faster, the cadence changes gently and the steps shorten
+    or lengthen a little rather than playing in slow motion; standing still, the gait settles to rest."""
+    table = None
+    out, memo = {}, {}
+    for i, entries in rig.items():
+        new = []
+        for e in entries:
+            if e.get("type") == "gait" and float(e.get("stride", 0)) > 0 and not e.get("in_place"):
+                if table is None:
+                    table = travel_table(item, dur)
+                key = (float(e["stride"]), float(e.get("period", 1.0)))
+                if key not in memo:
+                    us, ds, vs = (np.asarray(x) for x in table)
+                    stride, period = key
+                    r = np.clip(vs * period / stride, 0, None)  # speed relative to the natural pace
+                    rate = r ** 0.15 / period                   # cycles per second: cadence barely changes,
+                    dt = np.diff(us, prepend=0.0) * dur          # as in life (speed comes from stride length)
+                    cyc = np.cumsum(rate * dt)
+                    g = np.clip(r / 0.06, 0, 1)
+                    amp = (g * g * (3 - 2 * g)) * np.clip(0.7 + 0.3 * r, 0.7, 1.1)
+                    memo[key] = (us.tolist(), cyc.tolist(), amp.tolist())
+                e = dict(e, _cyc=memo[key])
+            new.append(e)
+        out[i] = new
+    return out
 
 
 # --------------------------------------------------------------------------- frame compositing
@@ -414,6 +473,7 @@ class SceneRenderer:
             rig = item.get("_rig_cache")
             if rig is None:
                 rig = actor.rig_anims(item.get("rig"), item.get("part_anims"))
+                rig = pace_gaits(rig, item, dur)
                 item["_rig_cache"] = rig
             hidden = set(item.get("hide", []))
             reveal = set(item.get("reveal", []))
