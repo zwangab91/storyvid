@@ -1,0 +1,65 @@
+{
+ "image": "girl_pick.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.91,
+   -0.17,
+   6.5
+  ],
+  "board_noise": 0.94,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 2,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    529,
+    282,
+    1236,
+    1283
+   ],
+   "area_frac": 0.1919,
+   "centroid": [
+    1152.9,
+    995.4
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.016,
+   "file": "piece_00.png",
+   "origin": [
+    523,
+    276
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    1516,
+    1291,
+    325,
+    211
+   ],
+   "area_frac": 0.0087,
+   "centroid": [
+    1689.2,
+    1424.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.024,
+   "file": "piece_01.png",
+   "origin": [
+    1510,
+    1285
+   ]
+  }
+ ]
+}

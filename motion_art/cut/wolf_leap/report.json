@@ -1,0 +1,43 @@
+{
+ "image": "wolf_leap.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   98.14,
+   -0.83,
+   7.52
+  ],
+  "board_noise": 0.99,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    345,
+    230,
+    2091,
+    1082
+   ],
+   "area_frac": 0.2291,
+   "centroid": [
+    1476.9,
+    746.4
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.033,
+   "file": "piece_00.png",
+   "origin": [
+    339,
+    224
+   ]
+  }
+ ]
+}

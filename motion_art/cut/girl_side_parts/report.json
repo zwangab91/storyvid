@@ -1,0 +1,263 @@
+{
+ "image": "girl_side_parts.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   98.18,
+   -0.69,
+   7.41
+  ],
+  "board_noise": 1.05,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 11,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    183,
+    143,
+    484,
+    517
+   ],
+   "area_frac": 0.0443,
+   "centroid": [
+    423.8,
+    392.9
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_00.png",
+   "origin": [
+    177,
+    137
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    655,
+    225,
+    976,
+    1220
+   ],
+   "area_frac": 0.1879,
+   "centroid": [
+    1142.7,
+    904.6
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_01.png",
+   "origin": [
+    649,
+    219
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    1482,
+    253,
+    191,
+    303
+   ],
+   "area_frac": 0.0078,
+   "centroid": [
+    1570.7,
+    402.9
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_02.png",
+   "origin": [
+    1476,
+    247
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    2011,
+    225,
+    169,
+    303
+   ],
+   "area_frac": 0.0076,
+   "centroid": [
+    2089.6,
+    377.5
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_03.png",
+   "origin": [
+    2005,
+    219
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    1578,
+    565,
+    118,
+    413
+   ],
+   "area_frac": 0.0091,
+   "centroid": [
+    1635.5,
+    753.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.026,
+   "file": "piece_04.png",
+   "origin": [
+    1572,
+    559
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    2082,
+    528,
+    114,
+    416
+   ],
+   "area_frac": 0.0086,
+   "centroid": [
+    2144.2,
+    723.1
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.022,
+   "file": "piece_05.png",
+   "origin": [
+    2076,
+    522
+   ]
+  },
+  {
+   "index": 6,
+   "bbox": [
+    1718,
+    944,
+    156,
+    291
+   ],
+   "area_frac": 0.0082,
+   "centroid": [
+    1788.0,
+    1095.4
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_06.png",
+   "origin": [
+    1712,
+    938
+   ]
+  },
+  {
+   "index": 7,
+   "bbox": [
+    1946,
+    943,
+    159,
+    292
+   ],
+   "area_frac": 0.0081,
+   "centroid": [
+    2033.7,
+    1093.5
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_07.png",
+   "origin": [
+    1940,
+    937
+   ]
+  },
+  {
+   "index": 8,
+   "bbox": [
+    199,
+    1209,
+    381,
+    394
+   ],
+   "area_frac": 0.0263,
+   "centroid": [
+    391.3,
+    1417.4
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_08.png",
+   "origin": [
+    193,
+    1203
+   ]
+  },
+  {
+   "index": 9,
+   "bbox": [
+    1717,
+    1265,
+    209,
+    372
+   ],
+   "area_frac": 0.0101,
+   "centroid": [
+    1791.4,
+    1467.7
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_09.png",
+   "origin": [
+    1711,
+    1259
+   ]
+  },
+  {
+   "index": 10,
+   "bbox": [
+    1989,
+    1272,
+    209,
+    367
+   ],
+   "area_frac": 0.0101,
+   "centroid": [
+    2064.4,
+    1470.2
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_10.png",
+   "origin": [
+    1983,
+    1266
+   ]
+  }
+ ]
+}

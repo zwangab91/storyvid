@@ -1,0 +1,43 @@
+{
+ "image": "kuafu_reach.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   97.77,
+   -0.19,
+   6.25
+  ],
+  "board_noise": 0.61,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    479,
+    118,
+    1576,
+    1601
+   ],
+   "area_frac": 0.1864,
+   "centroid": [
+    1159.9,
+    800.9
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.004,
+   "file": "piece_00.png",
+   "origin": [
+    473,
+    112
+   ]
+  }
+ ]
+}

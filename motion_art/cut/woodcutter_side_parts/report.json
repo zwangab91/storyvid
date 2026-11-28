@@ -1,0 +1,175 @@
+{
+ "image": "woodcutter_side_parts.png",
+ "size": [
+  2400,
+  1792
+ ],
+ "board": {
+  "board_lab": [
+   98.26,
+   -1.64,
+   8.41
+  ],
+  "board_noise": 1.17,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 7,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    175,
+    141,
+    388,
+    512
+   ],
+   "area_frac": 0.0364,
+   "centroid": [
+    371.0,
+    405.3
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.002,
+   "file": "piece_00.png",
+   "origin": [
+    169,
+    135
+   ]
+  },
+  {
+   "index": 1,
+   "bbox": [
+    1211,
+    186,
+    172,
+    370
+   ],
+   "area_frac": 0.013,
+   "centroid": [
+    1296.8,
+    377.4
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_01.png",
+   "origin": [
+    1205,
+    180
+   ]
+  },
+  {
+   "index": 2,
+   "bbox": [
+    1295,
+    281,
+    556,
+    1084
+   ],
+   "area_frac": 0.036,
+   "centroid": [
+    1600.2,
+    686.8
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.002,
+   "file": "piece_02.png",
+   "origin": [
+    1289,
+    275
+   ]
+  },
+  {
+   "index": 3,
+   "bbox": [
+    2021,
+    186,
+    211,
+    703
+   ],
+   "area_frac": 0.0214,
+   "centroid": [
+    2129.9,
+    512.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.003,
+   "file": "piece_03.png",
+   "origin": [
+    2015,
+    180
+   ]
+  },
+  {
+   "index": 4,
+   "bbox": [
+    609,
+    343,
+    556,
+    640
+   ],
+   "area_frac": 0.0611,
+   "centroid": [
+    877.1,
+    687.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.004,
+   "file": "piece_04.png",
+   "origin": [
+    603,
+    337
+   ]
+  },
+  {
+   "index": 5,
+   "bbox": [
+    198,
+    887,
+    297,
+    761
+   ],
+   "area_frac": 0.0375,
+   "centroid": [
+    329.3,
+    1244.8
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_05.png",
+   "origin": [
+    192,
+    881
+   ]
+  },
+  {
+   "index": 6,
+   "bbox": [
+    1934,
+    917,
+    298,
+    734
+   ],
+   "area_frac": 0.0357,
+   "centroid": [
+    2101.6,
+    1263.9
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.0,
+   "file": "piece_06.png",
+   "origin": [
+    1928,
+    911
+   ]
+  }
+ ]
+}

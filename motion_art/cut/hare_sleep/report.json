@@ -1,0 +1,43 @@
+{
+ "image": "hare_sleep.png",
+ "size": [
+  2752,
+  1536
+ ],
+ "board": {
+  "board_lab": [
+   97.8,
+   0.16,
+   6.2
+  ],
+  "board_noise": 0.84,
+  "border_is_board": 1.0,
+  "threshold": 5.0
+ },
+ "n_pieces": 1,
+ "cleanly_cuttable": true,
+ "pieces": [
+  {
+   "index": 0,
+   "bbox": [
+    532,
+    294,
+    1659,
+    986
+   ],
+   "area_frac": 0.2658,
+   "centroid": [
+    1370.2,
+    846.0
+   ],
+   "touches_edge": false,
+   "edges": [],
+   "weak_outline": 0.024,
+   "file": "piece_00.png",
+   "origin": [
+    526,
+    288
+   ]
+  }
+ ]
+}

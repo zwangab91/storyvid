@@ -1,0 +1,451 @@
+{
+ "model": "gemini-nano-banana-2.1",
+ "image_size": "2K",
+ "total_cost_usd": 0.737,
+ "assets": [
+  {
+   "id": "kuafu_side",
+   "key": "93806639010eb88b",
+   "file": "kuafu_side.png",
+   "aspect": "3:4",
+   "refs": [
+    "@kuafu_film/kuafu.png"
+   ],
+   "prompt": "The attached image is a cut-paper giant. Show the very same giant, with an identical face, long loose black hair, small yellow snake earrings, ochre-brown belted tunic, brown leggings and bark shoes, in exactly the same colours, paints and paper textures, in a new pose: side view facing right, standing upright, arms hanging straight down at his sides, legs straight, holding his tall wooden staff upright in his near hand (the hand nearest the viewer). The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1353,
+    "candidatesTokenCount": 2412,
+    "totalTokenCount": 4611,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 233
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 846,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06426,
+   "seconds": 32.1,
+   "created": "2026-11-28T07:34:43Z"
+  },
+  {
+   "id": "kuafu_side_parts",
+   "key": "58f2ca4a3f77f232",
+   "file": "kuafu_side_parts.png",
+   "aspect": "4:3",
+   "refs": [
+    "kuafu_side"
+   ],
+   "prompt": "The attached image is a cut-paper giant in side view. Make the puppet parts sheet: the same giant taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with hair, neck and snake earrings; the torso with the tunic (without arms or legs); the near upper arm; the near forearm with its hand gripping the whole staff (the staff is part of this piece); the far upper arm; the far forearm with its hand; the near thigh; the near lower leg with its bark shoe; the far thigh; the far lower leg with its bark shoe. The joint end of every limb piece (shoulder, elbow, hip, knee, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached figure. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "Here is the visual deconstruction of the giant into flat, cut-paper puppet pieces as requested. Each piece is isolated with straight joints and laid out on the flat cream board:",
+   "usage": {
+    "promptTokenCount": 1428,
+    "candidatesTokenCount": 2898,
+    "totalTokenCount": 5189,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 308
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 863,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06815,
+   "seconds": 33.7,
+   "created": "2026-11-28T07:35:18Z"
+  },
+  {
+   "id": "kuafu_lift",
+   "key": "b6e0242d5bc9b355",
+   "file": "kuafu_lift.png",
+   "aspect": "3:4",
+   "refs": [
+    "@kuafu_film/kuafu.png"
+   ],
+   "prompt": "The attached image is a cut-paper giant. Show the very same giant, with an identical face, long loose black hair, small yellow snake earrings, ochre-brown belted tunic, brown leggings and bark shoes, in exactly the same colours, paints and paper textures, in a new pose: front view, legs planted wide, lifting a huge grey boulder high above his head with both arms, showing his great strength; his staff is not in the picture. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1350,
+    "candidatesTokenCount": 2029,
+    "totalTokenCount": 3582,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 230
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 203,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05656,
+   "seconds": 19.4,
+   "created": "2026-11-28T07:35:39Z"
+  },
+  {
+   "id": "kuafu_reach",
+   "key": "bd8074b08d41f846",
+   "file": "kuafu_reach.png",
+   "aspect": "4:3",
+   "refs": [
+    "@kuafu_film/kuafu.png"
+   ],
+   "prompt": "The attached image is a cut-paper giant. Show the very same giant, with an identical face, long loose black hair, small yellow snake earrings, ochre-brown belted tunic, brown leggings and bark shoes, in exactly the same colours, paints and paper textures, in a new pose: three-quarter view turned to the right, leaning forward, both arms spread wide and reaching forward and up as if to embrace something enormous; his staff is not in his hands and not in the picture. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1358,
+    "candidatesTokenCount": 2045,
+    "totalTokenCount": 3665,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 238
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 262,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05714,
+   "seconds": 18.2,
+   "created": "2026-11-28T07:35:58Z"
+  },
+  {
+   "id": "kuafu_fallen",
+   "key": "e609be7df57ef380",
+   "file": "kuafu_fallen.png",
+   "aspect": "16:9",
+   "refs": [
+    "@kuafu_film/kuafu.png"
+   ],
+   "prompt": "The attached image is a cut-paper giant. Show the very same giant, with an identical face, long loose black hair, small yellow snake earrings, ochre-brown belted tunic, brown leggings and bark shoes, in exactly the same colours, paints and paper textures, in a new pose: lying full length on his side on the ground, worn out, eyes peacefully closed, head on the left and feet on the right, one hand open where his staff has fallen away; the staff is not in the picture. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1362,
+    "candidatesTokenCount": 2057,
+    "totalTokenCount": 4165,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 242
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 746,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06087,
+   "seconds": 19.7,
+   "created": "2026-11-28T07:36:20Z"
+  },
+  {
+   "id": "girl_side",
+   "key": "6bfca84fceebd2a1",
+   "file": "girl_side.png",
+   "aspect": "3:4",
+   "refs": [
+    "@red_film/girl.png"
+   ],
+   "prompt": "The attached image is a cut-paper girl. Show the very same girl, with an identical face, red hood and cape, brown bob hair, blue dress, white apron and dark shoes, in exactly the same colours, paints and paper textures, in a new pose: side view facing right, standing upright, arms hanging down at her sides, the small wicker basket with its checked cloth hanging from her near hand. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1341,
+    "candidatesTokenCount": 2084,
+    "totalTokenCount": 3558,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 221
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 133,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05644,
+   "seconds": 17.6,
+   "created": "2026-11-28T07:36:39Z"
+  },
+  {
+   "id": "girl_side_parts",
+   "key": "967491e003b609ee",
+   "file": "girl_side_parts.png",
+   "aspect": "4:3",
+   "refs": [
+    "girl_side"
+   ],
+   "prompt": "The attached image is a cut-paper girl in side view. Make the puppet parts sheet: the same girl taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with the hood and hair; the body with the cape, dress and apron (without arms or legs); the near upper arm; the near forearm with its hand; the far upper arm; the far forearm with its hand; the near thigh; the near lower leg with its shoe; the far thigh; the far lower leg with its shoe; the basket on its own. The joint end of every limb piece (shoulder, elbow, hip, knee, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached figure. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1422,
+    "candidatesTokenCount": 2185,
+    "totalTokenCount": 4827,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 302
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 1220,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06547,
+   "seconds": 24.9,
+   "created": "2026-11-28T07:37:05Z"
+  },
+  {
+   "id": "girl_pick",
+   "key": "fb0b3a4f35e49f15",
+   "file": "girl_pick.png",
+   "aspect": "4:3",
+   "refs": [
+    "@red_film/girl.png"
+   ],
+   "prompt": "The attached image is a cut-paper girl. Show the very same girl, with an identical face, red hood and cape, brown bob hair, blue dress, white apron and dark shoes, in exactly the same colours, paints and paper textures, in a new pose: side view facing right, crouching down to pick a flower from the ground with her near hand, holding a small bunch of red, yellow and purple flowers in her far hand, the basket on the ground beside her. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1355,
+    "candidatesTokenCount": 2085,
+    "totalTokenCount": 4038,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 235
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 598,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.05996,
+   "seconds": 20.0,
+   "created": "2026-11-28T07:37:26Z"
+  },
+  {
+   "id": "woodcutter_side",
+   "key": "0ec194e939782f31",
+   "file": "woodcutter_side.png",
+   "aspect": "3:4",
+   "refs": [
+    "@red_film/woodcutter.png"
+   ],
+   "prompt": "The attached image is a cut-paper woodcutter. Show the very same woodcutter, with an identical face, bushy brown beard, green cap, red and black plaid shirt, blue trousers and brown boots, in exactly the same colours, paints and paper textures, in a new pose: side view facing right, standing upright, arms hanging down at his sides, holding his wood axe upright in his near hand. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "Here is the cut-paper illustration of the woodcutter in a side view facing right, holding his axe, matching the exact colors, paper textures, and artistic style of the original.",
+   "usage": {
+    "promptTokenCount": 1340,
+    "candidatesTokenCount": 2054,
+    "totalTokenCount": 4260,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 220
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 866,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06171,
+   "seconds": 26.2,
+   "created": "2026-11-28T07:37:54Z"
+  },
+  {
+   "id": "woodcutter_side_parts",
+   "key": "c749e21d0fe92267",
+   "file": "woodcutter_side_parts.png",
+   "aspect": "4:3",
+   "refs": [
+    "woodcutter_side"
+   ],
+   "prompt": "The attached image is a cut-paper woodcutter in side view. Make the puppet parts sheet: the same woodcutter taken apart into separate flat cut-paper pieces, laid out on the board like parts before assembly. Pieces: the head with the cap and beard; the torso with the plaid shirt (without arms or legs); the near upper arm; the near forearm with its hand gripping the whole axe (the axe is part of this piece); the far upper arm; the far forearm with its hand; the near thigh; the near lower leg with its boot; the far thigh; the far lower leg with its boot. The joint end of every limb piece (shoulder, elbow, hip, knee, neck) is cut straight. Keep every colour, paint and texture exactly as in the attached figure. Every piece is complete and whole, nothing overlaps, and plain board shows between all pieces with clear gaps. Leave a wide empty margin of board around the edges.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "Here is the disassembled woodcutter puppet parts sheet based on your image, with all the piece types and joint cuts you described laid out separately.",
+   "usage": {
+    "promptTokenCount": 1427,
+    "candidatesTokenCount": 2215,
+    "totalTokenCount": 4768,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 307
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 1126,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.065,
+   "seconds": 24.1,
+   "created": "2026-11-28T07:38:20Z"
+  },
+  {
+   "id": "wolf_leap",
+   "key": "90b4a789eece0cd2",
+   "file": "wolf_leap.png",
+   "aspect": "16:9",
+   "refs": [
+    "@red_film/wolf.png"
+   ],
+   "prompt": "The attached image is a cut-paper wolf. Show the very same wolf, in exactly the same colours, paints and paper textures, wearing a white frilly lace nightcap with a little red pom-pom, in a new pose: side view facing right, leaping through the air, forelegs stretched forward and hind legs stretched back, mouth open showing his white pointed teeth, tail streaming behind. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1337,
+    "candidatesTokenCount": 2066,
+    "totalTokenCount": 4186,
+    "promptTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     },
+     {
+      "modality": "TEXT",
+      "tokenCount": 217
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 783,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06117,
+   "seconds": 22.2,
+   "created": "2026-11-28T07:38:43Z"
+  },
+  {
+   "id": "hare_sleep",
+   "key": "cca2bb30e91427ad",
+   "file": "hare_sleep.png",
+   "aspect": "16:9",
+   "refs": [
+    "@tortoise_film/hare.png"
+   ],
+   "prompt": "The attached image is a cut-paper hare. Show the very same hare, in exactly the same colours, paints and paper textures, in a new pose: side view, curled up fast asleep on a small tuft of grass, eyes closed, long ears folded down along his back, a peaceful smile. The whole figure is visible and isolated in the middle of the board with a wide empty margin of board on every side.\n\nStyle: children's picture-book art made entirely of cut pieces of hand-painted tissue paper, matching the paints and paper textures of the attached reference. Inside each piece: bold acrylic brush streaks, sponge mottling and comb-scraped texture in a few rich colours. Crisp scissor-cut edges. Flat, layered collage with no 3D shading and no outlines. Everything sits on a plain, flat, evenly lit cream paper board that fills the whole image. No cast shadows, no frame, no text, no letters, no numbers.",
+   "model_text": "",
+   "usage": {
+    "promptTokenCount": 1319,
+    "candidatesTokenCount": 2023,
+    "totalTokenCount": 4046,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 199
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1120
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1680
+     }
+    ],
+    "thoughtsTokenCount": 704,
+    "serviceTier": "standard"
+   },
+   "cost_usd": 0.06023,
+   "seconds": 21.2,
+   "created": "2026-11-28T07:39:06Z"
+  }
+ ]
+}
