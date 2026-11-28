@@ -26,7 +26,8 @@ storyboards in `stories/` render to:
 **Design goals**
 
 - **Continuous, coherent motion:** every frame is rendered from a scene graph. Characters keep the same cut-paper
-  pieces across scenes, and nothing is a looped clip or a re-shown still.
+  pieces across scenes, and nothing is a looped clip or a re-shown still (the hybrid films add one short generated clip
+  each, cut in and out of the puppet animation on rendered first and last frames).
 - **Editable intermediate:** the storyboard JSON is the single source of truth. A person or a model can edit it and
   re-render without touching code.
 - **Local and repeatable:** after the storyboard is written, rendering, speech and music run offline on CPU. The same
@@ -271,6 +272,9 @@ parts and animates every frame on the narration timeline.
 | Cutting pieces off a plain board (`storyvid/cutout.py`) | Built; tested on synthetic sheets made from real generated pieces |
 | Rigging and actor swap (`storyvid/rig.py`, cast files) | Built; joints automatic, attach points from the cast file |
 | Storyboard step that writes the asset list and cast file | Not built: for 精卫 both were written by the planner by hand |
+| Actions on the narration's words (`on`/`until`, `pose_of` stand-ins, `nudge`) | Built; used in every character scene of the four stories |
+| Keyed walk/run/bound/plod/flap cycles paced by travel (`storyvid/gait.py`) | Built; side-view people with knees and elbows, four animals, one bird |
+| Generated video clips over part of a scene (`storyvid/videoclip.py`, cast `clips`) | Built; one Omni clip per film, from rendered first and last frames |
 
 First full film: 精卫填海 (115 s, 14 scenes) rendered from `stories/jingwei.json` unchanged, with all 19 actors and
 the three backdrops swapped for generated art: 19 images for about $1.14 in total. With the generated soundtrack

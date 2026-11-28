@@ -859,5 +859,15 @@
     1.0
    ]
   }
- }
+ },
+ "clips": [
+  {
+   "scene": 11,
+   "src": "film_clips/kuafu_grove.mp4",
+   "on": "变成了",
+   "offset": -0.4,
+   "for": 8,
+   "fade": 0.3
+  }
+ ]
 }

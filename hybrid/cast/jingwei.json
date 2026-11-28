@@ -7,6 +7,7 @@
   "sky_soft": "jingwei_film/bg_day.png",
   "storm": "jingwei_film/bg_storm.png"
  },
+ "clips": [{"scene": 3, "src": "film_clips/jingwei_storm.mp4", "on": "卷起了", "offset": -0.3, "for": 8, "fade": 0.3}],
  "actors": {
   "jingwei": {
    "kind": "figure", "sheet": "jingwei_step1/cut/bird_parts", "root": 2,

@@ -1363,5 +1363,15 @@
     0.85
    ]
   }
- }
+ },
+ "clips": [
+  {
+   "scene": 11,
+   "src": "film_clips/red_leap.mp4",
+   "on": "@end",
+   "offset": -3.0,
+   "for": 3,
+   "fade": 0.25
+  }
+ ]
 }

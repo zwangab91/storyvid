@@ -78,7 +78,9 @@ Default camera is a slow push-in from zoom 1.0 to 1.035. Close-ups: zoom 1.3-2.0
 ## Animations (ANIM; for items, and for parts via part_anims/rigs)
 Timed (use `t`): `move {to:[x,y]}`, `by {d:[dx,dy]}`, `path {points:[[x,y],...], orient?}`, `enter {from: "left"|"right"|"top"|"bottom"|[x,y]}`,
 `exit {to: side|[x,y]}`, `scale {to}`, `rotate {to}`, `fade {to}`, `pop` (appear with overshoot), `grow` (appear, no overshoot),
-`vanish`, `show {t:[a,b]}` (visible only in window), `flip {at}` (turn around at fraction).
+`vanish`, `show {t:[a,b]}` (visible only in window), `flip {at}` (turn around at fraction, or on the words),
+`nudge {deg, d:[dx,dy]}` (a gesture that goes and comes back, added on top of whatever else moves the part, e.g. lifting a
+staff while walking).
 Looping (optional `t` window, `period` seconds, `phase` 0..1): `hop {height}`, `bob {amp, dir:[dx,dy]}`, `sway {deg}`, `swing {deg}`,
 `spin {speed deg/s}`, `pulse {amp}`, `squash {amp}`, `shake {amp}`, `drift {amp}` (clouds), `float_up {dist, dir}` (Zzz, bubbles, sweat).
 Easing: `"ease": "linear" | "in" | "out" | "inout" | "sine" | "back" | "bounce"`.
@@ -97,9 +99,21 @@ in the narration are a validation error. Example (a giant opens his arms, then c
  "part_anims": [{"part": "arm_l", "type": "rotate", "to": 105, "on": "张开双臂", "for": 0.9, "ease": "out"},
                 {"part": "arm_l", "type": "rotate", "to": 62, "on": "抱在怀里", "for": 1.1}]}
 ```
+`"words#2"` means the second time those words are spoken ("step, step, step" → `"step"`, `"step#2"`, `"step#3"`).
+The camera's `shake` takes `on`/`until` too. Inside a rig window, a rig entry that has its own `t` is timed within the
+window (0 to 1 of the window), so a bird tucks its legs as its flight starts.
+
 For poses a puppet can't reach (kneeling, crouching, lying down), use pose actors (separate drawings of the same
 character, `"character"` shared) and swap them with `show` windows on the words; give swaps `"fade": 0.001` so they cut
-cleanly, like replacement animation.
+cleanly, like replacement animation. A pose actor can be declared as `{"pose_of": "kuafu", "character": "kuafu"}`:
+films with painted art (hybrid casts) replace it with the painting; procedural renders draw the base puppet, skipping
+part anims for parts it lacks.
+
+**Walk and run cycles.** Figures with gaits (hybrid casts: side-view people with knees and elbows, four-legged
+animals, a hare's bound, a tortoise's plod, a wing beat) get keyed rigs named `walk`, `run` or `fly`. Give the rig a
+window on the words and move the item with `move`/`path`: the cycle is paced by how fast the item travels, so the feet
+keep up with the ground and the figure settles to standing when the move ends. For running on the spot while the
+scenery scrolls, add `"in_place": true` to the rig window.
 
 ## Actor
 ```json

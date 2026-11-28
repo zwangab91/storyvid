@@ -751,5 +751,15 @@
     0.95
    ]
   }
- }
+ },
+ "clips": [
+  {
+   "scene": 6,
+   "src": "film_clips/tortoise_whoosh.mp4",
+   "on": "Whoosh",
+   "offset": -0.3,
+   "for": 9,
+   "fade": 0.3
+  }
+ ]
 }

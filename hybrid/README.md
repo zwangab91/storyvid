@@ -77,11 +77,27 @@ Motion test on 夸父 scenes 7-8 (`stories/kuafu_motion_test.json`, `cast/kuafu_
   the character recognisable, but the kneel is awkward, the staff ends up floating, and the action runs about 2 s ahead
   of the narration.
 
+Motion pass on all four films (`assets/motion_art.json`, $0.74; `assets/film_clips.json`, $2.00):
+- Every character scene is restaged so actions happen on their words (see the spec), instead of one loop running
+  through a scene: 夸父 lifts a boulder on 力气大得, shivers on 又冷又黑, points his staff at the sun, strides then runs,
+  leaps a river, reaches for the sun, drinks, staggers and falls; the girl walks humming, crouches to pick flowers; the
+  wolf knocks three times on "knock, knock, knock"; the tortoise takes one step on each "step".
+- Keyed gaits (`storyvid/gait.py`) replace sine swings for walking, running and flying: per-joint curves from real
+  gaits (the leg plants and pushes back slowly, swings forward fast, the knee folds in the swing, the body bobs twice
+  a cycle), paced by how fast the figure travels. Side-view figures of 夸父, the girl and the woodcutter were painted
+  as parts sheets with knees and elbows; joint ends are rounded about their pivot (`"cap"`) so they bend without gaps.
+  The wolf, hare, tortoise and 精卫 keep their art and get quadruped, bound, plod and wing-beat cycles.
+- Painted poses for actions a puppet can't reach: 夸父 lifting a boulder, reaching for the sun, fallen; the girl
+  crouching to pick flowers; the wolf leaping in his nightcap; the hare asleep, curled up.
+- One generated clip per film (Gemini Omni, first and last frames rendered from the restaged scene, so it cuts in and
+  out of the puppet animation): 精卫's storm wave overturning the boat (8 s), 夸父's staff growing into the peach grove
+  (8 s), the wolf leaping out of bed (3 s), the hare's whoosh off the start line (9 s). The cast's `clips` play them
+  over their window of the scene, under the captions, with the film's own narration and music.
+
 Not built yet:
 - The storyboard step writing the asset list and cast file (for 精卫 the planner wrote both by hand: piece labels,
   attach points, pivots for pieces without a straight cut, draw order, tuned rig values).
 - Generated replacements for inline shapes in a storyboard (one grey rock in scene 1 is still procedural).
-- Optional first/last-frame video clips for a few key moments, spliced into the timeline.
 
 Known artefacts, from cutting a finished picture: a few teal slivers left in the sea where the lower wing was, a
 scrap of the pebble's string left at the beak after the drop, and some softness because the 1376 px source is
