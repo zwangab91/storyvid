@@ -1,0 +1,175 @@
+{
+ "kind": "video",
+ "model": "gemini-omni-1.2-flash",
+ "total_cost_usd": 1.9956,
+ "assets": [
+  {
+   "id": "jingwei_storm",
+   "type": "video",
+   "key": "27d5d4fc2b87c01c",
+   "file": "jingwei_storm.mp4",
+   "model": "gemini-omni-1.2-flash",
+   "duration": 8,
+   "bytes": 4490446,
+   "cost_usd": 0.567,
+   "usage": {
+    "total_tokens": 49581,
+    "total_input_tokens": 2432,
+    "input_tokens_by_modality": [
+     {
+      "modality": "text",
+      "tokens": 232
+     },
+     {
+      "modality": "image",
+      "tokens": 2200
+     }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 46336,
+    "output_tokens_by_modality": [
+     {
+      "modality": "video",
+      "tokens": 46336
+     }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 813,
+    "initial_input_tokens": 2432
+   },
+   "prompt": "Animate this hand-made cut-paper collage picture-book illustration as gentle 2D cut-out stop-motion, like the page come to life. Motion direction: 0 to 4 seconds: a howling wind whips the dark stormy sea into rolling waves and the little empty wooden boat pitches up and down; behind it a gigantic wave, taller than a mountain, rises up out of the sea. 4 to 6 seconds: the giant wave curls over and crashes down onto the little boat, tipping it over. 6 to 8 seconds: the boat is gone beneath the churning white foam and the great wave rolls on, ending exactly on the final frame. The storm clouds drift; the camera stays still.\nStyle lock: preserve every scissor-cut paper edge, painted brushstroke and paper texture and the flat 2D picture-book cut-paper look of the starting frame; keep every character's face, hair, clothes and colours exactly as in the starting frame; calm, steady camera like a multi-plane animation stand; never 3D, no new characters, no text, captions or watermarks.",
+   "images": [
+    "jingwei_s3_first.jpg",
+    "jingwei_s3_last.jpg"
+   ],
+   "seconds": 45.5,
+   "created": "2026-11-28T08:07:58Z"
+  },
+  {
+   "id": "kuafu_grove",
+   "type": "video",
+   "key": "fcaa29004dbc967c",
+   "file": "kuafu_grove.mp4",
+   "model": "gemini-omni-1.2-flash",
+   "duration": 8,
+   "bytes": 3492004,
+   "cost_usd": 0.5684,
+   "usage": {
+    "total_tokens": 49751,
+    "total_input_tokens": 2443,
+    "input_tokens_by_modality": [
+     {
+      "modality": "image",
+      "tokens": 2200
+     },
+     {
+      "modality": "text",
+      "tokens": 243
+     }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 46336,
+    "output_tokens_by_modality": [
+     {
+      "modality": "video",
+      "tokens": 46336
+     }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 972,
+    "initial_input_tokens": 2443
+   },
+   "prompt": "Animate this hand-made cut-paper collage picture-book illustration as gentle 2D cut-out stop-motion, like the page come to life. Motion direction: 0 to 1.5 seconds: the giant's long wooden staff lies on the green hill and begins to glow softly. 1.5 to 5 seconds: green shoots and roots sprout from the staff, which grows up into peach-tree trunks and branches, and more young trees spring up one after another across the hill, their leaves unfurling. 5 to 8 seconds: pink blossoms open on every branch and swell into big ripe peaches, and the grove settles, gently swaying, ending exactly on the final frame. The sun and sky stay still; the camera stays still.\nStyle lock: preserve every scissor-cut paper edge, painted brushstroke and paper texture and the flat 2D picture-book cut-paper look of the starting frame; keep every character's face, hair, clothes and colours exactly as in the starting frame; calm, steady camera like a multi-plane animation stand; never 3D, no new characters, no text, captions or watermarks.",
+   "images": [
+    "kuafu_s11_first.jpg",
+    "kuafu_s11_last.jpg"
+   ],
+   "seconds": 33.5,
+   "created": "2026-11-28T08:08:31Z"
+  },
+  {
+   "id": "red_leap",
+   "type": "video",
+   "key": "40b83a7938856d82",
+   "file": "red_leap.mp4",
+   "model": "gemini-omni-1.2-flash",
+   "duration": 3,
+   "bytes": 1838217,
+   "cost_usd": 0.2182,
+   "usage": {
+    "total_tokens": 20474,
+    "total_input_tokens": 2427,
+    "input_tokens_by_modality": [
+     {
+      "modality": "text",
+      "tokens": 227
+     },
+     {
+      "modality": "image",
+      "tokens": 2200
+     }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 17376,
+    "output_tokens_by_modality": [
+     {
+      "modality": "video",
+      "tokens": 17376
+     }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 671,
+    "initial_input_tokens": 2427
+   },
+   "prompt": "Animate this hand-made cut-paper collage picture-book illustration as gentle 2D cut-out stop-motion, like the page come to life. Motion direction: 0 to 1 second: the grey wolf wearing Grandmother's white nightcap throws off the patchwork quilt. 1 to 2 seconds: he leaps out of the bed in one big arc through the air toward Little Red Riding Hood, who flinches back and raises her hand. 2 to 3 seconds: he lands on all fours on the wooden floor in front of her as the quilt slides to the floor, ending exactly on the final frame. No biting. The room stays still; the camera stays still.\nStyle lock: preserve every scissor-cut paper edge, painted brushstroke and paper texture and the flat 2D picture-book cut-paper look of the starting frame; keep every character's face, hair, clothes and colours exactly as in the starting frame; calm, steady camera like a multi-plane animation stand; never 3D, no new characters, no text, captions or watermarks.",
+   "images": [
+    "red_s11_first.jpg",
+    "red_s11_last.jpg"
+   ],
+   "seconds": 24.9,
+   "created": "2026-11-28T08:08:56Z"
+  },
+  {
+   "id": "tortoise_whoosh",
+   "type": "video",
+   "key": "8cc4c29ed05007de",
+   "file": "tortoise_whoosh.mp4",
+   "model": "gemini-omni-1.2-flash",
+   "duration": 9,
+   "bytes": 3196971,
+   "cost_usd": 0.642,
+   "usage": {
+    "total_tokens": 55994,
+    "total_input_tokens": 2441,
+    "input_tokens_by_modality": [
+     {
+      "modality": "text",
+      "tokens": 241
+     },
+     {
+      "modality": "image",
+      "tokens": 2200
+     }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 52128,
+    "output_tokens_by_modality": [
+     {
+      "modality": "video",
+      "tokens": 52128
+     }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1425,
+    "initial_input_tokens": 2441
+   },
+   "prompt": "Animate this hand-made cut-paper collage picture-book illustration as gentle 2D cut-out stop-motion, like the page come to life. Motion direction: 0 to 1.5 seconds: the brown hare crouches low, then springs forward. 1.5 to 3 seconds: he shoots off to the right in long, fast bounds and leaves the picture. 3 to 7 seconds: the rush of wind from his dash sweeps across the meadow, bending the yellow flower, the red flower and the grass far over. 7 to 9 seconds: the flowers spring back upright and sway, ending exactly on the final frame. The tortoise stays where she is and only blinks; the cloud drifts; the camera stays still.\nStyle lock: preserve every scissor-cut paper edge, painted brushstroke and paper texture and the flat 2D picture-book cut-paper look of the starting frame; keep every character's face, hair, clothes and colours exactly as in the starting frame; calm, steady camera like a multi-plane animation stand; never 3D, no new characters, no text, captions or watermarks.",
+   "images": [
+    "tortoise_s6_first.jpg",
+    "tortoise_s6_last.jpg"
+   ],
+   "seconds": 39.2,
+   "created": "2026-11-28T08:09:35Z"
+  }
+ ]
+}
