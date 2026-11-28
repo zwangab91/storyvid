@@ -3696,7 +3696,7 @@
        ],
        "type": "rotate",
        "on": "hung his head",
-       "to": -55,
+       "to": -100,
        "ease": "inout",
        "for": 0.9
       },
@@ -3704,7 +3704,7 @@
        "part": "head",
        "type": "rotate",
        "on": "hung his head",
-       "to": 16,
+       "to": 26,
        "ease": "inout",
        "for": 0.9
       }
